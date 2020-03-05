@@ -27,7 +27,7 @@ return [
         'label' => 'badge badge-info',
         'submenu' => [
             [
-                'text' => 'Register Clients',
+                'text' => 'Register Client',
                 'route' => '#'
             ],
             [
@@ -40,6 +40,60 @@ return [
             ],
             [
                 'text' => 'Rejected Clients',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Transfer Client',
+                'route' => '#'
+            ]
+        ],
+        'translate' => 'sidebar.nav.DASHBOARD'
+    ],
+    [
+        'text' => 'Loans',
+        'route' => '#',
+        'icon' => 'icon-speedometer',
+        'alert' => '3',
+        'label' => 'badge badge-info',
+        'submenu' => [
+            [
+                'text' => 'Overpaid Loans',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Pending Approval',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Pending Second Approval',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Awaiting Disbursement',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Rejected',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Withdrawn',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Written Off Loans',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Closed',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Loan Schedule Pending',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Loan Calculator',
                 'route' => '#'
             ]
         ],
