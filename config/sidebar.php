@@ -46,6 +46,51 @@ return [
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
+        'text' => 'Reports',
+        'route' => '#',
+        'icon' => 'icon-grid',
+        'alert' => '30',
+        'submenu' => [
+            [
+                'text' => 'Client Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Group Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Savings Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Loan Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Organisation Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Financial Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Report Schedular',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Data Export',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Report Queue',
+                'route' => '#'
+            ],
+        ],
+        'translate' => 'sidebar.nav.WIDGETS'
+    ],
+    [
         'text' => 'Widgets',
         'route' => 'widgets',
         'icon' => 'icon-grid',
