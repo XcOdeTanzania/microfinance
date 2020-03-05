@@ -23,3 +23,7 @@ Route::get('/demo', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/client/register',function (){
+    return view('pages.client.register');
+})->name('client.register')->middleware('auth');
