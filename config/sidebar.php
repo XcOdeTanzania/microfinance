@@ -90,6 +90,49 @@ return [
         ],
         'translate' => 'sidebar.nav.WIDGETS'
     ],
+
+    [
+        'text' => 'Accounting',
+        'route' => '#',
+        'icon' => 'icon-grid',
+        'alert' => '30',
+        'submenu' => [
+            [
+                'text' => 'Client Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Charts of Accounts',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Journals',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Journals Template',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Reconciliation',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Accounting Export',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Periodic Accrual',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Close Periods',
+                'route' => '#'
+            ],
+            
+        ],
+        'translate' => 'sidebar.nav.WIDGETS'
+    ],
     [
         'text' => 'Widgets',
         'route' => 'widgets',
