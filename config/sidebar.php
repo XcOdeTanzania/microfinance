@@ -150,6 +150,71 @@ return [
         ],
         'translate' => 'sidebar.nav.WIDGETS'
     ],
+    [
+        'text' => 'Setting',
+        'route' => '#',
+        'icon' => 'icon-grid',
+        'alert' => '30',
+        'submenu' => [
+            
+            [
+                'text' => 'Access Management',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Audit',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Products',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Braches',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'MMT Services',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'SMS Module',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Email Module',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Blacklist',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'CRB',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Advanced',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Customisation',
+                'route' => '#'
+            ],
+            
+        ],
+        'translate' => 'sidebar.nav.WIDGETS'
+    ],
 
     [
         'text' => 'Widgets',
