@@ -100,6 +100,177 @@ return [
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
+        'text' => 'Reports',
+        'route' => '#',
+        'icon' => 'icon-grid',
+        'alert' => '30',
+        'submenu' => [
+            [
+                'text' => 'Client Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Group Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Savings Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Loan Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Organisation Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Financial Reports',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Report Schedular',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Data Export',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Report Queue',
+                'route' => '#'
+            ],
+        ],
+        'translate' => 'sidebar.nav.WIDGETS'
+    ],
+
+    [
+        'text' => 'Accounting',
+        'route' => '#',
+        'icon' => 'icon-grid',
+        'alert' => '30',
+        'submenu' => [
+            
+            [
+                'text' => 'Charts of Accounts',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Journals',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Journals Template',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Reconciliation',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Accounting Export',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Periodic Accrual',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Close Periods',
+                'route' => '#'
+            ],
+            
+        ],
+        'translate' => 'sidebar.nav.WIDGETS'
+    ],
+    [
+        'text' => 'Task',
+        'route' => '#',
+        'icon' => 'icon-grid',
+        'alert' => '30',
+        'submenu' => [
+            
+            [
+                'text' => 'Pending Approval',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'My Actions',
+                'route' => '#'
+            ],
+            
+        ],
+        'translate' => 'sidebar.nav.WIDGETS'
+    ],
+    [
+        'text' => 'Setting',
+        'route' => '#',
+        'icon' => 'icon-grid',
+        'alert' => '30',
+        'submenu' => [
+            
+            [
+                'text' => 'Access Management',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Audit',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Products',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Braches',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'MMT Services',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'SMS Module',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Email Module',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Blacklist',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'CRB',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Advanced',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'Customisation',
+                'route' => '#'
+            ],
+            
+        ],
+        'translate' => 'sidebar.nav.WIDGETS'
+    ],
+
+    [
         'text' => 'Widgets',
         'route' => 'widgets',
         'icon' => 'icon-grid',
@@ -112,16 +283,43 @@ return [
         'icon' => 'icon-layers',
         'submenu' => [
             [
-                'text' => 'Horizontal',
-                'route' => 'horizontal/dashboardh'
+                'text' => 'Pending Approval',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Awaiting Activation',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Rejected',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Closed',
+                'route' => '#'
             ]
         ]
     ],
     [
-        'text' => 'Components',
-        'heading' => true,
-        'translate' => 'sidebar.heading.COMPONENTS'
+        'text' => 'User',
+        'route' => 'horizontal',
+        'icon' => 'icon-layers',
+        'submenu' => [
+            [
+                'text' => 'Create User',
+                'route' => '#'
+            ],
+            [
+                'text' => 'User Roles',
+                'route' => '#'
+            ],
+            [
+                'text' => 'User Permissions',
+                'route' => '#'
+            ]
+        ]
     ],
+
     [
         'text' => 'Elements',
         'route' => 'elements',
@@ -326,11 +524,6 @@ return [
             ]
         ],
         'translate' => 'sidebar.nav.map.MAP'
-    ],
-    [
-        'text' => 'More',
-        'heading' => true,
-        'translate' => 'sidebar.heading.MORE'
     ],
     [
         'text' => 'Pages',
