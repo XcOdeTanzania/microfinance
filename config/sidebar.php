@@ -97,10 +97,7 @@ return [
         'icon' => 'icon-grid',
         'alert' => '30',
         'submenu' => [
-            [
-                'text' => 'Client Reports',
-                'route' => '#'
-            ],
+            
             [
                 'text' => 'Charts of Accounts',
                 'route' => '#'
@@ -133,6 +130,27 @@ return [
         ],
         'translate' => 'sidebar.nav.WIDGETS'
     ],
+    [
+        'text' => 'Task',
+        'route' => '#',
+        'icon' => 'icon-grid',
+        'alert' => '30',
+        'submenu' => [
+            
+            [
+                'text' => 'Pending Approval',
+                'route' => '#'
+            ],
+			
+			[
+                'text' => 'My Actions',
+                'route' => '#'
+            ],
+            
+        ],
+        'translate' => 'sidebar.nav.WIDGETS'
+    ],
+
     [
         'text' => 'Widgets',
         'route' => 'widgets',
