@@ -175,6 +175,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+ * Sidebar Service Provider...
+ */
+        App\Providers\SidebarServiceProvider::class
+
+
     ],
 
     /*

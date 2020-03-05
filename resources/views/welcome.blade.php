@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Microfinance Hawa
+                    Microfinance
                 </div>
 
                 <div class="links">
