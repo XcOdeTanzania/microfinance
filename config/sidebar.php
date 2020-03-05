@@ -46,28 +46,48 @@ return [
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
-        'text' => 'Widgets',
-        'route' => 'widgets',
-        'icon' => 'icon-grid',
-        'alert' => '30',
-        'translate' => 'sidebar.nav.WIDGETS'
-    ],
-    [
-        'text' => 'Layouts',
+        'text' => 'Shares',
         'route' => 'horizontal',
         'icon' => 'icon-layers',
         'submenu' => [
             [
-                'text' => 'Horizontal',
-                'route' => 'horizontal/dashboardh'
+                'text' => 'Pending Approval',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Awaiting Activation',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Rejected',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Closed',
+                'route' => '#'
             ]
         ]
     ],
     [
-        'text' => 'Components',
-        'heading' => true,
-        'translate' => 'sidebar.heading.COMPONENTS'
+        'text' => 'User',
+        'route' => 'horizontal',
+        'icon' => 'icon-layers',
+        'submenu' => [
+            [
+                'text' => 'Create User',
+                'route' => '#'
+            ],
+            [
+                'text' => 'User Roles',
+                'route' => '#'
+            ],
+            [
+                'text' => 'User Permissions',
+                'route' => '#'
+            ]
+        ]
     ],
+
     [
         'text' => 'Elements',
         'route' => 'elements',
@@ -272,11 +292,6 @@ return [
             ]
         ],
         'translate' => 'sidebar.nav.map.MAP'
-    ],
-    [
-        'text' => 'More',
-        'heading' => true,
-        'translate' => 'sidebar.heading.MORE'
     ],
     [
         'text' => 'Pages',
