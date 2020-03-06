@@ -30,7 +30,6 @@ Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
 
-<<<<<<< HEAD
 
 // SHARES ROUTES
 Route::get('/shares/active', function() {
@@ -49,7 +48,6 @@ Route::get('/shares/rejected', function(){
 Route::get('/shares/closed', function(){
     return view('pages.shares.closed');
 });
-=======
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
@@ -85,7 +83,7 @@ Route::group(['prefix' => 'reports'], function() {
 
     // financial reports route
     Route::get('financialReports', function () {
-        return view('pages.reports.financial-report');
+        return view('pages.reports.financial-reports');
     });
 
     // Report schedular route
@@ -105,4 +103,3 @@ Route::group(['prefix' => 'reports'], function() {
 });
 
 // Report menu route end
->>>>>>> 26b4f93a376dcc8f150bfab542f30ec872cf9f04
