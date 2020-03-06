@@ -85,10 +85,6 @@ Route::get('/user/permissions',function(){
     return view('pages.user.permissions');
 });
 
-Route::get('/accounting/reconciliation',function (){
-    return view('pages.accounting.reconciliation');
-});
-//  Accounting Roots  end
 
 // Report menu routes start
 

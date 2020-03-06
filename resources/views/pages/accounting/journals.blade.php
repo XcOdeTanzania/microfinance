@@ -6,9 +6,10 @@
         <h2>Journals</h2>
     </div>
     <!-- START card-->
-    <div class="card card-default">
-       
-       <div class="card-body">
+    <div class="card">
+      <div class="card-header"><br>
+     <button href="#createJounalentryModal" class="btn btn-oval btn-primary" type="button" data-toggle="modal"><em class="fa mr-2 fas fa-plus"></em>Add Account</button>
+      <div class="card-body">
           <form class="form-horizontal" method="get" action="/">
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Account</label>
@@ -51,12 +52,13 @@
  @section('scripts')@endsection
 
   <!-- Journal Modal HTML -->
-  <div id="createJournalEntry" class="modal fade">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <form>
+
+	<div id="createJounalentryModal" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<form>
 					<div class="modal-header">						
-						<h4 class="modal-title">Create Journal Entry</h4>
+						<h4 class="modal-title">Create a General Ledger Account</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					
@@ -111,14 +113,15 @@
 						</div>	
                         <div class="form-group">
 							<label> Description</label><br>
-							<textarea id="description" rows="4" cols="125"></textarea>      
+							<textarea id="description" rows="4" cols="125"></textarea>
+                               
 						</div>						
-					
+					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<input type="submit" class="btn btn-success" value="Add">
 					</div>
 				</form>
-        </div>
+			</div>
+		</div>
     </div>
-</div>
