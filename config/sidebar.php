@@ -107,39 +107,39 @@ return [
         'submenu' => [
             [
                 'text' => 'Client Reports',
-                'route' => '#'
+                'route' => '/reports/clientReports'
             ],
             [
                 'text' => 'Group Reports',
-                'route' => '#'
+                'route' => '/reports/groupReports'
             ],
             [
                 'text' => 'Savings Reports',
-                'route' => '#'
+                'route' => '/reports/savingReports'
             ],
             [
                 'text' => 'Loan Reports',
-                'route' => '#'
+                'route' => '/reports/loanReports'
             ],
             [
                 'text' => 'Organisation Reports',
-                'route' => '#'
+                'route' => '/reports/organisationReports'
             ],
             [
                 'text' => 'Financial Reports',
-                'route' => '#'
+                'route' => '/reports/financialReports'
             ],
             [
                 'text' => 'Report Schedular',
-                'route' => '#'
+                'route' => '/reports/reportSchedular'
             ],
             [
                 'text' => 'Data Export',
-                'route' => '#'
+                'route' => '/reports/dataExport'
             ],
             [
                 'text' => 'Report Queue',
-                'route' => '#'
+                'route' => '/reports/reportQueue'
             ],
         ],
         'translate' => 'sidebar.nav.WIDGETS'
@@ -157,7 +157,7 @@ return [
             ],
             [
                 'text' => 'Journals',
-                'route' => '/pages.accounting.journals'
+                'route' => '/accounting/journals'
             ],
             [
                 'text' => 'Journals Template',
@@ -165,7 +165,7 @@ return [
             ],
             [
                 'text' => 'Reconciliation',
-                'route' => '#'
+                'route' => '/accounting/reconciliation'
             ],
             [
                 'text' => 'Accounting Export',
@@ -182,6 +182,33 @@ return [
             
         ],
         'translate' => 'sidebar.nav.WIDGETS'
+    ],
+    [
+        'text' => 'Shares',
+        'route' => 'horizontal',
+        'icon' => 'icon-layers',
+        'submenu' => [
+            [
+                'text' => 'Active Shares',
+                'route' => '/shares/active'
+            ],
+            [
+                'text' => 'Pending Approval',
+                'route' => '/shares/pending'
+            ],
+            [
+                'text' => 'Waiting Activation',
+                'route' => '/shares/waiting'
+            ],
+            [
+                'text' => 'Rejected',
+                'route' => '/shares/rejected'
+            ],
+            [
+                'text' => 'Closed',
+                'route' => '/shares/closed'
+            ]
+        ]
     ],
     [
         'text' => 'Task',
