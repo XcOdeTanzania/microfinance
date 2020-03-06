@@ -7,10 +7,10 @@
         </div>
     </div>
     <div class="container-fluid">
-        <!-- DATATABLE FOR PENDING SHARES -->
+        <!-- DATATABLE FOR WAITIG APPROVAL -->
         <div class="card">
             <div class="card-header">
-                <div class="card-title">Shares Pending Approval</div>
+                <div class="card-title">Waiting Approval</div>
                 <!-- <div class="text-sm">
                     When displaying data in a DataTable, it can often be useful to your end users for them to have the ability to obtain the data from the DataTable, extracting it into a file for them
                     to use locally. This can be done with either HTML5 based buttons or Flash buttons.

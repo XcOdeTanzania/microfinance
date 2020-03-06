@@ -29,3 +29,22 @@ Route::get('/client/register',function (){
 Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
+
+
+// SHARES ROUTES
+Route::get('/shares/active', function() {
+    return view('pages.shares.active');
+});
+Route::get('/shares/pending', function(){
+    return view('pages.shares.pending');
+});
+Route::get('/shares/waiting', function() {
+    return view('pages.shares.waiting');
+});
+
+Route::get('/shares/rejected', function(){
+    return view('pages.shares.rejected');
+});
+Route::get('/shares/closed', function(){
+    return view('pages.shares.closed');
+});

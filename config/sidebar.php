@@ -190,23 +190,23 @@ return [
         'submenu' => [
             [
                 'text' => 'Active Shares',
-                'route' => '#'
+                'route' => '/shares/active'
             ],
             [
                 'text' => 'Pending Approval',
-                'route' => '#'
+                'route' => '/shares/pending'
             ],
             [
                 'text' => 'Waiting Activation',
-                'route' => '#'
+                'route' => '/shares/waiting'
             ],
             [
                 'text' => 'Rejected',
-                'route' => '#'
+                'route' => '/shares/rejected'
             ],
             [
                 'text' => 'Closed',
-                'route' => '#'
+                'route' => '/shares/closed'
             ]
         ]
     ],
