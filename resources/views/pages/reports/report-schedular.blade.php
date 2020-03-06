@@ -5,8 +5,6 @@
 @endsection
 
 @section('content')
-
-<div class="content-wrapper">
     <div class="content-heading">
         <div>Report Schedular</div>
     </div>
@@ -34,7 +32,6 @@
             </div>
         </div>
     </div>
-</div>
     
 @endsection
 

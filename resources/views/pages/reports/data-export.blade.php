@@ -6,7 +6,6 @@
 
 @section('content')
 
-<div class="content-wrapper">
     <div class="content-heading">
         <div>Data Exports</div>
     </div>
@@ -34,7 +33,7 @@
             </div>
         </div>
     </div>
-</div>
+
     
 @endsection
 
