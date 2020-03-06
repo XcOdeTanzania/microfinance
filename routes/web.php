@@ -13,14 +13,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/demo', function () {
     return view('demo');
 });
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Group for the Routes that are to be protected by auth middleware
+Route::group([
+    'name' => 'auth.',
+    'prefix' => '',
+    'middleware' => 'auth'
+], function () {
+
+    // Place your routes here
+    Route::get('/client/register',function (){
+        return view('pages.client.register');
+    })->name('client.register');
+
+    Route::get('/client/pendingApproval',function (){
+        return view('pages.client.pendingApproval');
+    })->name('client.pendingApproval');
+
+    Route::get('/client/closed',function (){
+        return view('pages.client.closed');
+    })->name('client.closed');
+
+    Route::get('/client/rejected',function (){
+        return view('pages.client.rejected');
+    })->name('client.rejected');
+
+});
+
 
 Route::get('/client/register',function (){
     return view('pages.client.register');
@@ -30,7 +60,6 @@ Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
 
-<<<<<<< HEAD
 
 // SHARES ROUTES
 Route::get('/shares/active', function() {
@@ -49,7 +78,7 @@ Route::get('/shares/rejected', function(){
 Route::get('/shares/closed', function(){
     return view('pages.shares.closed');
 });
-=======
+
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
@@ -104,5 +133,3 @@ Route::group(['prefix' => 'reports'], function() {
     });
 });
 
-// Report menu route end
->>>>>>> 26b4f93a376dcc8f150bfab542f30ec872cf9f04
