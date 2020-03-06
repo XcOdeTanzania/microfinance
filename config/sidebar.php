@@ -157,7 +157,7 @@ return [
             ],
             [
                 'text' => 'Journals',
-                'route' => '/pages.accounting.journals'
+                'route' => '/accounting/journals'
             ],
             [
                 'text' => 'Journals Template',
@@ -165,19 +165,19 @@ return [
             ],
             [
                 'text' => 'Reconciliation',
-                'route' => '#'
+                'route' => '/accounting/reconciliation'
             ],
             [
                 'text' => 'Accounting Export',
-                'route' => '#'
+                'route' => '/accounting/export'
             ],
             [
                 'text' => 'Periodic Accrual',
-                'route' => '#'
+                'route' => '/accounting/periodicaccrual'
             ],
             [
                 'text' => 'Close Periods',
-                'route' => '#'
+                'route' => '/accounting/closeperiod'
             ],
             
         ],
@@ -301,16 +301,16 @@ return [
         'icon' => 'icon-user',
         'submenu' => [
             [
-                'text' => 'Create User',
-                'route' => '#'
+                'text' => 'Users',
+                'route' => '/user/users'
             ],
             [
                 'text' => 'User Roles',
-                'route' => '#'
+                'route' => '/user/roles'
             ],
             [
                 'text' => 'User Permissions',
-                'route' => '#'
+                'route' => '/user/permissions'
             ]
         ]
     ],

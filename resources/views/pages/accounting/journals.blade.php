@@ -3,12 +3,13 @@
 
 <div class="content-wrapper">
     <div class="content-heading">
-        <button href="#createJournalEntry" class="btn btn-oval btn-primary" type="button" data-toggle="modal"><em class="fa mr-2 fas fa-plus"></em>Create Journal Entry</button>
+        <h2>Journals</h2>
     </div>
     <!-- START card-->
-    <div class="card card-default">
-       
-       <div class="card-body">
+    <div class="card">
+      <div class="card-header"><br>
+     <button href="#createJounalentryModal" class="btn btn-oval btn-primary" type="button" data-toggle="modal"><em class="fa mr-2 fas fa-plus"></em>Add Account</button>
+      <div class="card-body">
           <form class="form-horizontal" method="get" action="/">
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Account</label>
@@ -49,3 +50,78 @@
  @endsection
  @section('styles')@endsection
  @section('scripts')@endsection
+
+  <!-- Journal Modal HTML -->
+
+	<div id="createJounalentryModal" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">						
+						<h4 class="modal-title">Create a General Ledger Account</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+							<label> Account Name</label>
+							<input type="text" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label> GL Code</label>
+							<input type="text" class="form-control" required>
+						</div>
+						
+						<div class="form-group">
+                            <label>Account Type</label>
+                            <select name="accounttype" class="form-control" id="accounttype">
+                                <option >Select</option>
+                                <option>Asset </option> 
+                                <option> Equity</option>
+                                <option> Income</option>
+                            </select>
+						</div>
+						<div class="form-group">
+							<label> External ID</label>
+							<input type="text" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label> Account Tags</label>
+							<select name="accounttag" class="form-control" id="accountag">
+                                <option >Select</option>
+                                <option></option> 
+                                <option> </option>
+                                <option> </option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+							<label> Account Usage</label>
+							<select name="accounttag" class="form-control" id="accountag">
+                                <option >Select</option>
+                                <option>GL Group</option> 
+                                <option>GL Account </option>
+                            </select>
+						</div>
+                        <div class="form-group">
+							<label> Manual Entries Allowed?</label>
+							<input type="checkbox" class="form-control" required>
+						</div>		
+
+                        <div class="form-group">
+							<label> Enable Bank Reconcialliation?</label>
+							<input type="checkbox" class="form-control" required>
+						</div>	
+                        <div class="form-group">
+							<label> Description</label><br>
+							<textarea id="description" rows="4" cols="125"></textarea>
+                               
+						</div>						
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btn btn-success" value="Add">
+					</div>
+				</form>
+			</div>
+		</div>
+    </div>

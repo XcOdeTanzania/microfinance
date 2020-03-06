@@ -7,7 +7,6 @@
 
 
 @section('content')
-<div class="content-wrapper">
     <div class="content-heading">
        <div>Group Reports</div>
     </div>
@@ -58,7 +57,6 @@
        </div>
        </div>
     </div>
-</div>
 
 @endsection
 

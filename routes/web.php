@@ -56,9 +56,31 @@ Route::get('/client/register',function (){
     return view('pages.client.register');
 })->name('client.register')->middleware('auth');
 
+// Acoounting Roots
 Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
+
+Route::get('/accounting/journals',function (){
+    return view('pages.accounting.journals');
+});
+
+Route::get('/accounting/reconciliation',function (){
+    return view('pages.accounting.reconciliation');
+});
+
+Route::get('/accounting/closeperiod',function (){
+    return view('pages.accounting.closeperiod');
+});
+
+Route::get('/accounting/export',function (){
+    return view('pages.accounting.export');
+});
+
+Route::get('/accounting/periodicaccrual',function (){
+    return view('pages.accounting.periodicaccrual');
+});
+//  Accounting Roots  end
 
 
 // SHARES ROUTES
@@ -79,8 +101,18 @@ Route::get('/shares/closed', function(){
     return view('pages.shares.closed');
 });
 
-Route::get('/accounting/journals',function (){
-    return view('pages.accounting.journals');
+
+// Users Route
+Route::get('/user/users',function(){
+    return view('pages.user.users');
+});
+
+Route::get('/user/roles',function(){
+    return view('pages.user.roles');
+});
+
+Route::get('/user/permissions',function(){
+    return view('pages.user.permissions');
 });
 
 
@@ -114,7 +146,7 @@ Route::group(['prefix' => 'reports'], function() {
 
     // financial reports route
     Route::get('financialReports', function () {
-        return view('pages.reports.financial-report');
+        return view('pages.reports.financial-reports');
     });
 
     // Report schedular route
@@ -133,3 +165,4 @@ Route::group(['prefix' => 'reports'], function() {
     });
 });
 
+// Report menu route end
