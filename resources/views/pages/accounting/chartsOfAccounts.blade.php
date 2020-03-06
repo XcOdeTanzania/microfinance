@@ -70,7 +70,7 @@
 
     <!-- Add Modal HTML -->
 	<div id="addAccountModal" class="modal fade">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<form>
 					<div class="modal-header">						
@@ -129,7 +129,7 @@
 						</div>	
                         <div class="form-group">
 							<label> Description</label><br>
-							<textarea id="description" rows="4" cols="75"></textarea>
+							<textarea id="description" rows="4" cols="125"></textarea>
                                
 						</div>						
 					</div>
@@ -144,7 +144,7 @@
     
     <!-- Edit Modal HTML -->
 	<div id="editAccountModal" class="modal fade">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal lg">
 			<div class="modal-content">
 				<form>
 					<div class="modal-header">						
@@ -203,7 +203,7 @@
 						</div>	
                         <div class="form-group">
 							<label> Description</label><br>
-							<textarea id="description" rows="4" cols="75"></textarea>
+							<textarea id="description" rows="4" cols="125"></textarea>
                                
 						</div>						
 					</div>
