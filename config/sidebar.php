@@ -169,15 +169,15 @@ return [
             ],
             [
                 'text' => 'Accounting Export',
-                'route' => '#'
+                'route' => '/accounting/export'
             ],
             [
                 'text' => 'Periodic Accrual',
-                'route' => '#'
+                'route' => '/accounting/periodicaccrual'
             ],
             [
                 'text' => 'Close Periods',
-                'route' => '#'
+                'route' => '/accounting/closeperiod'
             ],
             
         ],
