@@ -274,16 +274,16 @@ return [
         'icon' => 'icon-layers',
         'submenu' => [
             [
-                'text' => 'Create User',
-                'route' => '#'
+                'text' => 'Users',
+                'route' => '/user/users'
             ],
             [
                 'text' => 'User Roles',
-                'route' => '#'
+                'route' => '/user/roles'
             ],
             [
                 'text' => 'User Permissions',
-                'route' => '#'
+                'route' => '/user/permissions'
             ]
         ]
     ],

@@ -33,3 +33,16 @@ Route::get('/accounting/chartsOfAccounts',function (){
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
+
+// Users Route
+Route::get('/user/users',function(){
+    return view('pages.user.users');
+});
+
+Route::get('/user/roles',function(){
+    return view('pages.user.roles');
+});
+
+Route::get('/user/permissions',function(){
+    return view('pages.user.permissions');
+});
