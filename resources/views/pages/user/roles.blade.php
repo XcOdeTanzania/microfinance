@@ -2,66 +2,51 @@
 @section('content')
     <div class="content-heading">
         <div>
-            User Roles
-
+            Users
+            <small></small>
         </div>
     </div>
-    <div class="container-fluid">
-        <!-- DATATABLE 1-->
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">User Roles</div>
-                
-            </div>
-            <div class="card-body">
-                <table class="table table-striped my-4 w-100" id="datatable1">
+    <div class="card">
+        <div class="card-header">Users</div>
+        <div class="card-body">
+            <div class="table-responsive bootgrid">
+                <table class="table table-striped" id="bootgrid-basic">
                     <thead>
                         <tr>
-                            <th data-priority="1">Name</th>
-                            <th>Description</th>
-                            <th>Active</th>
-                            
+                            <th data-column-id="userName">User Name</th>
+                            <th data-column-id="firstName">First Name</th>
+                            <th data-column-id="lastName" data-order="desc">Last Name</th>
+                            <th data-column-id="roles" data-order="desc">Roles</th>
+                            <th data-column-id="officeName" data-order="desc">OfficeName</th>
+                            <th data-column-id="email" data-order="desc">Email</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="User Roles">
+                        <tr>
+                            <td>HawaAlly</td>
                             <td>Hawa</td>
-                            <td>Branch Manager</td>
-                            <td><i class="fa fa-check"></i></td>
-                        
-                        
-                            
-                            <td><button class="btn btn-labeled btn-info mb-2" type="button">
-                        <span class="btn-label"><i class="fa fa-eye"></i></span>
-                        view
-                    </button></td>
+                            <td>Last name</td>
+                            <td>admin</td>
+                            <td>gogo</td>
+                            <td>tes@gmal.com</td>
                         </tr>
-
-                        <tr class="user">
-                            <td>Credit Officer</td>
-                            <td>Credit Officer</td>
-                            <td><i class="fa fa-check"></i></td>
-                            
-                            <td><button class="btn btn-labeled btn-info mb-2" type="button">
-                        <span class="btn-label"><i class="fa fa-eye"></i></span>
-                        view
-                    </button></td>
-                        </tr>    
-                        
-                        
-                       
-                        
-                        
-                        
-                       
+                        <tr>
+                            <td>HawaAlly</td>
+                            <td>Hawa</td>
+                            <td>Last name</td>
+                            <td>admin</td>
+                            <td>gogo</td>
+                            <td>tes@gmal.com</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-       
     </div>
+   
+   
 @endsection
 @section('styles')@endsection
 @section('scripts')
-    <script src="{{ asset('angle/js/datatable.js') }}"></script>
+    <script src="{{ asset('angle/js/bootgrid.js') }}"></script>
 @endsection
