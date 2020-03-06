@@ -31,6 +31,19 @@ Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
 
+Route::get('/accounting/journals',function (){
+    return view('pages.accounting.journals');
+});
+
+Route::get('/accounting/reconciliation',function (){
+    return view('pages.accounting.reconciliation');
+});
+
+Route::get('/accounting/closeperiod',function (){
+    return view('pages.accounting.closeperiod');
+});
+//  Accounting Roots  end
+
 
 // SHARES ROUTES
 Route::get('/shares/active', function() {
@@ -49,16 +62,7 @@ Route::get('/shares/rejected', function(){
 Route::get('/shares/closed', function(){
     return view('pages.shares.closed');
 });
-Route::get('/accounting/journals',function (){
-    return view('pages.accounting.journals');
-});
 
-<<<<<<< HEAD
-Route::get('/accounting/reconciliation',function (){
-    return view('pages.accounting.reconciliation');
-});
-//  Accounting Roots  end
-=======
 
 // Report menu routes start
 
@@ -110,4 +114,3 @@ Route::group(['prefix' => 'reports'], function() {
 });
 
 // Report menu route end
->>>>>>> c83ccde2cdbdbd146756fd3e55448e71c20610bd

@@ -3,7 +3,7 @@
 
 <div class="content-wrapper">
     <div class="content-heading">
-        <button href="#createJournalEntry" class="btn btn-oval btn-primary" type="button" data-toggle="modal"><em class="fa mr-2 fas fa-plus"></em>Create Journal Entry</button>
+        <h2>Reconciliation</h2>
     </div>
     <!-- START card-->
     <div class="card card-default">

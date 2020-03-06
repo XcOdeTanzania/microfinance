@@ -177,7 +177,7 @@ return [
             ],
             [
                 'text' => 'Close Periods',
-                'route' => '#'
+                'route' => '/accounting/closeperiod'
             ],
             
         ],
