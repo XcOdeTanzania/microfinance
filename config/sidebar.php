@@ -184,6 +184,33 @@ return [
         'translate' => 'sidebar.nav.WIDGETS'
     ],
     [
+        'text' => 'Shares',
+        'route' => 'horizontal',
+        'icon' => 'icon-layers',
+        'submenu' => [
+            [
+                'text' => 'Active Shares',
+                'route' => '/shares/active'
+            ],
+            [
+                'text' => 'Pending Approval',
+                'route' => '/shares/pending'
+            ],
+            [
+                'text' => 'Waiting Activation',
+                'route' => '/shares/waiting'
+            ],
+            [
+                'text' => 'Rejected',
+                'route' => '/shares/rejected'
+            ],
+            [
+                'text' => 'Closed',
+                'route' => '/shares/closed'
+            ]
+        ]
+    ],
+    [
         'text' => 'Task',
         'route' => '#',
         'icon' => 'icon-grid',
