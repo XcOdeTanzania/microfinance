@@ -157,7 +157,7 @@ return [
             ],
             [
                 'text' => 'Journals',
-                'route' => '#'
+                'route' => '/pages.accounting.journals'
             ],
             [
                 'text' => 'Journals Template',
