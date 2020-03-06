@@ -3,7 +3,7 @@
 
 <div class="content-wrapper">
     <div class="content-heading">
-        <h2>Reconciliation</h2>
+        <h2>Journals</h2>
     </div>
     <!-- START card-->
     <div class="card card-default">

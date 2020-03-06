@@ -173,7 +173,7 @@ return [
             ],
             [
                 'text' => 'Periodic Accrual',
-                'route' => '#'
+                'route' => '/accounting/periodicaccrual'
             ],
             [
                 'text' => 'Close Periods',

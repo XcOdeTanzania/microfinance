@@ -46,6 +46,10 @@ Route::get('/accounting/closeperiod',function (){
 Route::get('/accounting/export',function (){
     return view('pages.accounting.export');
 });
+
+Route::get('/accounting/periodicaccrual',function (){
+    return view('pages.accounting.periodicaccrual');
+});
 //  Accounting Roots  end
 
 
