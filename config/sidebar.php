@@ -107,39 +107,39 @@ return [
         'submenu' => [
             [
                 'text' => 'Client Reports',
-                'route' => '#'
+                'route' => '/reports/clientReports'
             ],
             [
                 'text' => 'Group Reports',
-                'route' => '#'
+                'route' => '/reports/groupReports'
             ],
             [
                 'text' => 'Savings Reports',
-                'route' => '#'
+                'route' => '/reports/savingReports'
             ],
             [
                 'text' => 'Loan Reports',
-                'route' => '#'
+                'route' => '/reports/loanReports'
             ],
             [
                 'text' => 'Organisation Reports',
-                'route' => '#'
+                'route' => '/reports/organisationReports'
             ],
             [
                 'text' => 'Financial Reports',
-                'route' => '#'
+                'route' => '/reports/financialReports'
             ],
             [
                 'text' => 'Report Schedular',
-                'route' => '#'
+                'route' => '/reports/reportSchedular'
             ],
             [
                 'text' => 'Data Export',
-                'route' => '#'
+                'route' => '/reports/dataExport'
             ],
             [
                 'text' => 'Report Queue',
-                'route' => '#'
+                'route' => '/reports/reportQueue'
             ],
         ],
         'translate' => 'sidebar.nav.WIDGETS'
@@ -157,7 +157,7 @@ return [
             ],
             [
                 'text' => 'Journals',
-                'route' => '#'
+                'route' => '/pages.accounting.journals'
             ],
             [
                 'text' => 'Journals Template',

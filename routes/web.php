@@ -30,6 +30,7 @@ Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
 
+<<<<<<< HEAD
 
 // SHARES ROUTES
 Route::get('/shares/active', function() {
@@ -48,3 +49,60 @@ Route::get('/shares/rejected', function(){
 Route::get('/shares/closed', function(){
     return view('pages.shares.closed');
 });
+=======
+Route::get('/accounting/journals',function (){
+    return view('pages.accounting.journals');
+});
+
+
+// Report menu routes start
+
+Route::group(['prefix' => 'reports'], function() {
+    // client reports route
+    Route::get('clientReports', function () {
+        return view('pages.reports.client-reports');
+    });
+
+    // group reports route
+    Route::get('groupReports', function () {
+        return view('pages.reports.group-reports');
+    });
+
+    // savings Reports route
+    Route::get('savingReports', function () {
+        return view('pages.reports.saving-reports');
+    });
+
+    // loan reports route
+    Route::get('loanReports', function () {
+        return view('pages.reports.loan-reports');
+    });
+
+    // organisation reports route
+    Route::get('organisationReports', function () {
+        return view('pages.reports.organisation-reports');
+    });
+
+    // financial reports route
+    Route::get('financialReports', function () {
+        return view('pages.reports.financial-report');
+    });
+
+    // Report schedular route
+    Route::get('reportSchedular', function () {
+        return view('pages.reports.report-schedular');
+    });
+
+    // Data export route
+    Route::get('dataExport', function () {
+        return view('pages.reports.data-export');
+    });
+
+    // report queue route
+    Route::get('reportQueue', function () {
+        return view('pages.reports.report-queue');
+    });
+});
+
+// Report menu route end
+>>>>>>> 26b4f93a376dcc8f150bfab542f30ec872cf9f04
