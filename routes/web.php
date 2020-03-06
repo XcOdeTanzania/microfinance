@@ -53,7 +53,7 @@ Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
 
-<<<<<<< HEAD
+
 // Users Route
 Route::get('/user/users',function(){
     return view('pages.user.users');
@@ -66,13 +66,11 @@ Route::get('/user/roles',function(){
 Route::get('/user/permissions',function(){
     return view('pages.user.permissions');
 });
-=======
-<<<<<<< HEAD
+
 Route::get('/accounting/reconciliation',function (){
     return view('pages.accounting.reconciliation');
 });
 //  Accounting Roots  end
-=======
 
 // Report menu routes start
 
@@ -124,5 +122,4 @@ Route::group(['prefix' => 'reports'], function() {
 });
 
 // Report menu route end
->>>>>>> c83ccde2cdbdbd146756fd3e55448e71c20610bd
 >>>>>>> 880bd948fb974a85481ae2a33d71e570d6b2a711
