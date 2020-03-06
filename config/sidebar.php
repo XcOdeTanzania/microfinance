@@ -22,25 +22,25 @@ return [
     [
         'text' => 'Clients',
         'route' => '#',
-        'icon' => 'icon-speedometer',
+        'icon' => 'icon-people',
         'alert' => '3',
         'label' => 'badge badge-info',
         'submenu' => [
             [
                 'text' => 'Register Client',
-                'route' => '#'
+                'route' => '/client/register'
             ],
             [
                 'text' => 'Pending Approval',
-                'route' => '#'
+                'route' => '/client/pendingApproval'
             ],
             [
                 'text' => 'Closed Clients',
-                'route' => '#'
+                'route' => '/client/closed'
             ],
             [
                 'text' => 'Rejected Clients',
-                'route' => '#'
+                'route' => '/client/rejected'
             ],
             [
                 'text' => 'Transfer Client',
@@ -52,7 +52,7 @@ return [
     [
         'text' => 'Loans',
         'route' => '#',
-        'icon' => 'icon-speedometer',
+        'icon' => 'icon-wallet',
         'alert' => '3',
         'label' => 'badge badge-info',
         'submenu' => [
@@ -102,7 +102,7 @@ return [
     [
         'text' => 'Reports',
         'route' => '#',
-        'icon' => 'icon-grid',
+        'icon' => 'icon-book-open',
         'alert' => '30',
         'submenu' => [
             [
@@ -147,7 +147,7 @@ return [
     [
         'text' => 'Accounting',
         'route' => '#',
-        'icon' => 'icon-grid',
+        'icon' => 'icon-calculator',
         'alert' => '30',
         'submenu' => [
             
@@ -186,7 +186,7 @@ return [
     [
         'text' => 'Shares',
         'route' => 'horizontal',
-        'icon' => 'icon-layers',
+        'icon' => 'icon-graph',
         'submenu' => [
             [
                 'text' => 'Active Shares',
@@ -233,7 +233,7 @@ return [
     [
         'text' => 'Setting',
         'route' => '#',
-        'icon' => 'icon-grid',
+        'icon' => 'icon-settings',
         'alert' => '30',
         'submenu' => [
             
@@ -298,7 +298,7 @@ return [
     [
         'text' => 'User',
         'route' => 'horizontal',
-        'icon' => 'icon-layers',
+        'icon' => 'icon-user',
         'submenu' => [
             [
                 'text' => 'Create User',
