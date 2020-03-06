@@ -169,7 +169,7 @@ return [
             ],
             [
                 'text' => 'Accounting Export',
-                'route' => '#'
+                'route' => '/accounting/export'
             ],
             [
                 'text' => 'Periodic Accrual',
