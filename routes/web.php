@@ -122,4 +122,4 @@ Route::group(['prefix' => 'reports'], function() {
 });
 
 // Report menu route end
->>>>>>> 880bd948fb974a85481ae2a33d71e570d6b2a711
+
