@@ -153,7 +153,7 @@ return [
             
             [
                 'text' => 'Charts of Accounts',
-                'route' => '#'
+                'route' => '/accounting/chartsOfAccounts'
             ],
             [
                 'text' => 'Journals',
