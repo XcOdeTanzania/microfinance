@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link rel="icon" type="image/x-icon" href="{{asset('angle/favicon.ico')}}"/>
 
-    <title>Angle - Bootstrap Admin Template</title>
+    <title>MSAMI MICROFINANCE</title>
 
     <!-- =============== VENDOR STYLES ===============-->
     <link rel="stylesheet" href="{{ asset('angle/css/vendor.css') }}"/>
