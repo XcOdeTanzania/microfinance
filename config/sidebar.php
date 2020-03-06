@@ -157,7 +157,7 @@ return [
             ],
             [
                 'text' => 'Journals',
-                'route' => '/pages.accounting.journals'
+                'route' => '/accounting/journals'
             ],
             [
                 'text' => 'Journals Template',
@@ -165,7 +165,7 @@ return [
             ],
             [
                 'text' => 'Reconciliation',
-                'route' => '#'
+                'route' => '/accounting/reconciliation'
             ],
             [
                 'text' => 'Accounting Export',

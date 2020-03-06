@@ -26,6 +26,7 @@ Route::get('/client/register',function (){
     return view('pages.client.register');
 })->name('client.register')->middleware('auth');
 
+// Acoounting Roots
 Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
@@ -33,3 +34,8 @@ Route::get('/accounting/chartsOfAccounts',function (){
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
+
+Route::get('/accounting/reconciliation',function (){
+    return view('pages.accounting.reconciliation');
+});
+//  Accounting Roots  end
