@@ -50,12 +50,28 @@ return [
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
+        'text' => 'Group',
+        'route' => '#',
+        'icon' => 'fa fa-users text-primary',
+        'alert' => '30',
+        'submenu' => [
+            [
+                'text' => 'Create Group',
+                'route' => '#'
+            ]
+        ]
+    ],
+    [
         'text' => 'Loans',
         'route' => '#',
         'icon' => 'icon-wallet',
         'alert' => '3',
         'label' => 'badge badge-info',
         'submenu' => [
+            [
+                'text' => 'Create Loan',
+                'route' => 'loan/create'
+            ],
             [
                 'text' => 'Overpaid Loans',
                 'route' => '#'

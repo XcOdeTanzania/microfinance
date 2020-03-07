@@ -33,6 +33,8 @@ Route::group([
 ], function () {
 
     // Place your routes here
+
+    //Client Routes
     Route::get('/client/register',function (){
         return view('pages.client.register');
     })->name('client.register');
@@ -48,6 +50,11 @@ Route::group([
     Route::get('/client/rejected',function (){
         return view('pages.client.rejected');
     })->name('client.rejected');
+
+    // Loan Routes
+    Route::get('/loan/create',function (){
+        return view('pages.loan.create');
+    })->name('loan.create');
 
 });
 
