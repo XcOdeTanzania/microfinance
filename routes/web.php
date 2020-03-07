@@ -30,26 +30,31 @@ Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
 
-<<<<<<< HEAD
 
 // SHARES ROUTES
+// shares active route
 Route::get('/shares/active', function() {
     return view('pages.shares.active');
 });
+// share pending route
 Route::get('/shares/pending', function(){
     return view('pages.shares.pending');
 });
+// share waiting route
 Route::get('/shares/waiting', function() {
     return view('pages.shares.waiting');
 });
-
+// shares rejected route
 Route::get('/shares/rejected', function(){
     return view('pages.shares.rejected');
 });
+// shares closed route
 Route::get('/shares/closed', function(){
     return view('pages.shares.closed');
 });
-=======
+//END SHARES ROUTE
+// ==============================
+
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
@@ -105,4 +110,16 @@ Route::group(['prefix' => 'reports'], function() {
 });
 
 // Report menu route end
->>>>>>> 26b4f93a376dcc8f150bfab542f30ec872cf9f04
+
+
+// start Loan routes
+
+Route::group(['prefix' => 'loan'], function() {
+    
+    //create loans route
+    Route::get('create', function() {
+        return view('pages.loan.create');
+    });
+
+    //
+});

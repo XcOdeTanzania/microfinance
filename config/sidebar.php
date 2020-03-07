@@ -57,6 +57,10 @@ return [
         'label' => 'badge badge-info',
         'submenu' => [
             [
+                'text' => 'Create Loan',
+                'route' => '/loan/create'
+            ],
+            [
                 'text' => 'Overpaid Loans',
                 'route' => '#'
             ],
