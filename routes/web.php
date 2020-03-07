@@ -83,6 +83,10 @@ Route::get('/accounting/export',function (){
 Route::get('/accounting/periodicaccrual',function (){
     return view('pages.accounting.periodicaccrual');
 });
+
+Route::get('/accounting/journaltemplate',function (){
+    return view('pages.accounting.journaltemplate');
+});
 //  Accounting Roots  end
 
 

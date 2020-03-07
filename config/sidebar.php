@@ -150,7 +150,7 @@ return [
         'icon' => 'icon-calculator',
         'alert' => '30',
         'submenu' => [
-            
+
             [
                 'text' => 'Charts of Accounts',
                 'route' => '/accounting/chartsOfAccounts'
@@ -161,7 +161,7 @@ return [
             ],
             [
                 'text' => 'Journals Template',
-                'route' => '#'
+                'route' => '/accounting/journaltemplate'
             ],
             [
                 'text' => 'Reconciliation',
@@ -179,7 +179,7 @@ return [
                 'text' => 'Close Periods',
                 'route' => '/accounting/closeperiod'
             ],
-            
+
         ],
         'translate' => 'sidebar.nav.WIDGETS'
     ],
@@ -216,17 +216,17 @@ return [
         'icon' => 'icon-grid',
         'alert' => '30',
         'submenu' => [
-            
+
             [
                 'text' => 'Pending Approval',
                 'route' => '/task/pendingApproval'
             ],
-			
+
 			[
                 'text' => 'My Actions',
                 'route' => '#'
             ],
-            
+
         ],
         'translate' => 'sidebar.nav.WIDGETS'
     ],
@@ -236,62 +236,62 @@ return [
         'icon' => 'icon-settings',
         'alert' => '30',
         'submenu' => [
-            
+
             [
                 'text' => 'Access Management',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Audit',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Products',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Braches',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'MMT Services',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'SMS Module',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Email Module',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Blacklist',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'CRB',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Advanced',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Customisation',
                 'route' => '#'
             ],
-            
+
         ],
         'translate' => 'sidebar.nav.WIDGETS'
     ],
