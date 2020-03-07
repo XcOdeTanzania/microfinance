@@ -1,11 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    <div class="content-wrapper">
-       <div class="content-heading">
-          <div>Charts Of Accounts</div>
-       </div>
+
        <div class="container-fluid">
           <!-- DATATABLE -->
+          <div class="card card-default">
+            <div class="content-heading "><h2>Charts of Accounts</h2></div>
           <div class="card">
              <div class="card-header"><br>
             <button href="#addAccountModal" class="btn btn-oval btn-primary" type="button" data-toggle="modal"><em class="fa mr-2 fas fa-plus"></em>Add Account</button>
@@ -23,7 +22,7 @@
                          <th>Status</th>
                       </tr>
                    </thead>
-                   <tbody> 
+                   <tbody>
                       <tr class="gradeC">
                          <td>001</td>
                          <td>zematty</td>
@@ -54,14 +53,14 @@
                          <td>C</td>
                          <td><a href="#editAccountModal"data-toggle="modal"><span class="todo-edit fas fa-pencil-alt"></span></a></td>
                       </tr>
-                      
+
                    </tbody>
                 </table>
              </div>
-         
+
           </div>
 
-          
+
     @endsection
     @section('styles')@endsection
     @section('scripts')
@@ -73,11 +72,11 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<form>
-					<div class="modal-header">						
+					<div class="modal-header">
 						<h4 class="modal-title">Create a General Ledger Account</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
-					<div class="modal-body">					
+					<div class="modal-body">
 						<div class="form-group">
 							<label> Account Name</label>
 							<input type="text" class="form-control" required>
@@ -86,12 +85,12 @@
 							<label> GL Code</label>
 							<input type="text" class="form-control" required>
 						</div>
-						
+
 						<div class="form-group">
                             <label>Account Type</label>
                             <select name="accounttype" class="form-control" id="accounttype">
                                 <option >Select</option>
-                                <option>Asset </option> 
+                                <option>Asset </option>
                                 <option> Equity</option>
                                 <option> Income</option>
                             </select>
@@ -104,34 +103,34 @@
 							<label> Account Tags</label>
 							<select name="accounttag" class="form-control" id="accountag">
                                 <option >Select</option>
-                                <option></option> 
+                                <option></option>
                                 <option> </option>
                                 <option> </option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
 							<label> Account Usage</label>
 							<select name="accounttag" class="form-control" id="accountag">
                                 <option >Select</option>
-                                <option>GL Group</option> 
+                                <option>GL Group</option>
                                 <option>GL Account </option>
                             </select>
 						</div>
                         <div class="form-group">
 							<label> Manual Entries Allowed?</label>
 							<input type="checkbox" class="form-control" required>
-						</div>		
+						</div>
 
                         <div class="form-group">
 							<label> Enable Bank Reconcialliation?</label>
 							<input type="checkbox" class="form-control" required>
-						</div>	
+						</div>
                         <div class="form-group">
 							<label> Description</label><br>
 							<textarea id="description" rows="4" cols="125"></textarea>
-                               
-						</div>						
+
+						</div>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -141,17 +140,17 @@
 			</div>
 		</div>
     </div>
-    
+
     <!-- Edit Modal HTML -->
 	<div id="editAccountModal" class="modal fade">
 		<div class="modal-dialog modal lg">
 			<div class="modal-content">
 				<form>
-					<div class="modal-header">						
+					<div class="modal-header">
 						<h4 class="modal-title">Edit a General Ledger Account</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
-					<div class="modal-body">					
+					<div class="modal-body">
 						<div class="form-group">
 							<label> Account Name</label>
 							<input type="text" class="form-control" required>
@@ -160,12 +159,12 @@
 							<label> GL Code</label>
 							<input type="text" class="form-control" required>
 						</div>
-						
+
 						<div class="form-group">
                             <label>Account Type</label>
                             <select name="accounttype" class="form-control" id="accounttype">
                                 <option >Select</option>
-                                <option>Asset </option> 
+                                <option>Asset </option>
                                 <option> Equity</option>
                                 <option> Income</option>
                             </select>
@@ -178,34 +177,34 @@
 							<label> Account Tags</label>
 							<select name="accounttag" class="form-control" id="accountag">
                                 <option >Select</option>
-                                <option></option> 
+                                <option></option>
                                 <option> </option>
                                 <option> </option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
 							<label> Account Usage</label>
 							<select name="accounttag" class="form-control" id="accountag">
                                 <option >Select</option>
-                                <option>GL Group</option> 
+                                <option>GL Group</option>
                                 <option>GL Account </option>
                             </select>
 						</div>
                         <div class="form-group">
 							<label> Manual Entries Allowed?</label>
 							<input type="checkbox" class="form-control" required>
-						</div>		
+						</div>
 
                         <div class="form-group">
 							<label> Enable Bank Reconcialliation?</label>
 							<input type="checkbox" class="form-control" required>
-						</div>	
+						</div>
                         <div class="form-group">
 							<label> Description</label><br>
 							<textarea id="description" rows="4" cols="125"></textarea>
-                               
-						</div>						
+
+						</div>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
