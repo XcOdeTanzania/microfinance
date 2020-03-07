@@ -69,7 +69,7 @@
 
     <!-- Add Modal HTML -->
 	<div id="addAccountModal" class="modal fade">
-		<div class="modal-dialog modal-lg">
+		<div class="modal-dialog modal-md">
 			<div class="modal-content">
 				<form>
 					<div class="modal-header">
@@ -117,24 +117,29 @@
                                 <option>GL Account </option>
                             </select>
 						</div>
-                        <div class="form-group">
-							<label> Manual Entries Allowed?</label>
-							<input type="checkbox" class="form-control" required>
-						</div>
-
-                        <div class="form-group">
-							<label> Enable Bank Reconcialliation?</label>
-							<input type="checkbox" class="form-control" required>
-						</div>
+                        <div class="col-md-10">
+                            <div class="form-check">
+                                <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" />
+                                <label class="form-check-label" for="defaultCheck1">Manual Entries Allowed?</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-10">
+                            <div class="form-check">
+                                <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" />
+                                <label class="form-check-label" for="defaultCheck1">Enable Bank Reconciliation?</label>
+                            </div>
+                        </div><br>
                         <div class="form-group">
 							<label> Description</label><br>
-							<textarea id="description" rows="4" cols="125"></textarea>
+							<textarea id="description" rows="4" cols="75"></textarea>
 
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-success" value="Add">
+                        <input type="submit" class="btn btn-primary" value="Add">
+						<input type="button" class="btn btn-danger" data-dismiss="modal" value="Close">
+
 					</div>
 				</form>
 			</div>
@@ -143,11 +148,11 @@
 
     <!-- Edit Modal HTML -->
 	<div id="editAccountModal" class="modal fade">
-		<div class="modal-dialog modal lg">
+		<div class="modal-dialog modal-md">
 			<div class="modal-content">
 				<form>
 					<div class="modal-header">
-						<h4 class="modal-title">Edit a General Ledger Account</h4>
+						<h4 class="modal-title">Create a General Ledger Account</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
@@ -191,24 +196,29 @@
                                 <option>GL Account </option>
                             </select>
 						</div>
-                        <div class="form-group">
-							<label> Manual Entries Allowed?</label>
-							<input type="checkbox" class="form-control" required>
-						</div>
-
-                        <div class="form-group">
-							<label> Enable Bank Reconcialliation?</label>
-							<input type="checkbox" class="form-control" required>
-						</div>
+                        <div class="col-md-10">
+                            <div class="form-check">
+                                <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" />
+                                <label class="form-check-label" for="defaultCheck1">Manual Entries Allowed?</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-10">
+                            <div class="form-check">
+                                <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" />
+                                <label class="form-check-label" for="defaultCheck1">Enable Bank Reconciliation?</label>
+                            </div>
+                        </div><br>
                         <div class="form-group">
 							<label> Description</label><br>
-							<textarea id="description" rows="4" cols="125"></textarea>
+							<textarea id="description" rows="4" cols="75"></textarea>
 
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-success" value="Add">
+                        <input type="submit" class="btn btn-primary" value="Add">
+						<input type="button" class="btn btn-danger" data-dismiss="modal" value="Close">
+
 					</div>
 				</form>
 			</div>
