@@ -29,3 +29,7 @@ Route::get('/client/register',function (){
 Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
+
+Route::get('/task/pendingApproval',function(){
+    return view('pages.task.pendingApproval');
+});

@@ -192,7 +192,7 @@ return [
             
             [
                 'text' => 'Pending Approval',
-                'route' => '#'
+                'route' => '/task/pendingApproval'
             ],
 			
 			[
