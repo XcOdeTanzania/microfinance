@@ -13,7 +13,7 @@
                         <br/>
                         <small>Basic Client Information</small>
                     </h4>
-                    <fieldset>
+                    <fieldset class="overflow-auto">
 
                         <div class="row justify-content-center">
                             <div class="col-lg-3 col-md-6 col-sm  align-content-center">
@@ -77,7 +77,7 @@
                         <br/>
                         <small> Identification</small>
                     </h4>
-                    <fieldset>
+                    <fieldset class="overflow-auto">
                         <button class="btn btn-labeled btn-info mb-2" data-toggle="modal"
                                 data-target="#addIdentityModal" type="button">
                             <span class="btn-label"><i class="fa fa-plus"></i></span>
@@ -124,7 +124,7 @@
                         <br/>
                         <small>Business Infomation</small>
                     </h4>
-                    <fieldset>
+                    <fieldset class="overflow-auto">
                         <div class="row justify-content-center">
                             <div class="col-lg-4 col-md-6 col-sm  align-content-center">
                                 <label for="businessName">Business Name *</label>
@@ -167,7 +167,7 @@
                         <br/>
                         <small>Clients Next of Kin</small>
                     </h4>
-                    <fieldset>
+                    <fieldset class="overflow-auto">
                         <div class="table-responsive table-bordered">
                             <table class="table">
                                 <thead>

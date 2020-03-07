@@ -50,6 +50,18 @@ return [
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
+        'text' => 'Group',
+        'route' => '#',
+        'icon' => 'fa fa-users text-primary',
+        'alert' => '30',
+        'submenu' => [
+            [
+                'text' => 'Create Group',
+                'route' => '#'
+            ]
+        ]
+    ],
+    [
         'text' => 'Loans',
         'route' => '#',
         'icon' => 'icon-wallet',
