@@ -22,25 +22,25 @@ return [
     [
         'text' => 'Clients',
         'route' => '#',
-        'icon' => 'icon-speedometer',
+        'icon' => 'icon-people',
         'alert' => '3',
         'label' => 'badge badge-info',
         'submenu' => [
             [
                 'text' => 'Register Client',
-                'route' => '#'
+                'route' => '/client/register'
             ],
             [
                 'text' => 'Pending Approval',
-                'route' => '#'
+                'route' => '/client/pendingApproval'
             ],
             [
                 'text' => 'Closed Clients',
-                'route' => '#'
+                'route' => '/client/closed'
             ],
             [
                 'text' => 'Rejected Clients',
-                'route' => '#'
+                'route' => '/client/rejected'
             ],
             [
                 'text' => 'Transfer Client',
@@ -52,7 +52,7 @@ return [
     [
         'text' => 'Loans',
         'route' => '#',
-        'icon' => 'icon-speedometer',
+        'icon' => 'icon-wallet',
         'alert' => '3',
         'label' => 'badge badge-info',
         'submenu' => [
@@ -106,7 +106,7 @@ return [
     [
         'text' => 'Reports',
         'route' => '#',
-        'icon' => 'icon-grid',
+        'icon' => 'icon-book-open',
         'alert' => '30',
         'submenu' => [
             [
@@ -151,46 +151,46 @@ return [
     [
         'text' => 'Accounting',
         'route' => '#',
-        'icon' => 'icon-grid',
+        'icon' => 'icon-calculator',
         'alert' => '30',
         'submenu' => [
-            
+
             [
                 'text' => 'Charts of Accounts',
                 'route' => '/accounting/chartsOfAccounts'
             ],
             [
                 'text' => 'Journals',
-                'route' => '/pages.accounting.journals'
+                'route' => '/accounting/journals'
             ],
             [
                 'text' => 'Journals Template',
-                'route' => '#'
+                'route' => '/accounting/journaltemplate'
             ],
             [
                 'text' => 'Reconciliation',
-                'route' => '#'
+                'route' => '/accounting/reconciliation'
             ],
             [
                 'text' => 'Accounting Export',
-                'route' => '#'
+                'route' => '/accounting/export'
             ],
             [
                 'text' => 'Periodic Accrual',
-                'route' => '#'
+                'route' => '/accounting/periodicaccrual'
             ],
             [
                 'text' => 'Close Periods',
-                'route' => '#'
+                'route' => '/accounting/closeperiod'
             ],
-            
+
         ],
         'translate' => 'sidebar.nav.WIDGETS'
     ],
     [
         'text' => 'Shares',
         'route' => 'horizontal',
-        'icon' => 'icon-layers',
+        'icon' => 'icon-graph',
         'submenu' => [
             [
                 'text' => 'Active Shares',
@@ -220,101 +220,101 @@ return [
         'icon' => 'icon-grid',
         'alert' => '30',
         'submenu' => [
-            
+
             [
                 'text' => 'Pending Approval',
-                'route' => '#'
+                'route' => '/task/pendingApproval'
             ],
-			
+
 			[
                 'text' => 'My Actions',
                 'route' => '#'
             ],
-            
+
         ],
         'translate' => 'sidebar.nav.WIDGETS'
     ],
     [
         'text' => 'Setting',
         'route' => '#',
-        'icon' => 'icon-grid',
+        'icon' => 'icon-settings',
         'alert' => '30',
         'submenu' => [
-            
+
             [
                 'text' => 'Access Management',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Audit',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Products',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Braches',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'MMT Services',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'SMS Module',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Email Module',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Blacklist',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'CRB',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Advanced',
                 'route' => '#'
             ],
-			
+
 			[
                 'text' => 'Customisation',
                 'route' => '#'
             ],
-            
+
         ],
         'translate' => 'sidebar.nav.WIDGETS'
     ],
     [
         'text' => 'User',
         'route' => 'horizontal',
-        'icon' => 'icon-layers',
+        'icon' => 'icon-user',
         'submenu' => [
             [
-                'text' => 'Create User',
-                'route' => '#'
+                'text' => 'Users',
+                'route' => '/user/users'
             ],
             [
                 'text' => 'User Roles',
-                'route' => '#'
+                'route' => '/user/roles'
             ],
             [
                 'text' => 'User Permissions',
-                'route' => '#'
+                'route' => '/user/permissions'
             ]
         ]
     ],

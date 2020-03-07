@@ -13,22 +13,81 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/demo', function () {
     return view('demo');
 });
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Group for the Routes that are to be protected by auth middleware
+Route::group([
+    'name' => 'auth.',
+    'prefix' => '',
+    'middleware' => 'auth'
+], function () {
+
+    // Place your routes here
+    Route::get('/client/register',function (){
+        return view('pages.client.register');
+    })->name('client.register');
+
+    Route::get('/client/pendingApproval',function (){
+        return view('pages.client.pendingApproval');
+    })->name('client.pendingApproval');
+
+    Route::get('/client/closed',function (){
+        return view('pages.client.closed');
+    })->name('client.closed');
+
+    Route::get('/client/rejected',function (){
+        return view('pages.client.rejected');
+    })->name('client.rejected');
+
+});
+
 
 Route::get('/client/register',function (){
     return view('pages.client.register');
 })->name('client.register')->middleware('auth');
 
+// Acoounting Roots
 Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
+
+Route::get('/task/pendingApproval',function(){
+    return view('pages.task.pendingApproval');
+});
+Route::get('/accounting/journals',function (){
+    return view('pages.accounting.journals');
+});
+
+Route::get('/accounting/reconciliation',function (){
+    return view('pages.accounting.reconciliation');
+});
+
+Route::get('/accounting/closeperiod',function (){
+    return view('pages.accounting.closeperiod');
+});
+
+Route::get('/accounting/export',function (){
+    return view('pages.accounting.export');
+});
+
+Route::get('/accounting/periodicaccrual',function (){
+    return view('pages.accounting.periodicaccrual');
+});
+
+Route::get('/accounting/journaltemplate',function (){
+    return view('pages.accounting.journaltemplate');
+});
+//  Accounting Roots  end
 
 
 // SHARES ROUTES
@@ -57,6 +116,19 @@ Route::get('/shares/closed', function(){
 
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
+
+
+// Users Route
+Route::get('/user/users',function(){
+    return view('pages.user.users');
+});
+
+Route::get('/user/roles',function(){
+    return view('pages.user.roles');
+});
+
+Route::get('/user/permissions',function(){
+    return view('pages.user.permissions');
 });
 
 
@@ -90,7 +162,7 @@ Route::group(['prefix' => 'reports'], function() {
 
     // financial reports route
     Route::get('financialReports', function () {
-        return view('pages.reports.financial-report');
+        return view('pages.reports.financial-reports');
     });
 
     // Report schedular route

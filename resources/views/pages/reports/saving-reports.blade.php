@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="content-heading">
-       <div>Client Reports</div>
+       <div>Savings Reports</div>
     </div>
     <div class="container-fluid">
        <!-- DATATABLE -->
@@ -27,37 +27,46 @@
                 <tbody> 
                     <tr class="gradeC">
                         <td>
-                            <a href="#">Client Report</a>
+                            <a href="#">All Savings Transactions</a>
                         </td>
-                        <td>Client</td>
-                        <td>The client report lists all loans and savings accounts of the client.</td>
+                        <td>Savings</td>
+                        <td>This report shows individual deposits and withdrawals from savings within the specified time period.</td>
                         <td><button type="btn" class="btn btn-primary"><span class="fas fa-file"></span></button></td>
                     </tr>
                    <tr class="gradeC">
                       <td>
-                          <a href="#">Branch Client Numbers</a>
+                          <a href="#">Fixed Term Deposit Accounts Overview</a>
                       </td>
-                      <td>Client</td>
-                      <td>Breaks down the clients in the system into different bands</td>
+                      <td>Savings</td>
+                      <td>This report shows individual deposits and withdrawals from savings within the specified time period.</td>
                       <td><button type="btn" class="btn btn-primary"><span class="fas fa-file"></span></button></td>
                    </tr>
                    <tr class="gradeC">
                     <td>
-                        <a href="#">Client Numbers Report</a>
+                        <a href="#">Fixed Term Maturity Report</a>
                     </td>
-                    <td>Client</td>
-                    <td>This report shows all loan and savings information for any client within a particular branch, similar to the Group report, but for an entire branch</td>
+                    <td>Savings</td>
+                    <td>This report shows individual deposits and withdrawals from savings within the specified time period.</td>
                     <td><button type="btn" class="btn btn-primary"><span class="fas fa-file"></span></button></td>
                    </tr>
+
                    <tr class="gradeC">
                     <td>
-                        <a href="#">Client Report</a>
+                        <a href="#">Savings Accounts Report</a>
                     </td>
-                    <td>Client</td>
-                    <td>The client report lists all loans and savings accounts of the client.</td>
+                    <td>Savings</td>
+                    <td>This report shows individual deposits and withdrawals from savings within the specified time period.</td>
                     <td><button type="btn" class="btn btn-primary"><span class="fas fa-file"></span></button></td>
                    </tr>
                    
+                   <tr class="gradeC">
+                    <td>
+                        <a href="#">Savings Balances</a>
+                    </td>
+                    <td>Savings</td>
+                    <td>This report shows individual deposits and withdrawals from savings within the specified time period.</td>
+                    <td><button type="btn" class="btn btn-primary"><span class="fas fa-file"></span></button></td>
+                   </tr>
                 </tbody>
              </table>
           </div>
@@ -65,7 +74,6 @@
        </div>
        </div>
     </div>
-
 
 @endsection
 

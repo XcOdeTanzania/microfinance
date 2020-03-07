@@ -2,11 +2,8 @@
 @section('content')
     <!-- START card-->
     <div class="card card-default">
-    <div class="content-heading "><h2>Journals</h2></div>
-    <div class="card">
-      <div class="card-header">
-     <button href="#createJounalentryModal" class="btn btn-oval btn-primary" type="button" data-toggle="modal"><em class="fa mr-2 fas fa-plus"></em>Add Account</button>
-      <div class="card-body">
+    <div class="content-heading "><h2>Reconciliation</h2></div>
+    <div class="card-body">
           <form class="form-horizontal" method="get" action="/">
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Account</label>
@@ -36,8 +33,17 @@
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">To</label>
                    <div class="col-md-10"><input class="form-control" id="input-id-1" type="text"></div>
-                </div><br>
-                <div><button class="btn btn-primary" type="filter">Filter</button></div>
+             </fieldset>
+             <fieldset>
+                <div class="form-group row"><label class="col-md-2 col-form-label"></label>
+                   <div class="col-md-10">
+                      <div class="form-check"><input class="form-check-input" id="defaultCheck1" type="checkbox" value=""><label class="form-check-label" for="defaultCheck1">Group Entries Reference</label></div>
+                      <div class="form-check"><input class="form-check-input" id="defaultCheck2" type="checkbox" value=""><label class="form-check-label" for="defaultCheck2">Show only reconciled</label></div>
+                      <div class="form-check"><input class="form-check-input" id="defaultCheck2" type="checkbox" value=""><label class="form-check-label" for="defaultCheck2">Show only Unreconciled</label></div>
+                      <br><br>
+                      <div><button class="btn btn-primary" type="filter">Filter</button></div>
+                   </div>
+                </div>
              </fieldset>
 
           </form>
@@ -47,13 +53,3 @@
  @endsection
  @section('styles')@endsection
  @section('scripts')@endsection
-
-  <!-- Journal Modal HTML -->
-
-  <div id="createJounalentryModal" class="modal fade">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-        </div>
-    </div>
-</div>
