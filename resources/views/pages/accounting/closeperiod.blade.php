@@ -1,11 +1,9 @@
 @extends('layouts.app')
 @section('content')
-    <div class="content-wrapper">
-       <div class="content-heading">
-          <div>Close Periods</div>
-       </div>
        <div class="container-fluid">
           <!-- DATATABLE -->
+          <div class="card card-default">
+            <div class="content-heading "><h2>Close Period</h2></div>
           <div class="card">
              <div class="card-header"><br>
             <button href="#addCloseFinancialPeriods" class="btn btn-oval btn-primary" type="button" data-toggle="modal"><em class="fa mr-2 fas fa-plus"></em>Close Financial Periods</button>
@@ -23,7 +21,7 @@
                          <th>Status</th>
                       </tr>
                    </thead>
-                   <tbody> 
+                   <tbody>
                       <tr class="gradeC">
                          <td>Head Office</td>
                          <td>06/03/2020</td>
@@ -34,14 +32,14 @@
                          <td><a><i class="fas fa-check"></i></a></td>
                          <td><a href="#deleteCloseFinancialPeriods"data-toggle="modal"><i class="fas fa-trash-alt"></i></a></td>
                       </tr>
-                      
+
                    </tbody>
                 </table>
              </div>
-         
+
           </div>
 
-          
+
     @endsection
     @section('styles')@endsection
     @section('scripts')
@@ -53,16 +51,16 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form>
-					<div class="modal-header">						
+					<div class="modal-header">
 						<h4 class="modal-title">Create a General Ledger Account</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
-					<div class="modal-body">					
+					<div class="modal-body">
 						<div class="form-group">
                             <label>Office</label>
                             <select name="accounttype" class="form-control" id="accounttype">
                                 <option >Select</option>
-                                <option>Asset </option> 
+                                <option>Asset </option>
                                 <option> Equity</option>
                                 <option> Income</option>
                             </select>
@@ -82,8 +80,8 @@
                         <div class="form-group">
 							<label> Description</label><br>
 							<textarea id="description" rows="4" cols="75"></textarea>
-                               
-						</div>						
+
+						</div>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -93,17 +91,17 @@
 			</div>
 		</div>
     </div>
-    
+
   <!-- Delete Modal HTML -->
 	<div id="deleteCloseFinancialPeriods" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form>
-					<div class="modal-header">						
+					<div class="modal-header">
 						<h4 class="modal-title">Delete Accounting Closure</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
-					<div class="modal-body">					
+					<div class="modal-body">
 						<p>Are You Sure You Want To Delete This Closure?</p>
 						<p class="text-warning"><small>This action cannot be undone.</small></p>
 					</div>

@@ -68,6 +68,9 @@ Route::get('/accounting/chartsOfAccounts',function (){
     return view('pages.accounting.chartsOfAccounts');
 });
 
+Route::get('/task/pendingApproval',function(){
+    return view('pages.task.pendingApproval');
+});
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
@@ -86,6 +89,10 @@ Route::get('/accounting/export',function (){
 
 Route::get('/accounting/periodicaccrual',function (){
     return view('pages.accounting.periodicaccrual');
+});
+
+Route::get('/accounting/journaltemplate',function (){
+    return view('pages.accounting.journaltemplate');
 });
 //  Accounting Roots  end
 

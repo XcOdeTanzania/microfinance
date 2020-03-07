@@ -1,20 +1,15 @@
 @extends('layouts.app')
 @section('content')
-
-<div class="content-wrapper">
-    <div class="content-heading">
-       <h2>Reconciliation</h2>
-    </div>
     <!-- START card-->
     <div class="card card-default">
-       
-       <div class="card-body">
+    <div class="content-heading "><h2>Reconciliation</h2></div>
+    <div class="card-body">
           <form class="form-horizontal" method="get" action="/">
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Account</label>
                    <div class="col-md-10"><select name="accounttag" class="form-control" id="accountag">
                     <option >Select</option>
-                    <option></option> 
+                    <option></option>
                     <option> </option>
                     <option> </option>
                 </select></div>
@@ -24,7 +19,7 @@
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Bracnh</label>
                    <div class="col-md-10"><select name="accounttag" class="form-control" id="accountag">
                     <option >Select</option>
-                    <option></option> 
+                    <option></option>
                     <option> </option>
                     <option> </option>
                 </select></div>
@@ -50,7 +45,7 @@
                    </div>
                 </div>
              </fieldset>
-            
+
           </form>
        </div>
     </div><!-- END card-->
