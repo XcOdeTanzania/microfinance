@@ -65,6 +65,8 @@
                                     <div class="col-md-6 mb-3">
 
                                         <div class="form-group">
+                                            <button  class="btn btn-secondary" type="button" ><em class="fa mr-2 fas fa-plus"></em>Debit</button>
+                                            <br><br>
                                             <select name="accounttag" class="form-control" id="accountag">
                                                 <option >Select Account</option>
                                                 <option></option>
@@ -75,6 +77,8 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
+                                            <button  class="btn btn-secondary float-right " type="button" ><em class="fa mr-2 fas fa-plus"></em>Credit</button>
+                                            <br><br>
                                             <select name="accounttag" class="form-control" id="accountag">
                                                 <option >Select Account</option>
                                                 <option></option>

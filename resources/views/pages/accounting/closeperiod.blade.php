@@ -30,7 +30,7 @@
                          <td>Mac OS 7.6-9</td>
                          <td>Tested by H</td>
                          <td><a><i class="fas fa-check"></i></a></td>
-                         <td><a href="#deleteCloseFinancialPeriods"data-toggle="modal"><i class="fas fa-trash-alt"></i></a></td>
+                         <td><a href="#deleteCloseFinancialPeriods" data-toggle="modal"><i class="fas fa-trash-alt"></i></a></td>
                       </tr>
 
                    </tbody>
