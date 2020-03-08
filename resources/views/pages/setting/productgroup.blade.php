@@ -46,7 +46,6 @@
             </div>
         </div>
     </div>
-    <section>
         <div class="content-heading">
             <div>
                 Product Group
@@ -93,11 +92,12 @@
                 </div>
             </div>
         </div>
-    </section>
-@endsection
-@section('styles')@endsection
-@section('scripts')
-@endsection
+    @endsection
+    @section('styles')@endsection
+    @section('scripts')
+    <script src="{{ asset('angle/js/datatable.js') }}"></script>
+    @endsection
+
 
 <!-- Add Loan Modal HTML -->
 <div id="AddproducLoantsGroupModal" class="modal fade">

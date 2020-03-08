@@ -190,4 +190,9 @@ Route::get('/setting/productgroup', function () {
     return view('pages.setting.productgroup');
 });
 
+Route::get('/setting/financialactivity', function () {
+    return view('pages.setting.financialactivity');
+});
+
+
 // setting routes ends

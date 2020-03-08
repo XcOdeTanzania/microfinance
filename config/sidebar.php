@@ -253,59 +253,63 @@ return [
         'alert' => '30',
         'submenu' => [
 
-            [
-                'text' => 'Access Management',
-                'route' => '#'
-            ],
+            // [
+            //     'text' => 'Access Management',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'Audit',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'Audit',
+            //     'route' => '#'
+            // ],
 
 			[
                 'text' => 'Products Group',
                 'route' => '/setting/productgroup'
             ],
 
-			[
-                'text' => 'Braches',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'Braches',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'MMT Services',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'MMT Services',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'SMS Module',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'SMS Module',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'Email Module',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'Email Module',
+            //     'route' => '#'
+            // ],
 
 			[
                 'text' => 'Blacklist',
                 'route' => '/setting/blacklist'
             ],
 
-			[
-                'text' => 'CRB',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'CRB',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'Advanced',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'Advanced',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'Customisation',
-                'route' => '#'
+			// [
+            //     'text' => 'Customisation',
+            //     'route' => '#'
+            // ],
+            [
+                'text' => 'Financial Activity',
+                'route' => '/setting/financialactivity'
             ],
 
         ],
