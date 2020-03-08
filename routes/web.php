@@ -186,4 +186,8 @@ Route::get('/setting/blacklist', function () {
     return view('pages.setting.blacklist');
 });
 
+Route::get('/setting/productgroup', function () {
+    return view('pages.setting.productgroup');
+});
+
 // setting routes ends

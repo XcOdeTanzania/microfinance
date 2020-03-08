@@ -264,8 +264,8 @@ return [
             ],
 
 			[
-                'text' => 'Products',
-                'route' => '#'
+                'text' => 'Products Group',
+                'route' => '/setting/productgroup'
             ],
 
 			[

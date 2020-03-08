@@ -31,7 +31,7 @@
                          <td>Mac OS 7.6-9</td>
                          <td>1</td>
                          <td>C</td>
-                         <td><a href="#editAccountModal"data-toggle="modal"><span class="todo-edit fas fa-pencil-alt"></span></a></td>
+                         <td><a href="#editAccountModal"data-toggle="modal"><span class="todo-edit fas fa-pencil-alt" style="color:black"></span></a></td>
                       </tr>
                       <tr class="gradeC">
                         <td>002</td>
@@ -41,7 +41,7 @@
                          <td>Mac OS 8-X</td>
                          <td>1</td>
                          <td>C</td>
-                         <td><a href="#editAccountModal"data-toggle="modal"><span class="todo-edit fas fa-pencil-alt"></span></a></td>
+                         <td><a href="#editAccountModal"data-toggle="modal"><span class="todo-edit fas fa-pencil-alt" style="color:black"></span></a></td>
                       </tr>
                       <tr class="gradeA">
                         <td>003</td>
@@ -51,7 +51,7 @@
                          <td>Embedded devices</td>
                          <td>-</td>
                          <td>C</td>
-                         <td><a href="#editAccountModal"data-toggle="modal"><span class="todo-edit fas fa-pencil-alt"></span></a></td>
+                         <td><a href="#editAccountModal"data-toggle="modal"><span class="todo-edit fas fa-pencil-alt" style="color:black"></span></a></td>
                       </tr>
 
                    </tbody>
