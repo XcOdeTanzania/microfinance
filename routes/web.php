@@ -180,3 +180,10 @@ Route::group(['prefix' => 'reports'], function() {
 });
 
 // Report menu route end
+
+//setting routes start
+Route::get('/setting/blacklist', function () {
+    return view('pages.setting.blacklist');
+});
+
+// setting routes ends

@@ -290,7 +290,7 @@ return [
 
 			[
                 'text' => 'Blacklist',
-                'route' => '#'
+                'route' => '/setting/blacklist'
             ],
 
 			[
