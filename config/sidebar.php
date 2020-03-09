@@ -96,7 +96,7 @@ return [
         'label' => 'badge badge-info',
         'submenu' => [
             [
-                'text' => 'Create Loan',
+                'text' => 'New Loan',
                 'route' => 'loan/create'
             ],
             [
