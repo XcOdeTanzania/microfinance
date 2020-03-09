@@ -58,9 +58,14 @@ return [
             [
                 'text' => ' Groups',
                 'route' => '/groups/groups'
+            ],
+            [
+                'text'=> 'Groups Pending Approval',
+                'route'=>'/groups/pendingapproval'
             ]
-        ]
     ],
+    'translate' => 'sidebar.nav.DASHBOARD'
+],
     [
         'text' => 'Loans',
         'route' => '#',

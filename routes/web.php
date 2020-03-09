@@ -211,4 +211,8 @@ Route::get('/setting/currencies', function () {
 Route::get('/groups/groups', function () {
     return view('pages.groups.groups');
 });
+
+Route::get('/groups/pendingapproval', function () {
+    return view('pages.groups.pendingapproval');
+});
 //Groups routes Ends
