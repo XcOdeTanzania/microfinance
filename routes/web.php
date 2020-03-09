@@ -199,3 +199,10 @@ Route::get('/setting/currencies', function () {
 });
 
 // setting routes ends
+
+// Groups routes starts
+
+Route::get('/groups/groups', function () {
+    return view('pages.groups.groups');
+});
+//Groups routes Ends

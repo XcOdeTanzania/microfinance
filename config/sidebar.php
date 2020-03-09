@@ -50,14 +50,14 @@ return [
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
-        'text' => 'Group',
+        'text' => 'Groups',
         'route' => '#',
         'icon' => 'fa fa-users text-primary',
         'alert' => '30',
         'submenu' => [
             [
-                'text' => 'Create Group',
-                'route' => '#'
+                'text' => ' Groups',
+                'route' => '/groups/groups'
             ]
         ]
     ],
