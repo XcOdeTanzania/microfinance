@@ -212,7 +212,7 @@ Route::group(['prefix' => 'reports'], function() {
 // start Loan routes
 
 Route::group(['prefix' => 'loan'], function() {
-    
+
     //create loans route
     Route::get('create', function() {
         return view('pages.loan.create');
@@ -269,7 +269,21 @@ Route::get('/centers/pendingapproval', function () {
     return view('pages.centers.pendingapproval');
 });
 
-Route::get('/groupscenters/closed', function () {
+Route::get('/centers/closed', function () {
     return view('pages.centers.closed');
 });
+
+Route::get('/transfergroup/history', function () {
+    return view('pages.transfergroup.history');
+});
+
+Route::get('/transfergroup/pendingapproval', function () {
+    return view('pages.transfergroup.pendingapproval');
+});
+
+Route::get('/transfergroup/stafftransferapproval', function () {
+    return view('pages.transfergroup.stafftransferapproval');
+});
+
+
 //Groups routes Ends
