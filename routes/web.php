@@ -71,6 +71,12 @@ Route::get('/accounting/chartsOfAccounts',function (){
 Route::get('/task/pendingApproval',function(){
     return view('pages.task.pendingApproval');
 });
+
+Route::get('/task/myActions',function(){
+    return view('pages.task.myActions');
+});
+
+
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
@@ -180,3 +186,37 @@ Route::group(['prefix' => 'reports'], function() {
 });
 
 // Report menu route end
+
+//setting routes start
+Route::get('/setting/blacklist', function () {
+    return view('pages.setting.blacklist');
+});
+
+Route::get('/setting/productgroup', function () {
+    return view('pages.setting.productgroup');
+});
+
+Route::get('/setting/financialactivity', function () {
+    return view('pages.setting.financialactivity');
+});
+
+Route::get('/setting/currencies', function () {
+    return view('pages.setting.currencies');
+});
+
+// setting routes ends
+
+// Groups routes starts
+
+Route::get('/groups/groups', function () {
+    return view('pages.groups.groups');
+});
+
+Route::get('/groups/pendingapproval', function () {
+    return view('pages.groups.pendingapproval');
+});
+
+Route::get('/groups/closedgroups', function () {
+    return view('pages.groups.closedgroups');
+});
+//Groups routes Ends

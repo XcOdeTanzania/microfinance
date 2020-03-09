@@ -30,7 +30,7 @@
                          <td>Mac OS 7.6-9</td>
                          <td>Tested by H</td>
                          <td><a><i class="fas fa-check"></i></a></td>
-                         <td><a href="#deleteCloseFinancialPeriods"data-toggle="modal"><i class="fas fa-trash-alt"></i></a></td>
+                         <td><a href="#deleteCloseFinancialPeriods" data-toggle="modal"><i class="fas fa-trash-alt" style="color:red"></i></a></td>
                       </tr>
 
                    </tbody>
@@ -65,18 +65,22 @@
                                 <option> Income</option>
                             </select>
                         </div>
-                        <div class="form-group">
-							<label> Sub Branch</label>
-							<input type="checkbox" class="form-control" required>
-						</div>
+                        <div class="col-md-10">
+                            <div class="form-check">
+                                <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" />
+                                <label class="form-check-label" for="defaultCheck1">Sub Branch</label>
+                            </div>
+                        </div><br>
 						<div class="form-group">
 							<label> Closing Date</label>
 							<input type="date" class="form-control" required>
                         </div>
-                        <div class="form-group">
-							<label> Booking Income and Expenses</label>
-							<input type="checkbox" class="form-control" required>
-						</div>
+                        <div class="col-md-10">
+                            <div class="form-check">
+                                <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" />
+                                <label class="form-check-label" for="defaultCheck1">Booking income and expenses</label>
+                            </div>
+                        </div><br>
                         <div class="form-group">
 							<label> Description</label><br>
 							<textarea id="description" rows="4" cols="75"></textarea>
@@ -84,8 +88,8 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-success" value="Add">
+                        <input type="submit" class="btn btn-primary" value="Add">
+                        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Close">
 					</div>
 				</form>
 			</div>

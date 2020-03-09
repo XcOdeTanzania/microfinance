@@ -50,33 +50,28 @@ return [
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
-        'text' => 'Group',
+        'text' => 'Groups',
         'route' => '#',
         'icon' => 'fa fa-users text-primary',
         'alert' => '30',
         'submenu' => [
             [
-                'text' => 'View All',
-                'route' => '#'
+                'text' => ' Groups',
+                'route' => '/groups/groups'
             ],
             [
-                'text' => 'Create Group',
-                'route' => '#'
+                'text'=> 'Groups Pending Approval',
+                'route'=>'/groups/pendingapproval'
             ],
+
             [
-                'text' => 'Pending Approval ',
-                'route' => '#'
+                'text'=> 'Closed Groups',
+                'route'=>'/groups/closedgroups'
             ],
-            [
-                'text' => 'Closed Groups',
-                'route' => '#'
-            ],
-            [
-                'text' => 'Transfer Group',
-                'route' => '#'
-            ],
-        ]
+
     ],
+    'translate' => 'sidebar.nav.DASHBOARD'
+],
     [
         'text' => 'Loans',
         'route' => '#',
@@ -256,7 +251,7 @@ return [
 
 			[
                 'text' => 'My Actions',
-                'route' => '#'
+                'route' => '/task/myActions'
             ],
 
         ],
@@ -269,59 +264,69 @@ return [
         'alert' => '30',
         'submenu' => [
 
-            [
-                'text' => 'Access Management',
-                'route' => '#'
-            ],
+            // [
+            //     'text' => 'Access Management',
+            //     'route' => '#'
+            // ],
+
+			// [
+            //     'text' => 'Audit',
+            //     'route' => '#'
+            // ],
 
 			[
-                'text' => 'Audit',
-                'route' => '#'
+                'text' => 'Products Group',
+                'route' => '/setting/productgroup'
             ],
 
-			[
-                'text' => 'Products',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'Braches',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'Braches',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'MMT Services',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'MMT Services',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'SMS Module',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'SMS Module',
-                'route' => '#'
-            ],
-
-			[
-                'text' => 'Email Module',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'Email Module',
+            //     'route' => '#'
+            // ],
 
 			[
                 'text' => 'Blacklist',
-                'route' => '#'
+                'route' => '/setting/blacklist'
             ],
 
-			[
-                'text' => 'CRB',
-                'route' => '#'
+			// [
+            //     'text' => 'CRB',
+            //     'route' => '#'
+            // ],
+
+			// [
+            //     'text' => 'Advanced',
+            //     'route' => '#'
+            // ],
+
+			// [
+            //     'text' => 'Customisation',
+            //     'route' => '#'
+            // ],
+
+            [
+                 'text' => 'Currencies',
+                  'route' =>'/setting/currencies'
             ],
 
-			[
-                'text' => 'Advanced',
-                'route' => '#'
-            ],
-
-			[
-                'text' => 'Customisation',
-                'route' => '#'
+            [
+                'text' => 'Financial Activity',
+                'route' => '/setting/financialactivity'
             ],
 
         ],
