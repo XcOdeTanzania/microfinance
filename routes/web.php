@@ -129,6 +129,17 @@ Route::get('/user/permissions',function(){
     return view('pages.user.permissions');
 });
 
+// User details
+Route::get('/user/details',function(){
+    return view('pages.user.details');
+});
+
+//User role
+Route::get('/user/role',function(){
+    return view('pages.user.role');
+});
+
+
 
 // Report menu routes start
 

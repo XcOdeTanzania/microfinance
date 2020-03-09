@@ -17,6 +17,7 @@
                          <th>Office Name</th>
                          <th>Email</th>
                          <th>Active</th>
+                         <th>Locked</th>
                          <th>Status</th>
                       </tr>
                    </thead>
@@ -29,7 +30,8 @@
                          <td>Head Office</td>
                          <td>demo@gmail.com</td>
                          <td>Yes</td>
-                         <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                         <td>No</td>
+                         <td><a href="/user/details"><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
                       </tr>
 
                    </tbody>
