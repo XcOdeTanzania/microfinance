@@ -307,6 +307,12 @@ return [
             //     'text' => 'Customisation',
             //     'route' => '#'
             // ],
+
+            [
+                 'text' => 'Currencies',
+                  'route' =>'/setting/currencies'
+            ],
+
             [
                 'text' => 'Financial Activity',
                 'route' => '/setting/financialactivity'
