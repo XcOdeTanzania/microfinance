@@ -215,4 +215,8 @@ Route::get('/groups/groups', function () {
 Route::get('/groups/pendingapproval', function () {
     return view('pages.groups.pendingapproval');
 });
+
+Route::get('/groups/closedgroups', function () {
+    return view('pages.groups.closedgroups');
+});
 //Groups routes Ends

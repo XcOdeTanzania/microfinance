@@ -62,7 +62,13 @@ return [
             [
                 'text'=> 'Groups Pending Approval',
                 'route'=>'/groups/pendingapproval'
-            ]
+            ],
+
+            [
+                'text'=> 'Closed Groups',
+                'route'=>'/groups/closedgroups'
+            ],
+
     ],
     'translate' => 'sidebar.nav.DASHBOARD'
 ],
