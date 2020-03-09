@@ -73,6 +73,10 @@ return [
                 'route' => '/loan/create'
             ],
             [
+                'text' => 'View Loans',
+                'route' => '/loan/loans'
+            ],
+            [
                 'text' => 'Overpaid Loans',
                 'route' => '#'
             ],

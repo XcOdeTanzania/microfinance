@@ -123,6 +123,7 @@ Route::get('/shares/closed', function(){
 
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
+});
 
 
 // Users Route
@@ -200,5 +201,13 @@ Route::group(['prefix' => 'loan'], function() {
         return view('pages.loan.create');
     });
 
-    //
+    // view all loans
+    Route::get('loans', function() {
+        return view('pages.loan.view');
+    });
+
+    // view loan detail routes
+    Route::get('details', function() {
+        return view('pages.loan.details');
+    });
 });
