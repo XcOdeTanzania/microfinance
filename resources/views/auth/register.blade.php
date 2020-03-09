@@ -60,6 +60,7 @@
                                     class="form-control border-right-0"
                                     id="password-confirm"
                                     type="password"
+                                    name="password_confirmation"
                                     placeholder="Retype Password"
                                     autocomplete="off"
                                     required="required"
