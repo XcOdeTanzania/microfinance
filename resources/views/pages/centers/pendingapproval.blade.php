@@ -2,7 +2,7 @@
 @section('content')
     <div class="content-heading">
         <div>
-            Closed Groups
+      Group  Centers Pending Approval
         </div>
     </div>
     <div class="card">

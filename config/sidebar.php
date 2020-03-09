@@ -60,7 +60,7 @@ return [
                 'route' => '/groups/groups'
             ],
             [
-                'text'=> 'Groups Pending Approval',
+                'text'=> 'Pending Approval',
                 'route'=>'/groups/pendingapproval'
             ],
 
@@ -68,26 +68,36 @@ return [
                 'text'=> 'Closed Groups',
                 'route'=>'/groups/closedgroups'
             ],
-
-
-                [
-                    'text' => ' Groups Centres Active',
-                    'route' => '/groups/centers/active'
-                ],
-
-                [
-                    'text'=> 'Group Centers Pending Approval',
-                    'route'=>'/groups/centers/pendingapproval'
-                ],
-
-                [
-                    'text'=> 'Group Centers closed',
-                    'route'=>'/groups/centers/closed'
-                ],
-
     ],
     'translate' => 'sidebar.nav.DASHBOARD'
 ],
+
+[
+    'text' => 'Group Centres',
+    'route' => '#',
+    'icon' => 'fa fa-users',
+    'alert' => '30',
+    'submenu' => [
+
+            [
+                'text' => 'Active',
+                'route' => '/centers/active'
+            ],
+
+            [
+                'text'=> 'Pending Approval',
+                'route'=>'/centers/pendingapproval'
+            ],
+
+            [
+                'text'=> 'closed',
+                'route'=>'/centers/closed'
+            ],
+
+],
+'translate' => 'sidebar.nav.DASHBOARD'
+],
+
     [
         'text' => 'Loans',
         'route' => '#',
