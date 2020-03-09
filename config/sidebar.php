@@ -56,9 +56,25 @@ return [
         'alert' => '30',
         'submenu' => [
             [
+                'text' => 'View All',
+                'route' => '#'
+            ],
+            [
                 'text' => 'Create Group',
                 'route' => '#'
-            ]
+            ],
+            [
+                'text' => 'Pending Approval ',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Closed Groups',
+                'route' => '#'
+            ],
+            [
+                'text' => 'Transfer Group',
+                'route' => '#'
+            ],
         ]
     ],
     [
@@ -69,7 +85,7 @@ return [
         'label' => 'badge badge-info',
         'submenu' => [
             [
-                'text' => 'Create Loan',
+                'text' => 'New Loan',
                 'route' => 'loan/create'
             ],
             [
