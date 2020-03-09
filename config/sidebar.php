@@ -69,6 +69,22 @@ return [
                 'route'=>'/groups/closedgroups'
             ],
 
+
+                [
+                    'text' => ' Groups Centres Active',
+                    'route' => '/groups/centers/active'
+                ],
+
+                [
+                    'text'=> 'Group Centers Pending Approval',
+                    'route'=>'/groups/centers/pendingapproval'
+                ],
+
+                [
+                    'text'=> 'Group Centers closed',
+                    'route'=>'/groups/centers/closed'
+                ],
+
     ],
     'translate' => 'sidebar.nav.DASHBOARD'
 ],

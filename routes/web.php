@@ -219,4 +219,16 @@ Route::get('/groups/pendingapproval', function () {
 Route::get('/groups/closedgroups', function () {
     return view('pages.groups.closedgroups');
 });
+
+Route::get('/groups/centers/active', function () {
+    return view('pages.groups.centers.active');
+});
+
+Route::get('/groups/centers/pendingapproval', function () {
+    return view('pages.groups.centers.pendingapproval');
+});
+
+Route::get('/groups/centers/closed', function () {
+    return view('pages.groups.centers.closed');
+});
 //Groups routes Ends
