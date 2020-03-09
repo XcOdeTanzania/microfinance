@@ -106,6 +106,10 @@ return [
         'label' => 'badge badge-info',
         'submenu' => [
             [
+                'text' => 'View Loans',
+                'route' => '/loan/loans',
+            ],
+            [
                 'text' => 'New Loan',
                 'route' => 'loan/create'
             ],

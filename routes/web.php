@@ -104,21 +104,31 @@ Route::get('/accounting/journaltemplate',function (){
 
 
 // SHARES ROUTES
+// shares active route
 Route::get('/shares/active', function() {
     return view('pages.shares.active');
 });
+// share pending route
 Route::get('/shares/pending', function(){
     return view('pages.shares.pending');
 });
+// share waiting route
 Route::get('/shares/waiting', function() {
     return view('pages.shares.waiting');
 });
-
+// shares rejected route
 Route::get('/shares/rejected', function(){
     return view('pages.shares.rejected');
 });
+// shares closed route
 Route::get('/shares/closed', function(){
     return view('pages.shares.closed');
+});
+//END SHARES ROUTE
+// ==============================
+
+Route::get('/accounting/journals',function (){
+    return view('pages.accounting.journals');
 });
 
 
@@ -198,6 +208,26 @@ Route::group(['prefix' => 'reports'], function() {
 
 // Report menu route end
 
+
+// start Loan routes
+
+Route::group(['prefix' => 'loan'], function() {
+    
+    //create loans route
+    Route::get('create', function() {
+        return view('pages.loan.create');
+    });
+
+    // view all loans
+    Route::get('loans', function() {
+        return view('pages.loan.view');
+    });
+
+    // view loan detail routes
+    Route::get('details', function() {
+        return view('pages.loan.details');
+    });
+});
 //setting routes start
 Route::get('/setting/blacklist', function () {
     return view('pages.setting.blacklist');
