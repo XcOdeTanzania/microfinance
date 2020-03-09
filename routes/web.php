@@ -194,5 +194,8 @@ Route::get('/setting/financialactivity', function () {
     return view('pages.setting.financialactivity');
 });
 
+Route::get('/setting/currencies', function () {
+    return view('pages.setting.currencies');
+});
 
 // setting routes ends
