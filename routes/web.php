@@ -71,6 +71,12 @@ Route::get('/accounting/chartsOfAccounts',function (){
 Route::get('/task/pendingApproval',function(){
     return view('pages.task.pendingApproval');
 });
+
+Route::get('/task/myActions',function(){
+    return view('pages.task.myActions');
+});
+
+
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
