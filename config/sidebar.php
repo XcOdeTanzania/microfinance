@@ -50,17 +50,54 @@ return [
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
-        'text' => 'Group',
+        'text' => 'Groups',
         'route' => '#',
         'icon' => 'fa fa-users text-primary',
         'alert' => '30',
         'submenu' => [
             [
-                'text' => 'Create Group',
-                'route' => '#'
-            ]
-        ]
+                'text' => ' Groups',
+                'route' => '/groups/groups'
+            ],
+            [
+                'text'=> 'Pending Approval',
+                'route'=>'/groups/pendingapproval'
+            ],
+
+            [
+                'text'=> 'Closed Groups',
+                'route'=>'/groups/closedgroups'
+            ],
     ],
+    'translate' => 'sidebar.nav.DASHBOARD'
+],
+
+[
+    'text' => 'Group Centres',
+    'route' => '#',
+    'icon' => 'fa fa-users',
+    'alert' => '30',
+    'submenu' => [
+
+            [
+                'text' => 'Active',
+                'route' => '/centers/active'
+            ],
+
+            [
+                'text'=> 'Pending Approval',
+                'route'=>'/centers/pendingapproval'
+            ],
+
+            [
+                'text'=> 'closed',
+                'route'=>'/centers/closed'
+            ],
+
+],
+'translate' => 'sidebar.nav.DASHBOARD'
+],
+
     [
         'text' => 'Loans',
         'route' => '#',
@@ -69,7 +106,7 @@ return [
         'label' => 'badge badge-info',
         'submenu' => [
             [
-                'text' => 'Create Loan',
+                'text' => 'New Loan',
                 'route' => 'loan/create'
             ],
             [
@@ -240,7 +277,7 @@ return [
 
 			[
                 'text' => 'My Actions',
-                'route' => '#'
+                'route' => '/task/myActions'
             ],
 
         ],

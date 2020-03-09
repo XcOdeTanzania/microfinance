@@ -17,9 +17,24 @@
                             </div>
                             <!-- Name and Job-->
                             <div class="user-block-info">
-                                <span class="user-block-name">Hello, Mike</span>
+                                <span class="user-block-name">{{Auth::user()->name}}</span>
                                 <span class="user-block-role">Designer</span>
                             </div>
+                            <div class="col">
+                                <form action="{{route('logout')}}" method="POST">
+                                    @csrf
+                                <div class="row justify-content-center">
+
+                                        <button  class="btn btn-info btn-circle  w-75 mt-2" >
+                                            <em class="fas fa-sign-out-alt"></em>
+                                            <small>Logout </small>
+                                        </button>
+
+                                </div>
+                            </form>
+                                <hr/>
+                            </div>
+
                         </div>
                     </div>
                 </li>

@@ -71,6 +71,12 @@ Route::get('/accounting/chartsOfAccounts',function (){
 Route::get('/task/pendingApproval',function(){
     return view('pages.task.pendingApproval');
 });
+
+Route::get('/task/myActions',function(){
+    return view('pages.task.myActions');
+});
+
+
 Route::get('/accounting/journals',function (){
     return view('pages.accounting.journals');
 });
@@ -210,3 +216,30 @@ Route::get('/setting/currencies', function () {
 });
 
 // setting routes ends
+
+// Groups routes starts
+
+Route::get('/groups/groups', function () {
+    return view('pages.groups.groups');
+});
+
+Route::get('/groups/pendingapproval', function () {
+    return view('pages.groups.pendingapproval');
+});
+
+Route::get('/groups/closedgroups', function () {
+    return view('pages.groups.closedgroups');
+});
+
+Route::get('/centers/active', function () {
+    return view('pages.centers.active');
+});
+
+Route::get('/centers/pendingapproval', function () {
+    return view('pages.centers.pendingapproval');
+});
+
+Route::get('/groupscenters/closed', function () {
+    return view('pages.centers.closed');
+});
+//Groups routes Ends
