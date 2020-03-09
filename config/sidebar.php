@@ -240,7 +240,7 @@ return [
 
 			[
                 'text' => 'My Actions',
-                'route' => '#'
+                'route' => '/task/myActions'
             ],
 
         ],
