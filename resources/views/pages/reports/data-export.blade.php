@@ -27,7 +27,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                            No results found
+                            <td>No results found.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                     </tbody>
                 </table>
             </div>

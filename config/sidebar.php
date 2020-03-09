@@ -50,17 +50,54 @@ return [
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
-        'text' => 'Group',
+        'text' => 'Groups',
         'route' => '#',
         'icon' => 'fa fa-users text-primary',
         'alert' => '30',
         'submenu' => [
             [
-                'text' => 'Create Group',
-                'route' => '#'
-            ]
-        ]
+                'text' => ' Groups',
+                'route' => '/groups/groups'
+            ],
+            [
+                'text'=> 'Pending Approval',
+                'route'=>'/groups/pendingapproval'
+            ],
+
+            [
+                'text'=> 'Closed Groups',
+                'route'=>'/groups/closedgroups'
+            ],
     ],
+    'translate' => 'sidebar.nav.DASHBOARD'
+],
+
+[
+    'text' => 'Group Centres',
+    'route' => '#',
+    'icon' => 'fa fa-users',
+    'alert' => '30',
+    'submenu' => [
+
+            [
+                'text' => 'Active',
+                'route' => '/centers/active'
+            ],
+
+            [
+                'text'=> 'Pending Approval',
+                'route'=>'/centers/pendingapproval'
+            ],
+
+            [
+                'text'=> 'closed',
+                'route'=>'/centers/closed'
+            ],
+
+],
+'translate' => 'sidebar.nav.DASHBOARD'
+],
+
     [
         'text' => 'Loans',
         'route' => '#',
@@ -69,12 +106,12 @@ return [
         'label' => 'badge badge-info',
         'submenu' => [
             [
-                'text' => 'Create Loan',
-                'route' => '/loan/create'
+                'text' => 'View Loans',
+                'route' => '/loan/loans',
             ],
             [
-                'text' => 'View Loans',
-                'route' => '/loan/loans'
+                'text' => 'New Loan',
+                'route' => 'loan/create'
             ],
             [
                 'text' => 'Overpaid Loans',
@@ -244,7 +281,7 @@ return [
 
 			[
                 'text' => 'My Actions',
-                'route' => '#'
+                'route' => '/task/myActions'
             ],
 
         ],
@@ -257,59 +294,69 @@ return [
         'alert' => '30',
         'submenu' => [
 
-            [
-                'text' => 'Access Management',
-                'route' => '#'
-            ],
+            // [
+            //     'text' => 'Access Management',
+            //     'route' => '#'
+            // ],
+
+			// [
+            //     'text' => 'Audit',
+            //     'route' => '#'
+            // ],
 
 			[
-                'text' => 'Audit',
-                'route' => '#'
+                'text' => 'Products Group',
+                'route' => '/setting/productgroup'
             ],
 
-			[
-                'text' => 'Products',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'Braches',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'Braches',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'MMT Services',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'MMT Services',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'SMS Module',
+            //     'route' => '#'
+            // ],
 
-			[
-                'text' => 'SMS Module',
-                'route' => '#'
-            ],
-
-			[
-                'text' => 'Email Module',
-                'route' => '#'
-            ],
+			// [
+            //     'text' => 'Email Module',
+            //     'route' => '#'
+            // ],
 
 			[
                 'text' => 'Blacklist',
-                'route' => '#'
+                'route' => '/setting/blacklist'
             ],
 
-			[
-                'text' => 'CRB',
-                'route' => '#'
+			// [
+            //     'text' => 'CRB',
+            //     'route' => '#'
+            // ],
+
+			// [
+            //     'text' => 'Advanced',
+            //     'route' => '#'
+            // ],
+
+			// [
+            //     'text' => 'Customisation',
+            //     'route' => '#'
+            // ],
+
+            [
+                 'text' => 'Currencies',
+                  'route' =>'/setting/currencies'
             ],
 
-			[
-                'text' => 'Advanced',
-                'route' => '#'
-            ],
-
-			[
-                'text' => 'Customisation',
-                'route' => '#'
+            [
+                'text' => 'Financial Activity',
+                'route' => '/setting/financialactivity'
             ],
 
         ],
