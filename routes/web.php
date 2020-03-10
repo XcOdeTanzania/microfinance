@@ -227,6 +227,10 @@ Route::group(['prefix' => 'loan'], function() {
     Route::get('details', function() {
         return view('pages.loan.details');
     });
+
+    Route::get('calculator', function() {
+        return view('pages.loan.calculator');
+    });
 });
 //setting routes start
 Route::get('/setting/blacklist', function () {
