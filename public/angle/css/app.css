@@ -814,7 +814,7 @@ _:-ms-lang(x),
 .topnavbar .navbar-nav > .nav-item > .nav-link:focus,
 .topnavbar .navbar-nav > .nav-item.show > .nav-link:hover,
 .topnavbar .navbar-nav > .nav-item.show > .nav-link:focus {
-  color: #a80000;
+  color: #f4f4f4;
 }
 
 .topnavbar .navbar-nav > .nav-item.active > .nav-link,
