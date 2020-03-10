@@ -98,6 +98,32 @@ return [
 'translate' => 'sidebar.nav.DASHBOARD'
 ],
 
+
+[
+    'text' => 'Group Transfer',
+    'route' => '#',
+    'icon' => 'fa fa-car',
+    'alert' => '30',
+    'submenu' => [
+
+            [
+                'text' => 'Staff Pending Approval',
+                'route' => '/transfergroup/stafftransferapproval'
+            ],
+            [
+                'text'=> 'Group Pending Approval',
+                'route'=>'/transfergroup/pendingapproval'
+            ],
+
+            [
+                'text'=> 'History',
+                'route'=>'/transfergroup/history'
+            ],
+
+],
+'translate' => 'sidebar.nav.DASHBOARD'
+],
+
     [
         'text' => 'Loans',
         'route' => '#',
@@ -119,7 +145,7 @@ return [
             ],
             [
                 'text' => 'Pending Approval',
-                'route' => '#'
+                'route' => 'loan/pending-approval'
             ],
             [
                 'text' => 'Pending Second Approval',
@@ -151,7 +177,7 @@ return [
             ],
             [
                 'text' => 'Loan Calculator',
-                'route' => '#'
+                'route' => '/loan/calculator'
             ]
         ],
         'translate' => 'sidebar.nav.DASHBOARD'

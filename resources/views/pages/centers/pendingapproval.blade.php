@@ -2,7 +2,7 @@
 @section('content')
     <div class="content-heading">
         <div>
-      Group  Centers Pending Approval
+       Pending Approval
         </div>
     </div>
     <div class="card">

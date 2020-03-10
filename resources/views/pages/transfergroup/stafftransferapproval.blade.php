@@ -2,7 +2,7 @@
 @section('content')
     <div class="content-heading">
         <div>
-        Group Staff Transfer Approval
+    Staff Transfer Approval
         </div>
     </div>
     <div class="card">

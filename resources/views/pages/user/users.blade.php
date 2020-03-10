@@ -31,7 +31,7 @@
                          <td>demo@gmail.com</td>
                          <td>Yes</td>
                          <td>No</td>
-                         <td><a href="/user/details"><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                         <td><a href="/user/details"><button class="btn btn-primary"><i class="fa fa-eye" style="color:white">&nbsp;view</i></a></td>
                       </tr>
 
                    </tbody>
