@@ -146,7 +146,7 @@ return [
             ],
             [
                 'text' => 'Pending Approval',
-                'route' => '#'
+                'route' => 'loan/pending-approval'
             ],
             [
                 'text' => 'Pending Second Approval',
