@@ -44,7 +44,7 @@ return [
             ],
             [
                 'text' => 'Transfer Client',
-                'route' => '#'
+                'route' => 'client/transfer'
             ]
         ],
         'translate' => 'sidebar.nav.DASHBOARD'
