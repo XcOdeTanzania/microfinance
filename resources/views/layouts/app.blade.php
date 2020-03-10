@@ -24,7 +24,7 @@
 </head>
 
 <body>
-<div class="wrapper">
+<div class="wrapper ">
 
 
 @if(Auth::user())
@@ -54,5 +54,6 @@
 <!-- =============== CUSTOM PAGE SCRIPTS ===============-->
 @yield('scripts')
 </body>
+
 
 </html>
