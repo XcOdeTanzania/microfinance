@@ -51,6 +51,10 @@ Route::group([
         return view('pages.client.rejected');
     })->name('client.rejected');
 
+    Route::get('client/transfer',function (){
+        return view('pages.client.transfer');
+    })->name('client.transfer');
+
     // Loan Routes
     Route::get('/loan/create',function (){
         return view('pages.loan.create');
