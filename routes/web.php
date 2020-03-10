@@ -228,6 +228,7 @@ Route::group(['prefix' => 'loan'], function() {
         return view('pages.loan.details');
     });
 
+<<<<<<< HEAD
     // pending approval load route
     Route::get('pending-approval', function() {
         return view('pages.loan.pending-approval');
@@ -237,6 +238,11 @@ Route::group(['prefix' => 'loan'], function() {
     Route::get('loan/{id}', function($id) {
         return view('pages.loan.pending', ['id' => $id]);
     })->name('loan.pending');
+=======
+    Route::get('calculator', function() {
+        return view('pages.loan.calculator');
+    });
+>>>>>>> f51996594ccbce5b5d503f102d59f035de135f67
 });
 //setting routes start
 Route::get('/setting/blacklist', function () {

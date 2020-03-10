@@ -110,7 +110,6 @@ return [
                 'text' => 'Staff Pending Approval',
                 'route' => '/transfergroup/stafftransferapproval'
             ],
-
             [
                 'text'=> 'Group Pending Approval',
                 'route'=>'/transfergroup/pendingapproval'
@@ -178,7 +177,7 @@ return [
             ],
             [
                 'text' => 'Loan Calculator',
-                'route' => '#'
+                'route' => '/loan/calculator'
             ]
         ],
         'translate' => 'sidebar.nav.DASHBOARD'
