@@ -5,7 +5,7 @@
     <div class="content-heading ">Register Client</div>
     <div class="card card-default">
         <div class="card-header"></div>
-        <div class="card-body">
+        <div class="card-body ">
             <form id="example-form" action="#">
                 <div>
                     <h4>
@@ -13,65 +13,69 @@
                         <br/>
                         <small>Basic Client Information</small>
                     </h4>
+
                     <fieldset class="overflow-auto">
+                        <div class="col">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 col-md-6 col-sm  align-content-center">
+                                    <label for="firstName">First Name *</label>
+                                    <input class="form-control required" id="firstName" name="firstName" type="text"/>
+                                    <label for="middleName">Middle Name *</label>
+                                    <input class="form-control required" id="middleName" name=middleName" type="text"/>
+                                    <label for="lastName">Last Name *</label>
+                                    <input class="form-control required" id="lastName" name="lastName" type="text"/>
+                                    <label for="registrationDate">Registration Date *</label>
+                                    <input class="form-control required" id="registrationDate" name="registrationDate"
+                                           type="date"/>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm  align-content-center">
+                                    <label for="phone">Phone Number *</label>
+                                    <input class="form-control required" id="phone" name="phone" type="text"/>
+                                    <label for="secondaryMobileNo">Secondary Mobile Number </label>
+                                    <input class="form-control " id="secondaryMobileNo" name="secondaryMobileNo"
+                                           type="text"/>
+                                    <label for="email">Email Address </label>
+                                    <input class="form-control " id="email" name="email" type="text"/>
+                                    <label for="dateOfBirth">Date of Birth </label>
+                                    <input class="form-control " id="dateOfBirth" name="dateOfBirth" type="date"/>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm  align-content-center">
+                                    <label for="gender">Gender *</label>
+                                    <select class="custom-select" id="gender" name="gender">
+                                        <option selected></option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                    {{--<input class="form-control required" id="registrationDate" name="registrationDate" type="text" />--}}
+                                    <label for="tags">Tags </label>
+                                    <input class="form-control " id="tags" name="tags" type="text"/>
+                                    <label for="town">Town </label>
+                                    <input class="form-control " id="town" name="town" type="text"/>
+                                    <label for="address">Address </label>
+                                    <input class="form-control " id="address" name="address" type="text"/>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm  align-content-center">
+                                    <label for="maritalStatus">Marital Status </label>
+                                    <select class="custom-select" id="maritalStatus" name="maritalStatus">
+                                        <option selected></option>
+                                        <option value="single">Single</option>
+                                        <option value="married">Married</option>
+                                        <option value="divorced">Divorced</option>
+                                    </select>
+                                    <label for="region">Region </label>
+                                    <input class="form-control " id="region" name="region" type="text"/>
+                                    <label for="gpsLocation">gps_location </label>
+                                    <input class="form-control " id="gpsLocation" name="gpsLocation" type="text"/>
 
-                        <div class="row justify-content-center">
-                            <div class="col-lg-3 col-md-6 col-sm  align-content-center">
-                                <label for="firstName">First Name *</label>
-                                <input class="form-control required" id="firstName" name="firstName" type="text"/>
-                                <label for="middleName">Middle Name *</label>
-                                <input class="form-control required" id="middleName" name=middleName" type="text"/>
-                                <label for="lastName">Last Name *</label>
-                                <input class="form-control required" id="lastName" name="lastName" type="text"/>
-                                <label for="registrationDate">Registration Date *</label>
-                                <input class="form-control required" id="registrationDate" name="registrationDate"
-                                       type="date"/>
+                                </div>
                             </div>
-                            <div class="col-lg-3 col-md-6 col-sm  align-content-center">
-                                <label for="phone">Phone Number *</label>
-                                <input class="form-control required" id="phone" name="phone" type="text"/>
-                                <label for="secondaryMobileNo">Secondary Mobile Number </label>
-                                <input class="form-control " id="secondaryMobileNo" name="secondaryMobileNo"
-                                       type="text"/>
-                                <label for="email">Email Address </label>
-                                <input class="form-control " id="email" name="email" type="text"/>
-                                <label for="dateOfBirth">Date of Birth </label>
-                                <input class="form-control " id="dateOfBirth" name="dateOfBirth" type="date"/>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm  align-content-center">
-                                <label for="gender">Gender *</label>
-                                <select class="custom-select" id="gender" name="gender">
-                                    <option selected></option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                                {{--<input class="form-control required" id="registrationDate" name="registrationDate" type="text" />--}}
-                                <label for="tags">Tags </label>
-                                <input class="form-control " id="tags" name="tags" type="text"/>
-                                <label for="town">Town </label>
-                                <input class="form-control " id="town" name="town" type="text"/>
-                                <label for="address">Address </label>
-                                <input class="form-control " id="address" name="address" type="text"/>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm  align-content-center">
-                                <label for="maritalStatus">Marital Status </label>
-                                <select class="custom-select" id="maritalStatus" name="maritalStatus">
-                                    <option selected></option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="divorced">Divorced</option>
-                                </select>
-                                <label for="region">Region </label>
-                                <input class="form-control " id="region" name="region" type="text"/>
-                                <label for="gpsLocation">gps_location </label>
-                                <input class="form-control " id="gpsLocation" name="gpsLocation" type="text"/>
 
-                            </div>
+
+                            <p>(*) Mandatory</p>
                         </div>
 
-
-                        <p>(*) Mandatory</p>
                     </fieldset>
+
                     <h4>
                         Client Identification
                         <br/>
@@ -125,42 +129,45 @@
                         <small>Business Infomation</small>
                     </h4>
                     <fieldset class="overflow-auto">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-4 col-md-6 col-sm  align-content-center">
-                                <label for="businessName">Business Name *</label>
-                                <input class="form-control required" id="businessName" name="businessName" type="text"/>
-                                <label for="businessType">Business Type *</label>
-                                <select class="custom-select " required id="businessType" name="businessType">
-                                    <option selected></option>
-                                    <option value="trader">Trader</option>
-                                    <option value="tinker">Tinker</option>
-                                    <option value="tailor">Tailor</option>
-                                    <option value="farmer">Farmer</option>
-                                    <option value="agent">Agent</option>
-                                </select>
-                                <label for="businessDate">Business Date *</label>
-                                <input class="form-control required" id="businessDate" name="businessDate"
-                                       type="date"/>
-                                <label for="businessAddress">Address *</label>
-                                <input class="form-control required" id="businessAddress" name="businessAddress" type="text"/>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm  align-content-center">
-                                <label for="businessRegion">Region  *</label>
-                                <input class="form-control required" id="businessRegion" name=businessRegion" type="text"/>
-                                <label for="businessCountry">Country *</label>
-                                <input class="form-control required" id="businessCountry" name="businessCountry" type="text"/>
-                                <label for="businessPostalCode">Postal Code  *</label>
-                                <input class="form-control required" id="businessPostalCode" name=businessPostalCode" type="text"/>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm  align-content-center">
-                                <label for="businessRevenue">Business Revenue *</label>
-                                <input class="form-control required" id="businessRevenue" name="businessRevenue" type="text"/>
-                                <label for="businessExpenses">Expenses *</label>
-                                <input class="form-control required" id="businessExpenses" name="businessExpenses" type="text"/>
-                                <label for="businessNetIncome">Net Income *</label>
-                                <input class="form-control required" id="businessNetIncome" name="businessNetIncome" type="text"/>
+                        <div class="col">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-4 col-md-6 col-sm  align-content-center">
+                                    <label for="businessName">Business Name *</label>
+                                    <input class="form-control required" id="businessName" name="businessName" type="text"/>
+                                    <label for="businessType">Business Type *</label>
+                                    <select class="custom-select " required id="businessType" name="businessType">
+                                        <option selected></option>
+                                        <option value="trader">Trader</option>
+                                        <option value="tinker">Tinker</option>
+                                        <option value="tailor">Tailor</option>
+                                        <option value="farmer">Farmer</option>
+                                        <option value="agent">Agent</option>
+                                    </select>
+                                    <label for="businessDate">Business Date *</label>
+                                    <input class="form-control required" id="businessDate" name="businessDate"
+                                           type="date"/>
+                                    <label for="businessAddress">Address *</label>
+                                    <input class="form-control required" id="businessAddress" name="businessAddress" type="text"/>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm  align-content-center">
+                                    <label for="businessRegion">Region  *</label>
+                                    <input class="form-control required" id="businessRegion" name=businessRegion" type="text"/>
+                                    <label for="businessCountry">Country *</label>
+                                    <input class="form-control required" id="businessCountry" name="businessCountry" type="text"/>
+                                    <label for="businessPostalCode">Postal Code  *</label>
+                                    <input class="form-control required" id="businessPostalCode" name=businessPostalCode" type="text"/>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm  align-content-center">
+                                    <label for="businessRevenue">Business Revenue *</label>
+                                    <input class="form-control required" id="businessRevenue" name="businessRevenue" type="text"/>
+                                    <label for="businessExpenses">Expenses *</label>
+                                    <input class="form-control required" id="businessExpenses" name="businessExpenses" type="text"/>
+                                    <label for="businessNetIncome">Net Income *</label>
+                                    <input class="form-control required" id="businessNetIncome" name="businessNetIncome" type="text"/>
+                                </div>
                             </div>
                         </div>
+
                     </fieldset>
                     <h4>
                         Next of Kin
@@ -173,7 +180,7 @@
                                 <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th> Date of Birth</th>
+                                    <th style="border-left: 1px;border-color: #1d68a7; !important; " > Date of Birth</th>
                                     <th>Address</th>
                                     <th> Region</th>
                                     <th>Phone Number</th>
