@@ -306,6 +306,98 @@
                     <div class="tab-pane fade" id="repayment-schedule" role="tabpanel" aria-labelledby="payment">...</div>
 
                     <!-- Transaction tab pane -->
+                    <div class="tab-pane fade" id="repayment-schedule" role="tabpanel" aria-labelledby="payment">
+                        <div class="card card-default">
+                        <div class="card-header">Repayment Schedule</div>
+                             <div class="card-body">
+                                  <div class="table-responsive table-bordered">
+                                       <table class="table table-sm">
+                                       <thead> 
+                                        <tr class = "bg-gray">
+                                           <th style="border-left:1px; border-top: 1px !important;border-color:#1D68A7 !important;" class= "empty" colspan="4"></th>
+                                           <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="3">Loan Amount and Balance</th>
+                                           <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="3">Total Cost of Loan</th>
+                                           <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="2">Compulsory Savings</th>
+                                           <th class= "empty" colspan="3"></th>
+                                        </tr>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Date</th>
+                                                <th># Days</th>
+                                                <th style="border-left:1px;border-color:#1D68A7;!important;">Paid by</th>
+                                                <th  class= "boarder-left boarder-primary">Disbursement</th>
+                                                <th>Principle Due</th>
+                                                <th style="border-left:1px;border-color:#1D68A7;!important;"> Principle Balance</th>
+                                                <th>Interest due</th>
+                                                <th>Fees</th>
+                                                <th style="border-left:1px;border-color:#1D68A7;!important;">Penalties</th>
+                                                <th>Expected Savings</th>
+                                                <th style="border-left:1px;border-color:#1D68A7;!important;">Actual Savings</th>
+                                                <th>Total Due</th>
+                                                <th>Total Paid</th>
+                                                <th>Total OutStanding<th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>10-01-2020</td>
+                                                <td></td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>50000.00</td>
+                                                <td ></td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;">50000.00</td>
+                                                <td></td>
+                                                <td>0.00</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>5000.00</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>0.00</td>
+                                                <td>0.00</td>
+                                                <td></td>
+                                            </tr>
+                                            @for($i=0; $i<3 ; $i++)
+                                            <tr>
+                                                <td>{{$i + 1}}</td>
+                                                <td>10-01-2020</td>
+                                                <td></td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>50000.00</td>
+                                                <td ></td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;">50000.00</td>
+                                                <td></td>
+                                                <td>0.00</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>5000.00</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>0.00</td>
+                                                <td>0.00</td>
+                                                <td></td>
+                                            </tr>
+                                            @endfor
+                                            <tr class = "bg-gray">
+                                                <td></td>
+                                                <td>Total</td>
+                                                <td>60</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>50000.00</td>
+                                                <td>14000.00</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>1000.00</td>
+                                                <td>1000.00</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;">0.00</td>
+                                                <td>5000.00</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>16000.00</td>
+                                                <td>7500.00</td>
+                                                <td>8500.00</td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>            
+                    </div>
                     <div class="tab-pane fade" id="transaction-tab" role="tabpanel" aria-labelledby="transaction">
                         <div class="card-body">
                             <table class="table table-striped my-4 w-100" id="datatable2">

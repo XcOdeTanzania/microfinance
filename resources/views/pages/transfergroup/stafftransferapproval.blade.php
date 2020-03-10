@@ -2,7 +2,7 @@
 @section('content')
     <div class="content-heading">
         <div>
-       Pending Approval
+    Staff Transfer Approval
         </div>
     </div>
     <div class="card">
@@ -16,16 +16,16 @@
                         <tr>
                             <th data-priority="1">Registration Number</th>
                             <th>Centre Name</th>
-                            <th>Branch</th>
-                            <th>Loan Ofiicer</th>
-                            <th>View</th>
+                            <th>Submited On</th>
+                            <th>Destination Office</th>
+                            <th>Destination Group</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="Received">
                             <td></td>
                             <td></td>
-                            <td>No results found.</td>
+                            <td>Processing</td>
                             <td></td>
                             <td></td>
                         </tr>

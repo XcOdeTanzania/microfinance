@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app');
 @section('content')
     <div class="content-heading">
         <div>
@@ -39,7 +39,7 @@
                             <td>X</td>
                             <td>X</td>
                             <td>X</td>
-                            <td><a href="/loan/details"><button class="btn btn-primary" type="submit"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                            <td><a href="/loan/details"><button class="btn btn-primary"><i class="fa fa-eye" style="color:white">&nbsp;view</i></a></td>
                         </tr>
                         <tr class="gradeC">
                             <td>Trident</td>
@@ -49,7 +49,7 @@
                             <td>C</td>
                             <td>X</td>
                             <td>X</td>
-                            <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                            <td><a href='' class="btn btn-primary text-white"><i class="fa fa-eye">&nbsp;</i>view</a></td>
                         </tr>
                         <tr class="gradeA">
                             <td>Trident</td>

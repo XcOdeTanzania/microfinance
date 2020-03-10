@@ -212,7 +212,7 @@ Route::group(['prefix' => 'reports'], function() {
 // start Loan routes
 
 Route::group(['prefix' => 'loan'], function() {
-    
+
     //create loans route
     Route::get('create', function() {
         return view('pages.loan.create');
@@ -226,6 +226,19 @@ Route::group(['prefix' => 'loan'], function() {
     // view loan detail routes
     Route::get('details', function() {
         return view('pages.loan.details');
+    });
+
+    // pending approval load route
+    Route::get('pending-approval', function() {
+        return view('pages.loan.pending-approval');
+    });
+
+    // pending load details route
+    Route::get('loan/{id}', function($id) {
+        return view('pages.loan.pending', ['id' => $id]);
+    })->name('loan.pending');
+    Route::get('calculator', function() {
+        return view('pages.loan.calculator');
     });
 });
 //setting routes start
@@ -269,7 +282,21 @@ Route::get('/centers/pendingapproval', function () {
     return view('pages.centers.pendingapproval');
 });
 
-Route::get('/groupscenters/closed', function () {
+Route::get('/centers/closed', function () {
     return view('pages.centers.closed');
 });
+
+Route::get('/transfergroup/history', function () {
+    return view('pages.transfergroup.history');
+});
+
+Route::get('/transfergroup/pendingapproval', function () {
+    return view('pages.transfergroup.pendingapproval');
+});
+
+Route::get('/transfergroup/stafftransferapproval', function () {
+    return view('pages.transfergroup.stafftransferapproval');
+});
+
+
 //Groups routes Ends
