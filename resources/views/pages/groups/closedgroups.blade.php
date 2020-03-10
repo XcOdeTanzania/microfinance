@@ -2,7 +2,7 @@
 @section('content')
     <!-- START card-->
     <div class="card card-default">
-    <div class="content-heading "><h2>Closed Groups</h2></div>
+    <div class="content-heading "><h2>Closed</h2></div>
     <div class="card">
       <div class="card-header">
       <div class="card-body">
