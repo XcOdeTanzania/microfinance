@@ -20,7 +20,8 @@
                          <td>Hawa12</td>
                          <td>Head Office</td>
                          <td><i class="fa fa-check"></i></td>
-                         <td><a href="/user/role"><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                         <td><a href="/user/role"><button class="btn btn-primary"><i class="fa fa-eye" style="color:white">&nbsp;view</i></a></td>
+        
                       </tr>
 
                    </tbody>
