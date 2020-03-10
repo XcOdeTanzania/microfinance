@@ -228,6 +228,15 @@ Route::group(['prefix' => 'loan'], function() {
         return view('pages.loan.details');
     });
 
+    // pending approval load route
+    Route::get('pending-approval', function() {
+        return view('pages.loan.pending-approval');
+    });
+
+    // pending load details route
+    Route::get('loan/{id}', function($id) {
+        return view('pages.loan.pending', ['id' => $id]);
+    })->name('loan.pending');
     Route::get('calculator', function() {
         return view('pages.loan.calculator');
     });
