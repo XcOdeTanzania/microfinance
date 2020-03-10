@@ -981,7 +981,7 @@ _:-ms-lang(x),
   .topnavbar .navbar-nav > .nav-item.show > .nav-link,
   .topnavbar .navbar-nav > .nav-item.show > .nav-link:hover,
   .topnavbar .navbar-nav > .nav-item.show > .nav-link:focus {
-    box-shadow: 0 -3px 0 #19a5d1 inset;
+    box-shadow: 0 -3px 0 #a80000 inset;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
   }
@@ -5762,7 +5762,7 @@ x:-o-prefocus,
 .show > .wizard > .actions a:active.dropdown-toggle {
   color: #fff;
   background-color: #2f80e7;
-  border-color: #2479e5;
+  border-color: #ffbfbf;
 }
 
 .wizard > .actions a:not(:disabled):not(.disabled):active:focus,
