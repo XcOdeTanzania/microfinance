@@ -91,7 +91,7 @@
                         <span class="form-text"><b>Date Expected</b></span>
                         <input class="form-control" type="date"  placeholder="" />
 
-                    </div><br><br>
+                    </div><br>
                 </div>
                 <button class="btn btn-primary"><i class="fas fa-arrow-left">&nbsp; Calculate</i></button>
                 <br>

@@ -7,7 +7,7 @@
           <form class="form-horizontal" method="get" action="/">
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Account</label>
-                   <div class="col-md-10"><select name="accounttag" class="form-control" id="accountag">
+                   <div class="col-md-6"><select name="accounttag" class="form-control" id="accountag">
                     <option >Select</option>
                     <option></option>
                     <option> </option>
@@ -17,7 +17,7 @@
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Bracnh</label>
-                   <div class="col-md-10"><select name="accounttag" class="form-control" id="accountag">
+                   <div class="col-md-6"><select name="accounttag" class="form-control" id="accountag">
                     <option >Select</option>
                     <option></option>
                     <option> </option>
@@ -27,12 +27,12 @@
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Transaction From</label>
-                   <div class="col-md-10"><input class="form-control" id="input-id-1" type="text"></div>
+                   <div class="col-md-6"><input class="form-control" id="input-id-1" type="text"></div>
                 </div>
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">To</label>
-                   <div class="col-md-10"><input class="form-control" id="input-id-1" type="text"></div>
+                   <div class="col-md-6"><input class="form-control" id="input-id-1" type="text"></div>
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label"></label>
@@ -47,7 +47,6 @@
              </fieldset>
 
           </form>
-       </div>
     </div><!-- END card-->
  </div>
  @endsection
