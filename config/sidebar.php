@@ -98,7 +98,7 @@ return [
             ],
             [
                 'text' => 'Pending Second Approval',
-                'route' => '#'
+                'route' => 'loan/pendingSecondApproval'
             ],
             [
                 'text' => 'Awaiting Disbursement',
