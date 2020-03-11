@@ -71,58 +71,7 @@ return [
     ],
     'translate' => 'sidebar.nav.DASHBOARD'
 ],
-
-[
-    'text' => 'Group Centres',
-    'route' => '#',
-    'icon' => 'fa fa-users',
-    'alert' => '30',
-    'submenu' => [
-
-            [
-                'text' => 'Active',
-                'route' => '/centers/active'
-            ],
-
-            [
-                'text'=> 'Pending Approval',
-                'route'=>'/centers/pendingapproval'
-            ],
-
-            [
-                'text'=> 'closed',
-                'route'=>'/centers/closed'
-            ],
-
-],
-'translate' => 'sidebar.nav.DASHBOARD'
-],
-
-
-[
-    'text' => 'Group Transfer',
-    'route' => '#',
-    'icon' => 'fa fa-car',
-    'alert' => '30',
-    'submenu' => [
-
-            [
-                'text' => 'Staff Pending Approval',
-                'route' => '/transfergroup/stafftransferapproval'
-            ],
-            [
-                'text'=> 'Group Pending Approval',
-                'route'=>'/transfergroup/pendingapproval'
-            ],
-
-            [
-                'text'=> 'History',
-                'route'=>'/transfergroup/history'
-            ],
-
-],
-'translate' => 'sidebar.nav.DASHBOARD'
-],
+    
 
     [
         'text' => 'Loans',
