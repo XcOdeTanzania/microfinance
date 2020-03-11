@@ -96,7 +96,7 @@
 
         {{-- client information card start --}}
         <div class="card card-default" id="cardDemo1">
-            <div class="card-header">Client Information<a class="float-right" href="#" data-tool="card-collapse" data-toggle="tooltip" title="Collapse Card"><em class="fa fa-minus"></em></a></div>
+            <div class="card-header">Client Information<a class="float-right" href="#" data-tool="card-collapse" data-toggle="tooltip" title="View More"><em class="fa fa-minus"></em></a></div>
             <div class="card-body">
                 <div class="row">
                     <div class="col">
