@@ -43,7 +43,7 @@
                         <td>Mr. JPM</td>
                         <td>20/01/2020</td>
                         <td>
-                            <button class="btn btn-sm btn-success ">
+                            <button class="btn btn-sm btn-primary ">
                                 <i class="fas fa-eye"></i>
                                 View
                             </button></td>
@@ -57,7 +57,7 @@
                         <td>Mr. JPM</td>
                         <td>20/01/2020</td>
                         <td>
-                            <button class="btn btn-sm btn-success ">
+                            <button class="btn btn-sm btn-primary ">
                                 <i class="fas fa-eye"></i>
                                 View
                             </button></td>
@@ -70,7 +70,7 @@
                         <td>Mr. X</td>
                         <td>20/01/2020</td>
                         <td>
-                            <button class="btn btn-sm btn-success ">
+                            <button class="btn btn-sm btn-primary ">
                                 <i class="fas fa-eye"></i>
                                 View
                             </button></td>

@@ -42,7 +42,11 @@
                         <td> M-City</td>
                         <td>Mr. JPM</td>
                         <td>20/01/2020</td>
-                        <td class="row justify-content-center"><i class="fas fa-eye text-success"></i></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary ">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button></td>
                     </tr>
 
                     <tr>
@@ -52,7 +56,11 @@
                         <td> M-City</td>
                         <td>Mr. JPM</td>
                         <td>20/01/2020</td>
-                        <td class="row justify-content-center"><i class="fas fa-eye text-success"></i></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary ">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button></td>
                     </tr>
                     <tr>
                         <td>CL-005-2020</td>
@@ -61,7 +69,11 @@
                         <td> M-City</td>
                         <td>Mr. X</td>
                         <td>20/01/2020</td>
-                        <td class="row justify-content-center"><i class="fas fa-eye text-success"></i></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary ">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button></td>
                     </tr>
 
                     </tbody>
