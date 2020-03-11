@@ -270,6 +270,14 @@ Route::get('/groups/groups', function () {
     return view('pages.groups.groups');
 });
 
+Route::get('/groups/centers', function () {
+    return view('pages.groups.centers');
+});
+
+Route::get('/groups/transfer', function () {
+    return view('pages.groups.transfer');
+});
+
 Route::get('/groups/pendingapproval', function () {
     return view('pages.groups.pendingapproval');
 });
