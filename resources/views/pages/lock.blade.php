@@ -27,7 +27,7 @@
                         <div class="mt-1">
                             <a class="text-muted" href="{{ route('password.request') }}"><small>Forgot your password?</small></a>
                         </div>
-                        <div class="ml-auto"><a class="btn btn-sm btn-primary" href="/dashboard/dashboard">Unlock</a></div>
+                        <div class="ml-auto"><a class="btn btn-sm btn-primary" href="{{route('home')}}">Unlock</a></div>
                     </div>
                 </form>
             </div>
