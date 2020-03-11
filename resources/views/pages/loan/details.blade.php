@@ -298,7 +298,7 @@
                                                 <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
                                                 <td>16000.00</td>
                                                 <td>7500.00</td>
-                                                <td>8500.00</td>
+                                                <td>8500.00</td> 
                                             </tr>
                                         </tbody>
                                         </table>
