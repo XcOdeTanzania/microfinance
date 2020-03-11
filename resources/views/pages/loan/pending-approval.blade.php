@@ -5,13 +5,17 @@
         </div>
 
         <div class="container-fluid">
+            <!-- DATATABLE DEMO 2-->
             <div class="card">
-                <div class="card-header"></div>
+                {{-- <div class="card-header">
+                    <div class="card-title">Export Buttons</div>
+                    <div class="text-sm">When displaying data in a DataTable, it can often be useful to your end users for them to have the ability to obtain the data from the DataTable, extracting it into a file for them to use locally. This can be done with either HTML5 based buttons or Flash buttons.</div>
+                 </div> --}}
                 <div class="card-body">
                     <table class="table table-bordered table-striped my-4 w-100" id="datatable2">
                         <thead>
                             <tr>
-                                <th>Account Nbr</th>
+                                <th data-priority="1">Account Nbr</th>
                                 <th>Branch</th>
                                 <th>Loan Officer</th>
                                 <th>Client Name</th>
@@ -19,7 +23,7 @@
                                 <th>Amount</th>
                                 <th>Created Date</th>
                                 <th>Product Name</th>
-                                <th>View</th>
+                                <th data-priority="2">View</th>
                             </tr>
                         </thead>
                         <tbody>
