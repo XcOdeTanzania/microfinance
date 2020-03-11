@@ -1,63 +1,81 @@
-@extends('layouts.app');
-
-
-@section('styles')
-    
-@endsection
-
+@extends('layouts.app')
 
 @section('content')
     <div class="content-heading">
        <div>Group Reports</div>
     </div>
+    
     <div class="container-fluid">
-       <!-- DATATABLE -->
-       <div class="card">
-          <div class="card-header"><br>
-          <div class="card-body">
-             <table class="table table-striped my-4 w-100" id="datatable1">
-                <thead>
-                   <tr>
-                      <th data-priority="1">Name</th>
-                      <th>Category</th>
-                      <th>Description</th>
-                      <th></th>
-                   </tr>
-                </thead>
-                <tbody> 
-                    <tr class="gradeC">
-                        <td>
-                            <a href="#">Group Breakdown</a>
-                        </td>
-                        <td>Group</td>
-                        <td>Provides a breakdown of the groups of each loanofficer into gender, average loansize and PAR</td>
-                        <td><button type="btn" class="btn btn-primary"><span class="fas fa-file"></span></button></td>
-                    </tr>
-                   <tr class="gradeC">
-                      <td>
-                          <a href="#">Group Report</a>
-                      </td>
-                      <td>Group</td>
-                      <td>This report will show all members of the group and their current loan status.</td>
-                      <td><button type="btn" class="btn btn-primary"><span class="fas fa-file"></span></button></td>
-                   </tr>
-                   <tr class="gradeC">
+      <!-- DATATABLE DEMO 3-->
+      <div class="card">
+        <!--<div class="card-header">
+           <div class="card-title">Key Table</div>
+           <div class="text-sm">KeyTable allows you to use keyboard navigation on a DataTables enhanced table, like an Excel spreadsheet.</div>
+        </div> -->
+        <div class="card-body">
+           <table class="table table-striped my-4 w-100" id="datatable3">
+              <thead>
+                 <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th></th>
+                 </tr>
+              </thead>
+              <tbody>
+                 <tr>
                     <td>
-                        <a href="#">Loanofficer Groups Report</a>
+                       <a href="#">Group Breakdown</a>
                     </td>
-                    <td>Group</td>
-                    <td>This report returns all groups reports for a specific loanofficer.</td>
-                    <td><button type="btn" class="btn btn-primary"><span class="fas fa-file"></span></button></td>
-                   </tr>
-                   
-                </tbody>
-             </table>
-          </div>
-      
-       </div>
-       </div>
-    </div>
-
+                    <td>
+                       Group
+                    </td>
+                    <td>
+                     Provides a breakdown of the groups of each loanofficer into gender, average loansize and PAR
+                    </td>
+                    <td>
+                       <a href="#" class="btn btn-primary">
+                          <i class="fas fa-file"></i>
+                       </a>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>
+                       <a href="#">Group Report</a>
+                    </td>
+                    <td>
+                       Group
+                    </td>
+                    <td>
+                        This report will show all members of the group and their current loan status.
+                    </td>
+                    <td>
+                       <a href="#" class="btn btn-primary">
+                          <i class="fas fa-file"></i>
+                       </a>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>
+                       <a href="#">Loanofficer Groups Report</a>
+                    </td>
+                    <td>
+                       Group
+                    </td>
+                    <td>
+                     This report returns all groups reports for a specific loanofficer.
+                    </td>
+                    <td>
+                       <a href="#" class="btn btn-primary">
+                          <i class="fas fa-file"></i>
+                       </a>
+                    </td>
+                 </tr>
+              </tbody>
+           </table>
+        </div>
+     </div>
+   </div>
 @endsection
 
 @section('scripts')
