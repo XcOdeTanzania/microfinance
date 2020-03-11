@@ -71,7 +71,7 @@ return [
     ],
     'translate' => 'sidebar.nav.DASHBOARD'
 ],
-    
+
 
     [
         'text' => 'Loans',
