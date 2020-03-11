@@ -407,8 +407,8 @@
                                         <tr class = "bg-gray">
                                            <th style="border-left:1px; border-top: 1px !important;border-color:#1D68A7 !important;" class= "empty" colspan="4"></th>
                                            <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="3">Loan Amount and Balance</th>
-                                           <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="3">Total Cost of Loan</th>
-                                           <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="2">Compulsory Savings</th>
+                                           <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="3">Total Cost of Loan</th>
+                                           <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="2">Compulsory Savings</th>
                                            <th class= "empty" colspan="3"></th>
                                         </tr>
                                             <tr>
@@ -496,7 +496,8 @@
                                     <tr>
                                         <th data-priority="1">Account Nbr</th>
                                         <th>Branch</th>
-                                        <th>Loan Officer</th>Group Name</th>
+                                        <th>Loan Officer</th>
+                                        <th>Group Name</th>
                                         <th class="sort-alpha">Amount</th>
                                         <th class="sort-alpha">Balance</th>
                                         <th class="sort-alpha">Disbursed</th>
@@ -513,7 +514,7 @@
                                         <td>X</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><a href="/loan/details"><button class="btn btn-primary" type="submit"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><a href="/loan/details" class="btn btn-primary" type="submit"><i class="fa fa-eye"></i>&nbsp;view</a></td>
                                     </tr>
                                     <tr class="gradeC">
                                         <td>Trident</td>
@@ -523,7 +524,7 @@
                                         <td>C</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>Trident</td>
@@ -533,7 +534,7 @@
                                         <td>A</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>Trident</td>
@@ -543,7 +544,7 @@
                                         <td>A</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>Trident</td>
@@ -553,7 +554,7 @@
                                         <td>A</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>Trident</td>
@@ -563,7 +564,7 @@
                                         <td>A</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                 </tbody>
                             </table>
