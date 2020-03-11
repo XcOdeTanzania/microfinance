@@ -2,8 +2,8 @@
 @section('content')
 <div class="content-heading">
     <div>
-        LoanID_with_LoanType
-        <small>status</small>
+        LoanID_with_Loanactive
+        <div class="badge badge-success">Active</div>
     </div>
 </div>
 <div class="col pl-0 pr-0">
@@ -12,26 +12,26 @@
 
         </div>
         <div class="card-body row">
-            <table class="table col-6 ">
-                <tbody>
-                    <tr>
-                        <td>Client name</td>
-                        <td>name</td>
-                    </tr>
-                    <tr>
-                        <td>Group name</td>
-                        <td>group_name</td>
-                    </tr>
-                    <tr>
-                        <td>Original Officer</td>
-                        <td>officer_name</td>
-                    </tr>
-                    <tr>
-                        <td>Loan Officer</td>
-                        <td>loan_officer_name</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="col-lg-6">
+                <form class="form-horizontal">
+                    <div class="form-group row">
+                        <div class="col-md-4">Client Name</div>
+                        <div class="col-md-8"><strong>client_name</strong></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">Group Name</div>
+                        <div class="col-md-8"><strong>group_name</strong></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">Original Officer</div>
+                        <div class="col-md-8"><strong>Loan, officer 3 Loan</strong></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">Loan Officer</div>
+                        <div class="col-md-8"><strong>Loan, officer 3 Loan</strong></div>
+                    </div>
+                </form>
+            </div>
             <div class="right">
 
             </div>
@@ -74,31 +74,54 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
+                    <!-- Summary tab pane -->
                     <div class="tab-pane fade show active" id="summary" role="tabpanel" aria-labelledby="summary">
                         <section>
-                            <table class="table">
-                                <tr>
-                                    <td>Loan cycle</td>
-                                    <td>Date Disbursed</td>
-                                </tr>
-                                <tr>
-                                    <td>Timely Repayment</td>
-                                    <td>Last Payment</td>
-                                </tr>
-                                <tr>
-                                    <td>Amount in Arreas</td>
-                                    <td>Next Payment</td>
-                                </tr>
-                                <tr>
-                                    <td>Days in Arrears</td>
-                                    <td>Final Payment Expected</td>
-                                </tr>
-                            </table>
-
-                            <table class="table">
-                                <tr>
-                                    <td>Summary</td>
-                                </tr>
+                            <!-- loans details  -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form class="form-horizontal">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">Loan Cycle</div>
+                                            <div class="col-md-8"><strong>987654</strong></div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">Timely Repayment:</div>
+                                            <div class="col-md-8"><strong>03/11/2015 10:10</strong></div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">Amount in Arrears</div>
+                                            <div class="col-md-8"><strong>Addison Nichols</strong></div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">Days in Arrears</div>
+                                            <div class="col-md-8"><strong>547</strong></div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6">
+                                    <form class="form-horizontal">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">Date Disbursed</div>
+                                            <div class="col-md-8"><strong>#32654</strong></div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">Last Payment</div>
+                                            <div class="col-md-8"><strong>Addison Nichols</strong></div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">Next Payment</div>
+                                            <div class="col-md-8"><strong>addisong@mail.com</strong></div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">Fina payment Expected</div>
+                                            <div class="col-md-8"><strong>Addison co.</strong></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <table class="table table-striped table-bordered table-hover">
+                                <tr>Summary</tr>
                                 <tr>
                                     <th></th>
                                     <th>Contract</th>
@@ -142,78 +165,238 @@
                                     <td></td>
                                 </tr>
                             </table>
+
+                            <div class="row mt-2 ml-1">
+                                <button class="btn btn-labeled btn-primary" type="button">
+                                    <span class="btn-label"><i class="fa fa-arrow-left"></i></span>
+                                    Left
+                                </button>
+                                <!-- Standard button with label on the right side-->
+                                <button class="btn btn-labeled btn-primary" type="button">
+                                    Right
+                                    <span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i></span>
+                                </button>
+                            </div>
                         </section>
                     </div>
+
+                    <!-- Detail tab pane -->
                     <div class="tab-pane fade" id="details-tab" role="tabpanel" aria-labelledby="details">
+                        <!-- loans details  -->
                         <div class="row">
                             <div class="col-lg-6">
-                                <p class="lead bb">Details</p>
                                 <form class="form-horizontal">
                                     <div class="form-group row">
-                                        <div class="col-md-4">Order ID:</div>
+                                        <div class="col-md-4">Account ID:</div>
                                         <div class="col-md-8"><strong>987654</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Purchased On:</div>
+                                        <div class="col-md-4">Loan Amount:</div>
                                         <div class="col-md-8"><strong>03/11/2015 10:10</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Client Name:</div>
+                                        <div class="col-md-4">Loarn Term:</div>
                                         <div class="col-md-8"><strong>Addison Nichols</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Items:</div>
+                                        <div class="col-md-4">Repayment Every:</div>
                                         <div class="col-md-8"><strong>547</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Amount:</div>
+                                        <div class="col-md-4">Linked Account:</div>
                                         <div class="col-md-8"><strong>$515.20</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Shipment:</div>
-                                        <div class="col-md-8"><strong>04/10/2015</strong></div>
+                                        <div class="col-md-4">Interest Type</div>
+                                        <div class="col-md-8"><strong>Flat</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Status</div>
+                                        <div class="col-md-4">Signature</div>
                                         <div class="col-md-8">
-                                            <div class="badge badge-info">Shipped</div>
+                                            <div class=""></div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="col-lg-6">
-                                <p class="lead bb">Client</p>
                                 <form class="form-horizontal">
                                     <div class="form-group row">
-                                        <div class="col-md-4">Client ID:</div>
+                                        <div class="col-md-4">Loan Product:</div>
                                         <div class="col-md-8"><strong>#32654</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Name:</div>
+                                        <div class="col-md-4">Loan Purpose:</div>
                                         <div class="col-md-8"><strong>Addison Nichols</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Email:</div>
+                                        <div class="col-md-4">APR:</div>
                                         <div class="col-md-8"><strong>addisong@mail.com</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Company:</div>
+                                        <div class="col-md-4">EIR:</div>
                                         <div class="col-md-8"><strong>Addison co.</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Phone:</div>
+                                        <div class="col-md-4">Loan Sector:</div>
                                         <div class="col-md-8"><strong>(123) 123 456465</strong></div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-md-4">Status</div>
+                                        <div class="col-md-4">Channel</div>
                                         <div class="col-md-8">
-                                            <div class="badge badge-success">Active</div>
+                                            <div class="">default loan fund</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-4">No of Guarantors</div>
+                                        <div class="col-md-8">
+                                            <div class="">0</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-4">Collateral values</div>
+                                        <div class="col-md-8">
+                                            <div class="">0.00</div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
+                        <!-- Detail tab table  -->
+                        <div class="row">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                    <th>Collected Type</th>
+                                    <th>Payment mode</th>
+                                    <th>Charge Type</th>
+                                    <th>Wave Penalty</th>
+                                </tr>
+                                <tr>
+                                    <td>Late Payment</td>
+                                    <td>Flat</td>
+                                    <td>1000</td>
+                                    <td>10/3/2020</td>
+                                    <td>Normal</td>
+                                    <td>Regular</td>
+                                    <th>Charge waived</th>
+                                </tr>
+
+                            </table>
+
+                        </div>
+
+                        <!-- Add Button  and previous and next button -->
+                        <div class="row">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#charges"><i class="fa fa-plus">&nbsp;Add Charges</i></button>
+                        </div>
+                        <div class="row mt-2">
+                            <button class="btn btn-labeled btn-secondary" type="button">
+                                <span class="btn-label"><i class="fa fa-arrow-left"></i></span>
+                                Left
+                            </button>
+                            <!-- Standard button with label on the right side-->
+                            <button class="btn btn-labeled btn-secondary" type="button">
+                                Right
+                                <span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
                     </div>
+                    <div class="tab-pane fade" id="repayment-schedule" role="tabpanel" aria-labelledby="payment">
+                        <div class="card card-default">
+                            <div class="card-header">Repayment Schedule</div>
+                            <div class="card-body">
+                                <div class="table-responsive table-bordered">
+                                    <table class="table table-sm">
+                                        <thead>
+                                        <tr class = "bg-gray">
+                                            <th style="border-left:1px; border-top: 1px !important;border-color:#1D68A7 !important;" class= "empty" colspan="4"></th>
+                                            <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="3">Loan Amount and Balance</th>
+                                            <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="3">Total Cost of Loan</th>
+                                            <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="2">Compulsory Savings</th>
+                                            <th class= "empty" colspan="3"></th>
+                                        </tr>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Date</th>
+                                            <th># Days</th>
+                                            <th style="border-left:1px;border-color:#1D68A7;!important;">Paid by</th>
+                                            <th  class= "boarder-left boarder-primary">Disbursement</th>
+                                            <th>Principle Due</th>
+                                            <th style="border-left:1px;border-color:#1D68A7;!important;"> Principle Balance</th>
+                                            <th>Interest due</th>
+                                            <th>Fees</th>
+                                            <th style="border-left:1px;border-color:#1D68A7;!important;">Penalties</th>
+                                            <th>Expected Savings</th>
+                                            <th style="border-left:1px;border-color:#1D68A7;!important;">Actual Savings</th>
+                                            <th>Total Due</th>
+                                            <th>Total Paid</th>
+                                            <th>Total OutStanding<th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>10-01-2020</td>
+                                            <td></td>
+                                            <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                            <td>50000.00</td>
+                                            <td ></td>
+                                            <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;">50000.00</td>
+                                            <td></td>
+                                            <td>0.00</td>
+                                            <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                            <td>5000.00</td>
+                                            <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td></td>
+                                        </tr>
+                                        @for($i=0; $i<3 ; $i++)
+                                            <tr>
+                                                <td>{{$i + 1}}</td>
+                                                <td>10-01-2020</td>
+                                                <td></td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>50000.00</td>
+                                                <td ></td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;">50000.00</td>
+                                                <td></td>
+                                                <td>0.00</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>5000.00</td>
+                                                <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                                <td>0.00</td>
+                                                <td>0.00</td>
+                                                <td></td>
+                                            </tr>
+                                        @endfor
+                                        <tr class = "bg-gray">
+                                            <td></td>
+                                            <td>Total</td>
+                                            <td>60</td>
+                                            <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                            <td>50000.00</td>
+                                            <td>14000.00</td>
+                                            <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                            <td>1000.00</td>
+                                            <td>1000.00</td>
+                                            <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;">0.00</td>
+                                            <td>5000.00</td>
+                                            <td style="border-left:1px;border-color:#1D68A7; border-top-color: #80808033; border-bottom:0px; !important;"></td>
+                                            <td>16000.00</td>
+                                            <td>7500.00</td>
+                                            <td>8500.00</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transaction tab pane -->
                     <div class="tab-pane fade" id="repayment-schedule" role="tabpanel" aria-labelledby="payment">
                         <div class="card card-default">
                         <div class="card-header">Repayment Schedule</div>
@@ -224,8 +407,8 @@
                                         <tr class = "bg-gray">
                                            <th style="border-left:1px; border-top: 1px !important;border-color:#1D68A7 !important;" class= "empty" colspan="4"></th>
                                            <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="3">Loan Amount and Balance</th>
-                                           <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="3">Total Cost of Loan</th>
-                                           <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="2">Compulsory Savings</th>
+                                           <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="3">Total Cost of Loan</th>
+                                           <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="2">Compulsory Savings</th>
                                            <th class= "empty" colspan="3"></th>
                                         </tr>
                                             <tr>
@@ -313,7 +496,8 @@
                                     <tr>
                                         <th data-priority="1">Account Nbr</th>
                                         <th>Branch</th>
-                                        <th>Loan Officer</th>Group Name</th>
+                                        <th>Loan Officer</th>
+                                        <th>Group Name</th>
                                         <th class="sort-alpha">Amount</th>
                                         <th class="sort-alpha">Balance</th>
                                         <th class="sort-alpha">Disbursed</th>
@@ -330,7 +514,7 @@
                                         <td>X</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><a href="/loan/details"><button class="btn btn-primary" type="submit"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><a href="/loan/details" class="btn btn-primary" type="submit"><i class="fa fa-eye"></i>&nbsp;view</a></td>
                                     </tr>
                                     <tr class="gradeC">
                                         <td>Trident</td>
@@ -340,7 +524,7 @@
                                         <td>C</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>Trident</td>
@@ -350,7 +534,7 @@
                                         <td>A</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>Trident</td>
@@ -360,7 +544,7 @@
                                         <td>A</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>Trident</td>
@@ -370,7 +554,7 @@
                                         <td>A</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>Trident</td>
@@ -380,19 +564,236 @@
                                         <td>A</td>
                                         <td>X</td>
                                         <td>X</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
+                                        <td><button class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp;view</button></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                        <!-- Min-statement and loan journal buttons -->
+                        <div class="row">
+                            <button class="btn btn-labeled btn-primary " type="button">
+                                <span class="btn-label"><i class="fa fa-note"></i></span>
+                                Min-statement
+                            </button>
+                            <button class="btn btn-labeled btn-primary " type="button">
+                                <span class="btn-label"><i class="fa fa-eye"></i></span>
+                                View Loan Journal
+                            </button>
+                        </div>
+                        <!-- Next and previous buttons -->
+                        <div class="row mt-2">
+                            <button class="btn btn-labeled btn-primary " type="button">
+                                <span class="btn-label"><i class="fa fa-arrow-left"></i></span>
+                                previous
+                            </button>
+                            <!-- Standard button with label on the right side-->
+                            <button class="btn btn-labeled btn-primary pl-2" type="button">
+                                Next
+                                <span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
                     </div>
+                    <!-- Security tab pane -->
                     <div class="tab-pane fade" id="security-tab" role="tabpanel" aria-labelledby="security">
-                        
+                        <div class="row">
+                            <h4>Guarantors</h4>
+                        </div>
+                        <div class="row">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Guarantor Type</th>
+                                    <th>Branch Name</th>
+                                    <th>Amount Guarantee</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <h4>Collateral</h4>
+                        </div>
+                        <div class="row">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Value</th>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <div class="row mt-2">
+                            <button class="btn btn-labeled btn-primary " type="button">
+                                <span class="btn-label"><i class="fa fa-arrow-left"></i></span>
+                                previous
+                            </button>
+                            <!-- Standard button with label on the right side-->
+                            <button class="btn btn-labeled btn-primary pl-2" type="button">
+                                Next
+                                <span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="standing-instruction-tab" role="tabpanel" aria-labelledby="standard-instruction">...</div>
-                    <div class="tab-pane fade" id="crb-tab" role="tabpanel" aria-labelledby="crb">...</div>
-                    <div class="tab-pane fade" id="group-allocation-tab" role="tabpanel" aria-labelledby="group">...</div>
-                    <div class="tab-pane fade" id="survey-tab" role="tabpanel" aria-labelledby="survey">...</div>
+                    <!-- Standing instruction pane -->
+                    <div class="tab-pane fade" id="standing-instruction-tab" role="tabpanel" aria-labelledby="standard-instruction">
+                        <div class="row mt-2">
+                            <!-- table -->
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>From Client</th>
+                                    <th>From Account Number</th>
+                                    <th>To Client</th>
+                                    <th>To Account Number</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- Button next  -->
+                        <div class="row mt-2">
+                            <button class="btn btn-labeled btn-primary " type="button">
+                                <span class="btn-label"><i class="fa fa-arrow-left"></i></span>
+                                previous
+                            </button>
+                            <!-- Standard button with label on the right side-->
+                            <button class="btn btn-labeled btn-primary pl-2" type="button">
+                                Next
+                                <span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Crb tab pane -->
+                    <div class="tab-pane fade" id="crb-tab" role="tabpanel" aria-labelledby="crb">
+                        <div class="row mt-2">
+                            <!-- table -->
+                            <div class="table-responsive table-bordered">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Client</th>
+                                        <th>Loan Account</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="row mt-2">
+                                    <button class="btn btn-labeled btn-primary ml-2 " type="button">
+                                        <span class="btn-label"><i class="fa fa-arrow-left"></i></span>
+                                        previous
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Group allocation tab pane -->
+                    <div class="tab-pane fade" id="group-allocation-tab" role="tabpanel" aria-labelledby="group">
+                        <div class="row mt-2">
+                            <!-- table -->
+                            <div class="table-responsive table-bordered">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Client Id</th>
+                                        <th>Client</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="row">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Survey tab pane -->
+                    <div class="tab-pane fade" id="survey-tab" role="tabpanel" aria-labelledby="survey">
+                        <div class="card-body">
+                            <table class="table table-striped my-4 w-100" id="datatable">
+                                <thead>
+                                    <tr>
+                                        <th data-priority="1">Account Nbr</th>
+                                        <th>Client Name</th>
+                                        <th>Savings Account Number/th>
+                                        <th class="sort-alpha" data-priority="2">Approved Shares</th>
+                                        <th class="sort-alpha" data-priority="2">Prodcut Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="gradeX">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0</td>
+                                        <td>Win 95+</td>
+                                        <td>4</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr class="gradeC">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 5.0</td>
+                                        <td>Win 95+</td>
+                                        <td>5</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 5.5</td>
+                                        <td>Win 95+</td>
+                                        <td>5.5</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 6</td>
+                                        <td>Win 98+</td>
+                                        <td>6</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td>7</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td>6</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.7</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.5</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -416,3 +817,38 @@
     //     });
 </script>
 @endsection
+
+<!-- Add charges Modal -->
+<div class="modal fade" id="charges" tabindex="-1" role="dialog" aria-labelledby="chargesLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="chargesLabel">Add Charges</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Charge *</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Date *</label>
+                        <input class="form-control" id="message-text">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Amount *</label>
+                        <input class="form-control" id="message-text">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End charges Modal -->

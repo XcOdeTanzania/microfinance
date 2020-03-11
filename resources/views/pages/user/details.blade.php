@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="row">         
+    <div class="row">
         <div class="col-lg-8">
             <div class="card card-default">
                 <div class="card-header d-flex align-items-center">
@@ -9,7 +9,7 @@
                     </div>
                     <div class="d-flex justify-content-end">
                         <div class="btn-group">
-                           
+
                         </div>
                     </div>
                 </div>
@@ -49,10 +49,10 @@
                                     <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputDetail8">System defined</label>
                                     <div class="col-xl-10 col-md-9 col-8"><input class="form-control" id="inputDetail8" type="text" placeholder="" /></div>
                                 </div>
-                               
-                              
+
+                              <div> <a href="/user/users"><button class="btn btn-primary"><i class="fas fa-arrow-left" style="color:white">&nbsp;Back</i></button></a></div>
                             </form>
-                            
+
                         </div>
                     </div>
                 </div>

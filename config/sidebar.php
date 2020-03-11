@@ -21,7 +21,7 @@ return [
     ],
     [
         'text' => 'Clients',
-        'route' => '#',
+        'route' => 'client',
         'icon' => 'icon-people',
         'alert' => '3',
         'label' => 'badge badge-info',
@@ -44,15 +44,15 @@ return [
             ],
             [
                 'text' => 'Transfer Client',
-                'route' => '#'
+                'route' => 'client/transfer'
             ]
         ],
         'translate' => 'sidebar.nav.DASHBOARD'
     ],
     [
         'text' => 'Groups',
-        'route' => '#',
-        'icon' => 'fa fa-users text-primary',
+        'route' => 'groups',
+        'icon' => 'fa fa-users text-black',
         'alert' => '30',
         'submenu' => [
             [
@@ -60,73 +60,22 @@ return [
                 'route' => '/groups/groups'
             ],
             [
-                'text'=> 'Pending Approval',
-                'route'=>'/groups/pendingapproval'
+                'text'=> 'Centers',
+                'route'=>'/groups/centers'
             ],
 
             [
-                'text'=> 'Closed Groups',
-                'route'=>'/groups/closedgroups'
+                'text'=> 'Transfer',
+                'route'=>'/groups/transfer'
             ],
     ],
     'translate' => 'sidebar.nav.DASHBOARD'
 ],
 
-[
-    'text' => 'Group Centres',
-    'route' => '#',
-    'icon' => 'fa fa-users',
-    'alert' => '30',
-    'submenu' => [
-
-            [
-                'text' => 'Active',
-                'route' => '/centers/active'
-            ],
-
-            [
-                'text'=> 'Pending Approval',
-                'route'=>'/centers/pendingapproval'
-            ],
-
-            [
-                'text'=> 'closed',
-                'route'=>'/centers/closed'
-            ],
-
-],
-'translate' => 'sidebar.nav.DASHBOARD'
-],
-
-
-[
-    'text' => 'Group Transfer',
-    'route' => '#',
-    'icon' => 'fa fa-car',
-    'alert' => '30',
-    'submenu' => [
-
-            [
-                'text' => 'Staff Pending Approval',
-                'route' => '/transfergroup/stafftransferapproval'
-            ],
-            [
-                'text'=> 'Group Pending Approval',
-                'route'=>'/transfergroup/pendingapproval'
-            ],
-
-            [
-                'text'=> 'History',
-                'route'=>'/transfergroup/history'
-            ],
-
-],
-'translate' => 'sidebar.nav.DASHBOARD'
-],
 
     [
         'text' => 'Loans',
-        'route' => '#',
+        'route' => 'loan',
         'icon' => 'icon-wallet',
         'alert' => '3',
         'label' => 'badge badge-info',
@@ -184,7 +133,7 @@ return [
     ],
     [
         'text' => 'Reports',
-        'route' => '#',
+        'route' => 'reports',
         'icon' => 'icon-book-open',
         'alert' => '30',
         'submenu' => [
@@ -229,7 +178,7 @@ return [
     ],
     [
         'text' => 'Accounting',
-        'route' => '#',
+        'route' => 'accounting',
         'icon' => 'icon-calculator',
         'alert' => '30',
         'submenu' => [
@@ -268,7 +217,7 @@ return [
     ],
     [
         'text' => 'Shares',
-        'route' => 'horizontal',
+        'route' => 'shares',
         'icon' => 'icon-graph',
         'submenu' => [
             [
@@ -295,7 +244,7 @@ return [
     ],
     [
         'text' => 'Task',
-        'route' => '#',
+        'route' => 'task',
         'icon' => 'icon-grid',
         'alert' => '30',
         'submenu' => [
@@ -315,7 +264,7 @@ return [
     ],
     [
         'text' => 'Setting',
-        'route' => '#',
+        'route' => 'setting',
         'icon' => 'icon-settings',
         'alert' => '30',
         'submenu' => [
@@ -390,7 +339,7 @@ return [
     ],
     [
         'text' => 'User',
-        'route' => 'horizontal',
+        'route' => 'user',
         'icon' => 'icon-user',
         'submenu' => [
             [

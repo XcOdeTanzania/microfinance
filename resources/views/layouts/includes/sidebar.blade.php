@@ -20,14 +20,14 @@
                                 <span class="user-block-name">{{Auth::user()->name}}</span>
                                 <span class="user-block-role">Designer</span>
                             </div>
-                            <div class="col">
+                            <div class="col ">
                                 <form action="{{route('logout')}}" method="POST">
                                     @csrf
                                 <div class="row justify-content-center">
 
-                                        <button  class="btn btn-info btn-circle  w-75 mt-2" >
-                                            <em class="fas fa-sign-out-alt"></em>
-                                            <small>Logout </small>
+                                        <button  class="btn btn-secondary btn-sm  w-75 mt-2" >
+                                            <em class="fas fa-sign-out-alt text-info"></em>
+                                            <small class="user-block-info text-info">Logout </small>
                                         </button>
 
                                 </div>
