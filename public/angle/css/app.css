@@ -1670,7 +1670,7 @@ a {
 
 a.text-muted:hover,
 a.text-muted:focus {
-  color: #748690;
+  color: #ffbfbf;
 }
 
 hr {
@@ -2057,7 +2057,7 @@ fieldset .form-group {
 }
 
 .alert-primary hr {
-  border-top-color: #468ee9;
+  border-top-color: #ffbfbf;
 }
 
 .alert-primary .alert-link {
@@ -2099,7 +2099,7 @@ fieldset .form-group {
 }
 
 .alert-info hr {
-  border-top-color: #19a9d5;
+  border-top-color: #ffbfbf;
 }
 
 .alert-info .alert-link {
@@ -2262,7 +2262,7 @@ a.badge-purple:focus {
 a.badge-purple:focus,
 a.badge-purple.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(114, 102, 186, 0.5);
+  box-shadow: 0 0 0 0.2rem #ffbfbf;
 }
 
 .alert-purple {
@@ -2428,7 +2428,7 @@ a.badge-purple.focus {
   color: #fff;
   background-color: #ffbfbf;
   border-color: #ffbfbf;
-  box-shadow: 0 0 0 0.2rem rgba(135, 125, 196, 0.5);
+  box-shadow: 0 0 0 0.2rem #ffbfbf;
 }
 
 .btn-purple.disabled,
@@ -2449,7 +2449,7 @@ a.badge-purple.focus {
 .btn-purple:not(:disabled):not(.disabled):active:focus,
 .btn-purple:not(:disabled):not(.disabled).active:focus,
 .show > .btn-purple.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(135, 125, 196, 0.5);
+  box-shadow: 0 0 0 0.2rem #ffbfbf;
 }
 
 .btn-pink {
@@ -3647,7 +3647,7 @@ a.badge-purple.focus {
 
 .bg-primary-light {
 
-  background-color: #8bb8f1;
+  background-color: #ffbfbf;
   color: #fff !important;
 }
 
@@ -3780,7 +3780,7 @@ a.badge-purple.focus {
 }
 
 .bg-purple-light {
-  background-color: #9289ca;
+  background-color: #ffbfbf;
   color: #fff !important;
 }
 
@@ -4422,7 +4422,7 @@ body .whirl.traditional:after {
 }
 
 body .whirl.line:after {
-  box-shadow: inset -10px 0px 0px rgba(93, 156, 236, 0.5);
+  box-shadow: inset -10px 0px 0px #ffbfbf;
 }
 
 .no-cssanimations body .whirl:before {
