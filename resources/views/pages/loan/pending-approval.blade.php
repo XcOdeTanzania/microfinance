@@ -1,4 +1,4 @@
-@extends('layouts.app');
+@extends('layouts.app')
 @section('content')
         <div class="content-heading">
             <div>Pending Approval</div>
@@ -15,7 +15,7 @@
                     <table class="table table-bordered table-striped my-4 w-100" id="datatable2">
                         <thead>
                             <tr>
-                                <th data-priority="1">Account Nbr</th>
+                                <th>Account Nbr</th>
                                 <th>Branch</th>
                                 <th>Loan Officer</th>
                                 <th>Client Name</th>
@@ -23,7 +23,7 @@
                                 <th>Amount</th>
                                 <th>Created Date</th>
                                 <th>Product Name</th>
-                                <th data-priority="2">View</th>
+                                <th>View</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,9 +39,8 @@
                             <td>
                             <a href="{{ route('loan.pending', 86) }}">
                                     <button class="btn btn-primary btn-mini">
-                                        <i class="icon-white icon-eye-open">
-                                            &nbsp;View
-                                        </i>
+                                        <i class="fas fa-eye"></i>
+                                        &nbsp;view
                                     </button>
                                 </a>
                             </td>
@@ -58,9 +57,8 @@
                             <td>
                                 <a href="">
                                     <button class="btn btn-primary btn-mini">
-                                        <i class="icon-white icon-eye-open">
-                                            &nbsp;View
-                                        </i>
+                                        <i class="fas fa-eye"></i>
+                                        &nbsp;view
                                     </button>
                                 </a>
                             </td>
@@ -77,9 +75,8 @@
                             <td>
                                 <a href="">
                                     <button class="btn btn-primary btn-mini">
-                                        <i class="icon-white icon-eye-open">
-                                            &nbsp;View
-                                        </i>
+                                        <i class="fas fa-eye"></i>
+                                        &nbsp;view
                                     </button>
                                 </a>
                             </td>
@@ -96,9 +93,8 @@
                             <td>
                                 <a href="">
                                     <button class="btn btn-primary btn-mini">
-                                        <i class="icon-white icon-eye-open">
-                                            &nbsp;View
-                                        </i>
+                                        <i class="fas fa-eye"></i>
+                                        &nbsp;view
                                     </button>
                                 </a>
                             </td>
@@ -115,9 +111,8 @@
                             <td>
                                 <a href="">
                                     <button class="btn btn-primary btn-mini">
-                                        <i class="icon-white icon-eye-open">
-                                            &nbsp;View
-                                        </i>
+                                        <i class="fas fa-eye"></i>
+                                        &nbsp;view
                                     </button>
                                 </a>
                             </td>
