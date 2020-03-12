@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Charge;
+use App\Guarantor;
 use Illuminate\Http\Request;
 
-class ChargesController extends Controller
+class GuarantorController extends Controller
 {
     //controller functions
 }
