@@ -54,7 +54,7 @@
         <div class="modal-content">
             <form>
                 <div class="modal-header">
-                    <h4 class="modal-title-centred" > Create a General Ledger Account</h4>
+                    <h4 class="modal-title-centred" >Create Journal Entry</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -161,7 +161,7 @@
                             </div><br>
                             <div class="form-group">
                                 <label><b>Comment</b></label><br>
-                                <textarea id="description" rows="4" cols="100"></textarea>
+                                <textarea id="description" rows="4" cols="110"></textarea>
 
                             </div>
                     </fieldset>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Collateral extends Model {
     use SoftDeletes;
 
-    protected$fillable = [
+    protected $fillable = [
         'id',
         'type',
         'value',
