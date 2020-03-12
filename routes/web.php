@@ -285,8 +285,7 @@ Route::group([
         return view('pages.loan.pending', ['id' => $id]);
     })->name('loan.pending');
     Route::get('calculator', function () {
-
-
+    });
 
     Route::get('calculator', function() {
         return view('pages.loan.calculator');
