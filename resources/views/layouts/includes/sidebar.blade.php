@@ -18,7 +18,7 @@
                             <!-- Name and Job-->
                             <div class="user-block-info">
                                 <span class="user-block-name">{{Auth::user()->name}}</span>
-                                <span class="user-block-role">Designer</span>
+                                <span class="user-block-role">Administrator</span>
                             </div>
                             <div class="col ">
                                 <form action="{{route('logout')}}" method="POST">

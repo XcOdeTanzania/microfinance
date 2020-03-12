@@ -13,13 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->middleware('auth');
 
 Route::get('/demo', function () {
     return view('demo');
 });
+
+Route::get('/lock', function () {
+    return view('pages/lock');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -237,10 +246,18 @@ Route::group(['prefix' => 'loan'], function() {
         return view('pages.loan.pending-approval');
     });
 
+    // pending second approval loan route
+    Route::get('pendingSecondApproval', function() {
+        return view('pages.loan.pendingSecondApproval');
+    });
+
     // pending load details route
     Route::get('loan/{id}', function($id) {
         return view('pages.loan.pending', ['id' => $id]);
     })->name('loan.pending');
+
+    
+
     Route::get('calculator', function() {
         return view('pages.loan.calculator');
     });

@@ -10,7 +10,7 @@
           <form class="form-horizontal" method="get" action="/">
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Account</label>
-                   <div class="col-md-10"><select name="accounttag" class="form-control" id="accountag">
+                   <div class="col-md-6><select name="accounttag" class="form-control" id="accountag">
                     <option >Select</option>
                     <option></option>
                     <option> </option>
@@ -20,7 +20,7 @@
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Bracnh</label>
-                   <div class="col-md-10"><select name="accounttag" class="form-control" id="accountag">
+                   <div class="col-md-6"><select name="accounttag" class="form-control" id="accountag">
                     <option >Select</option>
                     <option></option>
                     <option> </option>
@@ -30,14 +30,14 @@
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Transaction From</label>
-                   <div class="col-md-10"><input class="form-control" id="input-id-1" type="text"></div>
+                   <div class="col-md-6"><input class="form-control" id="input-id-1" type="text"></div>
                 </div>
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">To</label>
-                   <div class="col-md-10"><input class="form-control" id="input-id-1" type="text"></div>
+                   <div class="col-md-6"><input class="form-control" id="input-id-1" type="text"></div>
                 </div><br>
-                <div><button class="btn btn-primary" type="filter">Filter</button></div>
+                <div><a href=""><button class="btn btn-primary" type="submit">Filter</button></a></div>
              </fieldset>
 
           </form>
@@ -161,7 +161,7 @@
                             </div><br>
                             <div class="form-group">
                                 <label><b>Comment</b></label><br>
-                                <textarea id="description" rows="4" cols="120"></textarea>
+                                <textarea id="description" rows="4" cols="100"></textarea>
 
                             </div>
                     </fieldset>

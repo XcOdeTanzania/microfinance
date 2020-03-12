@@ -8,70 +8,95 @@
 
     <fieldset>
         <div class="form-group row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-2">
 
-            <div class="col-md-10">
-                <div class="form-row">
-                    <div class="col-lg-4 mb-3">
                         <div class="form-group">
-                            <label>Currency</label>
-                            <select name="accounttype" class="form-control" id="accounttype">
-                                <option >Select</option>
+                            <label for="product"><b>Product</b></label>
+                            <select name="accounttag" class="form-control" id="accountag">
+                                <option >Select </option>
                                 <option></option>
-                                <option></option>
+                                <option> </option>
                                 <option> </option>
                             </select>
                         </div>
-                        </div>
+
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <span class="form-text"><b>Loan Term</b></span>
+                        <input class="form-control" type="text"  placeholder="" />
+
+                    </div>
+                    <div class="col-md-4 mb-2">
                     </div>
 
-                    <div class="col-lg-4 mb-3">
+                    <div class="col-md-6 mb-2">
+                        <span class="form-text"><b>Loan Ammount</b></span>
+                        <input class="form-control" type="text"  placeholder="" />
+
+                    </div><br><br>
+                    <div class="col-md-4 mb-2">
+                    </div>
+                    <div class="col-md-4 mb-2">
                         <div class="form-group">
-                            <label>Loan Ammount</label>
-                            <input type="text" class="form-control" required>
+                            <span class="form-text"><b>Loan Term</b></span>
+                            <select name="accounttag" class="form-control" id="accountag">
+                                <option >Select </option>
+                                <option></option>
+                                <option> </option>
+                                <option> </option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="col-lg-4 mb-3">
-
-                            <label>Loan Term</label>
-                            <input type="text" class="form-control" required>
 
                     </div>
+                    <div class="col-md-4 mb-2">
+                        <span class="form-text">.<b></b></span>
+                        <div class="form-group">
+                            <select name="accounttag" class="form-control" id="accountag">
+                                <option >Select </option>
+                                <option></option>
+                                <option> </option>
+                                <option> </option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 mb-2">
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="form-group">
+                            <span class="form-text"><b>Repayment Frequency </b></span>
+                            <input class="form-control" type="text"  placeholder="month" />
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <span class="form-text">.<b></b></span>
+                        <div class="form-group">
+                            <select name="accounttag" class="form-control" id="accountag">
+                                <option >Select </option>
+                                <option></option>
+                                <option> </option>
+                                <option> </option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 mb-3">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <span class="form-text"><b>Date Expected</b></span>
+                        <input class="form-control" type="date"  placeholder="" />
+
+                    </div><br>
                 </div>
-
-                <div class="col-lg-3 mb-3">
-                    <label for="validation">Repayment Frequency</label>
-                    <input class="form-control" id="validation" type="text" placeholder="1" required="" />
-
-                </div>
-                <div class="col-lg-3 mb-3">
-
-                    <label>.</label>
-                    <select name="accounttype" class="form-control" id="accounttype">
-                        <option >Month</option>
-                        <option>Week</option>
-                        <option>Day</option>
-                        <option>Year </option>
-                    </select>
+                <button class="btn btn-primary"><i class="fas fa-arrow-left">&nbsp; Calculate</i></button>
+                <br>
             </div>
-                </div>
-
-                <div class="form-group">
-                <div class="col-lg-3 mb-3">
-                    <label for="validation">Rate</label>
-                    <input class="form-control " id="validation" type="text" placeholder="%" required="" />
-                </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-3 mb-3">
-                        <label for="validation">Expected Date</label>
-                        <input class="form-control " id="validation" type="date" placeholder="%" required="" />
-                    </div>
-                    </div>
-                <div class="form-group">
-
-                <button class="btn btn-primary" type="submit"><em class="fa mr-2 fas fa-arrow-right"></em>Calculate</button>
-            </div>
-        
+        </div>
     </fieldset>
     @endsection
     @section('styles')@endsection

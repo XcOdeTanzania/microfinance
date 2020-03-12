@@ -35,7 +35,7 @@
             <!-- END User avatar toggle-->
             <!-- START lock screen-->
             <li class="nav-item d-none d-md-block">
-                <a class="nav-link" href="#" title="Lock screen">
+                <a class="nav-link" href="/lock" title="Lock screen">
                     <em class="icon-lock"></em>
                 </a>
             </li>

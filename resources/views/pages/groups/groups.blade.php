@@ -22,7 +22,7 @@
                   <form class="form-horizontal" method="get" action="">
                       <fieldset>
                           <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Branch</label>
-                              <div class="col-md-10"><select name="accounttag" class="form-control" id="accountag">
+                              <div class="col-md-6"><select name="accounttag" class="form-control" id="accountag">
                                       <option >Select</option>
                                       <option></option>
                                       <option> </option>
@@ -32,7 +32,7 @@
                       </fieldset>
                       <fieldset>
                           <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Loan Office</label>
-                              <div class="col-md-10"><select name="accounttag" class="form-control" id="accountag">
+                              <div class="col-md-6"><select name="accounttag" class="form-control" id="accountag">
                                       <option >Select</option>
                                       <option></option>
                                       <option> </option>

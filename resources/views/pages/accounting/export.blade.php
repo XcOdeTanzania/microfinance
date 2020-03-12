@@ -9,7 +9,7 @@
           <form class="form-horizontal" method="get" action="/">
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Office</label>
-                   <div class="col-md-10"><select name="accounttag" class="form-control" id="accountag">
+                   <div class="col-md-6"><select name="accounttag" class="form-control" id="accountag">
                     <option >Select</option>
                     <option></option>
                     <option> </option>
@@ -19,7 +19,7 @@
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Start Clouser</label>
-                   <div class="col-md-10"><select name="accounttag" type="date" class="form-control" id="accountag">
+                   <div class="col-md-6"><select name="accounttag" type="date" class="form-control" id="accountag">
                     <option >Select</option>
                     <option></option>
                     <option> </option>
@@ -29,7 +29,7 @@
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">End Clouser</label>
-                   <div class="col-md-10"><select name="accounttag" type="date" class="form-control" id="accountag">
+                   <div class="col-md-6"><select name="accounttag" type="date" class="form-control" id="accountag">
                     <option >Select</option>
                     <option></option>
                     <option> </option>
@@ -39,12 +39,12 @@
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">References</label>
-                   <div class="col-md-10"><input class="form-control" id="input-id-1" type="text"></div>
+                   <div class="col-md-6"><input class="form-control" id="input-id-1" type="text"></div>
                 </div>
              </fieldset>
              <fieldset>
                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">File Format</label>
-                    <div class="col-md-10"><select name="accounttag" type="date" class="form-control" id="accountag">
+                    <div class="col-md-6"><select name="accounttag" type="date" class="form-control" id="accountag">
                      <option >Select</option>
                      <option></option>
                      <option> </option>
@@ -59,9 +59,8 @@
                <div><button class="btn btn-primary" type="download"><span class="fas fa-file">&nbsp; </span>Download Report</button></div>
             </fieldset>
           </form>
-       </div>
+    </div>
     </div><!-- END card-->
- </div>
  @endsection
  @section('styles')@endsection
  @section('scripts')@endsection
