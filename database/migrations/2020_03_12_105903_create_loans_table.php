@@ -15,6 +15,22 @@ class CreateLoansTable extends Migration
     {
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
+
+            $table->integer('loan_type_id');
+            $table->double('top_up');
+            $table->double('amount');
+            $table->string('orign_of_fund');
+            $table->string('loan_term');
+            $table->string('repayment_frequency_type');
+            $table->integer('repayment_frequency_number');
+            $table->double('interest_rate');
+            $table->date('disbursement_date');
+            $table->double('grace_on_principal_payment');
+            $table->double('grace_on_principal_interest');
+            $table->string('loan_purpose');
+            $table->boolean('auto_create_standing_instruction');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
