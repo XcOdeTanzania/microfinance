@@ -164,49 +164,31 @@ Route::group([
     'middleware' => 'auth'
 ], function () {
     // client reports route
-    Route::get('clientReports', function () {
-        return view('pages.reports.client-reports');
-    });
+    Route::get('clientReports', ['uses' => 'ReportController@clientReportsPage']);
 
     // group reports route
-    Route::get('groupReports', function () {
-        return view('pages.reports.group-reports');
-    });
+    Route::get('groupReports', ['uses' => 'ReportController@groupReportsPage']);
 
     // savings Reports route
-    Route::get('savingReports', function () {
-        return view('pages.reports.saving-reports');
-    });
+    Route::get('savingReports', ['uses' => 'ReportController@savingReportsPage']);
 
     // loan reports route
-    Route::get('loanReports', function () {
-        return view('pages.reports.loan-reports');
-    });
+    Route::get('loanReports', ['uses' => 'ReportController@loanReportsPage']);
 
     // organisation reports route
-    Route::get('organisationReports', function () {
-        return view('pages.reports.organisation-reports');
-    });
+    Route::get('organisationReports', ['uses' => 'ReportController@organisationReportsPage']);
 
     // financial reports route
-    Route::get('financialReports', function () {
-        return view('pages.reports.financial-reports');
-    });
+    Route::get('financialReports', ['uses' => 'ReportController@financialReportsPage']);
 
     // Report schedular route
-    Route::get('reportSchedular', function () {
-        return view('pages.reports.report-schedular');
-    });
+    Route::get('reportSchedular', ['uses' => 'ReportController@reportSchedularPage']);
 
     // Data export route
-    Route::get('dataExport', function () {
-        return view('pages.reports.data-export');
-    });
+    Route::get('dataExport', ['uses' => 'ReportController@dataExportPage']);
 
     // report queue route
-    Route::get('reportQueue', function () {
-        return view('pages.reports.report-queue');
-    });
+    Route::get('reportQueue', ['uses' => 'ReportController@reportQueuePage']);
 });
 
 // Report menu route end
