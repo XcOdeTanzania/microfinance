@@ -15,6 +15,9 @@ class CreateLoanTypeTable extends Migration
     {
         Schema::create('loan_type', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
