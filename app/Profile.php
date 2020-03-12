@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Profile extends Model
 {
 
-    use SoftDeletes;
+   use SoftDeletes;
 
     protected $fillable = [
         'first_name',
