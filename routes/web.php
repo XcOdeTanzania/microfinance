@@ -130,25 +130,15 @@ Route::group([
 ], function () {
 
     // shares active route
-    Route::get('/shares/active', function () {
-        return view('pages.shares.active');
-    });
+    Route::get('/shares/active', ['uses' => 'ShareController@sharesPage'])->name('shares');
     // share pending route
-    Route::get('/shares/pending', function () {
-        return view('pages.shares.pending');
-    });
+    Route::get('/shares/pending', ['uses' => 'ShareController@pendingSharesPage'])->name('pending.shares');
     // share waiting route
-    Route::get('/shares/waiting', function () {
-        return view('pages.shares.waiting');
-    });
+    Route::get('/shares/waiting', ['uses' => 'ShareController@waitingSharesPage'])->name('waiting.shares');
     // shares rejected route
-    Route::get('/shares/rejected', function () {
-        return view('pages.shares.rejected');
-    });
+    Route::get('/shares/rejected', ['uses' => 'ShareController@rejectedSharesPage'])->name('rejected.shares');
     // shares closed route
-    Route::get('/shares/closed', function () {
-        return view('pages.shares.closed');
-    });
+    Route::get('/shares/closed', ['uses' => 'ShareController@closedSharesPage']);
 });
 //END SHARES ROUTE
 // ==============================

@@ -8,78 +8,56 @@ use Illuminate\Http\Request;
 class ShareController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Displays shares.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function sharesPage()
     {
-        //
+        return  view('pages.shares.active');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
-     * Store a newly created resource in storage.
+     * Displays pending shares.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function pendingSharesPage()
     {
-        //
+        return view('pages.shares.pending');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Share  $share
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Share $share)
-    {
-        //
-    }
 
     /**
-     * Show the form for editing the specified resource.
+     * Displays waiting shares.
      *
-     * @param  \App\Share  $share
      * @return \Illuminate\Http\Response
      */
-    public function edit(Share $share)
+    public function waitingSharesPage()
     {
-        //
+        return view('pages.shares.waiting');
     }
 
-    /**
-     * Update the specified resource in storage.
+     /**
+     * Displays rejected shares.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Share  $share
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Share $share)
+    public function rejectedSharesPage()
     {
-        //
+        return view('pages.shares.rejected');
     }
 
-    /**
-     * Remove the specified resource from storage.
+
+
+     /**
+     * Displays closed shares.
      *
-     * @param  \App\Share  $share
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Share $share)
+    public function closedSharesPage()
     {
-        //
+        return view('pages.shares.closed');
     }
 }

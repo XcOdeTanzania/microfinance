@@ -15,6 +15,14 @@ class CreateSharesTable extends Migration
     {
         Schema::create('shares', function (Blueprint $table) {
             $table->id();
+
+            $table->string('account_name');
+            $table->integer('client_id');
+            $table->string('saving_account_number');
+            $table->double('approved_share');
+            $table->string('product_name');
+            
+            $table->softDeletes();
             $table->timestamps();
         });
     }
