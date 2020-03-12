@@ -158,6 +158,7 @@ Route::group([
     });
 });
 
+    
 // Report menu routes start
 
 Route::group([
@@ -223,6 +224,8 @@ Route::group([
     Route::get('loan/{id}', ['uses' => 'LoanController@loanPendingDetailsPage'])->name('loan.pending');
     Route::get('calculator', ['uses' => 'LoanController@loanCalculatorPage'])->name('loan.calculator');
 });
+
+   
 
 
 //setting routes start

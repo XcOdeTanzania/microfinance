@@ -12,8 +12,11 @@ class Clients extends Model
 
     protected $fillable = [
         'user_id',
-        'business_id',
+        'business_id', 
         'terms_and_condition'
     ];
 
+    protected $dates = [
+
+    ];
 }
