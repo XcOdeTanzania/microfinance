@@ -8,78 +8,75 @@ use Illuminate\Http\Request;
 class AccountController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display accounting charts.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function chartOfAccountsPage()
     {
-        //
+        return view('pages.accounting.chartsOfAccounts');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display journals.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function journalsPage()
     {
-        //
+        return view('pages.accounting.journals');
+    }
+
+
+    /**
+     * Display account reconciliation.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function accountReconciliationPage()
+    {
+        return view('pages.accounting.reconciliation');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display account closed period.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function accountClosePeriodPage()
     {
-        //
+        return view('pages.accounting.closeperiod');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Account  $account
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Account $account)
-    {
-        //
-    }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display account export.
      *
-     * @param  \App\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function edit(Account $account)
+    public function accountExportPage()
     {
-        //
+        return view('pages.accounting.export');
     }
 
-    /**
-     * Update the specified resource in storage.
+     /**
+     * Display account periodic accrual.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Account $account)
+    public function accountPeriodicAccrualPage()
     {
-        //
+        return view('pages.accounting.periodicaccrual');
     }
 
-    /**
-     * Remove the specified resource from storage.
+     /**
+     * Display account journal template.
      *
-     * @param  \App\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Account $account)
+    public function accountJournalTemplatePage()
     {
-        //
+        return view('pages.accounting.journaltemplate');
     }
+
 }

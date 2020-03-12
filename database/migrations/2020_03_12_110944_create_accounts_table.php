@@ -15,6 +15,17 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
+
+            $table->string('name');
+            $table->string('type');
+            $table->string('gl_code');
+            $table->integer('external_id');
+            $table->string('tag');
+            $table->string('usage');
+            $table->boolean('manual_entries_allowed');
+            $table->boolean('enable_bank_reconciliation');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

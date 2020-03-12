@@ -86,37 +86,19 @@ Route::group([
     'prefix' => '',
     'middleware' => 'auth'
 ], function () {
-    Route::get('/accounting/chartsOfAccounts', function () {
-        return view('pages.accounting.chartsOfAccounts');
-    });
+    Route::get('/accounting/chartsOfAccounts',['uses'=>'AccountController@chartOfAccountsPage'])->name('account.charts');
 
-    Route::get('/accounting/journals', function () {
-        return view('pages.accounting.journals');
-    });
+    Route::get('/accounting/journals',['uses'=>'AccountController@journalsPage'])->name('account.journals');
 
-    Route::get('/accounting/reconciliation', function () {
-        return view('pages.accounting.reconciliation');
-    });
+    Route::get('/accounting/reconciliation', ['uses' => 'AccountController@accountReconciliationPage'])->name('account.reconciliation');
 
-    Route::get('/accounting/closeperiod', function () {
-        return view('pages.accounting.closeperiod');
-    });
+    Route::get('/accounting/closeperiod', ['uses' => 'AccountController@accountClosePeriodPage'])->name('account.close.period');
 
-    Route::get('/accounting/export', function () {
-        return view('pages.accounting.export');
-    });
+    Route::get('/accounting/export', ['uses' => 'AccountController@accountExportPage'])->name('account.export');
 
-    Route::get('/accounting/periodicaccrual', function () {
-        return view('pages.accounting.periodicaccrual');
-    });
+    Route::get('/accounting/periodicaccrual', ['uses' => 'AccountController@accountPeriodicAccrualPage'])->name('account.periodic.accurual');
 
-    Route::get('/accounting/journaltemplate', function () {
-        return view('pages.accounting.journaltemplate');
-    });
-
-    Route::get('/accounting/journals', function () {
-        return view('pages.accounting.journals');
-    });
+    Route::get('/accounting/journaltemplate', ['uses' => 'AccountController@accountJournalTemplatePage'])->name('account.journal.template');
 });
 
 //  Accounting Roots  end
