@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Identification extends Model
-{
+{ 
     //
     use SoftDeletes;
 
