@@ -36,7 +36,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Group for the Routes that are to be protected by auth middleware
 Route::group([
-    'name' => 'auth.',
+    'name' => 'Client',
     'prefix' => '',
     'middleware' => 'auth'
 ], function () {
@@ -44,135 +44,160 @@ Route::group([
     // Place your routes here
 
     //Client Routes
-    Route::get('/client/register',function (){
+    Route::get('/client/register', function () {
         return view('pages.client.register');
     })->name('client.register');
 
-    Route::get('/client/pendingApproval',function (){
+    Route::get('/client/pendingApproval', function () {
         return view('pages.client.pendingApproval');
     })->name('client.pendingApproval');
 
-    Route::get('/client/closed',function (){
+    Route::get('/client/closed', function () {
         return view('pages.client.closed');
     })->name('client.closed');
 
-    Route::get('/client/rejected',function (){
+    Route::get('/client/rejected', function () {
         return view('pages.client.rejected');
     })->name('client.rejected');
 
-    Route::get('client/transfer',function (){
+    Route::get('client/transfer', function () {
         return view('pages.client.transfer');
     })->name('client.transfer');
 
-    // Loan Routes
-    Route::get('/loan/create',function (){
-        return view('pages.loan.create');
-    })->name('loan.create');
+});
+
+
+// Task Routes
+Route::group([
+    'name' => 'Tasks.',
+    'prefix' => '',
+    'middleware' => 'auth'
+], function () {
+
+    Route::get('/task/pendingApproval', function () {
+        return view('pages.task.pendingApproval');
+    });
+
+    Route::get('/task/myActions', function () {
+        return view('pages.task.myActions');
+    });
 
 });
 
 
-Route::get('/client/register',function (){
-    return view('pages.client.register');
-})->name('client.register')->middleware('auth');
+// Accounting Routs
 
-// Acoounting Roots
-Route::get('/accounting/chartsOfAccounts',function (){
-    return view('pages.accounting.chartsOfAccounts');
+Route::group([
+    'name' => 'Accounts.',
+    'prefix' => '',
+    'middleware' => 'auth'
+], function () {
+    Route::get('/accounting/chartsOfAccounts', function () {
+        return view('pages.accounting.chartsOfAccounts');
+    });
+
+    Route::get('/accounting/journals', function () {
+        return view('pages.accounting.journals');
+    });
+
+    Route::get('/accounting/reconciliation', function () {
+        return view('pages.accounting.reconciliation');
+    });
+
+    Route::get('/accounting/closeperiod', function () {
+        return view('pages.accounting.closeperiod');
+    });
+
+    Route::get('/accounting/export', function () {
+        return view('pages.accounting.export');
+    });
+
+    Route::get('/accounting/periodicaccrual', function () {
+        return view('pages.accounting.periodicaccrual');
+    });
+
+    Route::get('/accounting/journaltemplate', function () {
+        return view('pages.accounting.journaltemplate');
+    });
+
+    Route::get('/accounting/journals', function () {
+        return view('pages.accounting.journals');
+    });
 });
 
-Route::get('/task/pendingApproval',function(){
-    return view('pages.task.pendingApproval');
-});
-
-Route::get('/task/myActions',function(){
-    return view('pages.task.myActions');
-});
-
-
-Route::get('/accounting/journals',function (){
-    return view('pages.accounting.journals');
-});
-
-Route::get('/accounting/reconciliation',function (){
-    return view('pages.accounting.reconciliation');
-});
-
-Route::get('/accounting/closeperiod',function (){
-    return view('pages.accounting.closeperiod');
-});
-
-Route::get('/accounting/export',function (){
-    return view('pages.accounting.export');
-});
-
-Route::get('/accounting/periodicaccrual',function (){
-    return view('pages.accounting.periodicaccrual');
-});
-
-Route::get('/accounting/journaltemplate',function (){
-    return view('pages.accounting.journaltemplate');
-});
 //  Accounting Roots  end
 
 
 // SHARES ROUTES
+Route::group([
+    'name' => 'Shares.',
+    'prefix' => '',
+    'middleware' => 'auth'
+], function () {
+
 // shares active route
-Route::get('/shares/active', function() {
-    return view('pages.shares.active');
-});
+    Route::get('/shares/active', function () {
+        return view('pages.shares.active');
+    });
 // share pending route
-Route::get('/shares/pending', function(){
-    return view('pages.shares.pending');
-});
+    Route::get('/shares/pending', function () {
+        return view('pages.shares.pending');
+    });
 // share waiting route
-Route::get('/shares/waiting', function() {
-    return view('pages.shares.waiting');
-});
+    Route::get('/shares/waiting', function () {
+        return view('pages.shares.waiting');
+    });
 // shares rejected route
-Route::get('/shares/rejected', function(){
-    return view('pages.shares.rejected');
-});
+    Route::get('/shares/rejected', function () {
+        return view('pages.shares.rejected');
+    });
 // shares closed route
-Route::get('/shares/closed', function(){
-    return view('pages.shares.closed');
+    Route::get('/shares/closed', function () {
+        return view('pages.shares.closed');
+    });
 });
 //END SHARES ROUTE
 // ==============================
 
-Route::get('/accounting/journals',function (){
-    return view('pages.accounting.journals');
-});
-
 
 // Users Route
-Route::get('/user/users',function(){
-    return view('pages.user.users');
-});
+Route::group([
+    'name' => 'User.',
+    'prefix' => '',
+    'middleware' => 'auth'
+], function () {
 
-Route::get('/user/roles',function(){
-    return view('pages.user.roles');
-});
+    Route::get('/user/users', function () {
+        return view('pages.user.users');
+    });
 
-Route::get('/user/permissions',function(){
-    return view('pages.user.permissions');
-});
+    Route::get('/user/roles', function () {
+        return view('pages.user.roles');
+    });
+
+    Route::get('/user/permissions', function () {
+        return view('pages.user.permissions');
+    });
 
 // User details
-Route::get('/user/details',function(){
-    return view('pages.user.details');
-});
+    Route::get('/user/details', function () {
+        return view('pages.user.details');
+    });
 
 //User role
-Route::get('/user/role',function(){
-    return view('pages.user.role');
+    Route::get('/user/role', function () {
+        return view('pages.user.role');
+    });
+
 });
-
-
 
 // Report menu routes start
 
-Route::group(['prefix' => 'reports'], function() {
+Route::group([
+    'name' => 'Reports',
+    'prefix' => 'reports',
+    'middleware' => 'auth'
+], function () {
     // client reports route
     Route::get('clientReports', function () {
         return view('pages.reports.client-reports');
@@ -224,25 +249,29 @@ Route::group(['prefix' => 'reports'], function() {
 
 // start Loan routes
 
-Route::group(['prefix' => 'loan'], function() {
+Route::group([
+    'name' => 'Loan',
+    'prefix' => 'loan',
+    'middleware' => 'auth'
+], function () {
 
     //create loans route
-    Route::get('create', function() {
+    Route::get('create', function () {
         return view('pages.loan.create');
     });
 
     // view all loans
-    Route::get('loans', function() {
+    Route::get('loans', function () {
         return view('pages.loan.view');
     });
 
     // view loan detail routes
-    Route::get('details', function() {
+    Route::get('details', function () {
         return view('pages.loan.details');
     });
 
     // pending approval load route
-    Route::get('pending-approval', function() {
+    Route::get('pending-approval', function () {
         return view('pages.loan.pending-approval');
     });
 
@@ -252,79 +281,67 @@ Route::group(['prefix' => 'loan'], function() {
     });
 
     // pending load details route
-    Route::get('loan/{id}', function($id) {
+    Route::get('loan/{id}', function ($id) {
         return view('pages.loan.pending', ['id' => $id]);
     })->name('loan.pending');
+    Route::get('calculator', function () {
 
-    
+
 
     Route::get('calculator', function() {
         return view('pages.loan.calculator');
     });
 });
+
+
 //setting routes start
-Route::get('/setting/blacklist', function () {
-    return view('pages.setting.blacklist');
-});
+Route::group([
+    'name' => 'Setting',
+    'prefix' => '',
+    'middleware' => 'auth'
+], function () {
 
-Route::get('/setting/productgroup', function () {
-    return view('pages.setting.productgroup');
-});
 
-Route::get('/setting/financialactivity', function () {
-    return view('pages.setting.financialactivity');
-});
+    Route::get('/setting/blacklist', function () {
+        return view('pages.setting.blacklist');
+    });
 
-Route::get('/setting/currencies', function () {
-    return view('pages.setting.currencies');
-});
+    Route::get('/setting/productgroup', function () {
+        return view('pages.setting.productgroup');
+    });
 
+    Route::get('/setting/financialactivity', function () {
+        return view('pages.setting.financialactivity');
+    });
+
+    Route::get('/setting/currencies', function () {
+        return view('pages.setting.currencies');
+    });
+
+});
 // setting routes ends
 
 // Groups routes starts
 
-Route::get('/groups/groups', function () {
-    return view('pages.groups.groups');
-});
 
-Route::get('/groups/centers', function () {
-    return view('pages.groups.centers');
-});
+Route::group([
+    'name' => 'Groups.',
+    'prefix' => '',
+    'middleware' => 'auth'
+], function () {
 
-Route::get('/groups/transfer', function () {
-    return view('pages.groups.transfer');
-});
+    Route::get('/groups/groups', function () {
+        return view('pages.groups.groups');
+    });
 
-Route::get('/groups/pendingapproval', function () {
-    return view('pages.groups.pendingapproval');
-});
+    Route::get('/groups/centers', function () {
+        return view('pages.groups.centers');
+    });
 
-Route::get('/groups/closedgroups', function () {
-    return view('pages.groups.closedgroups');
-});
+    Route::get('/groups/transfer', function () {
+        return view('pages.groups.transfer');
+    });
 
-Route::get('/centers/active', function () {
-    return view('pages.centers.active');
-});
-
-Route::get('/centers/pendingapproval', function () {
-    return view('pages.centers.pendingapproval');
-});
-
-Route::get('/centers/closed', function () {
-    return view('pages.centers.closed');
-});
-
-Route::get('/transfergroup/history', function () {
-    return view('pages.transfergroup.history');
-});
-
-Route::get('/transfergroup/pendingapproval', function () {
-    return view('pages.transfergroup.pendingapproval');
-});
-
-Route::get('/transfergroup/stafftransferapproval', function () {
-    return view('pages.transfergroup.stafftransferapproval');
 });
 
 

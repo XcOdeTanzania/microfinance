@@ -11,7 +11,7 @@
 @section('content')
     <div class="content-heading">
         <div>
-            Active
+            Centers
         </div>
     </div>
     <div class="card">
