@@ -8,78 +8,72 @@ use Illuminate\Http\Request;
 class LoanController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a create loans page.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function createLoanPage()
     {
-        //
+        return view('pages.loan.create');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display  all loans.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function loansPage()
     {
-        //
+        return view('pages.loan.view');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display  loan details.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function loanDetailsPage()
     {
-        //
+        return view('pages.loan.details');
     }
 
     /**
-     * Display the specified resource.
+     * Display  loans pending approval.
      *
-     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function show(Loan $loan)
+    public function loanPendingApprovalPage()
     {
-        //
+        return view('pages.loan.pending-approval');
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display  loans pending second approval.
      *
-     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Loan $loan)
+    public function loanPendingSecondApprovalPage()
     {
-        //
+        return view('pages.loan.pendingSecondApproval');
     }
 
     /**
-     * Update the specified resource in storage.
+     * Display  pending loan details.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Loan $loan)
+    public function loanPendingDetailsPage($id)
     {
-        //
+        return view('pages.loan.pending', ['id' => $id]);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Display  pending loan details.
      *
-     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Loan $loan)
+    public function loanCalculatorPage()
     {
-        //
+        return view('pages.loan.calculator');
     }
 }

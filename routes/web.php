@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,7 +59,6 @@ Route::group([
     Route::get('client/transfer', function () {
         return view('pages.client.transfer');
     })->name('client.transfer');
-
 });
 
 
@@ -76,7 +76,6 @@ Route::group([
     Route::get('/task/myActions', function () {
         return view('pages.task.myActions');
     });
-
 });
 
 
@@ -130,23 +129,23 @@ Route::group([
     'middleware' => 'auth'
 ], function () {
 
-// shares active route
+    // shares active route
     Route::get('/shares/active', function () {
         return view('pages.shares.active');
     });
-// share pending route
+    // share pending route
     Route::get('/shares/pending', function () {
         return view('pages.shares.pending');
     });
-// share waiting route
+    // share waiting route
     Route::get('/shares/waiting', function () {
         return view('pages.shares.waiting');
     });
-// shares rejected route
+    // shares rejected route
     Route::get('/shares/rejected', function () {
         return view('pages.shares.rejected');
     });
-// shares closed route
+    // shares closed route
     Route::get('/shares/closed', function () {
         return view('pages.shares.closed');
     });
@@ -174,16 +173,15 @@ Route::group([
         return view('pages.user.permissions');
     });
 
-// User details
+    // User details
     Route::get('/user/details', function () {
         return view('pages.user.details');
     });
 
-//User role
+    //User role
     Route::get('/user/role', function () {
         return view('pages.user.role');
     });
-
 });
 
 // Report menu routes start
@@ -251,41 +249,23 @@ Route::group([
 ], function () {
 
     //create loans route
-    Route::get('create', function () {
-        return view('pages.loan.create');
-    });
+    Route::get('create', ['uses' => 'LoanController@createLoanPage'])->name('create.loan');
 
     // view all loans
-    Route::get('loans', function () {
-        return view('pages.loan.view');
-    });
+    Route::get('loans', ['uses' => 'LoanController@loansPage'])->name('loans');
 
     // view loan detail routes
-    Route::get('details', function () {
-        return view('pages.loan.details');
-    });
+    Route::get('details', ['uses' => 'LoanController@loanDetailsPage'])->name('loan.details');
 
     // pending approval load route
-    Route::get('pending-approval', function () {
-        return view('pages.loan.pending-approval');
-    });
+    Route::get('pending-approval', ['uses' => 'LoanController@loanPendingApprovalPage'])->name('loan.pending.approval');
 
     // pending second approval loan route
-    Route::get('pendingSecondApproval', function() {
-        return view('pages.loan.pendingSecondApproval');
-    });
+    Route::get('pendingSecondApproval', ['uses' => 'LoanController@loanPendingSecondApprovalPage'])->name('loan.pending.second.approval');
 
     // pending load details route
-    Route::get('loan/{id}', function ($id) {
-        return view('pages.loan.pending', ['id' => $id]);
-    })->name('loan.pending');
-    Route::get('calculator', function () {});
-
-
-
-    Route::get('calculator', function() {
-        return view('pages.loan.calculator');
-    });
+    Route::get('loan/{id}', ['uses' => 'LoanController@loanPendingDetailsPage'])->name('loan.pending');
+    Route::get('calculator', ['uses' => 'LoanController@loanCalculatorPage'])->name('loan.calculator');
 });
 
 
@@ -312,7 +292,6 @@ Route::group([
     Route::get('/setting/currencies', function () {
         return view('pages.setting.currencies');
     });
-
 });
 // setting routes ends
 
@@ -336,7 +315,6 @@ Route::group([
     Route::get('/groups/transfer', function () {
         return view('pages.groups.transfer');
     });
-
 });
 
 
