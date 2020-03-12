@@ -169,6 +169,8 @@ Route::group([
     Route::get('/user/roles', function () {
         return view('pages.user.roles');
     });
+        return view('pages.user.roles');
+    
 
     Route::get('/user/permissions', function () {
         return view('pages.user.permissions');
