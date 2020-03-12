@@ -21,9 +21,6 @@ Route::get('/', function () {
     return view('home');
 })->middleware('auth');
 
-Route::get('/demo', function () {
-    return view('demo');
-});
 
 Route::get('/lock', function () {
     return view('pages/lock');
@@ -31,7 +28,7 @@ Route::get('/lock', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', ['uses' => 'HomeController@homePage'])->name('home');
 
 
 // Group for the Routes that are to be protected by auth middleware
@@ -44,9 +41,7 @@ Route::group([
     // Place your routes here
 
     //Client Routes
-    Route::get('/client/register', function () {
-        return view('pages.client.register');
-    })->name('client.register');
+    Route::get('/client/register', ['uses' => 'HomeController@registerClient'])->name('client.register');
 
     Route::get('/client/pendingApproval', function () {
         return view('pages.client.pendingApproval');
@@ -284,9 +279,9 @@ Route::group([
     Route::get('loan/{id}', function ($id) {
         return view('pages.loan.pending', ['id' => $id]);
     })->name('loan.pending');
-    Route::get('calculator', function () {
-    });
+    Route::get('calculator', function () {});
 
+    
     Route::get('calculator', function() {
         return view('pages.loan.calculator');
     });

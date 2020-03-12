@@ -4454,7 +4454,7 @@ input[type=button].btn-block {
 
 .custom-file-input:focus ~ .custom-file-label {
   border-color: #66afe9;
-  box-shadow: 0 0 0 0.2rem #ffbfbf);
+  box-shadow: 0 0 0 0.2rem #ffbfbf;
 }
 
 .custom-file-input[disabled] ~ .custom-file-label,
