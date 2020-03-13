@@ -120,7 +120,7 @@ Route::group([
     // shares rejected route
     Route::get('/shares/rejected', ['uses' => 'ShareController@rejectedSharesPage'])->name('rejected.shares');
     // shares closed route
-    Route::get('/shares/closed', ['uses' => 'ShareController@closedSharesPage']);
+    Route::get('/shares/closed', ['uses' => 'ShareController@closedSharesPage'])->name('share.close');
 });
 //END SHARES ROUTE
 // ==============================
@@ -140,9 +140,7 @@ Route::group([
     Route::get('/user/roles', function () {
         return view('pages.user.roles');
     });
-        return view('pages.user.roles');
-    
-
+      
     Route::get('/user/permissions', function () {
         return view('pages.user.permissions');
     });
