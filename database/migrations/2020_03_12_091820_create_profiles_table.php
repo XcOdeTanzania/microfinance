@@ -25,12 +25,12 @@ class CreateProfilesTable extends Migration
             $table->date('date_of_birth');
             $table->string('tags');
             $table->string('town');
-            $table->string('postal_address');
+            $table->string('postal_address')->nullable();
             $table->string('marital_status');
             $table->integer('district_id');
             $table->double('latitude')->nullable();
             $table->double('longitude')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email');
             
             $table->integer('profileable_id');
             $table->string('profileable_type');
