@@ -69,13 +69,9 @@ Route::group([
     'middleware' => 'auth'
 ], function () {
 
-    Route::get('/task/pendingApproval', function () {
-        return view('pages.task.pendingApproval');
-    });
+    Route::get('/task/pendingApproval', ['uses' =>'TaskController@pendingApprovalPage'])->name('task.pending.approval');
 
-    Route::get('/task/myActions', function () {
-        return view('pages.task.myActions');
-    });
+    Route::get('/task/myActions', ['uses' =>'TaskController@myActionsPage']) ->name('task.my.actions');
 });
 
 
