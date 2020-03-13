@@ -263,17 +263,12 @@ Route::group([
     'middleware' => 'auth'
 ], function () {
 
-    Route::get('/groups/groups', function () {
-        return view('pages.groups.groups');
-    });
+    Route::get('/groups/groups',['uses'=>'GroupController@groupsPage'])->name('group.groups');
 
-    Route::get('/groups/centers', function () {
-        return view('pages.groups.centers');
-    });
+    Route::get('/groups/centers', ['uses'=>'GroupController@centersPage'])->name('group.centers');
 
-    Route::get('/groups/transfer', function () {
-        return view('pages.groups.transfer');
-    });
+    Route::get('/groups/transfer', ['uses'=>'GroupController@transferPage'])->name('group.transfer');
+    
 });
 
 
