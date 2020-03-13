@@ -7,6 +7,7 @@
         <div class="card-header"></div>
         <div class="card-body ">
             <form id="example-form" action="#">
+            
                 <div>
                     <h4>
                         Client Information
@@ -20,8 +21,8 @@
                                 <div class="col-lg-3 col-md-6 col-sm  align-content-center">
                                     <label for="firstName">First Name *</label>
                                     <input class="form-control required" id="firstName" name="firstName" type="text"/>
-                                    <label for="middleName">Middle Name *</label>
-                                    <input class="form-control required" id="middleName" name="middleName" type="text"/>
+                                    <label for="middleName">Middle Name </label>
+                                    <input class="form-control " id="middleName" name="middleName" type="text"/>
                                     <label for="lastName">Last Name *</label>
                                     <input class="form-control required" id="lastName" name="lastName" type="text"/>
                                     <label for="registrationDate">Registration Date *</label>
@@ -30,18 +31,18 @@
                                 </div>
                                 <div class="col-lg-3 col-md-6 col-sm  align-content-center">
                                     <label for="phone">Phone Number *</label>
-                                    <input class="form-control required" id="phone" name="phone" type="text"/>
+                                    <input class="form-control required " id="phone" name="phone" type="text"/>
                                     <label for="secondaryMobileNo">Secondary Mobile Number </label>
                                     <input class="form-control " id="secondaryMobileNo" name="secondaryMobileNo"
                                            type="text"/>
-                                    <label for="email">Email Address </label>
-                                    <input class="form-control " id="email" name="email" type="text"/>
-                                    <label for="dateOfBirth">Date of Birth </label>
-                                    <input class="form-control " id="dateOfBirth" name="dateOfBirth" type="date"/>
+                                    <label for="email">Email Address *</label>
+                                    <input class="form-control required " id="email" name="email" type="text"/>
+                                    <label for="dateOfBirth">Date of Birth *</label>
+                                    <input class="form-control required " require id="dateOfBirth" name="dateOfBirth" type="date"/>
                                 </div>
                                 <div class="col-lg-3 col-md-6 col-sm  align-content-center">
                                     <label for="gender">Gender *</label>
-                                    <select class="custom-select" id="gender" name="gender">
+                                    <select class="custom-select required" id="gender" name="gender">
                                         <option selected></option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -49,22 +50,36 @@
                                     {{--<input class="form-control required" id="registrationDate" name="registrationDate" type="text" />--}}
                                     <label for="tags">Tags </label>
                                     <input class="form-control " id="tags" name="tags" type="text"/>
-                                    <label for="town">Town </label>
-                                    <input class="form-control " id="town" name="town" type="text"/>
-                                    <label for="address">Address </label>
+                                    <label for="town">Town *</label>
+                                    <input class="form-control required" id="town" name="town" type="text"/>
+                                    <label for="address">Postal Address </label>
                                     <input class="form-control " id="address" name="address" type="text"/>
                                 </div>
                                 <div class="col-lg-3 col-md-6 col-sm  align-content-center">
-                                    <label for="maritalStatus">Marital Status </label>
-                                    <select class="custom-select" id="maritalStatus" name="maritalStatus">
+                                    <label for="maritalStatus">Marital Status *</label>
+                                    <select class="custom-select required " id="maritalStatus" name="maritalStatus">
                                         <option selected></option>
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
                                         <option value="divorced">Divorced</option>
                                     </select>
-                                    <label for="region">Region </label>
-                                    <input class="form-control " id="region" name="region" type="text"/>
-                                    <label for="gpsLocation">gps_location </label>
+
+                                    <label for="region">Region *</label>
+                                    <select class="custom-select required " id="region" name="region">
+                                        <option selected></option>
+                                        <option value="single">Single</option>
+                                        <option value="married">Married</option>
+                                        <option value="divorced">Divorced</option>
+                                    </select>
+
+                                    <label for="district">District *</label>
+                                    <select class="custom-select required " id="district" name="district">
+                                        <option selected></option>
+                                        <option value="single">Single</option>
+                                        <option value="married">Married</option>
+                                        <option value="divorced">Divorced</option>
+                                    </select>
+                                   <label for="gpsLocation">gps_location </label>
                                     <input class="form-control " id="gpsLocation" name="gpsLocation" type="text"/>
 
                                 </div>

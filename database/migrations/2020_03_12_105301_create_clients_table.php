@@ -19,6 +19,7 @@ class CreateClientsTable extends Migration
             $table->integer('user_id');
             $table->integer('group_id');
             $table->integer('branch_id');
+            $table->date('registration_date');
             $table->boolean('terms_and_conditions');
 
             $table->softdeletes();

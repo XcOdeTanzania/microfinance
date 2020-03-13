@@ -23,7 +23,7 @@ class CreateBusinessesTable extends Migration
             $table->string('address');
             $table->integer('region_id');
             $table->integer('post_code');
-            $table->bigInteger('business_revinue');
+            $table->bigInteger('business_revenue');
             $table->bigInteger('expenses');
             $table->bigInteger('net_income');
 
