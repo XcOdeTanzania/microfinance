@@ -42,23 +42,12 @@ Route::group([
     // Place your routes here
 
     //Client Routes
-    Route::get('/client/register', ['uses' => 'HomeController@registerClient'])->name('client.register');
-
-    Route::get('/client/pendingApproval', function () {
-        return view('pages.client.pendingApproval');
-    })->name('client.pendingApproval');
-
-    Route::get('/client/closed', function () {
-        return view('pages.client.closed');
-    })->name('client.closed');
-
-    Route::get('/client/rejected', function () {
-        return view('pages.client.rejected');
-    })->name('client.rejected');
-
-    Route::get('client/transfer', function () {
-        return view('pages.client.transfer');
-    })->name('client.transfer');
+    Route::get('/client/register', ['uses' => 'ClientController@registerClientPage'])->name('client.register');
+    Route::get('/client/pendingApproval', ['uses' => 'ClientController@pendingApprovalPage'])->name('client.pendingApproval');
+    Route::get('/client/closed', ['uses' => 'ClientController@closedPage'])->name('client.closed');
+    Route::get('/client/rejected', ['uses' => 'ClientController@rejectedPage'])->name('client.rejected');
+    Route::get('/client/closed', ['uses' => 'ClientController@transferPage'])->name('client.transfer');
+    
 });
 
 
@@ -69,13 +58,9 @@ Route::group([
     'middleware' => 'auth'
 ], function () {
 
-    Route::get('/task/pendingApproval', function () {
-        return view('pages.task.pendingApproval');
-    });
+    Route::get('/task/pendingApproval', ['uses' =>'TaskController@pendingApprovalPage'])->name('task.pending.approval');
 
-    Route::get('/task/myActions', function () {
-        return view('pages.task.myActions');
-    });
+    Route::get('/task/myActions', ['uses' =>'TaskController@myActionsPage']) ->name('task.my.actions');
 });
 
 
@@ -234,21 +219,13 @@ Route::group([
 ], function () {
 
 
-    Route::get('/setting/blacklist', function () {
-        return view('pages.setting.blacklist');
-    });
+    Route::get('/setting/blacklist', ['uses' => 'SettingController@blackListPage'])->name('setting.blacklist');
 
-    Route::get('/setting/productgroup', function () {
-        return view('pages.setting.productgroup');
-    });
+    Route::get('/setting/product/group', ['uses' => 'SettingController@productGroupPage'])->name('setting.product.group');
 
-    Route::get('/setting/financialactivity', function () {
-        return view('pages.setting.financialactivity');
-    });
+    Route::get('/setting/financial/activity', ['uses' => 'SettingController@financialActivityPage'])->name('setting.financial.activity');
 
-    Route::get('/setting/currencies', function () {
-        return view('pages.setting.currencies');
-    });
+    Route::get('/setting/currencies', ['uses' => 'SettingController@currenciesPage'])->name('setting.currencies');
 });
 // setting routes ends
 

@@ -281,7 +281,7 @@ return [
 
 			[
                 'text' => 'Products Group',
-                'route' => '/setting/productgroup'
+                'route' => '/setting/product/group'
             ],
 
 			// [
@@ -331,7 +331,7 @@ return [
 
             [
                 'text' => 'Financial Activity',
-                'route' => '/setting/financialactivity'
+                'route' => '/setting/financial/activity'
             ],
 
         ],
