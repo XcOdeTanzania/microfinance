@@ -236,21 +236,13 @@ Route::group([
 ], function () {
 
 
-    Route::get('/setting/blacklist', function () {
-        return view('pages.setting.blacklist');
-    });
+    Route::get('/setting/blacklist', ['uses' => 'SettingController@blackListPage'])->name('setting.blacklist');
 
-    Route::get('/setting/productgroup', function () {
-        return view('pages.setting.productgroup');
-    });
+    Route::get('/setting/product/group', ['uses' => 'SettingController@productGroupPage'])->name('setting.product.group');
 
-    Route::get('/setting/financialactivity', function () {
-        return view('pages.setting.financialactivity');
-    });
+    Route::get('/setting/financial/activity', ['uses' => 'SettingController@financialActivityPage'])->name('setting.financial.activity');
 
-    Route::get('/setting/currencies', function () {
-        return view('pages.setting.currencies');
-    });
+    Route::get('/setting/currencies', ['uses' => 'SettingController@currenciesPage'])->name('setting.currencies');
 });
 // setting routes ends
 
