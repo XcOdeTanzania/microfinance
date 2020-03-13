@@ -140,6 +140,8 @@ Route::group([
     Route::get('/user/roles', function () {
         return view('pages.user.roles');
     });
+        return view('pages.user.roles');
+    
 
     Route::get('/user/permissions', function () {
         return view('pages.user.permissions');
@@ -156,6 +158,7 @@ Route::group([
     });
 });
 
+    
 // Report menu routes start
 
 Route::group([
@@ -221,6 +224,8 @@ Route::group([
     Route::get('loan/{id}', ['uses' => 'LoanController@loanPendingDetailsPage'])->name('loan.pending');
     Route::get('calculator', ['uses' => 'LoanController@loanCalculatorPage'])->name('loan.calculator');
 });
+
+   
 
 
 //setting routes start
