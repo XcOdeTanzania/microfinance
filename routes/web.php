@@ -42,23 +42,12 @@ Route::group([
     // Place your routes here
 
     //Client Routes
-    Route::get('/client/register', ['uses' => 'HomeController@registerClient'])->name('client.register');
-
-    Route::get('/client/pendingApproval', function () {
-        return view('pages.client.pendingApproval');
-    })->name('client.pendingApproval');
-
-    Route::get('/client/closed', function () {
-        return view('pages.client.closed');
-    })->name('client.closed');
-
-    Route::get('/client/rejected', function () {
-        return view('pages.client.rejected');
-    })->name('client.rejected');
-
-    Route::get('client/transfer', function () {
-        return view('pages.client.transfer');
-    })->name('client.transfer');
+    Route::get('/client/register', ['uses' => 'ClientController@registerClientPage'])->name('client.register');
+    Route::get('/client/pendingApproval', ['uses' => 'ClientController@pendingApprovalPage'])->name('client.pendingApproval');
+    Route::get('/client/closed', ['uses' => 'ClientController@closedPage'])->name('client.closed');
+    Route::get('/client/rejected', ['uses' => 'ClientController@rejectedPage'])->name('client.rejected');
+    Route::get('/client/closed', ['uses' => 'ClientController@transferPage'])->name('client.transfer');
+    
 });
 
 
