@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 { 
+
+   // Views Functions
+
         /**
         * Display pendingApproval.
         *
@@ -52,5 +55,9 @@ class ClientController extends Controller
         {
            return view('pages.client.register'); 
 }
+
+// Logical Functions
+
+ 
 
 }

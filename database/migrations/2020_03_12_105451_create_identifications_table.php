@@ -17,9 +17,10 @@ class CreateIdentificationsTable extends Migration
             $table->id();
 
             $table->bigInteger('client_id');
-            $table->string('file');
+            $table->string('attachment');
             $table->string('uuid');
             $table->string('type');
+            $table->string('description')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

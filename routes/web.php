@@ -43,7 +43,7 @@ Route::group([
 
     //Client Routes
     Route::get('/client/register', ['uses' => 'ClientController@registerClientPage'])->name('client.register');
-    Route::get('/client/pendingApproval', ['uses' => 'ClientController@pendingApprovalPage'])->name('client.pendingApproval');
+    Route::get('/client/pendingApproval', ['uses' => 'ClientController@pendingApprovalPage'])->name('client.pending.approval');
     Route::get('/client/closed', ['uses' => 'ClientController@closedPage'])->name('client.closed');
     Route::get('/client/rejected', ['uses' => 'ClientController@rejectedPage'])->name('client.rejected');
     Route::get('/client/transfer', ['uses' => 'ClientController@transferPage'])->name('client.transfer');
