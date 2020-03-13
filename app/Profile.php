@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facedes\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Profile extends Model
 {
@@ -92,7 +92,7 @@ class Profile extends Model
 
         if($profilableType === 'guarantor'){
             $guarantor = Guarantor::find($profileableId);
-            if(!guarantor) back()->with('error','Guarantor does not exist');
+            if(!$guarantor) back()->with('error','Guarantor does not exist');
             $guarantor->profile()->save($profile);
         }
         else if($profilableType === 'user'){
