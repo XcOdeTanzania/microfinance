@@ -16,7 +16,7 @@ class CreateIdentificationsTable extends Migration
         Schema::create('identifications', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('user_id');
+            $table->bigInteger('client_id');
             $table->string('file');
             $table->string('uuid');
             $table->string('type');

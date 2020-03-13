@@ -25,4 +25,16 @@ class Business extends Model
     protected $dates = [
         'deleted_at'
     ];
+
+
+    // relations
+
+    /**
+     * business belongs to client relation
+     */
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }

@@ -25,4 +25,15 @@ class group extends Model
     protected $dates = [
         'deleted_at'
     ];
+
+    // relations
+
+    /**
+     * Group has many client relation
+     */
+
+    public function clients()
+    {
+        return $this->hasMany(Client::class);
+    }
 }

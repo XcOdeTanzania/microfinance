@@ -20,4 +20,15 @@ class Identification extends Model
     protected $dates = [
         'deleted_at'
     ];
+
+    // relations
+
+    /**
+     * Identification belongs to client
+     */
+
+     public function client()
+     {
+         return $this->belongsTo(Client::class);
+     }
 }

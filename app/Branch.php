@@ -12,8 +12,20 @@ class Branch extends Model
 
     protected $fillable = [
         'name',
-        'category',
-        'description'
+        'location',
+        'company_id'
     ];
+
+
+    // relations
+
+    /** 
+     * branch has many client relations
+     */
+
+    public function clients()
+    {
+        return $this->hasMany(Client::class);
+    }
     
 }

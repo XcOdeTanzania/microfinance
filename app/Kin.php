@@ -10,12 +10,28 @@ class Kin extends Model
     use SoftDeletes;
 
     protected $fillable =[
-        'profile_id',
+        'name',
+        'address',
+        'date_of_birth',
+        'city',
+        'phone_number',
+        'town',
+        'relationship',
         'client_id',
-        'relationship'
     ];
 
     protected $dates =[
         'deleted_at'
     ];
+
+    // relations
+
+    /**
+     * Kin belongs to Client
+     */
+
+     public function client()
+     {
+         return $this->belongsTo(Client::class);
+     }
 }
