@@ -268,7 +268,7 @@ Route::group([
     Route::get('/groups/centers', ['uses'=>'GroupController@centersPage'])->name('group.centers');
 
     Route::get('/groups/transfer', ['uses'=>'GroupController@transferPage'])->name('group.transfer');
-    
+
 });
 
 
