@@ -18,4 +18,24 @@ class Guarantor extends Model
     protected $dates =[
         'deleted_at'
     ];
+
+
+    // relations
+
+    /**
+     * Get the profile.
+     */
+    public function profile()
+    {
+        return $this->morphOne(Profile::class, 'profileable');
+    }
+
+    /**
+     * guarantor has many loans.
+     */
+    public function loans()
+    {
+        return $this->hasMany(Loan::class);
+    }
+
 }

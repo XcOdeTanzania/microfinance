@@ -48,4 +48,21 @@ class User extends Authenticatable
      {
          return $this->hasOne(Client::class);
      }
+
+
+    /**
+     * Get the profile.
+     */
+    public function profile()
+    {
+        return $this->morphOne(Profile::class, 'profileable');
+    }
+
+     /**
+     * user has many roles
+     */
+    public function roles()
+    {
+        return $this->hasMany(Role::class);
+    }
 }

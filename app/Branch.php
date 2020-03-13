@@ -28,4 +28,21 @@ class Branch extends Model
         return $this->hasMany(Client::class);
     }
     
+     /** 
+     * branch has many groups relations
+     */
+
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
+    }
+
+    /** 
+     * branch belongs to a company relations
+     */
+
+    public function company()
+    {
+        return $this->belongsTo(company::class);
+    }
 }

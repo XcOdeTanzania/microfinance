@@ -36,4 +36,22 @@ class group extends Model
     {
         return $this->hasMany(Client::class);
     }
+
+    /**
+     * Group belongs to a branch
+     */
+
+    public function branch()
+    {
+        return $this->belongsTo(Group::class);
+    }
+
+    
+    /**
+     * Loan polymorphic to group.
+     */
+    public function loan()
+    {
+        return $this->morphOne(Loan::class, 'loanable');
+    }
 }

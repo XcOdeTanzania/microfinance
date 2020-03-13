@@ -81,4 +81,21 @@ class Client extends Model
     {
         return $this->hasMany(Kin::class);
     }
+
+    /**
+     * Loan polymorphic to client.
+     */
+    public function loan()
+    {
+        return $this->morphOne(Loan::class, 'loanable');
+    }
+
+     /**
+     * client has one share
+     */
+
+    public function share()
+    {
+        return $this->hasOne(Share::class);
+    }
 }

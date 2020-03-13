@@ -20,7 +20,7 @@ class CreateGroupsTable extends Migration
             $table->integer('branch_id');
             $table->string('account_number');
             $table->string('uid');
-            $table->integer('status_id');
+            $table->string('status');
             $table->date('activation_date');
             $table->integer('meeting_day');
             $table->string('meeting_location');

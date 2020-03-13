@@ -46,7 +46,7 @@ Route::group([
     Route::get('/client/pendingApproval', ['uses' => 'ClientController@pendingApprovalPage'])->name('client.pendingApproval');
     Route::get('/client/closed', ['uses' => 'ClientController@closedPage'])->name('client.closed');
     Route::get('/client/rejected', ['uses' => 'ClientController@rejectedPage'])->name('client.rejected');
-    Route::get('/client/closed', ['uses' => 'ClientController@transferPage'])->name('client.transfer');
+    Route::get('/client/transfer', ['uses' => 'ClientController@transferPage'])->name('client.transfer');
     
 });
 

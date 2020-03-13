@@ -32,4 +32,15 @@ class Profile extends Model
     protected $dates = [
         'deleted_at'
     ];
+
+
+    // relations
+
+    /**
+     * Get the owning profileable model.
+     */
+    public function profileable()
+    {
+        return $this->morphTo();
+    }
 }

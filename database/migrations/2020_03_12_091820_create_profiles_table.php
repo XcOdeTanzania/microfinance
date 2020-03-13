@@ -31,7 +31,9 @@ class CreateProfilesTable extends Migration
             $table->double('latitude')->nullable();
             $table->double('longitude')->nullable();
             $table->string('email')->nullable();
-            $table->bigInteger('user_id');
+            
+            $table->integer('profileable_id');
+            $table->string('profileable_type');
 
             $table->softdeletes();
             $table->timestamps();
