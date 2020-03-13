@@ -5,17 +5,19 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Guarantor extends Model
-{
-
+class Identification extends Model
+{ 
+    //
     use SoftDeletes;
 
-    protected $fillable =[
-        'profile_id',
+    protected $fillable = [
+        'user_id',
+        'file',
+        'uuid',
         'type'
     ];
 
-    protected $dates =[
+    protected $dates = [
         'deleted_at'
     ];
 }
