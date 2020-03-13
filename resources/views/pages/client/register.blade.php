@@ -21,7 +21,7 @@
                                     <label for="firstName">First Name *</label>
                                     <input class="form-control required" id="firstName" name="firstName" type="text"/>
                                     <label for="middleName">Middle Name *</label>
-                                    <input class="form-control required" id="middleName" name=middleName" type="text"/>
+                                    <input class="form-control required" id="middleName" name="middleName" type="text"/>
                                     <label for="lastName">Last Name *</label>
                                     <input class="form-control required" id="lastName" name="lastName" type="text"/>
                                     <label for="registrationDate">Registration Date *</label>
@@ -151,11 +151,11 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm  align-content-center">
                                     <label for="businessRegion">Region  *</label>
-                                    <input class="form-control required" id="businessRegion" name=businessRegion" type="text"/>
+                                    <input class="form-control required" id="businessRegion" name="businessRegion" type="text"/>
                                     <label for="businessCountry">Country *</label>
                                     <input class="form-control required" id="businessCountry" name="businessCountry" type="text"/>
                                     <label for="businessPostalCode">Postal Code  *</label>
-                                    <input class="form-control required" id="businessPostalCode" name=businessPostalCode" type="text"/>
+                                    <input class="form-control required" id="businessPostalCode" name="businessPostalCode" type="text"/>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm  align-content-center">
                                     <label for="businessRevenue">Business Revenue *</label>
