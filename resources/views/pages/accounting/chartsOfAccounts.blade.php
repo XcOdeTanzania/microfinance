@@ -132,7 +132,7 @@
                         </div><br>
                         <div class="form-group">
 							<label> Description</label><br>
-							<textarea id="description" rows="4" cols="60"></textarea>
+							<textarea id="description" rows="4" cols="70"></textarea>
 
 						</div>
 					</div>
@@ -211,7 +211,7 @@
                         </div><br>
                         <div class="form-group">
 							<label> Description</label><br>
-							<textarea id="description" rows="4" cols="60"></textarea>
+							<textarea id="description" rows="4" cols="70"></textarea>
 
 						</div>
 					</div>
