@@ -42,23 +42,12 @@ Route::group([
     // Place your routes here
 
     //Client Routes
-    Route::get('/client/register', ['uses' => 'HomeController@registerClient'])->name('client.register');
-
-    Route::get('/client/pendingApproval', function () {
-        return view('pages.client.pendingApproval');
-    })->name('client.pendingApproval');
-
-    Route::get('/client/closed', function () {
-        return view('pages.client.closed');
-    })->name('client.closed');
-
-    Route::get('/client/rejected', function () {
-        return view('pages.client.rejected');
-    })->name('client.rejected');
-
-    Route::get('client/transfer', function () {
-        return view('pages.client.transfer');
-    })->name('client.transfer');
+    Route::get('/client/register', ['uses' => 'ClientController@registerClientPage'])->name('client.register');
+    Route::get('/client/pendingApproval', ['uses' => 'ClientController@pendingApprovalPage'])->name('client.pending.approval');
+    Route::get('/client/closed', ['uses' => 'ClientController@closedPage'])->name('client.closed');
+    Route::get('/client/rejected', ['uses' => 'ClientController@rejectedPage'])->name('client.rejected');
+    Route::get('/client/transfer', ['uses' => 'ClientController@transferPage'])->name('client.transfer');
+    
 });
 
 
@@ -116,7 +105,7 @@ Route::group([
     // shares rejected route
     Route::get('/shares/rejected', ['uses' => 'ShareController@rejectedSharesPage'])->name('rejected.shares');
     // shares closed route
-    Route::get('/shares/closed', ['uses' => 'ShareController@closedSharesPage']);
+    Route::get('/shares/closed', ['uses' => 'ShareController@closedSharesPage'])->name('share.close');
 });
 //END SHARES ROUTE
 // ==============================
@@ -136,9 +125,7 @@ Route::group([
     Route::get('/user/roles', function () {
         return view('pages.user.roles');
     });
-        return view('pages.user.roles');
-    
-
+      
     Route::get('/user/permissions', function () {
         return view('pages.user.permissions');
     });

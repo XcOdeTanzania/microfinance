@@ -11,4 +11,15 @@ class Company extends Model
     protected $fillable = ['name', 'address', 'logo'];
 
     protected $dates = ['deleted_at'];
+
+//relations
+
+/** 
+     * company has many branches relations
+     */
+
+    public function branches()
+    {
+        return $this->hasMany(Branch::class);
+    }
 }

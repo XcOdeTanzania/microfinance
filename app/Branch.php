@@ -12,8 +12,37 @@ class Branch extends Model
 
     protected $fillable = [
         'name',
-        'category',
-        'description'
+        'location',
+        'company_id'
     ];
+
+
+    // relations
+
+    /** 
+     * branch has many client relations
+     */
+
+    public function clients()
+    {
+        return $this->hasMany(Client::class);
+    }
     
+     /** 
+     * branch has many groups relations
+     */
+
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
+    }
+
+    /** 
+     * branch belongs to a company relations
+     */
+
+    public function company()
+    {
+        return $this->belongsTo(company::class);
+    }
 }

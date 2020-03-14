@@ -21,4 +21,15 @@ class Charge extends Model
     protected $dates =[
         'deleted_at'
     ];
+
+//relations
+ /**
+     * Charges belongs to a loan
+     */
+
+    public function loan()
+    {
+        return $this->belongsTo(Loan::class);
+    }
+
 }

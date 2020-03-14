@@ -49,7 +49,7 @@
                             <td>C</td>
                             <td>X</td>
                             <td>X</td>
-                            <td><a href='' class="btn btn-primary text-white"><i class="fa fa-eye">&nbsp;</i>view</a></td>
+                            <td><a href='' class="btn btn-primary text-white"><i class="fa fa-eye" style="color:white">&nbsp;view</i></a></td>
                         </tr>
                         <tr class="gradeA">
                             <td>Trident</td>

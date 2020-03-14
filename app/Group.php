@@ -25,4 +25,33 @@ class group extends Model
     protected $dates = [
         'deleted_at'
     ];
+
+    // relations
+
+    /**
+     * Group has many client relation
+     */
+
+    public function clients()
+    {
+        return $this->hasMany(Client::class);
+    }
+
+    /**
+     * Group belongs to a branch
+     */
+
+    public function branch()
+    {
+        return $this->belongsTo(Group::class);
+    }
+
+    
+    /**
+     * Loan polymorphic to group.
+     */
+    public function loan()
+    {
+        return $this->morphOne(Loan::class, 'loanable');
+    }
 }

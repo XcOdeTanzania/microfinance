@@ -18,4 +18,14 @@ class Role extends Model
     protected $dates = [
         'deleted_at'
     ];
+
+    // relations
+
+     /**
+     * role belongs to many users
+     */
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

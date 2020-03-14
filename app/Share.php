@@ -11,4 +11,14 @@ class Share extends Model
     protected $fillable = ['name', 'account_name', 'client_id', 'saving_account_number', 'approved_share', 'product_name'];
 
     protected $dates = ['deleted_at'];
+
+    //relations
+     /**
+     * share has one client
+     */
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }

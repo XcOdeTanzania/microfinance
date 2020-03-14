@@ -29,6 +29,8 @@ class CreateLoansTable extends Migration
             $table->double('grace_on_principal_interest');
             $table->string('loan_purpose');
             $table->boolean('auto_create_standing_instruction');
+            $table->integer('loanable_id');
+            $table->string('loanable_type');
 
             $table->softDeletes();
             $table->timestamps();

@@ -15,4 +15,14 @@ class Collateral extends Model {
         'description',
 
     ];
+
+    //relations
+     /**
+     * loan belongs to a collateral
+     */
+
+    public function loan()
+    {
+        return $this->belongsTo(Loan::class);
+    }
 }

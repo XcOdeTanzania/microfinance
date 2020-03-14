@@ -30,4 +30,14 @@ class Repayment extends Model {
     protected $dates = [
         'deleted_at'
     ];
+
+    //relations
+     /**
+     * repayment belongs to a loan
+     */
+
+    public function loan ()
+    {
+        return $this->belongsTo(Loan::class);
+    }
 }
