@@ -17,6 +17,7 @@ class ClientController extends Controller
         */
        public function pendingApprovalPage()
        {
+
           return view('pages.client.pendingApproval');
 }
         /**
