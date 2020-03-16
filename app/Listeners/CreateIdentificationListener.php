@@ -27,7 +27,7 @@ class CreateIdentificationListener
      */
     public function handle(ClientCreatedEvent $event)
     {
-      $identification = Identification;
+      $identification =new Identification;
 
       $identification->postIdentification($event->request, $event->client);
     }

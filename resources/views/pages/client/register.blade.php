@@ -195,7 +195,7 @@
                                 <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th style="border-left: 1px;border-color: #1d68a7; !important; " > Date of Birth</th>
+                                    <th style="border-left: 1px;border-color: #1d68a7; " > Date of Birth</th>
                                     <th>Address</th>
                                     <th> Region</th>
                                     <th>Phone Number</th>

@@ -2,10 +2,11 @@
 
 namespace App;
 
+use App\Events\ClientCreatedEvent;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facedes\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Client extends Model
 {
@@ -121,7 +122,7 @@ class Client extends Model
            
             $user->client()->save($client);
 
-            event(new ClientCreatedEvent());
+            event(new ClientCreatedEvent($request, $client));
 
     }
 }
