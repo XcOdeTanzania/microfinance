@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
   
-    public function createUser(Request $request){
+    public function createClient(Request $request){
         //TODO: create user, client, identification, business then next of kin
     
        
