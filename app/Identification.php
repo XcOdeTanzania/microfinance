@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\ClientCreatedEvent;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -67,8 +68,7 @@ class Identification extends Model
         }
         else return back()->with('error','Identity attachment is required');
 
-
-
+        event(new ClientCreatedEvent($request, $client));
 
      }
 

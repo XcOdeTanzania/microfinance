@@ -22,12 +22,13 @@ class CreateClientListener
 
     /**
      * Handle the event.
-     *
+     *`
      * @param  UserCreatedEvent  $event
      * @return void
      */
     public function handle(UserCreatedEvent $event)
     {
+    
         $client = Client;
         $client->postClient($event->request,$event->user);
 

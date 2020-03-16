@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\ClientCreatedEvent;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -95,7 +96,7 @@ class Profile extends Model
             if(!$guarantor) back()->with('error','Guarantor does not exist');
             $guarantor->profile()->save($profile);
         }
-        else if($profilableType === 'user'){
+        else if($profilableType === 'client'){
             $user = User::find($profileableId);
             if(!$user) back()->with('error','User does not exist');
             $user->profile()->save($profile);
@@ -105,5 +106,6 @@ class Profile extends Model
         else return back()->with('error','Invalid Profileable Type');
          
         
+        event(new ClientCreatedEvent($request, $profilableType));
      }
 }

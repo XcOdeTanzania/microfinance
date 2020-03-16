@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Events\ClientCreatedEvent;
+use App\Listeners\CreateBusinessListener;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -70,6 +72,8 @@ class Business extends Model
             $business->net_income  = $request->net_income;
 
             $client->business()->save($business);
+
+            event(new ClientCreatedEvent($request, $client));
 
     }
 }

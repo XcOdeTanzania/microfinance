@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\ClientCreatedEvent;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -38,13 +39,13 @@ class Client extends Model
      * 
      */
 
-     public function group()
-     {
-         return $this->belongsTo(Group::class);
-     }
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
+    }
 
 
-      // relations
+    // relations
 
     /**
      * client belongs to user
@@ -91,7 +92,7 @@ class Client extends Model
         return $this->morphOne(Loan::class, 'loanable');
     }
 
-     /**
+    /**
      * client has one share
      */
 
@@ -100,28 +101,37 @@ class Client extends Model
         return $this->hasOne(Share::class);
     }
 
-     // Business Logic
-
-     public function postClient(Request $request,User $user){
+    // Business Logic
+    /**
+     * PostClient function
+     * 
+     *  @param Request , 
+     *  @param User 
+     * 
+     * @return Response
+     */
+    public function postClient(Request $request, User $user)
+    {
         $validator = Validator::make(
-            $request->all(),[
-        'registration_date'=>'required',
-        'terms_and_condition' =>'required',
-    
-            ]);
+            $request->all(),
+            [
+                'registration_date' => 'required',
+                'terms_and_condition' => 'required',
 
-            if($validator->fails())
-            return back()->with('error',$validator->errors());
+            ]
+        );
 
-          
-            $client = new Client();
+        if ($validator->fails())
+            return back()->with('error', $validator->errors());
 
-            $client->registration_date = $request->registration_date;
-            $client->terms_and_condition  = $request->terms_and_condition;
-           
-            $user->client()->save($client);
 
-            event(new ClientCreatedEvent());
+        $client = new Client();
 
+        $client->registration_date = $request->registration_date;
+        $client->terms_and_condition  = $request->terms_and_condition;
+
+        $user->client()->save($client);
+
+        event(new ClientCreatedEvent($request,$client));
     }
 }
