@@ -2,6 +2,7 @@
 
 namespace App;
 
+use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -59,7 +60,7 @@ class Kin extends Model
 
             $kin->name = $request->kin_name;
             $kin->address = $request->kin_address;
-            $kin->date_of_birth = $request->date_of_birth_kin;
+            $kin->date_of_birth =  new DateTime('now');//$request->date_of_birth_kin;
             $kin->city = $request->kin_city;
             $kin->phone_number = $request->kin_phone_number;
             $kin->town = $request->kin_town;

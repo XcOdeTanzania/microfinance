@@ -2,6 +2,7 @@
 
 namespace App;
 
+use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -63,7 +64,7 @@ class Profile extends Model
                 'client_town' => 'required',
                 'marital_status' => 'required',
                 'district_id' => 'required',
-                'client_email'=> 'required|email|unique:profiles',
+                'client_email'=> 'required|email|unique:profiles,email',
              ]
          );
 
@@ -80,7 +81,7 @@ class Profile extends Model
         $profile->gender = $request->input('gender');
         $profile->phone_number_one = $request->input('phone_number_one');
         $profile->phone_number_two = $request->input('phone_number_two');
-        $profile->date_of_birth = $request->input('date_of_birth_client');
+        $profile->date_of_birth =  new DateTime('now');//$request->input('date_of_birth_client');
         $profile->tags = $request->input('tags');
         $profile->town = $request->input('client_town');
         $profile->postal_address = $request->input('postal_address');

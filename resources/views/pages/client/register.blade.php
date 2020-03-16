@@ -6,7 +6,7 @@
 <div class="card card-default">
     <div class="card-header"></div>
     <div class="card-body ">
-        <form id="example-form" method="POST" action="{{route('client.register')}}">
+        <form id="example-form" enctype="multipart/form-data" method="POST" action="{{route('client.register')}}">
             @csrf
 
             <div>
@@ -66,17 +66,17 @@
                                 <label for="region">Region *</label>
                                 <select class="custom-select required " id="region" name="region_id">
                                     <option selected></option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="divorced">Divorced</option>
+                                    @foreach($regions as $region)
+                                    <option value="{{$region->id}}">{{$region->name}}</option>
+                                    @endforeach
                                 </select>
 
                                 <label for="district">District *</label>
                                 <select class="custom-select required " id="district" name="district_id">
                                     <option selected></option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="divorced">Divorced</option>
+                                    @foreach($districts as $district )
+                                    <option value="{{$district->id}}">{{$district->name}}</option>
+                                    @endforeach
                                 </select>
                                 <label for="gpsLocation">gps_location </label>
                                 <input class="form-control " id="gpsLocation" name="gps_location" type="text" />
@@ -169,20 +169,26 @@
                                 <input class="form-control required" id="businessAddress" name="business_address" type="text" />
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm  align-content-center">
-                                <label for="businessRegion">Region *</label>
-                                <input class="form-control required" id="businessRegion" name="business_region_id" type="text" />
+
+                                <label for="region">Region *</label>
+                                <select class="custom-select required " id="region" name="business_region_id">
+                                    <option selected></option>
+                                    @foreach($regions as $region)
+                                    <option value="{{$region->id}}">{{$region->name}}</option>
+                                    @endforeach
+                                </select>
                                 <label for="businessCountry">Country *</label>
-                                <input class="form-control required" id="businessCountry" name="business_country" type="text" />
+                                <input class="form-control required" value="Tanazania" readonly id="businessCountry" name="business_country" type="text" />
                                 <label for="businessPostalCode">Postal Code *</label>
-                                <input class="form-control required" id="businessPostalCode" name="business_postal_code" type="text" />
+                                <input class="form-control required" id="businessPostalCode" name="business_postal_code" type="number" />
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm  align-content-center">
                                 <label for="businessRevenue">Business Revenue *</label>
-                                <input class="form-control required" id="businessRevenue" name="business_revenue" type="text" />
+                                <input class="form-control required" id="businessRevenue" name="business_revenue" type="number" />
                                 <label for="businessExpenses">Expenses *</label>
-                                <input class="form-control required" id="businessExpenses" name="business_expenses" type="text" />
+                                <input class="form-control required" id="businessExpenses" name="business_expenses" type="number" />
                                 <label for="businessNetIncome">Net Income *</label>
-                                <input class="form-control required" id="businessNetIncome" name="business_net_income" type="text" />
+                                <input class="form-control required" id="businessNetIncome" name="business_net_income" type="number" />
                             </div>
                         </div>
                     </div>
@@ -240,20 +246,20 @@
                         <input class="form-control required" id="address" name="kin_address" type="text" />
                     </div>
                     <div class="form-group">
-                    <label for="city">City  *</label>
-                                    <input class="form-control required" id="city" name="kin_city" type="text"/>
+                        <label for="city">City *</label>
+                        <input class="form-control required" id="city" name="kin_city" type="text" />
                     </div>
                     <div class="form-group">
-                    <label for="phone_number">Phone Number  *</label>
-                                    <input class="form-control required" id="phone_number" name="kin_phone_number" type="text"/>
+                        <label for="phone_number">Phone Number *</label>
+                        <input class="form-control required" id="phone_number" name="kin_phone_number" type="text" />
                     </div>
                     <div class="form-group">
-                    <label for="town">Town  *</label>
-                                    <input class="form-control required" id="town" name="kin_town" type="text"/>
+                        <label for="town">Town *</label>
+                        <input class="form-control required" id="town" name="kin_town" type="text" />
                     </div>
                     <div class="form-group">
-                    <label for="relationship">Relationship  *</label>
-                                    <input class="form-control required" id="relationship" name="relationship" type="text"/>
+                        <label for="relationship">Relationship *</label>
+                        <input class="form-control required" id="relationship" name="relationship" type="text" />
                     </div>
                 </fieldset>
                 <h4>
@@ -265,7 +271,7 @@
                     <p class="lead">One last check</p>
                     <div class="checkbox c-checkbox">
                         <label>
-                            <input type="checkbox" required="required" name="terms" />
+                            <input type="checkbox" required="required" name="terms_and_condition" />
                             <span class="fa fa-check"></span>
                             I agree with the Terms and Conditions.
                         </label>

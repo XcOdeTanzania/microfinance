@@ -46,7 +46,7 @@ class Identification extends Model
         ]);
 
         if($validator->fails())
-        return back()->with('error',$validator->errors());
+        return redirect('/client/register')->with('error',$validator->errors());
 
         $identification = new Identification();
 

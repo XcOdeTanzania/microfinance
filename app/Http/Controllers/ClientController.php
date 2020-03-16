@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Clients;
+use App\District;
+use App\Region;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -54,7 +56,9 @@ class ClientController extends Controller
         */
         public function registerClientPage()
         {
-           return view('pages.client.register'); 
+           $regions = Region::all();
+           $districts = District::all();
+           return view('pages.client.register',['regions'=>$regions,'districts'=>$districts]); 
 }
 
 // Logical Functions
