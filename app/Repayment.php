@@ -23,7 +23,7 @@ class Repayment extends Model {
         'actual_saving',
         'total_paid',
         'total_outstanding',
-        'load_id',
+        'loan_id',
 
     ];
 
