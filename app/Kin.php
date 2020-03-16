@@ -12,12 +12,12 @@ class Kin extends Model
     use SoftDeletes;
 
     protected $fillable =[
-        'name',
-        'address',
-        'date_of_birth',
-        'city',
-        'phone_number',
-        'town',
+        'kin_name',
+        'kin_address',
+        'date_of_birth_kin',
+        'kin_city',
+        'kin_phone_number',
+        'kin_town',
         'relationship',
     ];
 
@@ -42,12 +42,12 @@ class Kin extends Model
     public function postKin(Request $request, Client $client){
         $validator = Validator::make(
             $request->all(),[
-                'name'=>'required',
-                'address'=>'required',
-                'date_of_birth'=>'required',
-                'city'=>'required',
-                'phone_number'=>'required',
-                'town'=>'required',
+                'kin_name'=>'required',
+                'kin_address'=>'required',
+                'date_of_birth_kin'=>'required',
+                'kin_city'=>'required',
+                'kin_phone_number'=>'required',
+                'kin_town'=>'required',
                 'relationship'=>'required',
             ]);
 
@@ -57,12 +57,12 @@ class Kin extends Model
 
             $kin = new Kin();
 
-            $kin->name = $request->name;
-            $kin->address = $request->address;
-            $kin->date_of_birth = $request->date_of_birth;
-            $kin->city = $request->city;
-            $kin->phone_number = $request->phone_number;
-            $kin->town = $request->town;
+            $kin->name = $request->kin_name;
+            $kin->address = $request->kin_address;
+            $kin->date_of_birth = $request->date_of_birth_kin;
+            $kin->city = $request->kin_city;
+            $kin->phone_number = $request->kin_phone_number;
+            $kin->town = $request->kin_town;
             $kin->relationship = $request->relationship;
 
             $client->kins()->save($kin);

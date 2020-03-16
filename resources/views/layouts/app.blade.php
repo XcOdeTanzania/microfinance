@@ -59,7 +59,7 @@
                     {{ session('info') }}
                 </div>
             @endif
-                
+
             @yield('content')
         </div>
     </section>
@@ -75,6 +75,7 @@
 <!-- =============== CUSTOM PAGE SCRIPTS ===============-->
 @yield('scripts')
 </body>
+
 
 
 </html>
