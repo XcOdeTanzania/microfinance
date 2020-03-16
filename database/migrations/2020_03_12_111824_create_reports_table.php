@@ -19,6 +19,10 @@ class CreateReportsTable extends Migration
             $table->string('name');
             $table->string('category');
             $table->string('description');
+            $table->string('description');
+            $table->string('description');
+            $table->integer('reportable_id');
+            $table->string('reportable_type');
 
             $table->softDeletes();
             $table->timestamps();

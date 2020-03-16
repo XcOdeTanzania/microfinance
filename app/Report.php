@@ -19,4 +19,11 @@ class Report extends Model
     protected $dates = [
         'deleted_at'
     ];
+
+    
+
+    public function reportable()
+    {
+        return $this->morphTo();
+    }
 }

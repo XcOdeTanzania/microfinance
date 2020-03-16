@@ -54,4 +54,13 @@ class group extends Model
     {
         return $this->morphOne(Loan::class, 'loanable');
     }
+
+    /**
+     * Group report relationships.
+     */
+    public function reports()
+    {
+        return $this->morphMany(Report::class,'reportable');
+    }
+
 }

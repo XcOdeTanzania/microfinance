@@ -102,6 +102,15 @@ class Client extends Model
         return $this->hasOne(Share::class);
     }
 
+
+      /**
+     * Client report relationships.
+     */
+    public function reports()
+    {
+        return $this->morphMany(Report::class,'reportable');
+    }
+
      // Business Logic
 
      public function postClient(Request $request,User $user){
@@ -129,4 +138,6 @@ class Client extends Model
             return redirect(route('client.pending.approval'))->with('Client registered successfuly');
 
     }
+
+   
 }
