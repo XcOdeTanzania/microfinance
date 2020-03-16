@@ -13,14 +13,15 @@ class Business extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name',
-        'type',
-        'date_of_start',
-        'address',
-        'post_code',
+        'business_name',
+        'business_type',
+        'start_date',
+        'business_region_id',
+        'business_address',
+        'business_postal_code',
         'business_revenue',
-        'expenses',
-        'net_income'
+        'business_expenses',
+        'business_net_income'
     ];
 
     protected $dates = [
