@@ -161,7 +161,7 @@
                             </div><br>
                             <div class="form-group">
                                 <label><b>Comment</b></label><br>
-                                <textarea id="description" rows="4" cols="110"></textarea>
+                                <textarea id="description" rows="4" cols="113"></textarea>
 
                             </div>
                     </fieldset>

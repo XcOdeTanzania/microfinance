@@ -6,7 +6,7 @@ use App\Events\ClientCreatedEvent;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facedes\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Identification extends Model
 { 
@@ -17,7 +17,7 @@ class Identification extends Model
         'attachment',
         'uuid',
         'description',
-        'type'
+        'identification_type'
     ];
 
     protected $dates = [
@@ -43,17 +43,17 @@ class Identification extends Model
             $request->all(),[
                 'uuid'=>'required',
                 'description'=>'required',
-                'type' => 'required'
+                'identification_type' => 'required'
         ]);
 
         if($validator->fails())
-        return back()->with('error',$validator->errors());
+        return redirect('/client/register')->with('error',$validator->errors());
 
         $identification = new Identification();
 
         $identification->uuid = $request->input('uuid');
         $identification->description = $request->input('description');
-        $identification->type = $request->input('type');
+        $identification->type = $request->input('identification_type');
 
         if($request->hasFile('attachment')){
             $path = $request->attachment->store('identification');

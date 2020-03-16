@@ -3,9 +3,10 @@
 namespace App\Listeners;
 
 use App\Events\ClientCreatedEvent;
+use App\Kin;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use App\Kin;
+
 
 class CreateKinListener
 {
@@ -27,7 +28,7 @@ class CreateKinListener
      */
     public function handle(ClientCreatedEvent $event)
     {
-        $kin = Kin;
+        $kin = new Kin;
         $kin->postKin($event->request, $event->client);
     }
 }

@@ -2,7 +2,11 @@
 
 namespace App;
 
+<<<<<<< HEAD
 use App\Events\ClientCreatedEvent;
+=======
+use DateTime;
+>>>>>>> 8e26c6be13d3e20ee127272940f2057bcfef461b
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -20,15 +24,15 @@ class Profile extends Model
         'gender',
         'phone_number_one',
         'phone_number_two',
-        'date_of_birth',
+        'date_of_birth_client',
         'tags',
-        'town',
+        'client_town',
         'postal_address',
         'marital_status',
         'district_id',
         'latitude',
         'longitude',
-        'email'
+        'client_email'
     ];
 
     protected $dates = [
@@ -60,11 +64,11 @@ class Profile extends Model
                 'last_name'=>'required',
                 'gender'=>'required',
                 'phone_number_one'=>'required',
-                'date_of_birth' =>'required',
-                'town' => 'required',
+                'date_of_birth_client' =>'required',
+                'client_town' => 'required',
                 'marital_status' => 'required',
                 'district_id' => 'required',
-                'email'=> 'required|email|unique:profiles',
+                'client_email'=> 'required|email|unique:profiles,email',
              ]
          );
 
@@ -81,15 +85,15 @@ class Profile extends Model
         $profile->gender = $request->input('gender');
         $profile->phone_number_one = $request->input('phone_number_one');
         $profile->phone_number_two = $request->input('phone_number_two');
-        $profile->date_of_birth = $request->input('date_of_birth');
+        $profile->date_of_birth =  new DateTime('now');//$request->input('date_of_birth_client');
         $profile->tags = $request->input('tags');
-        $profile->town = $request->input('town');
+        $profile->town = $request->input('client_town');
         $profile->postal_address = $request->input('postal_address');
         $profile->marital_status = $request->input('marital_status');
         $profile->latitude = $request->input('latitude');
         $profile->longitude = $request->input('longitude');
         $profile->district_id = $request->input('district_id');
-        $profile->email = $request->input('email');
+        $profile->email = $request->input('client_email');
 
         if($profilableType === 'guarantor'){
             $guarantor = Guarantor::find($profileableId);

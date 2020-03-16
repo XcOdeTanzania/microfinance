@@ -4,18 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event\UserCreatedEvent;
+use App\Events\UserCreatedEvent as EventsUserCreatedEvent;
+use App\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
   
-    public function createUser(Request $request){
+    public function createClient(Request $request){
         //TODO: create user, client, identification, business then next of kin
     
        
         $validator = Validator::make(
             $request->all(),[
                 'first_name' => 'required',
-                'email' => 'required | unique:users| email',
+                'client_email' => 'required | unique:users,email| email',
                 'last_name' => 'required' 
             ]);
 
@@ -24,11 +28,11 @@ class UserController extends Controller
 
         $user = User::create([
             'name' => $request->first_name,
-            'email' => $request->email,
+            'email' => $request->client_email,
             'password' => Hash::make($request->last_name),
         ]);
 
-        event(new UserCreatedEvent($request, $user));
+        event(new EventsUserCreatedEvent($request, $user));
     
      }
 }

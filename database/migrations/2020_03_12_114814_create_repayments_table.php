@@ -29,7 +29,7 @@ class CreateRepaymentsTable extends Migration
             $table->double('actual_saving');
             $table->double('total_paid');
             $table->double('total_outstanding');
-            $table->bigInteger('load_id');
+            $table->bigInteger('loan_id');
 
             $table->softdeletes();
             $table->timestamps();

@@ -27,7 +27,7 @@ class CreateProfileListener
      */
     public function handle(ClientCreatedEvent $event)
     {
-        $profile = Profile;
+        $profile = new Profile;
          
         $profile->postProfile($event->request,'user', $event->client->user_id);
     }

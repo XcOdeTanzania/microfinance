@@ -7,7 +7,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use App\Client;
 
-
 class CreateClientListener
 {
     /**
@@ -28,10 +27,8 @@ class CreateClientListener
      */
     public function handle(UserCreatedEvent $event)
     {
-    
-        $client = Client;
+        $client = new Client;
         $client->postClient($event->request,$event->user);
-
-
+        
     }
 }

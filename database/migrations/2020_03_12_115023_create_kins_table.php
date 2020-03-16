@@ -14,7 +14,7 @@ class CreateKinsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kins', function (Blueprint $table) {
+        Schema::create('kin', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('client_id');
             
@@ -38,6 +38,6 @@ class CreateKinsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kins');
+        Schema::dropIfExists('kin');
     }
 }

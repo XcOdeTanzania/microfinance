@@ -17,7 +17,7 @@ class CreateClientsTable extends Migration
             $table->id();
 
             $table->integer('user_id');
-            $table->integer('group_id');
+            $table->integer('group_id')->nullable();
             $table->integer('branch_id');
             $table->date('registration_date');
             $table->boolean('terms_and_conditions');

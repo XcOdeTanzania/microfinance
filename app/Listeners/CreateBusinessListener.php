@@ -26,7 +26,7 @@ class CreateBusinessListener
      */
     public function handle(ClientCreatedEvent $event)
     {
-    $business  = Business;
+    $business  = new Business;
     $business->postBusiness($event->request, $event->client);
     }
 }

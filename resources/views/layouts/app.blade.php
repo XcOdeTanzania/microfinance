@@ -39,6 +39,27 @@
     <section class="section-container">
         <!-- Page content-->
         <div class="content-wrapper">
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible">
+                    <button class="close" type="button" data-dismiss="alert"><span>&times;</span></button>
+                    {{ session('error') }}
+                </div>
+            @endif
+
+            @if (session('message'))
+                <div class="alert alert-success alert-dismissible">
+                    <button class="close" type="button" data-dismiss="alert"><span>&times;</span></button>
+                    {{ session('message') }}
+                </div>
+            @endif
+
+            @if (session('info'))
+                <div class="alert alert-info alert-dismissible">
+                    <button class="close" type="button" data-dismiss="alert"><span>&times;</span></button>
+                    {{ session('info') }}
+                </div>
+            @endif
+
             @yield('content')
         </div>
     </section>
@@ -54,6 +75,7 @@
 <!-- =============== CUSTOM PAGE SCRIPTS ===============-->
 @yield('scripts')
 </body>
+
 
 
 </html>

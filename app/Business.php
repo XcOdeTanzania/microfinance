@@ -2,12 +2,16 @@
 
 namespace App;
 
+<<<<<<< HEAD
 use App\Events\ClientCreatedEvent;
 use App\Listeners\CreateBusinessListener;
+=======
+use DateTime;
+>>>>>>> 8e26c6be13d3e20ee127272940f2057bcfef461b
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facedes\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Business extends Model
 {
@@ -15,14 +19,15 @@ class Business extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name',
-        'type',
-        'date_of_start',
-        'address',
-        'post_code',
+        'business_name',
+        'business_type',
+        'start_date',
+        'business_region_id',
+        'business_address',
+        'business_postal_code',
         'business_revenue',
-        'expenses',
-        'net_income'
+        'business_expenses',
+        'business_net_income'
     ];
 
     protected $dates = [
@@ -46,34 +51,39 @@ class Business extends Model
     public function postBusiness(Request $request,Client $client){
         $validator = Validator::make(
             $request->all(),[
-        'name'=>'required',
-        'type' =>'required',
-        'date_of_start' =>'required',
-        'address' =>'required',
-        'post_code' =>'required',
+        'business_name'=>'required',
+        'business_type' =>'required',
+        'start_date' =>'required',
+        'business_address' =>'required',
+        'business_postal_code' =>'required',
         'business_revenue' =>'required',
-        'expenses' =>'required',
-        'net_income' =>'required'
+        'business_expenses' =>'required',
+        'business_net_income' =>'required'
             ]);
 
             if($validator->fails())
-            return back()->with('error',$validator->errors());
+            return redirect('/client/register')->with('error',$validator->errors());
 
         
             $business = new Business();
 
-            $business->name = $request->name;
-            $business->type  = $request->type;
-            $business->date_of_start  = $request->date_of_start;
-            $business->address  = $request->address;
-            $business->post_code  = $request->post_code;
+            $business->name = $request->business_name;
+            $business->type  = $request->business_type;
+            $business->date_of_start  = $request->start_date;
+            $business->address  = $request->business_address;
+            $business->post_code  = $request->business_postal_code;
             $business->business_revenue = $request->business_revenue;
-            $business->expenses = $request->expenses;
-            $business->net_income  = $request->net_income;
+            $business->expenses = $request->business_expenses;
+            $business->net_income  = $request->business_net_income;
+            $business->region_id = 1;
 
             $client->business()->save($business);
 
+<<<<<<< HEAD
             event(new ClientCreatedEvent($request, $client));
+=======
+
+>>>>>>> 8e26c6be13d3e20ee127272940f2057bcfef461b
 
     }
 }

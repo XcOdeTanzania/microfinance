@@ -47,6 +47,8 @@ Route::group([
     Route::get('/client/closed', ['uses' => 'ClientController@closedPage'])->name('client.closed');
     Route::get('/client/rejected', ['uses' => 'ClientController@rejectedPage'])->name('client.rejected');
     Route::get('/client/transfer', ['uses' => 'ClientController@transferPage'])->name('client.transfer');
+
+    Route::post('client/register',['uses'=>'UserController@createClient'])->name('client.register');
     
 });
 

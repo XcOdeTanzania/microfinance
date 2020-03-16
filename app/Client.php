@@ -3,10 +3,11 @@
 namespace App;
 
 use App\Events\ClientCreatedEvent;
+use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facedes\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Client extends Model
 {
@@ -124,14 +125,21 @@ class Client extends Model
         if ($validator->fails())
             return back()->with('error', $validator->errors());
 
+        if ($validator->fails())
+            return redirect('/client/register')->with('error', $validator->errors());
 
         $client = new Client();
 
-        $client->registration_date = $request->registration_date;
-        $client->terms_and_condition  = $request->terms_and_condition;
+        $client->registration_date =  $request->registration_date;
+        $client->terms_and_conditions  = true; // $request->terms_and_condition;
+        $client->branch_id = 1;
 
         $user->client()->save($client);
 
-        event(new ClientCreatedEvent($request,$client));
+        event(new ClientCreatedEvent($request, $client));
+
+        return redirect(route('client.pending.approval'))->with('Client registered successfuly');
+
+        event(new ClientCreatedEvent($request, $client));
     }
 }
