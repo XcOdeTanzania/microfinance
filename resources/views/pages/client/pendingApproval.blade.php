@@ -4,7 +4,7 @@
  * User: henry
  * Date: 06-Mar-20
  * Time: 14:33
- */?>
+ */ ?>
 
 @extends('layouts.app')
 @section('content')
@@ -26,54 +26,73 @@
                     <thead>
                     <tr>
                         <th data-priority="1">Client Id</th>
-                        <th >Display Name</th>
+                        <th>Display Name</th>
                         <th>Group Name</th>
                         <th>Branch</th>
                         <th>Loan Officer</th>
                         <th>Registration Date</th>
-                        <th>Action </th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr >
+                    @foreach($clients as $client)
+
+                        <tr >
+                            <td>{{$client->id}}</td>
+                            <td>{{$client->user()->profile()->first_name . ' '. $client->profile()->last_name}}</td>
+                            <td>@if($client->group_id) $client->group() @else __('Individual')__ @endif</td>
+                            <td> $client->branch_id </td>
+                            <td>Mr. JPM</td>
+                            <td>{{$client->registration_date}}</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary ">
+                                    <i class="fas fa-eye"></i>
+                                    View
+                                </button></td>
+                        </tr>
+                    @endforeach
+                    <tr>
                         <td>CL-002-2020</td>
                         <td>John Joseph</td>
                         <td>Alpha 1</td>
-                        <td> M-City </td>
+                        <td> M-City</td>
                         <td>Mr. JPM</td>
                         <td>20/01/2020</td>
                         <td>
                             <button class="btn btn-sm btn-primary ">
                                 <i class="fas fa-eye"></i>
                                 View
-                            </button></td>
+                            </button>
+                        </td>
                     </tr>
 
-                    <tr >
+                    <tr>
                         <td>CL-002-2020</td>
                         <td>Ramadhan Athumani</td>
                         <td>individual</td>
-                        <td> M-City </td>
+                        <td> M-City</td>
                         <td>Mr. JPM</td>
                         <td>20/01/2020</td>
                         <td>
                             <button class="btn btn-sm btn-primary ">
                                 <i class="fas fa-eye"></i>
                                 View
-                            </button></td>
+                            </button>
+                        </td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td>CL-005-2020</td>
                         <td> Joseph John</td>
                         <td>individual</td>
-                        <td> M-City </td>
+                        <td> M-City</td>
                         <td>Mr. X</td>
                         <td>20/01/2020</td>
                         <td>
                             <button class="btn btn-sm btn-primary ">
                                 <i class="fas fa-eye"></i>
                                 View
-                            </button></td>
+                            </button>
+                        </td>
                     </tr>
 
                     </tbody>

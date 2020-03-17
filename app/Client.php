@@ -40,13 +40,13 @@ class Client extends Model
      * 
      */
 
-    public function group()
-    {
-        return $this->belongsTo(Group::class);
-    }
+     public function group()
+     {
+         return $this->belongsTo(Group::class);
+     }
 
 
-    // relations
+      // relations
 
     /**
      * client belongs to user
@@ -116,7 +116,7 @@ class Client extends Model
      * get Client reports.
      */
     public function getClientsReports()
-    { //define accessor 
+    { //define accessor
         if ($this->reportable_type == 'App\Client') return $this->reports;
         return null;
     }
@@ -148,6 +148,6 @@ class Client extends Model
 
         event(new ClientCreatedEvent($request, $client));
 
-        return redirect(route('client.pending.approval'))->with('Client registered successfuly');
+        return redirect(route('client.pending.approval'))->with('Client registered Successfully');
     }
 }
