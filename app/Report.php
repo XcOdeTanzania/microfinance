@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Validator;
 
 class Report extends Model
 {
@@ -20,10 +22,39 @@ class Report extends Model
         'deleted_at'
     ];
 
-    
+
 
     public function reportable()
     {
         return $this->morphTo();
+    }
+
+    public function postReport(Request $request){
+        $validator = Validator::make(
+            $request->all(),[
+                'name'=>'required',
+                'description'=>'required'
+                
+            ]);
+
+            if($validator->fails())
+            return back()->with('error',$validator->errors());
+
+
+            $report = new Report();
+
+            $report->name = $request->name;
+            $report->description = $request->description;
+            
+           if($request->reportable_type === 'Client'){
+              $client = Client::find($request->reportable_id);
+              $client->reports()->save($report);
+           }
+
+           if($request->reportable_type === 'Group'){
+            $group = Group::find($request->reportable_id);
+            $group->reports()->save($report);
+         }
+            
     }
 }
