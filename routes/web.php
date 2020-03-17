@@ -49,6 +49,7 @@ Route::group([
     Route::get('/client/transfer', ['uses' => 'ClientController@transferPage'])->name('client.transfer');
 
     Route::post('client/register',['uses'=>'UserController@createClient'])->name('client.register');
+    Route::get('client/list',['uses'=>'ClientController@getClientsList'])->name('client.list');
     
 });
 

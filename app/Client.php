@@ -111,6 +111,27 @@ class Client extends Model
      * 
      * @return Response
      */
+
+    /**
+     * Client report relationships.
+     */
+    public function reports()
+    {
+        return $this->morphMany(Report::class, 'reportable');
+    }
+
+
+    /**
+     * get Client reports.
+     */
+    public function getClientsReports()
+    { //define accessor 
+        if ($this->reportable_type == 'App\Client') return $this->reports;
+        return null;
+    }
+
+    // Business Logic
+
     public function postClient(Request $request, User $user)
     {
         $validator = Validator::make(
@@ -123,10 +144,8 @@ class Client extends Model
         );
 
         if ($validator->fails())
-            return back()->with('error', $validator->errors());
-
-        if ($validator->fails())
             return redirect('/client/register')->with('error', $validator->errors());
+
 
         $client = new Client();
 
@@ -139,6 +158,5 @@ class Client extends Model
         event(new ClientCreatedEvent($request, $client));
 
         return redirect(route('client.pending.approval'))->with('Client registered successfuly');
-
     }
 }

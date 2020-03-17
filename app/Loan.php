@@ -115,4 +115,14 @@ class Loan extends Model
 
 
     }
+    /**
+     * Loan report relationships.
+     */
+    public function reports()
+    {
+        return $this->morphMany(Report::class,'reportable');
+    }
+
+    
+
 }

@@ -87,4 +87,13 @@ class Branch extends Model
 
         $company->branches()->save($branch);
     }
+    /*
+    *  branch has many users
+    */
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
 }
