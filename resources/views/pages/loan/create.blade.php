@@ -193,7 +193,7 @@
                     </h4>
                     <fieldset class="overflow-auto">
                         <div class="table-responsive table-bordered">
-                            <table class="table">
+                            <table class="table charges-table">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
@@ -202,16 +202,22 @@
                                     <th>Collected on</th>
                                     <th>Date</th>
                                     <th>Payment Mode</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody id="chargesTableBody">
                                 <tr>
-                                    <td>Loan Account fee</td>
-                                    <td>Flat</td>
-                                    <td>2000</td>
-                                    <td>Installment</td>
-                                    <td></td>
-                                    <td>Normal</td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td>
+                                        <a class="add" title="Add" data-toggle="tooltip"><i class="fas fa-plus"></i></a>
+                                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="fa fa-pencil-alt"></i></a>
+                                        <a class="delete" title="Delete" data-toggle="tooltip"><i class="fa fa-trash-alt"></i></a>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -225,10 +231,13 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <!-- Add to product button -->
                             <div class="col-auto">
                                 <button class="btn btn-primary mb-2" onclick="addChargesToTable();" type="button">Add To Product</button>
                             </div>
                         </div>
+
+                        <!-- Collateral  -->
                     </fieldset>
                     <h4>
                         Collateral
@@ -239,7 +248,7 @@
                         <button class="btn btn-sm btn-primary m-2" type="button" data-toggle="modal"
                                 data-target="#addCollateralModal"><i class="fas fa-plus text-white mr-1"></i> Add
                         </button>
-                        <div class="table-responsive table-bordered">
+                        <div class="table-responsive table-bordered collateral_table">
                             <table class="table">
                                 <thead>
                                 <tr class="bg-gray">
@@ -254,6 +263,8 @@
                             </table>
                         </div>
                     </fieldset>
+
+                    <!-- Guarantors -->
                     <h4>
                         Guarantors
                         <br/>
@@ -416,6 +427,8 @@
 
     </script>
 @endsection
+
+<!-- Collateral modal -->
 <div class="modal fade" id="addCollateralModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -455,7 +468,9 @@
         </div>
     </div>
 </div>
+<!-- End Collateral modal -->
 
+<!-- Guarantor modal -->
 <div class="modal fade" id="addGuarantorModal" tabindex="-1" role="dialog" aria-labelledby="guarantorModelLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -583,3 +598,5 @@
         </div>
     </div>
 </div>
+
+<!-- End Guarantor model -->

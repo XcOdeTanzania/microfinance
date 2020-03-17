@@ -21,7 +21,7 @@ class CreateClientListener
 
     /**
      * Handle the event.
-     *
+     *`
      * @param  UserCreatedEvent  $event
      * @return void
      */

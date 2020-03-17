@@ -75,6 +75,5 @@ class Business extends Model
             $client->business()->save($business);
 
 
-
     }
 }

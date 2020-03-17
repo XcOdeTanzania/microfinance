@@ -96,7 +96,7 @@ class Profile extends Model
             if(!$guarantor) back()->with('error','Guarantor does not exist');
             $guarantor->profile()->save($profile);
         }
-        else if($profilableType === 'user'){
+        else if($profilableType === 'client'){
             $user = User::find($profileableId);
             if(!$user) back()->with('error','User does not exist');
             $user->profile()->save($profile);

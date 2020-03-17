@@ -102,6 +102,15 @@ class Client extends Model
         return $this->hasOne(Share::class);
     }
 
+    // Business Logic
+    /**
+     * PostClient function
+     * 
+     *  @param Request , 
+     *  @param User 
+     * 
+     * @return Response
+     */
 
     /**
      * Client report relationships.

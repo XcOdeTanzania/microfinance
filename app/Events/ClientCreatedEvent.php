@@ -20,8 +20,9 @@ class ClientCreatedEvent
     public $request;
 
     /**
-     * Create a new event instance.
-     *
+     * Create a new client create event instance.
+     * @param Request $request
+     * @param Client $client
      * @return void
      */
     public function __construct(Request $request,Client $client)
