@@ -22,4 +22,13 @@ class Company extends Model
     {
         return $this->hasMany(Branch::class);
     }
+
+    /**
+     * Client report relationships.
+     */
+    public function reports()
+    {
+        return $this->morphMany(Report::class,'reportable');
+    }
+
 }

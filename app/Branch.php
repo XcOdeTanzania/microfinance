@@ -45,4 +45,14 @@ class Branch extends Model
     {
         return $this->belongsTo(company::class);
     }
+
+    /*
+    *  branch has many users
+    */
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
 }

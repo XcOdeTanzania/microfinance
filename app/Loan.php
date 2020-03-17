@@ -55,4 +55,15 @@ class Loan extends Model
     {
         return $this->hasMany(Collateral::class);
     }
+
+    /**
+     * Loan report relationships.
+     */
+    public function reports()
+    {
+        return $this->morphMany(Report::class,'reportable');
+    }
+
+    
+
 }
