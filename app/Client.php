@@ -40,13 +40,13 @@ class Client extends Model
      * 
      */
 
-     public function group()
-     {
-         return $this->belongsTo(Group::class);
-     }
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
+    }
 
 
-      // relations
+    // relations
 
     /**
      * client belongs to user
@@ -93,7 +93,7 @@ class Client extends Model
         return $this->morphOne(Loan::class, 'loanable');
     }
 
-     /**
+    /**
      * client has one share
      */
 
@@ -103,41 +103,51 @@ class Client extends Model
     }
 
 
-      /**
+    /**
      * Client report relationships.
      */
     public function reports()
     {
-        return $this->morphMany(Report::class,'reportable');
+        return $this->morphMany(Report::class, 'reportable');
     }
 
-     // Business Logic
 
-     public function postClient(Request $request,User $user){
+    /**
+     * get Client reports.
+     */
+    public function getClientsReports()
+    { //define accessor 
+        if ($this->reportable_type == 'App\Client') return $this->reports;
+        return null;
+    }
+
+    // Business Logic
+
+    public function postClient(Request $request, User $user)
+    {
         $validator = Validator::make(
-            $request->all(),[
-        'registration_date'=>'required',
-        'terms_and_condition' =>'required',
-    
-            ]);
+            $request->all(),
+            [
+                'registration_date' => 'required',
+                'terms_and_condition' => 'required',
 
-            if($validator->fails())
-            return redirect('/client/register')->with('error',$validator->errors());
+            ]
+        );
 
-          
-            $client = new Client();
+        if ($validator->fails())
+            return redirect('/client/register')->with('error', $validator->errors());
 
-            $client->registration_date =  $request->registration_date;
-            $client->terms_and_conditions  = true; // $request->terms_and_condition;
-            $client->branch_id = 1;
-           
-            $user->client()->save($client);
 
-            event(new ClientCreatedEvent($request, $client));
+        $client = new Client();
 
-            return redirect(route('client.pending.approval'))->with('Client registered successfuly');
+        $client->registration_date =  $request->registration_date;
+        $client->terms_and_conditions  = true; // $request->terms_and_condition;
+        $client->branch_id = 1;
 
+        $user->client()->save($client);
+
+        event(new ClientCreatedEvent($request, $client));
+
+        return redirect(route('client.pending.approval'))->with('Client registered successfuly');
     }
-
-   
 }

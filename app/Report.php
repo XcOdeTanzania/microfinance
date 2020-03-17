@@ -29,6 +29,8 @@ class Report extends Model
         return $this->morphTo();
     }
 
+    
+
     public function postReport(Request $request){
         $validator = Validator::make(
             $request->all(),[
