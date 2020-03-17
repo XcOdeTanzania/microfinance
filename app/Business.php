@@ -2,12 +2,7 @@
 
 namespace App;
 
-<<<<<<< HEAD
-use App\Events\ClientCreatedEvent;
-use App\Listeners\CreateBusinessListener;
-=======
 use DateTime;
->>>>>>> 8e26c6be13d3e20ee127272940f2057bcfef461b
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -79,11 +74,6 @@ class Business extends Model
 
             $client->business()->save($business);
 
-<<<<<<< HEAD
-            event(new ClientCreatedEvent($request, $client));
-=======
-
->>>>>>> 8e26c6be13d3e20ee127272940f2057bcfef461b
 
     }
 }

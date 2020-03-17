@@ -28,7 +28,8 @@ class CreateGuarantorsTable extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * @r
+     * eturn void
      */
     public function down()
     {

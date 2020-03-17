@@ -2,11 +2,7 @@
 
 namespace App;
 
-<<<<<<< HEAD
-use App\Events\ClientCreatedEvent;
-=======
 use DateTime;
->>>>>>> 8e26c6be13d3e20ee127272940f2057bcfef461b
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -71,8 +67,6 @@ class Kin extends Model
             $kin->relationship = $request->relationship;
 
             $client->kins()->save($kin);
-
-            event(new ClientCreatedEvent($request, $client));
 
         }
 }

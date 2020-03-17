@@ -140,6 +140,5 @@ class Client extends Model
 
         return redirect(route('client.pending.approval'))->with('Client registered successfuly');
 
-        event(new ClientCreatedEvent($request, $client));
     }
 }

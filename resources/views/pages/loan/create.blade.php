@@ -193,7 +193,7 @@
                     </h4>
                     <fieldset class="overflow-auto">
                         <div class="table-responsive table-bordered">
-                            <table class="table">
+                            <table class="table charges-table">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
@@ -202,16 +202,22 @@
                                     <th>Collected on</th>
                                     <th>Date</th>
                                     <th>Payment Mode</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>Loan Account fee</td>
-                                    <td>Flat</td>
-                                    <td>2000</td>
-                                    <td>Installment</td>
-                                    <td></td>
-                                    <td>Normal</td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td>
+                                        <a class="add" title="Add" data-toggle="tooltip"><i class="fas fa-plus"></i></a>
+                                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="fa fa-pencil-alt"></i></a>
+                                        <a class="delete" title="Delete" data-toggle="tooltip"><i class="fa fa-trash-alt"></i></a>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -225,10 +231,13 @@
                                     <option value="">Application fee</option>
                                 </select>
                             </div>
+                            <!-- Add to product button -->
                             <div class="col-auto">
-                                <button class="btn btn-primary mb-2" type="button">Add To Product</button>
+                                <button class="btn btn-primary mb-2 add-to" type="button">Add To Product</button>
                             </div>
                         </div>
+
+                        <!-- Collateral  -->
                     </fieldset>
                     <h4>
                         Collateral
@@ -239,7 +248,7 @@
                         <button class="btn btn-sm btn-primary m-2" type="button" data-toggle="modal"
                                 data-target="#addCollateralModal"><i class="fas fa-plus text-white mr-1"></i> Add
                         </button>
-                        <div class="table-responsive table-bordered">
+                        <div class="table-responsive table-bordered collateral_table">
                             <table class="table">
                                 <thead>
                                 <tr class="bg-gray">
@@ -264,6 +273,8 @@
                             </table>
                         </div>
                     </fieldset>
+
+                    <!-- Guarantors -->
                     <h4>
                         Guarantors
                         <br/>
@@ -322,7 +333,142 @@
 @section('scripts')
     <script src="{{ asset('angle/js/wizard.js') }}"></script>
     <script src="{{ asset('angle/js/forms.js') }}"></script>
+    <script>
+    $(document).ready(function () {
+        $('[data-toggle=tooltip]').tooltip();
+        var action = $('table td:last-child').html();
+        // Append table with row form on add to product button
+        $(".add-to").click(function() {
+            $(this).attr("disabled", "disabled");
+            var index = $("table body tr:last-child").index();
+            var row = '<tr>' +
+                '<td><input type="text" class="form-control" name="name"></td>'+
+                '<td><input type="text" class="form-control" name="type"></td>'+
+                '<td><input type="text" class="form-control" name="amount"></td>'+
+                '<td><input type="text" class="form-control" name="collect_on"></td>'+
+                '<td><input type="text" class="form-control" name="date"></td>'+
+                '<td><input type="text" class="form-control" name="payment_mode"></td>'+
+                '<td>'+ action +'</td>'+
+                '</tr>';
+            $("charges-table").append(row);
+            $("charges-table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+            $('[data-toggle="tooltip"]').tooltip();
+                
+        });
+
+        //Add row on add button click
+        $(document).on("click", ".add", function(){
+            var empty = false;
+            var input = $(this).parent("tr").find('input[type=text]');
+            input.each(function() {
+                if(!$(this).val()){
+                    $(this).addClass("error");
+                    empty = true;
+                }
+                else {
+                    $(this).removeClass("error");
+                }
+            });
+            
+            $(this).parents('tr').find(".error").first().focus();
+            if(!empty) {
+                input.each(function () {
+                    $(this).parent("td").html($(this).val());
+                });
+                $(this).parents("tr").find(".add, .edit").toggle();
+                $(".add-to").removeAttr('disabled');
+                
+            }
+        });
+
+        //Edit row on edit button
+        $(document).on("click", "edit", function() {
+            $(this).parents("tr").find("td:not(:last-child)").each(function() {
+                $(this).html('<input type="text" class="form-control" value=""' +$(this).text() + '">');
+            });
+            $(this).parents("tr").find(".add, .edit").toggle();
+            $(".add-to").attr("disable", "disable");
+        });
+
+        // Delete row on delete button click
+
+        $(document).on("click", ".delete", function() {
+            $(this).parents("tr").remove();
+            $(".add-to").removeAttr("disabled");
+        });
+    });
+    </script>
+
+    
+    <script>
+       $(document).ready(function () {
+        $('[data-toggle=tooltip]').tooltip();
+        var action = $('table td:last-child').html();
+        // Append table with row form on add to product button
+        $(".add-to").click(function() {
+            $(this).attr("disabled", "disabled");
+            var index = $("table body tr:last-child").index();
+            var row = '<tr>' +
+                '<td><input type="text" class="form-control" name="name"></td>'+
+                '<td><input type="text" class="form-control" name="type"></td>'+
+                '<td><input type="text" class="form-control" name="amount"></td>'+
+                '<td><input type="text" class="form-control" name="collect_on"></td>'+
+                '<td><input type="text" class="form-control" name="date"></td>'+
+                '<td><input type="text" class="form-control" name="payment_mode"></td>'+
+                '<td>'+ action +'</td>'+
+                '</tr>';
+            $("collateral_table").append(row);
+            $("charges-table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+            $('[data-toggle="tooltip"]').tooltip();
+                
+        });
+
+        //Add row on add button click
+        $(document).on("click", ".add", function(){
+            var empty = false;
+            var input = $(this).parent("tr").find('input[type=text]');
+            input.each(function() {
+                if(!$(this).val()){
+                    $(this).addClass("error");
+                    empty = true;
+                }
+                else {
+                    $(this).removeClass("error");
+                }
+            });
+            
+            $(this).parents('tr').find(".error").first().focus();
+            if(!empty) {
+                input.each(function () {
+                    $(this).parent("td").html($(this).val());
+                });
+                $(this).parents("tr").find(".add, .edit").toggle();
+                $(".add-to").removeAttr('disabled');
+                
+            }
+        });
+
+        //Edit row on edit button
+        $(document).on("click", "edit", function() {
+            $(this).parents("tr").find("td:not(:last-child)").each(function() {
+                $(this).html('<input type="text" class="form-control" value=""' +$(this).text() + '">');
+            });
+            $(this).parents("tr").find(".add, .edit").toggle();
+            $(".add-to").attr("disable", "disable");
+        });
+
+        // Delete row on delete button click
+
+        $(document).on("click", ".delete", function() {
+            $(this).parents("tr").remove();
+            $(".add-to").removeAttr("disabled");
+        });
+        
+    }); 
+    </script>
 @endsection
+
+<!-- Collateral modal -->
 <div class="modal fade" id="addCollateralModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -358,13 +504,15 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="button" class="btn btn-primary add-to">Add</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<!-- End Collateral modal -->
 
+<!-- Guarantor modal -->
 <div class="modal fade" id="addGuarantorModal" tabindex="-1" role="dialog" aria-labelledby="guarantorModelLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -479,3 +627,5 @@
         </div>
     </div>
 </div>
+
+<!-- End Guarantor model -->

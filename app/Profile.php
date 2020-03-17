@@ -2,11 +2,7 @@
 
 namespace App;
 
-<<<<<<< HEAD
-use App\Events\ClientCreatedEvent;
-=======
 use DateTime;
->>>>>>> 8e26c6be13d3e20ee127272940f2057bcfef461b
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -110,6 +106,5 @@ class Profile extends Model
         else return back()->with('error','Invalid Profileable Type');
          
         
-        event(new ClientCreatedEvent($request, $profilableType));
      }
 }
