@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Charge;
 use App\Loan;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class LoanController extends Controller
      */
     public function createLoanPage()
     {
-        return view('pages.loan.create');
+        $charges = Charge::all();
+        return view('pages.loan.create',['charges'=>$charges]);
     }
 
     /**
