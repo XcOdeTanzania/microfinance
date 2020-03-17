@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
-class group extends Model
+class Group extends Model
 {
     use SoftDeletes;
 
@@ -56,6 +56,16 @@ class group extends Model
     {
         return $this->morphOne(Loan::class, 'loanable');
     }
+
+
+        /**
+     * Group report relationships.
+     */
+    public function reports()
+    {
+        return $this->morphMany(Report::class,'reportable');
+    }
+
 
     // Business Logic
 
@@ -142,4 +152,6 @@ class group extends Model
 
         $group->delete();
     }
+
+
 }
