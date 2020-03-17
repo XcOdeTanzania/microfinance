@@ -55,6 +55,24 @@ class Report extends Model
             $group = Group::find($request->reportable_id);
             $group->reports()->save($report);
          }
+         if($request->reportable_type === 'Saving'){
+            $saving = Saving::find($request->reportable_id);
+            $saving->reports()->save($report);
+         }
+
+         if($request->reportable_type === 'Loan'){
+            $loan = Loan::find($request->reportable_id);
+            $loan->reports()->save($report);
+         }
+
+         if($request->reportable_type === 'Company'){
+            $company = Company::find($request->reportable_id);
+            $company->reports()->save($report);
+         }
+         if($request->reportable_type === 'Finance'){
+            $finance = Loan::find($request->reportable_id);
+            $finance->reports()->save($report);
+         }
             
     }
 }
