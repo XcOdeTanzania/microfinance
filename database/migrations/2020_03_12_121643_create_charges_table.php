@@ -21,7 +21,7 @@ class CreateChargesTable extends Migration
             $table->string('type');
             $table->double('amount');
             $table->string('collected_on');
-            $table->date('date');
+            $table->date('date')->nullable();
             $table->string('payment_mode');
 
             $table->softdeletes();
