@@ -24,9 +24,9 @@
                                 <div class="form-group row"><label class="col-md-2 col-form-label" for="input-id-1">Branch</label>
                                     <div class="col-md-6"><select name="accounttag" class="form-control" id="accountag">
                                             <option >Select</option>
-                                            @foreach ($branches as $branch)
+                                            {{-- @foreach ($branches as $branch)
                                                 <option>{{ $branch->name }}</option>
-                                            @endforeach
+                                            @endforeach --}}
                                         </select></div>
                                 </div>
                             </fieldset>
@@ -98,6 +98,41 @@
                     </div>
                 </div>
 
+
+                <table class="table table-striped my-4 w-100" id="datatable3">
+                    <thead>
+                       <tr>
+                          <th>Group Name</th>
+                          <th>External ID</th>
+                          <th>Branch Name</th>
+                          <th>Loan Officer</th>
+                          <th>View</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($approvedGroups as $group)
+                       <tr>
+                          <td>
+                             <a href="#">{{$group->name}}</a>
+                          </td>
+                          <td>
+                             {{$group->uuid}}
+                          </td>
+                          <td>
+                             {{$group->branch[0]->name}}
+                          </td>
+                          <td>
+                            {{$group->branch_id}}
+                         </td>
+                          <td>
+                             <a href="#" class="btn btn-primary">
+                                <i class="fas fa-file"></i>
+                             </a>
+                          </td>
+                       </tr>
+                       @endforeach
+                    </tbody>
+                 </table>
             </div>
         <!-- END card-->
  </div>

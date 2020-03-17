@@ -67,6 +67,12 @@ class Group extends Model
     }
 
 
+    public function loanUser()
+    {
+        return $this->hasOneThrough('App\User', 'App\Loan');
+    }
+
+
     // Business Logic
 
     // create new group function

@@ -64,4 +64,6 @@ class Loan extends Model
         return $this->morphMany(Report::class,'reportable');
     }
 
+    
+
 }

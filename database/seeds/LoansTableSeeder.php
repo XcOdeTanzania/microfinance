@@ -13,6 +13,7 @@ class LoansTableSeeder extends Seeder
     public function run()
     {
         Loan::create([
+            'user_id' => 1,
             'loan_type_id' => 1,
             'top_up' => 20000,
             'amount' => 3000,
@@ -31,6 +32,7 @@ class LoansTableSeeder extends Seeder
         ]);
 
         Loan::create([
+            'user_id' => 1,
             'loan_type_id' => 1,
             'top_up' => 20000,
             'amount' => 3000,
@@ -49,6 +51,7 @@ class LoansTableSeeder extends Seeder
         ]);
 
         Loan::create([
+            'user_id' => 1,
             'loan_type_id' => 3,
             'top_up' => 20000,
             'amount' => 3000,
@@ -67,6 +70,7 @@ class LoansTableSeeder extends Seeder
         ]);
 
         Loan::create([
+            'user_id' => 1,
             'loan_type_id' => 1,
             'top_up' => 20000,
             'amount' => 3000,
@@ -85,6 +89,7 @@ class LoansTableSeeder extends Seeder
         ]);
 
         Loan::create([
+            'user_id' => 1,
             'loan_type_id' => 1,
             'top_up' => 20000,
             'amount' => 3000,
