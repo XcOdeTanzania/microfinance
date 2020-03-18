@@ -13,6 +13,7 @@ class GroupsTableSeeder extends Seeder
     public function run()
     {
         Group::create([
+            'user_id'=> 1,
             'name' => 'group 1',
             'branch_id' => 1,
             'account_number' => 'account_number',
@@ -26,6 +27,7 @@ class GroupsTableSeeder extends Seeder
         ]);
 
         Group::create([
+            'user_id'=> 2,
             'name' => 'group 2',
             'branch_id' => 1,
             'account_number' => 'account_number',
@@ -38,6 +40,7 @@ class GroupsTableSeeder extends Seeder
 
         ]);
         Group::create([
+            'user_id'=> 3,
             'name' => 'group 3',
             'branch_id' => 1,
             'account_number' => 'account_number',
@@ -50,6 +53,7 @@ class GroupsTableSeeder extends Seeder
 
         ]);
         Group::create([
+            'user_id'=> 1,
             'name' => 'group 4',
             'branch_id' => 1,
             'account_number' => 'account_number',

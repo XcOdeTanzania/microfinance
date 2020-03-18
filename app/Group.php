@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -52,25 +53,25 @@ class Group extends Model
     /**
      * Loan polymorphic to group.
      */
-    public function loan()
+    public function loans()
     {
-        return $this->morphOne(Loan::class, 'loanable');
+        return $this->morphMany(Loan::class, 'loanable');
     }
 
 
-        /**
+    /**
      * Group report relationships.
      */
     public function reports()
     {
-        return $this->morphMany(Report::class,'reportable');
+        return $this->morphMany(Report::class, 'reportable');
     }
 
-
-    public function loanUser()
+    public function user()
     {
-        return $this->hasOneThrough('App\User', 'App\Loan');
+        return $this->belongsTo(User::class);
     }
+
 
 
     // Business Logic
@@ -116,7 +117,7 @@ class Group extends Model
         $group = Group::find($group_id);
 
         if (!$group)
-        return redirect('/groups/groups')->with('error', 'group not found');
+            return redirect('/groups/groups')->with('error', 'group not found');
 
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -131,7 +132,7 @@ class Group extends Model
         ]);
 
         if ($validator->fails())
-        return redirect('/')->with('error', $validator->errors());
+            return redirect('/')->with('error', $validator->errors());
 
         $group->name = $request->name;
         $group->branch_id = $request->branch_id;
@@ -154,10 +155,8 @@ class Group extends Model
         $group = Group::find($group_id);
 
         if (!$group)
-        return redirect('/groups/groups')->with('error', 'group not found');
+            return redirect('/groups/groups')->with('error', 'group not found');
 
         $group->delete();
     }
-
-
 }

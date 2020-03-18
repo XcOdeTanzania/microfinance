@@ -15,7 +15,8 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-
+            
+            $table->integer('user_id');
             $table->string('name');
             $table->integer('branch_id');
             $table->string('account_number');

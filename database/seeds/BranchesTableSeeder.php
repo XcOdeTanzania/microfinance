@@ -22,16 +22,16 @@ class BranchesTableSeeder extends Seeder
 
         $branch = new Branch();
 
-        $branch->name = "Head Office";
-        $branch->location = "Mwenge";
+        $branch->name = "Kisutu";
+        $branch->location = "Posta";
         $branch->company_id = 1;
 
         $branch->save();
 
         $branch = new Branch();
 
-        $branch->name = "Head Office";
-        $branch->location = "Mwenge";
+        $branch->name = "Vijana";
+        $branch->location = "Kariokoo";
         $branch->company_id = 1;
 
         $branch->save();
