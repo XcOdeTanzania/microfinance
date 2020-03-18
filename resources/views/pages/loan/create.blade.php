@@ -12,7 +12,8 @@
     <div class="card card-default">
         <div class="card-header"> Loan Application</div>
         <div class="card-body">
-            <form id="example-form" action="">
+            <form id="example-form" action="{{route('loan.create')}}" method="POST">
+                @csrf
                 <div>
                     <h4>
                         Terms
@@ -24,9 +25,12 @@
                             <div class="row justify-content-center justify-content-sm-center justify-content-md-center  ">
                                 <div class="col-lg-4 col-md-6 col-sm-8 col-12 ">
                                     <div class="form-group">
-                                        <label for="client"> Client </label>
-                                        <input name="client" id="client" class="form-control" type="text"
-                                               placeholder="Individual / Group"/>
+                                        <label for="clientApplyForLoan"> Client </label>
+                                        <div class="autocomplete">
+                                            <input  name="client" id="clientApplyForLoan" class="form-control" type="text"
+                                                    placeholder="Individual / Group"/>
+                                        </div>
+
                                     </div>
                                     <div class="form-group">
                                         <label for="loanType"> Loan Type </label>
@@ -193,7 +197,7 @@
                     </h4>
                     <fieldset class="overflow-auto">
                         <div class="table-responsive table-bordered">
-                            <table class="table charges-table">
+                            <table class="table">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
@@ -202,22 +206,16 @@
                                     <th>Collected on</th>
                                     <th>Date</th>
                                     <th>Payment Mode</th>
-                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody id="chargesTableBody">
                                 <tr>
-                                    <td><input type="text" name="" id="" class="form-control"></td>
-                                    <td><input type="text" name="" id="" class="form-control"></td>
-                                    <td><input type="text" name="" id="" class="form-control"></td>
-                                    <td><input type="text" name="" id="" class="form-control"></td>
-                                    <td><input type="text" name="" id="" class="form-control"></td>
-                                    <td><input type="text" name="" id="" class="form-control"></td>
-                                    <td>
-                                        <a class="add" title="Add" data-toggle="tooltip"><i class="fas fa-plus"></i></a>
-                                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="fa fa-pencil-alt"></i></a>
-                                        <a class="delete" title="Delete" data-toggle="tooltip"><i class="fa fa-trash-alt"></i></a>
-                                    </td>
+                                    <td>Loan Account fee</td>
+                                    <td>Flat</td>
+                                    <td>2000</td>
+                                    <td>Installment</td>
+                                    <td></td>
+                                    <td>Normal</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -231,7 +229,6 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <!-- Add to product button -->
                             <div class="col-auto">
                                 <button class="btn btn-primary mb-2" onclick="addChargesToTable();" type="button">Add To Product</button>
                             </div>
@@ -248,7 +245,7 @@
                         <button class="btn btn-sm btn-primary m-2" type="button" data-toggle="modal"
                                 data-target="#addCollateralModal"><i class="fas fa-plus text-white mr-1"></i> Add
                         </button>
-                        <div class="table-responsive table-bordered collateral_table">
+                        <div class="table-responsive table-bordered">
                             <table class="table">
                                 <thead>
                                 <tr class="bg-gray">
@@ -316,6 +313,8 @@
     <script>
 
 
+
+
         $('#addGuarantorModal').on('hidden.bs.modal', function (e) {
             console.log('Guarantor closed');
         });
@@ -334,7 +333,7 @@
             clients['clients'].forEach(function (client){
                 clientsList.push(client['id']+' '+client['profile']['first_name']+' '+client['profile']['middle_name']+' '+client['profile']['last_name'])
             });
-
+            console.log(clientsList);
         }).catch (function (error) {
             console.log(error);
             return {'error':error};
@@ -408,7 +407,7 @@
             var obj = JSON.parse(charge);
             console.log(obj.amount);
             var row = ''+
-                    '<input type="hidden" name="charge_id" value="'+obj.id+'">'+
+                    '<tr class="hidden"><input type="hidden" name="charge_id" value="'+obj.id+'"></tr>'+
                 '<tr>'+
                 '<td >'+obj.name+'</td>'+
             '<td>'+obj.type+'</td>'+
@@ -422,14 +421,27 @@
 
         // End charges
 
+        // add suggestions to client input
 
+
+
+        console.log('XXXXXXXXXXXXXXXXXXX');
+        console.log(document.getElementById("clientApplyForLoan"));
+        document.getElementById("clientApplyForLoan").addEventListener('focus',function (event) {
+            console.log('focussed ');
+        });
+//        $('#clientApplyForLoan').onfocus(function () {
+//           console.log('Message');
+//        });
+        autoComplete($('#clientApplyForLoan'), clientsList);
+        console.log('called');
 
 
     </script>
 @endsection
 
 <!-- Collateral modal -->
-<div class="modal fade" id="addCollateralModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade " id="addCollateralModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
