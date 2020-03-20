@@ -35,6 +35,15 @@ class Loan extends Model
     }
 
     /**
+     * user has many charges
+     */
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
      * loans has many charges
      */
 
@@ -61,6 +70,9 @@ class Loan extends Model
 
 
 
+
+
+
     // Business Logic
 
 
@@ -72,7 +84,8 @@ class Loan extends Model
      * 
      * @return void
      */
-    public function postLoan(Request $request, Client $client) {
+    public function postLoan(Request $request, Client $client)
+    {
 
         $validator = Validator::make(
             $request->all(),
@@ -90,7 +103,7 @@ class Loan extends Model
             ]
         );
 
-        
+
         if ($validator->fails())
             return back()->with('error', $validator->errors());
 
@@ -112,17 +125,12 @@ class Loan extends Model
 
 
         $client->loan()->save($loan);
-
-
     }
     /**
      * Loan report relationships.
      */
     public function reports()
     {
-        return $this->morphMany(Report::class,'reportable');
+        return $this->morphMany(Report::class, 'reportable');
     }
-
-    
-
 }

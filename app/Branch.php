@@ -77,7 +77,7 @@ class Branch extends Model
         );
 
         if ($validator->fails())
-        return back()->with('error', $validator->errors());
+            return back()->with('error', $validator->errors());
 
         $branch = new Branch();
 
@@ -95,5 +95,4 @@ class Branch extends Model
     {
         return $this->hasMany(User::class);
     }
-
 }

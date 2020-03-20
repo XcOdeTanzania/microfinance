@@ -44,10 +44,18 @@ class User extends Authenticatable
      * user has one client relation
      */
 
-     public function client()
-     {
-         return $this->hasOne(Client::class);
-     }
+    public function clients()
+    {
+        return $this->hasMany(Client::class);
+    }
+
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
+    }
+
+
+
 
 
     /**
@@ -58,7 +66,7 @@ class User extends Authenticatable
         return $this->morphOne(Profile::class, 'profileable');
     }
 
-     /**
+    /**
      * user has many roles
      */
     public function roles()
@@ -66,14 +74,28 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+  /**
+     * check for role
+     */
+    public function is($roleName)
+    {
+        foreach ($this->roles()->get() as $role)
+        {
+            if ($role->name == $roleName)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     /*
     *  user belongs to a branch
     */
 
-    public function branches()
+    public function branch()
     {
         return $this->belongsTo(Branch::class);
     }
-
-
 }

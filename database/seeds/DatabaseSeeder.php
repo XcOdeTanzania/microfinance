@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ChargesTableSeeder::class);
         $this->call(ProfilesTableSeeder::class);
 
+
     }
 }

@@ -7,7 +7,8 @@ use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+
+
 
 class Client extends Model
 {
@@ -15,6 +16,7 @@ class Client extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'name', 'email', 'password',
         'registration_date',
         'terms_and_condition'
     ];
@@ -40,22 +42,13 @@ class Client extends Model
      * 
      */
 
-     public function group()
-     {
-         return $this->belongsTo(Group::class);
-     }
-
-
-      // relations
-
-    /**
-     * client belongs to user
-     */
-
-    public function user()
+    public function group()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Group::class);
     }
+
+
+    // relations
 
 
     /**
@@ -88,9 +81,9 @@ class Client extends Model
     /**
      * Loan polymorphic to client.
      */
-    public function loan()
+    public function loans()
     {
-        return $this->morphOne(Loan::class, 'loanable');
+        return $this->morphMany(Loan::class, 'loanable');
     }
 
     /**
@@ -102,15 +95,14 @@ class Client extends Model
         return $this->hasOne(Share::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     // Business Logic
-    /**
-     * PostClient function
-     * 
-     *  @param Request , 
-     *  @param User 
-     * 
-     * @return Response
-     */
+   
+
 
     /**
      * Client report relationships.
@@ -120,43 +112,17 @@ class Client extends Model
         return $this->morphMany(Report::class, 'reportable');
     }
 
+    
+
 
     /**
      * get Client reports.
      */
     public function getClientsReports()
-    { //define accessor
+    { //define accessor 
         if ($this->reportable_type == 'App\Client') return $this->reports;
         return null;
     }
 
     // Business Logic
-
-    public function postClient(Request $request, User $user)
-    {
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'registration_date' => 'required',
-                'terms_and_condition' => 'required',
-
-            ]
-        );
-
-        if ($validator->fails())
-            return redirect('/client/register')->with('error', $validator->errors());
-
-
-        $client = new Client();
-
-        $client->registration_date =  $request->registration_date;
-        $client->terms_and_conditions  = true; // $request->terms_and_condition;
-        $client->branch_id = 1;
-
-        $user->client()->save($client);
-
-        event(new ClientCreatedEvent($request, $client));
-
-        return redirect(route('client.pending.approval'))->with('Client registered Successfully');
-    }
 }

@@ -6,64 +6,65 @@ use Illuminate\Http\Request;
 use App\Branch;
 use App\User;
 use App\Group;
+use App\Loan;
+use App\Officer;
+use App\Role;
 
 class GroupController extends Controller
 {
-    public function groupsPage(){
-
-        $roleName = "Loan Officer";
-
+    public function groupsPage()
+    {
         $groups = Group::all();
 
         $branches = Branch::all();
 
-        $approved_groups = $groups->filter(function ($item) {
-            if ($item->status == 'approved') {
-                $item->loan;
-                $item->userLoan;
-                $item->branch = Branch::where('id','like',$item->branch_id)->get();
-                return $item;
-            }
-        });
-
-        return response()->json([
-            "data" => $approved_groups
-        ]);
-
-        $closed_groups = $groups->filter(function ($item) {
-            if ($item->status == 'closed') return $item;
-        });
-
-        $pending_approval_groups = $groups->filter(function ($item) {
-            if ($item->status == 'pendingApproval') return $item;
-        });
-
         foreach ($branches as $branch) {
-            foreach ($branch->users as $user) {
-                $user->roles;
-                $user = null;
+            foreach ($branch->users as $key => $user) {
+                if ($user->is('Loan Officer')) {
+                    $user->groups;
+                    $user->clients;
+                } else {
+                    unset($branch->users[$key]);
+                }
+
             }
         }
 
-        // dd($branches);
-        
-        
+       
 
-        // dd($users)
 
-        return view('pages.groups.groups',
-        ["approvedGroups" => $approved_groups,
-        "pendingApprovalGroups" => $pending_approval_groups,
-        "closedGroups" => $closed_groups
-        ]);
+
+
+       
+
+
+
+
+        // return response()->json([
+        //     "branches" => $branches,
+        //     "groups" => $groups,
+        // ]);
+
+
+
+        return view(
+            'pages.groups.groups',
+            [
+                "groups" => $groups,
+                "branches" => $branches,
+
+            ]
+        );
     }
 
 
-    public function centersPage(){
+    public function centersPage()
+    {
         return view('pages.groups.centers');
     }
 
-    public function transferPage(){
+    public function transferPage()
+    {
         return view('pages.groups.transfer');
     }
 
@@ -72,11 +73,11 @@ class GroupController extends Controller
 
     public function getUsersByRole($roleName, $branch_id)
     {
-        $users = User::whereHas("roles", function($query) use ($roleName) {
+        $users = User::whereHas("roles", function ($query) use ($roleName) {
             $query->where("name", "=", $roleName);
         })->get();
 
-        return $users->filter(function($item) use ($branch_id) {
+        return $users->filter(function ($item) use ($branch_id) {
             $item->branch_id = $branch_id;
         })->get();
     }

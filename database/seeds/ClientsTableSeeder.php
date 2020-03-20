@@ -2,6 +2,7 @@
 
 use App\Client;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class ClientsTableSeeder extends Seeder
 {
@@ -16,6 +17,9 @@ class ClientsTableSeeder extends Seeder
 
         $client->create([
             'user_id' => 1,
+            'name' => 'aaaaaa',
+            'email' => 'a@a.com',
+            'password' => Hash::make('password'),
             'group_id' => 1,
             'branch_id' => 1,
             'registration_date' => '2020-03-16',
@@ -24,6 +28,9 @@ class ClientsTableSeeder extends Seeder
 
         $client->create([
             'user_id' => 2,
+            'name' => 'rrchrcdsytfc',
+            'email' => 'd@a.com',
+            'password' => Hash::make('password'),
             'group_id' => 1,
             'branch_id' => 1,
             'registration_date' => '2020-03-16',
@@ -31,7 +38,10 @@ class ClientsTableSeeder extends Seeder
         ]);
 
         $client->create([
-            'user_id' => 3,
+            'user_id' => 1,
+            'name' => 'aajhcjkaaaa',
+            'email' => 'app@a.com',
+            'password' => Hash::make('password'),
             'group_id' => 1,
             'branch_id' => 1,
             'registration_date' => '2020-03-16',
