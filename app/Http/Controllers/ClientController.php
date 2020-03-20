@@ -75,18 +75,11 @@ class ClientController extends Controller
     public function getClientsList()
     {
         $clients = Client::all();
-        foreach ($clients as $client) {
-
-
-        $names = array();
         foreach ($clients as $client){
-            $client->profile = $client->user->profile;
-            array_push($names,$client->id.' '.$client->user->profile->first_name.' '.$client->user->profile->middle_name.' '.$client->user->profile->last_name);
+            $client->profile = $client->profile;
         }
-
         return response()->json([
-            'clients' => $clients,'name'=>$names
-        ], 200, [], JSON_NUMERIC_CHECK);
+            'clients' => $clients,   ], 200, [], JSON_NUMERIC_CHECK);
     }
 
     // Logical Functions

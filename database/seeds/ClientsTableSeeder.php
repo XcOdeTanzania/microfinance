@@ -17,8 +17,8 @@ class ClientsTableSeeder extends Seeder
 
         $client->create([
             'user_id' => 1,
-            'name' => 'aaaaaa',
-            'email' => 'a@a.com',
+            'name' => 'Chris Tucker',
+            'email' => 'cris@qlicue.com',
             'password' => Hash::make('password'),
             'group_id' => 1,
             'branch_id' => 1,
@@ -28,8 +28,8 @@ class ClientsTableSeeder extends Seeder
 
         $client->create([
             'user_id' => 2,
-            'name' => 'rrchrcdsytfc',
-            'email' => 'd@a.com',
+            'name' => 'Jackson Jackob',
+            'email' => 'jack@gmail.com',
             'password' => Hash::make('password'),
             'group_id' => 1,
             'branch_id' => 1,
@@ -39,8 +39,8 @@ class ClientsTableSeeder extends Seeder
 
         $client->create([
             'user_id' => 1,
-            'name' => 'aajhcjkaaaa',
-            'email' => 'app@a.com',
+            'name' => 'Samuel David',
+            'email' => 'sam@ymail.com',
             'password' => Hash::make('password'),
             'group_id' => 1,
             'branch_id' => 1,

@@ -112,6 +112,15 @@ class Client extends Model
         return $this->morphMany(Report::class, 'reportable');
     }
 
+    /**
+     * get client profile
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function profile()
+    {
+        return $this->morphOne(Profile::class, 'profileable');
+    }
+
     
 
 
@@ -123,6 +132,7 @@ class Client extends Model
         if ($this->reportable_type == 'App\Client') return $this->reports;
         return null;
     }
+
 
     // Business Logic
 }

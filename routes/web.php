@@ -256,3 +256,7 @@ Route::group([
 
 
 //Groups routes Ends
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
