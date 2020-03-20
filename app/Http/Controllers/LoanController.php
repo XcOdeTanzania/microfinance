@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Charge;
+use App\Client;
+use App\Group;
 use App\Loan;
 use Illuminate\Http\Request;
 
@@ -16,7 +18,19 @@ class LoanController extends Controller
     public function createLoanPage()
     {
         $charges = Charge::all();
-        return view('pages.loan.create',['charges'=>$charges]);
+        $groups = Group::all();
+        $loanableNames = array();
+        $clients = Client::all();
+
+        foreach ($clients as $client){
+            array_push($loanableNames,$client->id.' '.$client->user->profile->first_name.' '.$client->user->profile->middle_name.' '.$client->user->profile->last_name);
+            //array_push($loanableNames,$client->id.' '.$client->user->profile->first_name.' '.$client->user->profile->middle_name.' '.$client->user->profile->last_name);
+        }
+        foreach ($groups as $group){
+            array_push($loanableNames,$group->id.' '.$group->name);
+        }
+
+        return view('pages.loan.create',['charges'=>$charges,'loanableNames'=>$loanableNames]);
     }
 
     /**
@@ -77,5 +91,17 @@ class LoanController extends Controller
     public function loanCalculatorPage()
     {
         return view('pages.loan.calculator');
+    }
+
+
+
+    public function postLoan(Request $request) {
+
+
+        return response()->json([
+            'request' => $request->all()
+        ], 200, [], JSON_NUMERIC_CHECK);
+
+//        return back()->with('message',$request);
     }
 }

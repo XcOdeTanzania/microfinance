@@ -209,6 +209,11 @@ Route::group([
     // pending load details route
     Route::get('loan/{id}', ['uses' => 'LoanController@loanPendingDetailsPage'])->name('loan.pending');
     Route::get('calculator', ['uses' => 'LoanController@loanCalculatorPage'])->name('loan.calculator');
+
+
+    // post loan responce
+
+    Route::post('create', ['uses' => 'LoanController@postLoan'])->name('loan.create');
 });
 
    

@@ -26,5 +26,35 @@ class UsersTableSeeder extends Seeder
         $user->roles()->attach(1);
 
         $user->update(["branch_id" => 1]);
+
+
+
+        $user = new User();
+        $user->name = "Zamzam, Kanda";
+        $user->email = "etv@mail.com";
+        $user->password = Hash::make("password");
+
+        // attach role Loan Officer with id 1 to user
+
+        $user->save();
+
+        $user->roles()->attach(1);
+
+        $user->update(["branch_id" => 1]);
+
+
+
+        $user = new User();
+        $user->name = "Cris, Rock";
+        $user->email = "cris@mail.com";
+        $user->password = Hash::make("password");
+
+        // attach role Loan Officer with id 1 to user
+
+        $user->save();
+
+        $user->roles()->attach(1);
+
+        $user->update(["branch_id" => 1]);
     }
 }
