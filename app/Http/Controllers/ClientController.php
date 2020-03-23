@@ -77,6 +77,7 @@ class ClientController extends Controller
         $clients = Client::all();
         foreach ($clients as $client){
             $client->profile = $client->profile;
+            $client->branch = $client->branch;
         }
         return response()->json([
             'clients' => $clients,   ], 200, [], JSON_NUMERIC_CHECK);

@@ -24,7 +24,7 @@
 </head>
 
 <body>
-<div class="wrapper ">
+<div class="wrapper " id="app">
 
 
 @if(Auth::user())
@@ -33,12 +33,10 @@
     <!-- sidebar-->
     @include('layouts.includes.sidebar')
 @endif
-<!-- offsidebar-->
-@include('layouts.includes.offsidebar')
 <!-- Main section-->
     <section class="section-container">
         <!-- Page content-->
-        <div class="content-wrapper">
+        <div class="content-wrapper" id="app">
             @if (session('error'))
                 <div class="alert alert-danger alert-dismissible">
                     <button class="close" type="button" data-dismiss="alert"><span>&times;</span></button>
@@ -59,10 +57,11 @@
                     {{ session('info') }}
                 </div>
             @endif
-
             @yield('content')
+
         </div>
-    </section>
+
+    {{--</section>--}}
     <!-- Page footer-->
     @include('layouts.includes.footer')
 </div>
@@ -73,6 +72,22 @@
 <!-- =============== APP SCRIPTS ===============-->
 <script src="{{ asset('angle/js/app.js') }}"></script>
 <!-- =============== CUSTOM PAGE SCRIPTS ===============-->
+
+{{--Vue Scripts--}}
+<script src='{{asset('js/app.js')}}'></script>
+<!-- Register Service Providers  -->
+<script src='{{asset('js/service-provider.js')}}'></script>
+<script>
+    // INJECT json_encoded backend data
+
+    window.Container.addBackEndContent(@json(config('app')))
+</script>
+<!-- Register Service Providers (Explained in later steps) -->
+{{--<script src='./container-service-providers.js'></script>--}}
+
+<script>
+    window.Container.launch()
+</script>
 @yield('scripts')
 </body>
 

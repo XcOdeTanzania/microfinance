@@ -117,13 +117,6 @@
                 <!-- END Dropdown menu-->
             </li>
             <!-- END Alert menu-->
-            <!-- START Offsidebar button-->
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
-                    <em class="icon-notebook"></em>
-                </a>
-            </li>
-            <!-- END Offsidebar menu-->
         </ul>
         <!-- END Right Navbar-->
         <!-- START Search form-->
