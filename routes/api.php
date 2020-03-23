@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('client/list',['uses'=>'ClientController@getClientsList'])->name('client.list');
+
+Route::get('groups', ['uses' => 'GroupController@groups']);

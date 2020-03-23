@@ -81,4 +81,37 @@ class GroupController extends Controller
             $item->branch_id = $branch_id;
         })->get();
     }
+
+
+
+
+    public function groups()
+    {
+        $groups = Group::all();
+
+
+        $branches = Branch::all();
+
+        foreach ($branches as $branch) {
+            foreach ($branch->users as $key => $user) {
+                if ($user->is('Loan Officer')) {
+                    $user->groups;
+                    $user->clients;
+                } else {
+                    unset($branch->users[$key]);
+                }
+
+            }
+        }
+
+        foreach ($groups as $group) {
+            $group->officer = $group->user;
+            $group->branch = $group->branch;
+        }
+
+        return response()->json([
+            "groups" => $groups,
+            "branches" => $branches
+        ]);
+    }
 }
