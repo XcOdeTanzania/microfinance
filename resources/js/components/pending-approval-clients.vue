@@ -1,102 +1,59 @@
 <template>
-    <!--<div class="content-heading">-->
-        <!--<div>-->
-            <!--Pending Approval-->
-        <!--</div>-->
-    <!--</div>-->
-    <div class="container-fluid">
-        <!-- DATATABLE DEMO 1-->
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title"></div>
-                <div class="text-sm"></div>
+    <div>
+        <div class="content-heading">
+            <div>
+                Pending Approval
             </div>
-            <div class="card-body">
-                <table class="table table-striped my-4 w-100" id="pendingApproval">
-                    <thead>
-                    <tr>
-                        <th data-priority="1">Client Id</th>
-                        <th>Display Name</th>
-                        <th>Group Name</th>
-                        <th>Branch</th>
-                        <th>Loan Officer</th>
-                        <th>Registration Date</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+        </div>
+        <div class="container-fluid">
+            <!-- DATATABLE DEMO 1-->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"></div>
+                    <div class="text-sm"></div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped my-4 w-100" id="pendingApproval">
+                        <thead>
+                        <tr>
+                            <th data-priority="1">Client Id</th>
+                            <th>Display Name</th>
+                            <th>Group Name</th>
+                            <th>Branch</th>
+                            <th>Loan Officer</th>
+                            <th>Registration Date</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                    <tr v-for="client in clients" >
-                        <td>{{client.id}}</td>
-                        <td>{{client['profile'].first_name + ' '+ client['profile'].last_name}}</td>
-                        <td></td>
-                        <td> {{client['branch'].name}} </td>
-                        <td>Mr. JPM</td>
-                        <td>{{client.registration_date}}</td>
-                        <td>
-                            <button class="btn btn-sm btn-primary ">
-                                <i class="fas fa-eye"></i>
-                                View
-                            </button></td>
-                    </tr>
-                    <!--<tr>-->
-                        <!--<td>CL-002-2020</td>-->
-                        <!--<td>John Joseph</td>-->
-                        <!--<td>Alpha 1</td>-->
-                        <!--<td> M-City</td>-->
-                        <!--<td>Mr. JPM</td>-->
-                        <!--<td>20/01/2020</td>-->
-                        <!--<td>-->
-                            <!--<button class="btn btn-sm btn-primary ">-->
-                                <!--<i class="fas fa-eye"></i>-->
-                                <!--View-->
-                            <!--</button>-->
-                        <!--</td>-->
-                    <!--</tr>-->
+                        <tr v-for="client in clients" >
+                            <td>{{client.id}}</td>
+                            <td>{{client['profile'].first_name + ' '+ client['profile'].last_name}}</td>
+                            <td></td>
+                            <td> {{client['branch'].name}} </td>
+                            <td>Mr. JPM</td>
+                            <td>{{client.registration_date}}</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary ">
+                                    <i class="fas fa-eye"></i>
+                                    View
+                                </button></td>
+                        </tr>
 
-                    <!--<tr>-->
-                        <!--<td>CL-002-2020</td>-->
-                        <!--<td>Ramadhan Athumani</td>-->
-                        <!--<td>individual</td>-->
-                        <!--<td> M-City</td>-->
-                        <!--<td>Mr. JPM</td>-->
-                        <!--<td>20/01/2020</td>-->
-                        <!--<td>-->
-                            <!--<button class="btn btn-sm btn-primary ">-->
-                                <!--<i class="fas fa-eye"></i>-->
-                                <!--View-->
-                            <!--</button>-->
-                        <!--</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                        <!--<td>CL-005-2020</td>-->
-                        <!--<td> Joseph John</td>-->
-                        <!--<td>individual</td>-->
-                        <!--<td> M-City</td>-->
-                        <!--<td>Mr. X</td>-->
-                        <!--<td>20/01/2020</td>-->
-                        <!--<td>-->
-                            <!--<button class="btn btn-sm btn-primary ">-->
-                                <!--<i class="fas fa-eye"></i>-->
-                                <!--View-->
-                            <!--</button>-->
-                        <!--</td>-->
-                    <!--</tr>-->
-
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
-    import axios from 'axios';
     export default{
         name:'pending-approval-clients',
         data(){
-
-
             return {clients:[]}
         },
         methods:{

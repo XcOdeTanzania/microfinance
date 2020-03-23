@@ -78,14 +78,6 @@
 <!-- Register Service Providers  -->
 <script src='{{asset('js/service-provider.js')}}'></script>
 <script>
-    // INJECT json_encoded backend data
-
-    window.Container.addBackEndContent(@json(config('app')))
-</script>
-<!-- Register Service Providers (Explained in later steps) -->
-{{--<script src='./container-service-providers.js'></script>--}}
-
-<script>
     window.Container.launch()
 </script>
 @yield('scripts')

@@ -6,8 +6,9 @@ import axios from 'axios'
 
 Container.provide({
     register({ container, content }) {
+
         container.bind('clients', () => {
-            return axios.get(`/client/list`).then(({ data }) => {
+            return axios.get(`api/client/list`).then(({ data }) => {
                 return data;
             })
         },{
