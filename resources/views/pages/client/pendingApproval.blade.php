@@ -8,11 +8,6 @@
 
 @extends('layouts.app')
 @section('content')
-    <div class="content-heading">
-        <div>
-            Pending Approval
-        </div>
-    </div>
     <pending-approval-clients></pending-approval-clients>
 @endsection
 @section('styles')@endsection
