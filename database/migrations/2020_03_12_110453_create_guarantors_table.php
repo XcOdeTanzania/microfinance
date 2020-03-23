@@ -15,7 +15,7 @@ class CreateGuarantorsTable extends Migration
     public function up()
     {
         Schema::create('guarantors', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
             $table->bigInteger('profile_id');
             $table->string('type');

@@ -14,7 +14,7 @@ class CreateSharesTable extends Migration
     public function up()
     {
         Schema::create('shares', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
             $table->string('account_name');
             $table->integer('client_id');

@@ -15,7 +15,7 @@ class CreateKinsTable extends Migration
     public function up()
     {
         Schema::create('kin', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->bigInteger('client_id');
             
             $table->string('name');

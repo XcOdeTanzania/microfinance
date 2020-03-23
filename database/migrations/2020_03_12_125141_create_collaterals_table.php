@@ -14,7 +14,7 @@ class CreateCollateralsTable extends Migration
     public function up()
     {
         Schema::create('collaterals', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
             $table->string('type');
             $table->double('value');
