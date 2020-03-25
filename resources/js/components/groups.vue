@@ -62,16 +62,13 @@
                                         <select
                                             aplaceholder="Select"
                                             name="branch"
-                                            onchange="setOfficers(this);"
                                             class="form-control"
                                             id="branch"
                                             @change="onchange($event)"
                                         >
                                             <option>Select</option>
                                             <option
-                                                v-bind:value="
-                                                    JSON.stringify(branch.users)
-                                                "
+                                                v-bind:value="branch.id"
                                                 v-for="branch in branches"
                                             >
                                                 {{ branch.name }}
@@ -89,14 +86,17 @@
                                     >
                                     <div class="col-md-6">
                                         <select
-                                            onchange="updateGroupTable(this);"
                                             name="loanOfficer"
                                             class="form-control"
                                             id="loanOfficer"
+                                            @change="updateGroupTable($event)"
                                         >
                                             <option>select</option>
 
-                                            <option v-for="officer in officers">
+                                            <option
+                                                v-bind:value="officer.id"
+                                                v-for="officer in officers"
+                                            >
                                                 {{ officer.name }}
                                             </option>
                                         </select>
@@ -247,19 +247,18 @@
                         </tr>
                     </thead>
                     <tbody id="groupTableBody">
-                        @foreach($groups as $group)
-                        <tr>
+                        <tr v-for="group in groups">
                             <td>
-                                <!-- <a href="#">{{$group->name}}</a> -->
+                                {{ group.name }}
                             </td>
                             <td>
-                                <!-- {{$group->uuid}} -->
+                                {{ group.uuid }}
                             </td>
                             <td>
-                                oo
+                                {{ group.branch_id }}
                             </td>
                             <td>
-                                <!-- {{$group->branch_id}} -->
+                                {{ group.user_id }}
                             </td>
                             <td>
                                 <a href="#" class="btn btn-primary">
@@ -267,7 +266,6 @@
                                 </a>
                             </td>
                         </tr>
-                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -285,15 +283,36 @@ export default {
     methods: {
         getGroups() {
             Container.resolve("groups").then(data => {
-                this.groups = data.groups;
                 this.branches = data.branches;
-                // console.log(this.groups);
-                console.log(this.branches);
             });
         },
 
         onchange(event) {
-            this.officers = JSON.parse(event.target.value);
+            for (let index = 0; index < this.branches.length; index++) {
+                if (event.target.value == this.branches[index].id) {
+                    this.officers = this.branches[index].users;
+
+                    for (let j = 0; j < this.officers.length; j++) {
+                        this.officers[j].branch_id = this.branches[index].name;
+                    }
+                }
+            }
+            // console.log(this.branches[0].users[0].groups);
+        },
+
+        updateGroupTable(event) {
+            for (let index = 0; index < this.officers.length; index++) {
+                if (event.target.value == this.officers[index].id) {
+                    this.groups = this.officers[index].groups;
+
+                    for (let j = 0; j < this.groups.length; j++) {
+                        this.groups[j].user_id = this.officers[index].name;
+                        this.groups[j].branch_id = this.officers[
+                            index
+                        ].branch_id;
+                    }
+                }
+            }
             console.log(event.target.value);
         }
     },

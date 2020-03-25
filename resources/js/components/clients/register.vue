@@ -5,7 +5,12 @@
             <div class="card-header"></div>
             <div class="card-body ">
                 <!--<form id="example-form" enctype="multipart/form-data" method="POST" action="{{route('client.register')}}">-->
-            <form id="register-client-form" enctype="multipart/form-data" method="POST" action="">
+                <form
+                    id="register-client-form"
+                    enctype="multipart/form-data"
+                    method="POST"
+                    action=""
+                >
                     <!--@csrf-->
                     <div>
                         <h4>
@@ -17,52 +22,156 @@
                         <fieldset class="overflow-auto">
                             <div class="col">
                                 <div class="row justify-content-center">
-                                    <div class="col-lg-3 col-md-6 col-sm  align-content-center">
-                                        <label for="firstName">First Name *</label>
-                                        <input class="form-control required" id="firstName" name="first_name" type="text" />
-                                        <label for="middleName">Middle Name </label>
-                                        <input class="form-control " id="middleName" name="middle_name" type="text" />
-                                        <label for="lastName">Last Name *</label>
-                                        <input class="form-control required" id="lastName" name="last_name" type="text" />
-                                        <label for="clientRegistrationDate">Registration Date *</label>
-                                        <input class="form-control required" id="clientRegistrationDate" name="registration_date" type="date" />
+                                    <div
+                                        class="col-lg-3 col-md-6 col-sm  align-content-center"
+                                    >
+                                        <label for="firstName"
+                                            >First Name *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="firstName"
+                                            name="first_name"
+                                            type="text"
+                                        />
+                                        <label for="middleName"
+                                            >Middle Name
+                                        </label>
+                                        <input
+                                            class="form-control "
+                                            id="middleName"
+                                            name="middle_name"
+                                            type="text"
+                                        />
+                                        <label for="lastName"
+                                            >Last Name *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="lastName"
+                                            name="last_name"
+                                            type="text"
+                                        />
+                                        <label for="clientRegistrationDate"
+                                            >Registration Date *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="clientRegistrationDate"
+                                            name="registration_date"
+                                            type="date"
+                                        />
                                     </div>
-                                    <div class="col-lg-3 col-md-6 col-sm  align-content-center">
-                                        <label for="phone">Phone Number *</label>
-                                        <input class="form-control required " id="phone" name="phone_number_one" type="text" />
-                                        <label for="secondaryMobileNo">Secondary Mobile Number </label>
-                                        <input class="form-control " id="secondaryMobileNo" name="phone_nuber_two" type="text" />
-                                        <label for="email">Email Address *</label>
-                                        <input class="form-control required " id="email" name="client_email" type="text" />
-                                        <label for="dateOfBirth">Date of Birth *</label>
-                                        <input class="form-control required " require id="dateOfBirth" name="date_of_birth_client" type="date" />
+                                    <div
+                                        class="col-lg-3 col-md-6 col-sm  align-content-center"
+                                    >
+                                        <label for="phone"
+                                            >Phone Number *</label
+                                        >
+                                        <input
+                                            class="form-control required "
+                                            id="phone"
+                                            name="phone_number_one"
+                                            type="text"
+                                        />
+                                        <label for="secondaryMobileNo"
+                                            >Secondary Mobile Number
+                                        </label>
+                                        <input
+                                            class="form-control "
+                                            id="secondaryMobileNo"
+                                            name="phone_nuber_two"
+                                            type="text"
+                                        />
+                                        <label for="email"
+                                            >Email Address *</label
+                                        >
+                                        <input
+                                            class="form-control required "
+                                            id="email"
+                                            name="client_email"
+                                            type="text"
+                                        />
+                                        <label for="dateOfBirth"
+                                            >Date of Birth *</label
+                                        >
+                                        <input
+                                            class="form-control required "
+                                            require
+                                            id="dateOfBirth"
+                                            name="date_of_birth_client"
+                                            type="date"
+                                        />
                                     </div>
-                                    <div class="col-lg-3 col-md-6 col-sm  align-content-center">
+                                    <div
+                                        class="col-lg-3 col-md-6 col-sm  align-content-center"
+                                    >
                                         <label for="gender">Gender *</label>
-                                        <select class="custom-select required" id="gender" name="gender">
+                                        <select
+                                            class="custom-select required"
+                                            id="gender"
+                                            name="gender"
+                                        >
                                             <option selected></option>
                                             <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
+                                            <option value="Female"
+                                                >Female</option
+                                            >
                                         </select>
                                         <!--{{&#45;&#45;<input class="form-control required" id="registrationDate" name="registration_date" type="text" />&#45;&#45;}}-->
                                         <label for="tags">Tags </label>
-                                        <input class="form-control " id="tags" name="tags" type="text" />
+                                        <input
+                                            class="form-control "
+                                            id="tags"
+                                            name="tags"
+                                            type="text"
+                                        />
                                         <label for="town">Town *</label>
-                                        <input class="form-control required" id="town" name="client_town" type="text" />
-                                        <label for="address">Postal Address </label>
-                                        <input class="form-control " id="address" name="postal_address" type="text" />
+                                        <input
+                                            class="form-control required"
+                                            id="town"
+                                            name="client_town"
+                                            type="text"
+                                        />
+                                        <label for="address"
+                                            >Postal Address
+                                        </label>
+                                        <input
+                                            class="form-control "
+                                            id="address"
+                                            name="postal_address"
+                                            type="text"
+                                        />
                                     </div>
-                                    <div class="col-lg-3 col-md-6 col-sm  align-content-center">
-                                        <label for="maritalStatus">Marital Status *</label>
-                                        <select class="custom-select required " id="maritalStatus" name="marital_status">
+                                    <div
+                                        class="col-lg-3 col-md-6 col-sm  align-content-center"
+                                    >
+                                        <label for="maritalStatus"
+                                            >Marital Status *</label
+                                        >
+                                        <select
+                                            class="custom-select required "
+                                            id="maritalStatus"
+                                            name="marital_status"
+                                        >
                                             <option selected></option>
-                                            <option value="single">Single</option>
-                                            <option value="married">Married</option>
-                                            <option value="divorced">Divorced</option>
+                                            <option value="single"
+                                                >Single</option
+                                            >
+                                            <option value="married"
+                                                >Married</option
+                                            >
+                                            <option value="divorced"
+                                                >Divorced</option
+                                            >
                                         </select>
 
                                         <label for="region">Region *</label>
-                                        <select class="custom-select required " id="region" name="region_id">
+                                        <select
+                                            class="custom-select required "
+                                            id="region"
+                                            name="region_id"
+                                        >
                                             <option selected></option>
                                             <!--@foreach($regions as $region)-->
                                             <!--<option value="{{$region->id}}">{{$region->name}}</option>-->
@@ -70,22 +179,30 @@
                                         </select>
 
                                         <label for="district">District *</label>
-                                        <select class="custom-select required " id="district" name="district_id">
+                                        <select
+                                            class="custom-select required "
+                                            id="district"
+                                            name="district_id"
+                                        >
                                             <option selected></option>
                                             <!--@foreach($districts as $district )-->
                                             <!--<option value="{{$district->id}}">{{$district->name}}</option>-->
                                             <!--@endforeach-->
                                         </select>
-                                        <label for="gpsLocation">gps_location </label>
-                                        <input class="form-control " id="gpsLocation" name="gps_location" type="text" />
-
+                                        <label for="gpsLocation"
+                                            >gps_location
+                                        </label>
+                                        <input
+                                            class="form-control "
+                                            id="gpsLocation"
+                                            name="gps_location"
+                                            type="text"
+                                        />
                                     </div>
                                 </div>
 
-
                                 <p>(*) Mandatory</p>
                             </div>
-
                         </fieldset>
 
                         <h4>
@@ -94,52 +211,91 @@
                             <small> Identification</small>
                         </h4>
                         <fieldset class="overflow-auto">
-                            <button class="btn btn-labeled btn-info mb-2" data-toggle="modal" data-target="#addIdentityModal" type="button">
-                                <span class="btn-label"><i class="fa fa-plus"></i></span>
+                            <button
+                                class="btn btn-labeled btn-info mb-2"
+                                data-toggle="modal"
+                                data-target="#addIdentityModal"
+                                type="button"
+                            >
+                                <span class="btn-label"
+                                    ><i class="fa fa-plus"></i
+                                ></span>
                                 Add
                             </button>
 
                             <div class="table-responsive table-bordered">
                                 <table class="table">
                                     <thead>
-                                    <tr>
-                                        <th>Document Type</th>
-                                        <th> Unique Identification</th>
-                                        <th>Description</th>
-                                        <th> Attachment</th>
-                                        <th>Remove</th>
-                                    </tr>
+                                        <tr>
+                                            <th>Document Type</th>
+                                            <th>Unique Identification</th>
+                                            <th>Description</th>
+                                            <th>Attachment</th>
+                                            <th>Remove</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>National ID</td>
-                                        <td>01012000</td>
-                                        <td>National Identity card</td>
-                                        <td>
-                                            <div class="form-group">
-                                                <input class="form-control filestyle" type="file" data-classbutton="btn btn-secondary" data-classinput="form-control inline" data-icon="&lt;span class='fa fa-upload mr-2'&gt;&lt;/span&gt;" />
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <i class="fas fa-trash-alt text-danger align-self-center"></i>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td>National ID</td>
+                                            <td>01012000</td>
+                                            <td>National Identity card</td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input
+                                                        class="form-control filestyle"
+                                                        type="file"
+                                                        data-classbutton="btn btn-secondary"
+                                                        data-classinput="form-control inline"
+                                                        data-icon="&lt;span class='fa fa-upload mr-2'&gt;&lt;/span&gt;"
+                                                    />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i
+                                                    class="fas fa-trash-alt text-danger align-self-center"
+                                                ></i>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class='form-group'>
+                            <div class="form-group">
                                 <label for="description">Description *</label>
-                                <input class="form-control required " id="description" name="description" type="text" />
+                                <input
+                                    class="form-control required "
+                                    id="description"
+                                    name="description"
+                                    type="text"
+                                />
                             </div>
-                            <div class='form-group'>
+                            <div class="form-group">
                                 <label for="type">Type *</label>
-                                <input class="form-control required " id="type" name="identification_type" type="text" />
+                                <input
+                                    class="form-control required "
+                                    id="type"
+                                    name="identification_type"
+                                    type="text"
+                                />
                             </div>
-                            <div class='form-group'>
-                                <label for="uuid">Unique Identification *</label>
-                                <input class="form-control required " id="uuid" name="uuid" type="text" />
+                            <div class="form-group">
+                                <label for="uuid"
+                                    >Unique Identification *</label
+                                >
+                                <input
+                                    class="form-control required "
+                                    id="uuid"
+                                    name="uuid"
+                                    type="text"
+                                />
                             </div>
-                            <input class="form-control filestyle" type="file" name="attachment" data-classbutton="btn btn-secondary" data-classinput="form-control inline" data-icon="&lt;span class='fa fa-upload mr-2'&gt;&lt;/span&gt;" />
+                            <input
+                                class="form-control filestyle"
+                                type="file"
+                                name="attachment"
+                                data-classbutton="btn btn-secondary"
+                                data-classinput="form-control inline"
+                                data-icon="&lt;span class='fa fa-upload mr-2'&gt;&lt;/span&gt;"
+                            />
                         </fieldset>
                         <h4>
                             Business Details
@@ -149,48 +305,129 @@
                         <fieldset class="overflow-auto">
                             <div class="col">
                                 <div class="row justify-content-center">
-                                    <div class="col-lg-4 col-md-6 col-sm  align-content-center">
-                                        <label for="businessName">Business Name *</label>
-                                        <input class="form-control required" id="businessName" name="business_name" type="text" />
-                                        <label for="businessType">Business Type *</label>
-                                        <select class="custom-select " required id="businessType" name="business_type">
+                                    <div
+                                        class="col-lg-4 col-md-6 col-sm  align-content-center"
+                                    >
+                                        <label for="businessName"
+                                            >Business Name *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="businessName"
+                                            name="business_name"
+                                            type="text"
+                                        />
+                                        <label for="businessType"
+                                            >Business Type *</label
+                                        >
+                                        <select
+                                            class="custom-select "
+                                            required
+                                            id="businessType"
+                                            name="business_type"
+                                        >
                                             <option selected></option>
-                                            <option value="trader">Trader</option>
-                                            <option value="tinker">Tinker</option>
-                                            <option value="tailor">Tailor</option>
-                                            <option value="farmer">Farmer</option>
+                                            <option value="trader"
+                                                >Trader</option
+                                            >
+                                            <option value="tinker"
+                                                >Tinker</option
+                                            >
+                                            <option value="tailor"
+                                                >Tailor</option
+                                            >
+                                            <option value="farmer"
+                                                >Farmer</option
+                                            >
                                             <option value="agent">Agent</option>
                                         </select>
-                                        <label for="businessDate">Business Date *</label>
-                                        <input class="form-control required" id="businessDate" name="start_date" type="date" />
-                                        <label for="businessAddress">Address *</label>
-                                        <input class="form-control required" id="businessAddress" name="business_address" type="text" />
+                                        <label for="businessDate"
+                                            >Business Date *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="businessDate"
+                                            name="start_date"
+                                            type="date"
+                                        />
+                                        <label for="businessAddress"
+                                            >Address *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="businessAddress"
+                                            name="business_address"
+                                            type="text"
+                                        />
                                     </div>
-                                    <div class="col-lg-4 col-md-6 col-sm  align-content-center">
-
+                                    <div
+                                        class="col-lg-4 col-md-6 col-sm  align-content-center"
+                                    >
                                         <label for="region">Region *</label>
-                                        <select class="custom-select required " id="region" name="business_region_id">
+                                        <select
+                                            class="custom-select required "
+                                            id="region"
+                                            name="business_region_id"
+                                        >
                                             <option selected></option>
                                             <!--@foreach($regions as $region)-->
                                             <!--<option value="{{$region->id}}">{{$region->name}}</option>-->
                                             <!--@endforeach-->
                                         </select>
-                                        <label for="businessCountry">Country *</label>
-                                        <input class="form-control required" value="Tanazania" readonly id="businessCountry" name="business_country" type="text" />
-                                        <label for="businessPostalCode">Postal Code *</label>
-                                        <input class="form-control required" id="businessPostalCode" name="business_postal_code" type="number" />
+                                        <label for="businessCountry"
+                                            >Country *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            value="Tanazania"
+                                            readonly
+                                            id="businessCountry"
+                                            name="business_country"
+                                            type="text"
+                                        />
+                                        <label for="businessPostalCode"
+                                            >Postal Code *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="businessPostalCode"
+                                            name="business_postal_code"
+                                            type="number"
+                                        />
                                     </div>
-                                    <div class="col-lg-4 col-md-6 col-sm  align-content-center">
-                                        <label for="businessRevenue">Business Revenue *</label>
-                                        <input class="form-control required" id="businessRevenue" name="business_revenue" type="number" />
-                                        <label for="businessExpenses">Expenses *</label>
-                                        <input class="form-control required" id="businessExpenses" name="business_expenses" type="number" />
-                                        <label for="businessNetIncome">Net Income *</label>
-                                        <input class="form-control required" id="businessNetIncome" name="business_net_income" type="number" />
+                                    <div
+                                        class="col-lg-4 col-md-6 col-sm  align-content-center"
+                                    >
+                                        <label for="businessRevenue"
+                                            >Business Revenue *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="businessRevenue"
+                                            name="business_revenue"
+                                            type="number"
+                                        />
+                                        <label for="businessExpenses"
+                                            >Expenses *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="businessExpenses"
+                                            name="business_expenses"
+                                            type="number"
+                                        />
+                                        <label for="businessNetIncome"
+                                            >Net Income *</label
+                                        >
+                                        <input
+                                            class="form-control required"
+                                            id="businessNetIncome"
+                                            name="business_net_income"
+                                            type="number"
+                                        />
                                     </div>
                                 </div>
                             </div>
-
                         </fieldset>
                         <h4>
                             Next of Kin
@@ -201,63 +438,112 @@
                             <div class="table-responsive table-bordered">
                                 <table class="table">
                                     <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th style="border-left: 1px;border-color: #1d68a7; "> Date of Birth</th>
-                                        <th>Address</th>
-                                        <th> Region</th>
-                                        <th>Phone Number</th>
-                                        <th>Relationship </th>
-                                        <th> Remove </th>
-                                    </tr>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th
+                                                style="border-left: 1px;border-color: #1d68a7; "
+                                            >
+                                                Date of Birth
+                                            </th>
+                                            <th>Address</th>
+                                            <th>Region</th>
+                                            <th>Phone Number</th>
+                                            <th>Relationship</th>
+                                            <th>Remove</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>John Doe</td>
-                                        <td>01/01/2000</td>
-                                        <td> P.O. Box 6112 DSM</td>
-                                        <td>Dar es Salaam</td>
-                                        <td>Parent</td>
+                                        <tr>
+                                            <td>John Doe</td>
+                                            <td>01/01/2000</td>
+                                            <td>P.O. Box 6112 DSM</td>
+                                            <td>Dar es Salaam</td>
+                                            <td>Parent</td>
 
-                                        <td>
-                                            <div class="form-group">
-                                                <input class="form-control filestyle" type="file" data-classbutton="btn btn-secondary" data-classinput="form-control inline" data-icon="&lt;span class='fa fa-upload mr-2'&gt;&lt;/span&gt;" />
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <i class="fas fa-trash-alt text-danger align-self-center"></i>
-                                        </td>
-                                    </tr>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input
+                                                        class="form-control filestyle"
+                                                        type="file"
+                                                        data-classbutton="btn btn-secondary"
+                                                        data-classinput="form-control inline"
+                                                        data-icon="&lt;span class='fa fa-upload mr-2'&gt;&lt;/span&gt;"
+                                                    />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i
+                                                    class="fas fa-trash-alt text-danger align-self-center"
+                                                ></i>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="form-group">
                                 <label for="name">Name *</label>
-                                <input class="form-control required" id="name" name="kin_name" type="text" />
+                                <input
+                                    class="form-control required"
+                                    id="name"
+                                    name="kin_name"
+                                    type="text"
+                                />
                             </div>
                             <div class="form-group">
-                                <label for="kinDateOfBirth">Date of Birth *</label>
-                                <input class="form-control required" id="kinDateOfBirth" name="date_of_birth_kin" type="date" />
+                                <label for="kinDateOfBirth"
+                                    >Date of Birth *</label
+                                >
+                                <input
+                                    class="form-control required"
+                                    id="kinDateOfBirth"
+                                    name="date_of_birth_kin"
+                                    type="date"
+                                />
                             </div>
                             <div class="form-group">
                                 <label for="address">Address *</label>
-                                <input class="form-control required" id="address" name="kin_address" type="text" />
+                                <input
+                                    class="form-control required"
+                                    id="address"
+                                    name="kin_address"
+                                    type="text"
+                                />
                             </div>
                             <div class="form-group">
                                 <label for="city">City *</label>
-                                <input class="form-control required" id="city" name="kin_city" type="text" />
+                                <input
+                                    class="form-control required"
+                                    id="city"
+                                    name="kin_city"
+                                    type="text"
+                                />
                             </div>
                             <div class="form-group">
                                 <label for="phone_number">Phone Number *</label>
-                                <input class="form-control required" id="phone_number" name="kin_phone_number" type="text" />
+                                <input
+                                    class="form-control required"
+                                    id="phone_number"
+                                    name="kin_phone_number"
+                                    type="text"
+                                />
                             </div>
                             <div class="form-group">
                                 <label for="town">Town *</label>
-                                <input class="form-control required" id="town" name="kin_town" type="text" />
+                                <input
+                                    class="form-control required"
+                                    id="town"
+                                    name="kin_town"
+                                    type="text"
+                                />
                             </div>
                             <div class="form-group">
                                 <label for="relationship">Relationship *</label>
-                                <input class="form-control required" id="relationship" name="relationship" type="text" />
+                                <input
+                                    class="form-control required"
+                                    id="relationship"
+                                    name="relationship"
+                                    type="text"
+                                />
                             </div>
                         </fieldset>
                         <h4>
@@ -269,12 +555,19 @@
                             <p class="lead">One last check</p>
                             <div class="checkbox c-checkbox">
                                 <label>
-                                    <input type="checkbox" required="required" name="terms_and_condition" />
+                                    <input
+                                        type="checkbox"
+                                        required="required"
+                                        name="terms_and_condition"
+                                    />
                                     <span class="fa fa-check"></span>
                                     I agree with the Terms and Conditions.
                                 </label>
                             </div>
-                            <button class="button button-success " type="submit">
+                            <button
+                                class="button button-success "
+                                type="submit"
+                            >
                                 Save
                             </button>
                         </fieldset>
@@ -282,27 +575,19 @@
                 </form>
             </div>
         </div>
-
     </div>
 </template>
 <script>
-
-    //    import datatable from '../../angle/modules/tables/datatable';
-    import $ from 'jquery';
-    import { FormWizard, TabContent, WizardStep } from 'vue-form-wizard'
-    export default{
-        name:'register',
-        data(){
-            return {}
-        },
-        methods:{
-
-        },
-        mounted(){
-            $('#register-client-form').init()
-
-        }
-
+//    import datatable from '../../angle/modules/tables/datatable';
+import $ from "jquery";
+export default {
+    name: "register",
+    data() {
+        return {};
+    },
+    methods: {},
+    mounted() {
+        $("#register-client-form").init();
     }
-
+};
 </script>
