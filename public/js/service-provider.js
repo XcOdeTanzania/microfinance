@@ -2968,6 +2968,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "pending-approval-clients",
   data: function data() {
@@ -3755,34 +3773,68 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "tbody",
-                _vm._l(_vm.clients, function(client) {
-                  return _c("tr", [
-                    _c("td", [_vm._v(_vm._s(client.id))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "\n                                " +
+                [
+                  _vm._v("\n<<<<<<< HEAD\n\n                        "),
+                  _vm._l(_vm.clients, function(client) {
+                    return _c("tr", { key: client.id }, [
+                      _c("td", [_vm._v(_vm._s(client.id))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
                           _vm._s(
                             client["profile"].first_name +
                               " " +
                               client["profile"].last_name
-                          ) +
-                          "\n                            "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("td"),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(client["branch"].name))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Mr. JPM")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(client.registration_date))]),
-                    _vm._v(" "),
-                    _vm._m(3, true)
-                  ])
-                }),
-                0
+                          )
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td"),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(" " + _vm._s(client["branch"].name) + " ")
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("Mr. JPM")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(client.registration_date))]),
+                      _vm._v(" "),
+                      _vm._m(3, true)
+                    ])
+                  }),
+                  _vm._v("\n\n=======\n                            "),
+                  _vm._l(_vm.clients, function(client) {
+                    return _c("tr", [
+                      _c("td", [_vm._v(_vm._s(client.id))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n                                    " +
+                            _vm._s(
+                              client["profile"].first_name +
+                                " " +
+                                client["profile"].last_name
+                            ) +
+                            "\n                                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td"),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(client["branch"].name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("Mr. JPM")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(client.registration_date))]),
+                      _vm._v(" "),
+                      _vm._m(4, true)
+                    ])
+                  }),
+                  _vm._v(
+                    "\n>>>>>>> 4e9a3fca5314d70911c638d5f21881afa715ba68\n                        "
+                  )
+                ],
+                2
               )
             ]
           )
@@ -3797,7 +3849,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "content-heading" }, [
-      _c("div", [_vm._v("\n            Pending Approval\n        ")])
+      _c("div", [_vm._v("\n                Pending Approval\n            ")])
     ])
   },
   function() {
@@ -3841,6 +3893,19 @@ var staticRenderFns = [
         _c("i", { staticClass: "fas fa-eye" }),
         _vm._v(
           "\n                                    View\n                                "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("button", { staticClass: "btn btn-sm btn-primary " }, [
+        _c("i", { staticClass: "fas fa-eye" }),
+        _vm._v(
+          "\n                                        View\n                                    "
         )
       ])
     ])
@@ -4205,6 +4270,28 @@ Container.provide({
           }
         }
       }, _callee2);
+    })), {});
+    container.bind('viewLoans', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+      var _ref7, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/loan/list');
+
+            case 2:
+              _ref7 = _context3.sent;
+              data = _ref7.data;
+              return _context3.abrupt("return", data);
+
+            case 5:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
     })), {});
   }
 });

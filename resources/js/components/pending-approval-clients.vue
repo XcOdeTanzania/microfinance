@@ -29,6 +29,23 @@
                             </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD
+
+                        <tr v-for="client in clients" :key="client.id" >
+                            <td>{{client.id}}</td>
+                            <td>{{client['profile'].first_name + ' '+ client['profile'].last_name}}</td>
+                            <td></td>
+                            <td> {{client['branch'].name}} </td>
+                            <td>Mr. JPM</td>
+                            <td>{{client.registration_date}}</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary ">
+                                    <i class="fas fa-eye"></i>
+                                    View
+                                </button></td>
+                        </tr>
+
+=======
                             <tr v-for="client in clients">
                                 <td>{{ client.id }}</td>
                                 <td>
@@ -49,6 +66,7 @@
                                     </button>
                                 </td>
                             </tr>
+>>>>>>> 4e9a3fca5314d70911c638d5f21881afa715ba68
                         </tbody>
                     </table>
                 </div>

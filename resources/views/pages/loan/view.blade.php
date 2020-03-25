@@ -1,103 +1,53 @@
 @extends('layouts.app');
 @section('content')
-    <div class="content-heading">
-        <div>
-            Loans
-            <small>All load with in microfinance</small>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <!-- DATATABLE TO VIEW ALL LOANS D -->
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">All Loans</div>
-                <!-- <div class="text-sm">
-                    When displaying data in a DataTable, it can often be useful to your end users for them to have the ability to obtain the data from the DataTable, extracting it into a file for them
-                    to use locally. This can be done with either HTML5 based buttons or Flash buttons.
-                </div> -->
-            </div>
-            <div class="card-body">
-                <table class="table table-striped my-4 w-100" id="datatable2">
-                    <thead>
-                        <tr>
-                            <th data-priority="1">Account Nbr</th>
-                            <th>Branch</th>
-                            <th>Loan Officer</th>Group Name</th>
-                            <th class="sort-alpha" >Amount</th>
-                            <th class="sort-alpha" >Balance</th>
-                            <th class="sort-alpha" >Disbursed</th>
-                            <th class="sort-alpha" >Product Name</th>
-                            <th>View</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td>4</td>
-                            <td>X</td>
-                            <td>X</td>
-                            <td>X</td>
-                            <td><a href="/loan/details"><button class="btn btn-primary"><i class="fa fa-eye" style="color:white">&nbsp;view</i></a></td>
-                        </tr>
-                        <tr class="gradeC">
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
-                            <td>5</td>
-                            <td>C</td>
-                            <td>X</td>
-                            <td>X</td>
-                            <td><a href='' class="btn btn-primary text-white"><i class="fa fa-eye" style="color:white">&nbsp;view</i></a></td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td>5.5</td>
-                            <td>A</td>
-                            <td>X</td>
-                            <td>X</td>
-                            <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td>6</td>
-                            <td>A</td>
-                            <td>X</td>
-                            <td>X</td>
-                            <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td>7</td>
-                            <td>A</td>
-                            <td>X</td>
-                            <td>X</td>
-                            <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>AOL browser (AOL desktop)</td>
-                            <td>Win XP</td>
-                            <td>6</td>
-                            <td>A</td>
-                            <td>X</td>
-                            <td>X</td>
-                            <td><button class="btn btn-primary"><i class="fa fa-eye">&nbsp;view</i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+<view-loans></view-loans>
 @endsection
 @section('styles')@endsection
 @section('scripts')
     <script src="{{ asset('angle/js/datatable.js') }}"></script>
+    <!-- <script>
+         $('#viewloan').DataTable({
+            'paging': true,
+            // Table pagination
+            'ordering': true,
+            // Column ordering
+            'info': true,
+            // Bottom left status text
+            responsive: true,
+            // Text translation options
+            // Note the required keywords between underscores (e.g _MENU_)
+            oLanguage: {
+                sSearch: 'Search all columns:',
+                sLengthMenu: '_MENU_ records per page',
+                info: 'Showing page _PAGE_ of _PAGES_',
+                zeroRecords: 'Nothing found - sorry',
+                infoEmpty: 'No records available',
+                infoFiltered: '(filtered from _MAX_ total records)',
+                oPaginate: {
+                    sNext: '<em class="fa fa-caret-right"></em>',
+                    sPrevious: '<em class="fa fa-caret-left"></em>'
+                }
+            },
+            // Datatable Buttons setup
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'copy',
+                className: 'btn-info'
+            }, {
+                extend: 'csv',
+                className: 'btn-info'
+            }, {
+                extend: 'excel',
+                className: 'btn-info',
+                title: 'XLS-File'
+            }, {
+                extend: 'pdf',
+                className: 'btn-info',
+                title: 'PDF'//$('title').text()
+            }, {
+                extend: 'print',
+                className: 'btn-info'
+            }]
+        });
+    </script> -->
 @endsection

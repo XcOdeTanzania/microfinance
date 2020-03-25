@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<pedding-second-approval></pedding-second-approval>
+    <written-off></written-off>
 @endsection
-   
 @section('style')@endsection
 
 @section('scripts')

@@ -12,7 +12,7 @@ class LoansTableSeeder extends Seeder
      */
     public function run()
     {
-        Loan::create([
+      $loan  =Loan::create([
 
             'loan_type_id' => 1,
             'top_up' => 20000,
@@ -31,7 +31,9 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Client'
         ]);
 
-        Loan::create([
+        $loan->guarantors()->attach(2);
+
+      $loan = Loan::create([
 
             'loan_type_id' => 1,
             'top_up' => 20000,
@@ -48,9 +50,11 @@ class LoansTableSeeder extends Seeder
             'auto_create_standing_instruction' => true,
             'loanable_id' => 2,
             'loanable_type' => 'App\Client'
+            
         ]);
+        $loan->guarantors()->attach(2);
 
-        Loan::create([
+        $loan = Loan::create([
             'loan_type_id' => 3,
             'top_up' => 20000,
             'amount' => 3000,
@@ -68,7 +72,9 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Client'
         ]);
 
-        Loan::create([
+        $loan->guarantors()->attach(4);
+
+        $loan = Loan::create([
 
             'loan_type_id' => 1,
             'top_up' => 20000,
@@ -87,7 +93,9 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group'
         ]);
 
-        Loan::create([
+        $loan->guarantors()->attach(3);
+
+       $loan =  Loan::create([
             'loan_type_id' => 1,
             'top_up' => 20000,
             'amount' => 3000,
@@ -104,5 +112,7 @@ class LoansTableSeeder extends Seeder
             'loanable_id' => 2,
             'loanable_type' => 'App\Group'
         ]);
+
+        $loan->guarantors()->attach(1);
     }
 }

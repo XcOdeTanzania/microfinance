@@ -198,7 +198,7 @@ Route::group([
     Route::get('loans', ['uses' => 'LoanController@loansPage'])->name('loans');
 
     // view loan detail routes
-    Route::get('details', ['uses' => 'LoanController@loanDetailsPage'])->name('loan.details');
+    Route::get('details/{id}', ['uses' => 'LoanController@loanDetailsPage'])->name('loan.details');
 
     // pending approval load route
     Route::get('pending-approval', ['uses' => 'LoanController@loanPendingApprovalPage'])->name('loan.pending.approval');
@@ -206,8 +206,25 @@ Route::group([
     // pending second approval loan route
     Route::get('pendingSecondApproval', ['uses' => 'LoanController@loanPendingSecondApprovalPage'])->name('loan.pending.second.approval');
 
+    // Overpaid loan
+    Route::get('overpaid', ['uses' => 'LoanController@overpaidPage'])->name('loan.overpaid');
+
+    // rejeced loans
+    Route::get('rejected', ['uses' => 'LoanController@rejectedPage'])->name('loan.rejected');
+
+    // Awaiting loans
+    Route::get('awaiting', ['uses' => 'LoanController@awaitingPage'])->name('loan.awaiting');
+
+    // Closed loans
+    Route::get('closed', ['uses' => 'LoanController@closedPage'])->name('loan.closed');
+
+    // Withdraw loans
+    Route::get('withdraw', ['uses' => 'LoanController@withdrawPage'])->name('loan.withdraw');
+
+    // WrittenOff loans
+    Route::get('writtenoff', ['uses' => 'LoanController@writtenOffPage'])->name('loan.writtenoff');
+
     // pending load details route
-    Route::get('loan/{id}', ['uses' => 'LoanController@loanPendingDetailsPage'])->name('loan.pending');
     Route::get('calculator', ['uses' => 'LoanController@loanCalculatorPage'])->name('loan.calculator');
 
 

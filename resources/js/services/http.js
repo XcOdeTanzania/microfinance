@@ -22,5 +22,12 @@ Container.provide({
             },
             {}
         );
+        container.bind('viewLoans', 
+        async () => {
+            const {data} = await axios.get('/api/loan/list')
+                return data
+            },
+            {}
+            );
     }
 });
