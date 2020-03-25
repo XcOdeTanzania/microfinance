@@ -2,7 +2,7 @@
     <div>
         <div class="content-heading">
     <div>
-        LoanID_with_Loanactive
+        Loanactive
         <div class="badge badge-success">Active</div>
     </div>
 </div>
@@ -313,8 +313,8 @@
                                         <tr class = "bg-gray">
                                             <th style="border-left:1px; border-top: 1px !important;border-color:#1D68A7 !important;" class= "empty" colspan="4"></th>
                                             <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="3">Loan Amount and Balance</th>
-                                            <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="3">Total Cost of Loan</th>
-                                            <th style="border-left:1px;border-color:#1D68A7 !important;"colspan="2">Compulsory Savings</th>
+                                            <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="3">Total Cost of Loan</th>
+                                            <th style="border-left:1px;border-color:#1D68A7 !important;" colspan="2">Compulsory Savings</th>
                                             <th class= "empty" colspan="3"></th>
                                         </tr>
                                         <tr>

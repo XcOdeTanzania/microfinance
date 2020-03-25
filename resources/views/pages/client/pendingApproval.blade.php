@@ -15,7 +15,7 @@
 @section('scripts')
     <script src="{{ asset('angle/js/datatable.js') }}"></script>
     <script>
-        $('#pendingApproval').DataTable({
+        $('.DatatableOne').DataTable({
             'paging': true,
             // Table pagination
             'ordering': true,

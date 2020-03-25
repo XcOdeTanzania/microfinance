@@ -82,6 +82,7 @@
         "simple-line-icons": "2.4.1",
         "spinkit": "1.2.5",
         "sweetalert": "2.1.2",
+        "vue-form-wizard": "^0.8.4",
         "vue-router": "^3.1.6",
         "vuejs-service-container": "^1.1.1",
         "weather-icons": "github:erikflowers/weather-icons",

@@ -310,10 +310,8 @@
 @section('scripts')
     <script src="{{ asset('angle/js/wizard.js') }}"></script>
     <script src="{{ asset('angle/js/forms.js') }}"></script>
+
     <script>
-
-
-
 
         $('#addGuarantorModal').on('hidden.bs.modal', function (e) {
             console.log('Guarantor closed');

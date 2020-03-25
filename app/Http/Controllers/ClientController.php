@@ -7,6 +7,7 @@ use App\Clients;
 use App\District;
 use App\Events\ClientCreatedEvent;
 use App\Region;
+use function foo\func;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -68,8 +69,10 @@ class ClientController extends Controller
     public function registerClientPage()
     {
         $regions = Region::all();
-        $districts = District::all();
-        return view('pages.client.register', ['regions' => $regions, 'districts' => $districts]);
+        foreach ($regions as $region){
+            $region->districts = $region->districts;
+        }
+        return view('pages.client.register', ['regions' => $regions]);
     }
 
     public function getClientsList()
