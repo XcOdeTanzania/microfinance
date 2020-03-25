@@ -90,7 +90,7 @@ return [
             ],
             [
                 'text' => 'Overpaid Loans',
-                'route' => '#'
+                'route' => 'loan/overpaid'
             ],
             [
                 'text' => 'Pending Approval',
@@ -102,23 +102,23 @@ return [
             ],
             [
                 'text' => 'Awaiting Disbursement',
-                'route' => '#'
+                'route' => 'loan/awaiting'
             ],
             [
                 'text' => 'Rejected',
-                'route' => '#'
+                'route' => 'loan/rejected'
             ],
             [
                 'text' => 'Withdrawn',
-                'route' => '#'
+                'route' => 'loan/withdraw'
             ],
             [
                 'text' => 'Written Off Loans',
-                'route' => '#'
+                'route' => 'loan/writtenoff'
             ],
             [
                 'text' => 'Closed',
-                'route' => '#'
+                'route' => 'loan/closed'
             ],
             [
                 'text' => 'Loan Schedule Pending',

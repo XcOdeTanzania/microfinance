@@ -27,7 +27,7 @@
                         </thead>
                         <tbody>
 
-                        <tr v-for="client in clients" >
+                        <tr v-for="client in clients" :key="client.id" >
                             <td>{{client.id}}</td>
                             <td>{{client['profile'].first_name + ' '+ client['profile'].last_name}}</td>
                             <td></td>

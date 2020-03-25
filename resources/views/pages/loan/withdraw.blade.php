@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<pedding-second-approval></pedding-second-approval>
+    <withdraw-loans></withdraw-loans>
 @endsection
-   
 @section('style')@endsection
 
 @section('scripts')

@@ -11,8 +11,17 @@ Container.provide({
             return axios.get(`api/client/list`).then(({ data }) => {
                 return data;
             })
-        },{
+        })
+    }
+})
 
+
+Container.provide({
+    register({container, content}) {
+        container.bind('viewLoans', () => {
+            return axios.get('/api/loan/list').then(({data})=> {
+                return data
+            })
         })
     }
 })

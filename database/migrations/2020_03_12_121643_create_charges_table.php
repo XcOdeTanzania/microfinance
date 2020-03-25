@@ -23,6 +23,7 @@ class CreateChargesTable extends Migration
             $table->string('collected_on');
             $table->date('date')->nullable();
             $table->string('payment_mode');
+            $table->integer('loan_id');
 
             $table->softdeletes();
             $table->timestamps();
