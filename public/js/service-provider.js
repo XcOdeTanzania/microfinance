@@ -4241,7 +4241,7 @@ Container.provide({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Qlicue\projects\microfinance\resources\js\service-provider.js */"./resources/js/service-provider.js");
+module.exports = __webpack_require__(/*! /Users/admin/Downloads/projects/laravel/microfinance/resources/js/service-provider.js */"./resources/js/service-provider.js");
 
 
 /***/ })

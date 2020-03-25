@@ -76,7 +76,7 @@ class ClientController extends Controller
     {
         $clients = Client::all();
         foreach ($clients as $client){
-            $client->profile = $client->profile;
+            $client->pronpme = $client->profile;
             $client->branch = $client->branch;
         }
         return response()->json([
