@@ -14,7 +14,7 @@ class CreateRepaymentsTable extends Migration
     public function up()
     {
         Schema::create('repayments', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
             $table->dateTime('date');
             $table->integer('days');

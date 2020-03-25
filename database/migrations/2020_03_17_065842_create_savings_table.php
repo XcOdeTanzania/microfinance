@@ -14,7 +14,7 @@ class CreateSavingsTable extends Migration
     public function up()
     {
         Schema::create('savings', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->timestamps();
         });
     }

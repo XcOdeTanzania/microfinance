@@ -22,14 +22,14 @@ class Loan extends Model
      */
     function guarantors()
     {
-        return $this->hasMany(Guarantor::class);
+        return $this->belongsToMany(Guarantor::class);
     }
 
     /** 
      * loan polymorpic relations to client and group
      */
 
-    public function laonable()
+    public function loanable()
     {
         return $this->morphTo();
     }
@@ -67,7 +67,6 @@ class Loan extends Model
     {
         return $this->hasMany(Collateral::class);
     }
-
 
 
 

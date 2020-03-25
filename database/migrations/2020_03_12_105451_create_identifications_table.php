@@ -14,7 +14,7 @@ class CreateIdentificationsTable extends Migration
     public function up()
     {
         Schema::create('identifications', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
             $table->bigInteger('client_id');
             $table->string('attachment');

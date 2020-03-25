@@ -14,7 +14,7 @@ class CreateFinancesTable extends Migration
     public function up()
     {
         Schema::create('finances', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->timestamps();
         });
     }

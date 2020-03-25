@@ -14,7 +14,7 @@ class CreateGuarantorLoanTable extends Migration
     public function up()
     {
         Schema::create('guarantor_loan', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
             $table->integer('guarantor_id');
             $table->integer('loan_id');

@@ -29,7 +29,7 @@
                         <tr v-for="client in clients" >
                             <td>{{client.id}}</td>
                             <td>{{client['profile'].first_name + ' '+ client['profile'].last_name}}</td>
-                            <td>dd</td>
+                            <td></td>
                             <td> {{client['branch'].name}} </td>
                             <td>Mr. JPM</td>
                             <td>{{client.registration_date}}</td>

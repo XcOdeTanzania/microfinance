@@ -14,7 +14,7 @@ class CreateLoanTypeTable extends Migration
     public function up()
     {
         Schema::create('loan_type', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name');
 
             $table->softDeletes();

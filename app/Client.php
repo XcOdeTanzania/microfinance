@@ -25,6 +25,10 @@ class Client extends Model
         'deleted_at'
     ];
 
+    protected $hidden = [
+        'password',
+    ];
+
     // relations
 
     /**
