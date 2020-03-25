@@ -5,14 +5,12 @@ import axios from 'axios'
 
 
 Container.provide({
-    register({ container, content }) {
-
+    register({container, content}) {
         container.bind('clients', () => {
-            return axios.get(`api/client/list`).then(({ data }) => {
-                return data;
-            })
-        },{
-
-        })
+                return axios.get(`/api/client/list`).then(({data}) => {
+                    return data;
+                })
+            }, {},
+        )
     }
-})
+});

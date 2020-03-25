@@ -13,7 +13,7 @@
                     <div class="text-sm"></div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped my-4 w-100" id="pendingApproval">
+                    <table class="table table-striped my-4 w-100 DatatableOne" id="pending_approval">
                         <thead>
                         <tr>
                             <th data-priority="1">Client Id</th>
@@ -26,11 +26,10 @@
                         </tr>
                         </thead>
                         <tbody>
-
                         <tr v-for="client in clients" >
                             <td>{{client.id}}</td>
                             <td>{{client['profile'].first_name + ' '+ client['profile'].last_name}}</td>
-                            <td></td>
+                            <td>dd</td>
                             <td> {{client['branch'].name}} </td>
                             <td>Mr. JPM</td>
                             <td>{{client.registration_date}}</td>
@@ -38,9 +37,9 @@
                                 <button class="btn btn-sm btn-primary ">
                                     <i class="fas fa-eye"></i>
                                     View
-                                </button></td>
+                                </button>
+                            </td>
                         </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -49,8 +48,11 @@
     </div>
 
 </template>
-
+<!--<script src="js/jquery.dataTables.min.js" type="text/javascript"></script>-->
 <script>
+
+//    import datatable from '../../angle/modules/tables/datatable';
+    import $ from 'jquery';
     export default{
         name:'pending-approval-clients',
         data(){
@@ -61,12 +63,13 @@
 
                 Container.resolve('clients').then((data)=>{
                     this.clients = data.clients;
-                    console.log(this.clients);
+
                 });
             }
         },
         mounted(){
-            this.getClients()
+            this.getClients();
+
         }
 
     }

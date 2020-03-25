@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-
+    {{--<register-client></register-client>--}}
 <div class="content-heading ">Register Client</div>
 <div class="card card-default">
     <div class="card-header"></div>
@@ -64,7 +64,7 @@
                                 </select>
 
                                 <label for="region">Region *</label>
-                                <select class="custom-select required " id="region" name="region_id">
+                                <select onchange="setSelectorOptions('district',{{$regions}},this)" class="custom-select required " id="region" name="region_id">
                                     <option selected></option>
                                     @foreach($regions as $region)
                                     <option value="{{$region->id}}">{{$region->name}}</option>
@@ -74,9 +74,9 @@
                                 <label for="district">District *</label>
                                 <select class="custom-select required " id="district" name="district_id">
                                     <option selected></option>
-                                    @foreach($districts as $district )
-                                    <option value="{{$district->id}}">{{$district->name}}</option>
-                                    @endforeach
+                                    {{--@foreach($districts as $district )--}}
+                                    {{--<option value="{{$district->id}}">{{$district->name}}</option>--}}
+                                    {{--@endforeach--}}
                                 </select>
                                 <label for="gpsLocation">gps_location </label>
                                 <input class="form-control " id="gpsLocation" name="gps_location" type="text" />
@@ -289,6 +289,33 @@
 @section('styles')@endsection
 @section('scripts')
 <script src="{{ asset('angle/js/wizard.js') }}"></script>
+
+<script>
+    function setSelectorOptions(selector_id,regions,source){
+        var selectedRegion = $(source).val();
+        console.log("#"+selector_id);
+          document.getElementById(selector_id).innerHTML = '';
+          var select = document.getElementById(selector_id );
+
+          regions.forEach(function (region) {
+              if(region.id == selectedRegion) options = region.districts;
+          })
+//         options = JSON.parse(options);
+
+        var opt = document.createElement('option');
+        opt.text = 'SELECT';
+        // console.log($('#loanOfficer'));
+        select.appendChild(opt);
+        options.forEach(function (option){
+            var opt = document.createElement('option');
+            opt.text = option.name;
+            opt.value = option.id;
+            // console.log($('#loanOfficer'));
+            select.appendChild(opt);
+        });
+    }
+</script>
+
 @endsection
 
 <div class="modal fade" id="addIdentityModal" tabindex="-1" role="dialog" aria-labelledby="addIdentityModal" aria-hidden="true">

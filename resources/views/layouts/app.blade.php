@@ -61,7 +61,7 @@
 
         </div>
 
-    {{--</section>--}}
+    </section>
     <!-- Page footer-->
     @include('layouts.includes.footer')
 </div>
@@ -82,7 +82,5 @@
 </script>
 @yield('scripts')
 </body>
-
-
 
 </html>

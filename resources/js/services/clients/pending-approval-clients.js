@@ -1,7 +1,7 @@
 /**
  * Created by henry on 23-Mar-20.
  */
-import PendingApprovalClients from '@Component/pending-approval-clients';
+import PendingApprovalClients from '@Component/clients/pending-approval-clients';
 
 Container.provide({
     register({Vue}){
