@@ -97,5 +97,17 @@ class User extends Authenticatable
     public function branch()
     {
         return $this->belongsTo(Branch::class);
+
+    }
+
+    // relations
+
+    /**
+     * user belongs to one task relation
+     */
+
+    public function tasks()
+    {
+        return $this->belongsTo(Task::class);
     }
 }

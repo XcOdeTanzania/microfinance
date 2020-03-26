@@ -159,4 +159,13 @@ class Group extends Model
 
         $group->delete();
     }
+
+
+    // task relations
+
+ public function tasks()
+    {
+        return $this->belongsTo(Task::class);
+    }
+
 }
