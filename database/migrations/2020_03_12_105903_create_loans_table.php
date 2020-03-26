@@ -17,6 +17,8 @@ class CreateLoansTable extends Migration
             $table->bigIncrements('id');
             
             $table->integer('loan_type_id');
+            $table->integer('loan_status_id');
+            $table->date('loan_status_date');
             $table->double('top_up');
             $table->double('amount');
             $table->string('orign_of_fund');

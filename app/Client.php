@@ -18,6 +18,7 @@ class Client extends Model
     protected $fillable = [
         'name', 'email', 'password',
         'registration_date',
+        'account_number',
         'terms_and_condition'
     ];
 
@@ -105,7 +106,7 @@ class Client extends Model
     }
 
     // Business Logic
-   
+
 
 
     /**
@@ -125,7 +126,7 @@ class Client extends Model
         return $this->morphOne(Profile::class, 'profileable');
     }
 
-    
+
 
 
     /**
