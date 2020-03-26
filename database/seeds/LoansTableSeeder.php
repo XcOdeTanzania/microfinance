@@ -37,7 +37,12 @@ class LoansTableSeeder extends Seeder
             'days_in_arrears' => 6,
             'last_payment' => "250,000/- TZS - 2020-03-12",
             'next_payment' => "250,000/- TZS - 2020-04-12",
-            'final_payment_expected' => "2020-07-12"
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
 
 
         ]);
@@ -70,7 +75,12 @@ class LoansTableSeeder extends Seeder
             'days_in_arrears' => 6,
             'last_payment' => "250,000/- TZS - 2020-03-12",
             'next_payment' => "250,000/- TZS - 2020-04-12",
-            'final_payment_expected' => "2020-07-12"
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
 
         ]);
         $loan->guarantors()->attach(2);
@@ -99,7 +109,12 @@ class LoansTableSeeder extends Seeder
             'days_in_arrears' => 6,
             'last_payment' => "250,000/- TZS - 2020-03-12",
             'next_payment' => "250,000/- TZS - 2020-04-12",
-            'final_payment_expected' => "2020-07-12"
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(4);
@@ -128,7 +143,12 @@ class LoansTableSeeder extends Seeder
             'days_in_arrears' => 6,
             'last_payment' => "250,000/- TZS - 2020-03-12",
             'next_payment' => "250,000/- TZS - 2020-04-12",
-            'final_payment_expected' => "2020-07-12"
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(3);
@@ -157,7 +177,12 @@ class LoansTableSeeder extends Seeder
             'days_in_arrears' => 6,
             'last_payment' => "250,000/- TZS - 2020-03-12",
             'next_payment' => "250,000/- TZS - 2020-04-12",
-            'final_payment_expected' => "2020-07-12"
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -187,7 +212,12 @@ class LoansTableSeeder extends Seeder
             'days_in_arrears' => 6,
             'last_payment' => "250,000/- TZS - 2020-03-12",
             'next_payment' => "250,000/- TZS - 2020-04-12",
-            'final_payment_expected' => "2020-07-12"
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -217,7 +247,12 @@ class LoansTableSeeder extends Seeder
             'days_in_arrears' => 6,
             'last_payment' => "250,000/- TZS - 2020-03-12",
             'next_payment' => "250,000/- TZS - 2020-04-12",
-            'final_payment_expected' => "2020-07-12"
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -239,14 +274,19 @@ class LoansTableSeeder extends Seeder
             'loan_purpose' => 'loan_purpose',
             'auto_create_standing_instruction' => true,
             'loanable_id' => 2,
-            'loanable_type' => 'App\Group', 
+            'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
             'amount_in_arrears' => 20000,
             'days_in_arrears' => 6,
             'last_payment' => "250,000/- TZS - 2020-03-12",
             'next_payment' => "250,000/- TZS - 2020-04-12",
-            'final_payment_expected' => "2020-07-12"
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -271,11 +311,16 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
 
         ]);
 
@@ -301,11 +346,16 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -330,11 +380,16 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -360,11 +415,16 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -390,11 +450,16 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -420,11 +485,16 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -449,11 +519,16 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -479,11 +554,16 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(3);
@@ -508,11 +588,16 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
         ]);
 
         $loan->guarantors()->attach(1);
@@ -538,11 +623,19 @@ class LoansTableSeeder extends Seeder
             'loanable_type' => 'App\Group',
             'loan_cycle' => 1,
             'timely_repayments' => 50,
-            'amount_in_arrears'=> 20000,
-            'days_in_arrears'=> 6,
-            'last_payment'=>"250,000/- TZS - 2020-03-12",
-            'next_payment'=>"250,000/- TZS - 2020-04-12",
-            'final_payment_expected'=>"2020-07-12"
+            'amount_in_arrears' => 20000,
+            'days_in_arrears' => 6,
+            'last_payment' => "250,000/- TZS - 2020-03-12",
+            'next_payment' => "250,000/- TZS - 2020-04-12",
+            'final_payment_expected' => "2020-07-12",
+            'annual_percentage_rate' => 20,
+            'effective_interest_rate' => 40,
+            'loan_sector' => 'loan_sector',
+            'channel' => 'channel',
+            'collateral_value' => 200000
+
+
+
         ]);
 
         $loan->guarantors()->attach(2);

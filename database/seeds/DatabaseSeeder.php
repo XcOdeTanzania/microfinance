@@ -39,5 +39,7 @@ class DatabaseSeeder extends Seeder
         $this->call(InterestsTableSeeder::class);
         $this->call(FeesTableSeeder::class);
         $this->call(PenaltiesTableSeeder::class);
+        $this->call(RepaymentsTableSeeder::class);
+        $this->call(TransactionsTableSeeder::class);
     }
 }

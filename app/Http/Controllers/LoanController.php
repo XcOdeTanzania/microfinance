@@ -189,6 +189,9 @@ class LoanController extends Controller
             $loan->summaryInterest;
             $loan->summaryFee;
             $loan->summaryPenalty;
+            $loan->repayments;
+            $loan->transactions;
+            $loan->guarantors;
             $loan->product = LoanType::find($loan->loan_type_id);
             $loan->status = LoanStatus::find($loan->loan_status_id);
             if ($val_to_lower == 'group') {

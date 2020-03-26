@@ -42,6 +42,12 @@ class CreateLoansTable extends Migration
             $table->string('next_payment');
             $table->date('final_payment_expected');
 
+            $table->double('annual_percentage_rate');
+            $table->double('effective_interest_rate');
+            $table->string('loan_sector');
+            $table->string('channel');
+            $table->double('collateral_value');
+
 
             $table->softDeletes();
             $table->timestamps();
