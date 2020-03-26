@@ -34,6 +34,15 @@ class CreateLoansTable extends Migration
             $table->integer('loanable_id');
             $table->string('loanable_type');
 
+            $table->integer('loan_cycle');
+            $table->integer('timely_repayments');
+            $table->double('amount_in_arrears')->nullable();
+            $table->integer('days_in_arrears')->nullable();
+            $table->string('last_payment')->nullable();
+            $table->string('next_payment');
+            $table->date('final_payment_expected');
+
+
             $table->softDeletes();
             $table->timestamps();
         });

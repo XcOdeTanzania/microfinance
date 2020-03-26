@@ -184,6 +184,11 @@ class LoanController extends Controller
             $loan->$val_to_lower = $loan->loanable_type::find($loan->loanable_id);
             $loan->officer = $loan->loanable_type::find($loan->loanable_id)->user;
             $loan->branch = $loan->loanable_type::find($loan->loanable_id)->branch;
+            $loan->summary;
+            $loan->summaryPrincipal;
+            $loan->summaryInterest;
+            $loan->summaryFee;
+            $loan->summaryPenalty;
             $loan->product = LoanType::find($loan->loan_type_id);
             $loan->status = LoanStatus::find($loan->loan_status_id);
             if ($val_to_lower == 'group') {
