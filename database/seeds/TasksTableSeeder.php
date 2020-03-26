@@ -12,7 +12,7 @@ class TasksTableSeeder extends Seeder {
 
     public function run() {
         Task::create( [
-            'name'=>'task',
+            'name'=>'qlicue',
             'action'=>'created',
             'entity'=>'group',
             'user_id'=> 1,
@@ -25,7 +25,7 @@ class TasksTableSeeder extends Seeder {
         ] );
 
          Task::create( [
-            'name'=>'task',
+            'name'=>'digital',
             'action'=>'created',
             'entity'=>'group',
             'user_id'=> 2,
@@ -38,7 +38,7 @@ class TasksTableSeeder extends Seeder {
         ] );
 
          Task::create( [
-            'name'=>'task',
+            'name'=>'agency',
             'action'=>'created',
             'entity'=>'group',
             'user_id'=> 3,
@@ -51,7 +51,7 @@ class TasksTableSeeder extends Seeder {
         ] );
 
          Task::create( [
-            'name'=>'task',
+            'name'=>'limited',
             'action'=>'created',
             'entity'=>'group',
             'user_id'=> 2,

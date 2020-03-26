@@ -1,39 +1,39 @@
 <template>
+<div>
 <div class="content-heading">
         <div>
             Actions Pending Approval
         </div>
-    </div>
+</div>
 
     <div class="card card-default">
         <div class="card-body">
-        <div class= "col-xl-6 col-lg-6 col-md-10">
-        <form>
-            <div class="form-group row">
-                <label for="user" class="col-md-2 col-form-label">User</label>
-                <div class="col-md-10">
-                    <select id="user" class="custom-select custom-select-sm" name="user">
+          <div class= "col-xl-6 col-lg-6 col-md-10">
+             <form>
+                <div class="form-group row">
+                   <label for="user" class="col-md-2 col-form-label">User</label>
+                    <div class="col-md-10">
+                      <select id="user" class="custom-select custom-select-sm" name="user">
                         <option selected="">Open this select menu</option>
-                        <option value="1">Demo</option>
-                        <option value="2">DemoUser</option>
-                        <option value="3">0765342765</option>
-                    </select>
+                        <option
+                                v-bind:value="user.id"
+                                v-for="user in users">
+                                {{user.name}}
+                        </option>
+                      </select>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="entity" class="col-md-2 col-form-label">Entity</label>
-                <div class="col-md-10">
-                    <select class="custom-select custom-select-sm" name="entity"  id="entity">
-                        <option selected="">Open this select menu</option>
-                        <option value="1">Group</option>
-                        <option value="2">Client</option>
-                        <option value="3">Account Transfer</option>
-                        <option value="3">Journal Entry</option>
-                        <option value="3">Loan</option>
-                        <option value="3">Collection sheet</option>
-                    </select>
+                <div class="form-group row">
+                    <label for="entity" class="col-md-2 col-form-label">Entity</label>
+                    <div class="col-md-10">
+                       <select class="custom-select custom-select-sm" name="entity"  id="entity">
+                           <option selected=""> Open this select menu</option>
+                            <option value="1">group</option>
+                            <option value="2">client</option>
+                            <option value="3">Loan</option>
+                       </select>
+                    </div>
                 </div>
-            </div>
             <div class="form-group row mb-2">
                 <label for="from" class="col-md-2 col-form-label mb-2">*From</label>
                 <div class= "col-6">
@@ -72,16 +72,17 @@
          </form>
          </div>
         </div>
-    </div>
-    <div class="card">
-            <div class="card-header">
-                <div class="card-title"></div>
-                <div class="text-sm"></div>
-            </div>
-            <div class="card-body">
-                <table class="table table-striped my-4 w-100" id="datatable1">
-                    <thead>
-                        <tr>
+       </div>
+   
+  <div class="card">
+    <div class="card-header">
+        <div class="card-title"></div>
+            <div class="text-sm"></div>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped my-4 w-100" id="datatable1">
+                <thead>
+                    <tr>
                             <th data-priority="1">Action</th>
                             <th>Entity</th>
                             <th>Performed by</th>
@@ -91,22 +92,53 @@
                             <th>Amount</th>
                             <th>Submitted on date</th>
                             <th>Effective date</th>
+                    </tr>
+                 </thead>
+                <tbody>
+                        <tr v-for="task in tasks">
+                            <td>{{task.action}}</td>
+                            <td>{{task.entity}}</td>
+                            <td>{{task.user_id}}</td>
+                            <td>{{task.branch_id}}</td>
+                            <td>{{task.name}}</td>
+                            <td>{{task.group_id}}</td>
+                            <td>{{task.amount}}</td>
+                            <td>{{task.submitted_on_date}}</td>
+                            <td>{{task.effective_date}}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="Received">
-                            <td>Received</td>
-                            <td>Group</td>
-                            <td>Cashier</td>
-                            <td>Kigamboni</td>
-                            <td>Jane</td>
-                            <td>WAMWA</td>
-                            <td>500000</td>
-                            <td>03/01/2019</td>
-                            <td>20/02/2019</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table>
         </div>
+    </div>
+</div>
 </template>
+
+
+<script>
+export default {
+    name: "tasks",
+    data() {
+        return { tasks: [], users: [] };
+    },
+    methods: {
+        getTasks() {
+            Container.resolve("tasks").then(data => {
+                this.tasks = data.tasks;
+            });
+        },
+
+         getUsers()
+        {
+            Container.resolve("users").then(data =>
+            {
+                this.users = data.users;
+            });
+        }
+    },
+    mounted() {
+        this.getTasks();
+        this.getUsers();
+    }
+};
+</script>
+

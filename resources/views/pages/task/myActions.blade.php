@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<task-myAction></task-myAction>
+<my-action-task></my-action-task>
 
     @endsection
     @section('styles')@endsection

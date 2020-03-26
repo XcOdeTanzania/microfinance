@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <PendingApproval-task></PendingApproval-task>
+    <pending-approval-task></pending-approval-task>
 
 
     @endsection

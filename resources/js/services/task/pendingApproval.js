@@ -1,7 +1,7 @@
-import Task from "@Component/pendingApproval";
+import Task from "@Component/task/pendingApproval";
 
 Container.provide({
     register({ Vue }) {
-        Vue.component("pendingApproval", Task);
+        Vue.component("pending-approval-task", Task);
     }
 });

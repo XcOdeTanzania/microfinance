@@ -26,7 +26,7 @@ class CreateTasksTable extends Migration
             $table->date('submitted_on_date');
             $table->date('effective_date');
 
-
+            $table->softdeletes();
             $table->timestamps();
         });
     }

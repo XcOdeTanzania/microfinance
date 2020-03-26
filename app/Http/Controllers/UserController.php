@@ -11,4 +11,10 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    public function allUsers()
+    {
+        $users = User::all();
+
+        return response()->json(['users'=>$users]);
+    }
 }

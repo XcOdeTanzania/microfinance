@@ -1,7 +1,7 @@
-import Task from "@Component/myAction";
+import Task from "@Component/task/myAction";
 
 Container.provide({
     register({ Vue }) {
-        Vue.component("myAction", Task);
+        Vue.component("my-action-task", Task);
     }
 });

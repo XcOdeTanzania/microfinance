@@ -22,5 +22,5 @@ require('@Service/loan/loan-detail-service')
 require("@Service/groups");
 
 // Task Services
-require('Service/task/myAction')
-require('Service/task/pendingApproval')
+require('@Service/task/myAction')
+require('@Service/task/pendingApproval')
