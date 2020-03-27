@@ -119,6 +119,11 @@ class Loan extends Model
         return $this->hasMany(Transaction::class);
     }
 
+    public function standingInstructions()
+    {
+        return $this->hasMany(StandingInstruction::class);
+    }
+
 
 
 

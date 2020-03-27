@@ -42,5 +42,8 @@ class DatabaseSeeder extends Seeder
         $this->call(RepaymentsTableSeeder::class);
         $this->call(TransactionsTableSeeder::class);
         $this->call(CollateralsTableSeeder::class);
+        $this->call(StandingInstructionsTableSeeder::class);
+
+        
     }
 }
