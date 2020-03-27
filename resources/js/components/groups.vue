@@ -287,18 +287,7 @@ export default {
             });
         },
 
-        onchange(event) {
-            for (let index = 0; index < this.branches.length; index++) {
-                if (event.target.value == this.branches[index].id) {
-                    this.officers = this.branches[index].users;
 
-                    for (let j = 0; j < this.officers.length; j++) {
-                        this.officers[j].branch_id = this.branches[index].name;
-                    }
-                }
-            }
-            // console.log(this.branches[0].users[0].groups);
-        },
 
         updateGroupTable(event) {
             for (let index = 0; index < this.officers.length; index++) {

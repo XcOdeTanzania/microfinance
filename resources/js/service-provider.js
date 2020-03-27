@@ -20,3 +20,7 @@ require('@Service/loan/closed-service');
 require('@Service/loan/withdraw-service');
 require('@Service/loan/loan-detail-service');
 require("@Service/groups");
+
+// Task Services
+require('@Service/task/myAction');
+require('@Service/task/pendingApproval');

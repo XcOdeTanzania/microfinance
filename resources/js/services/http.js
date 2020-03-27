@@ -29,6 +29,24 @@ Container.provide({
             },
             {}
             );
+
+            container.bind(
+            "tasks",
+            async () => {
+                const { data } = await axios.get('/api/tasks');
+                return data;
+            },
+            {}
+        );
+
+        container.bind(
+            "users",
+            async () => {
+                const { data } = await axios.get('/api/users');
+                return data;
+            },
+            {}
+        );
     }
 });
 

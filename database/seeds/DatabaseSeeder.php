@@ -29,6 +29,11 @@ class DatabaseSeeder extends Seeder
         $this->call(ReportsTableSeeder::class);
         $this->call(ChargesTableSeeder::class);
         $this->call(ProfilesTableSeeder::class);
+<<<<<<< HEAD
+        $this->call(TasksTableSeeder::class);
+
+=======
+>>>>>>> 8577682a8e8bde8aaf7e253a86ecb0e012180049
 
         $this->call(LoanTypeTableSeeder::class);
         $this->call(LoanStatusTableSeeder::class);
