@@ -16,25 +16,45 @@ Container.provide({
         );
 
         container.bind(
-            "groups",
+            "approvedGroups",
             async () => {
-                const { data } = await axios.get(`/api/groups`);
+                const { data } = await axios.get(`/api/groups/approved`);
                 return data;
             },
             {}
         );
-        container.bind('viewLoans',
-        async () => {
-            const {data} = await axios.get('/api/loan/list')
-                return data
+
+        container.bind(
+            "closedGroups",
+            async () => {
+                const { data } = await axios.get(`/api/groups/closed`);
+                return data;
             },
             {}
-            );
+        );
 
-            container.bind(
+        container.bind(
+            "pendingGroups",
+            async () => {
+                const { data } = await axios.get(`/api/groups/pending`);
+                return data;
+            },
+            {}
+        );
+
+        container.bind(
+            "viewLoans",
+            async () => {
+                const { data } = await axios.get("/api/loan/list");
+                return data;
+            },
+            {}
+        );
+
+        container.bind(
             "tasks",
             async () => {
-                const { data } = await axios.get('/api/tasks');
+                const { data } = await axios.get("/api/tasks");
                 return data;
             },
             {}
@@ -43,7 +63,7 @@ Container.provide({
         container.bind(
             "users",
             async () => {
-                const { data } = await axios.get('/api/users');
+                const { data } = await axios.get("/api/users");
                 return data;
             },
             {}
@@ -52,16 +72,15 @@ Container.provide({
         container.bind(
             "users",
             async () => {
-                const { data } = await axios.get('/api/user/list');
+                const { data } = await axios.get("/api/user/list");
                 return data;
             },
             {}
         );
 
-        container.bind('roles',async () =>{
-            const {data} = await axios.get('/api/role/list');
+        container.bind("roles", async () => {
+            const { data } = await axios.get("/api/role/list");
             return data;
         });
     }
 });
-

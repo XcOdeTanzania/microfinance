@@ -21,7 +21,7 @@ Route::get('client/list',['uses'=>'ClientController@getClientsList'])->name('cli
 
 // Loan api
 Route::get('loan/list', ['uses' => 'LoanController@getAllLoans'])->name('loan.list');
-Route::get('groups', ['uses' => 'GroupController@groups']);
+Route::get('groups/{status}', ['uses' => 'GroupController@groups']);
 
 // tasks
 Route::get('tasks', ['uses' => 'TaskController@allTasks'])->name('tasks');
