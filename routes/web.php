@@ -121,9 +121,7 @@ Route::group([
     'middleware' => 'auth'
 ], function () {
 
-    Route::get('/user/users', function () {
-        return view('pages.user.users');
-    });
+    Route::get('/user/users', ['uses'=>'UserController@users']);
 
     Route::get('/user/roles', function () {
         return view('pages.user.roles');
@@ -134,9 +132,7 @@ Route::group([
     });
 
     // User details
-    Route::get('/user/details', function () {
-        return view('pages.user.details');
-    });
+    Route::get('/user/details/{id}',['uses'=>'UserController@userDetails']);
 
     //User role
     Route::get('/user/role', function () {

@@ -1,7 +1,11 @@
 /**
  * Created by henry on 23-Mar-20.
  */
-require('@Service/http')
+
+
+require('@Service/http');
+
+// Client services
 require('@Service/clients/pending-approval-clients');
 require('@Service/clients/closed');
 require('@Service/clients/register');
@@ -19,5 +23,12 @@ require('@Service/loan/writtenoff-service')
 require('@Service/loan/closed-service')
 require('@Service/loan/withdraw-service')
 require('@Service/loan/loan-detail-service')
+
+// Group services
 require("@Service/groups");
+
+// User Services
+require('@Service/users/users');
+require('@Service/users/user-detail')
+require('@Service/users/user-roles');
 

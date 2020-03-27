@@ -5,6 +5,7 @@ import axios from "axios";
 
 Container.provide({
     register({ container, content }) {
+        // Get all clients list
         container.bind(
             "clients",
             async () => {
@@ -29,6 +30,20 @@ Container.provide({
             },
             {}
             );
+
+        container.bind(
+            "users",
+            async () => {
+                const { data } = await axios.get('/api/user/list');
+                return data;
+            },
+            {}
+        );
+
+        container.bind('roles',async () =>{
+            const {data} = await axios.get('/api/role/list');
+            return data;
+        });
     }
 });
 

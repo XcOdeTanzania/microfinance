@@ -21,4 +21,16 @@ Route::get('client/list',['uses'=>'ClientController@getClientsList'])->name('cli
 
 // Loan api
 Route::get('loan/list', ['uses' => 'LoanController@getAllLoans'])->name('loan.list');
+
 Route::get('groups', ['uses' => 'GroupController@groups']);
+
+// Users api
+Route::get('user/list', ['uses' => 'UserController@usersList'])->name('user.list');
+
+// Roles API
+Route::get('role/list', ['uses' => 'RoleController@allRoles'])->name('role.list');
+
+Route::get('routes', function (){
+    $routes = collect(\Route::getRoutes())->map(function ($route) { return $route; });
+    return response()->json(['routes'=>$routes]);
+});
