@@ -17,7 +17,19 @@ class CreateGuarantorsTable extends Migration
         Schema::create('guarantors', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->bigInteger('profile_id');
+            $table->bigInteger('client_id');
+            $table->bigInteger('group_id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->date('date_of_birth');
+            $table->string('address');
+            $table->string('city');
+            $table->string('state');
+            $table->string('postal_code');
+            $table->string('country');
+            $table->string('phone_number');
+            $table->string('comment');
+            $table->string('relationship');
             $table->string('type');
 
             $table->softdeletes();
