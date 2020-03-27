@@ -13,24 +13,26 @@ class Guarantor extends Model
     use SoftDeletes;
 
     protected $fillable =[
-        'profile_id',
+        'client_id',
+        'group_id',
+        'first_name',
+        'last_name',
+        'date_of_birth',
+        'address',
+        'city',
+        'state',
+        'postal_code',
+        'country',
+        'phone_number',
+        'comment',
         'type',
+        'relationship'
     ];
 
     protected $dates =[
         'deleted_at'
     ];
 
-
-    // relations
-
-    /**
-     * Get the profile.
-     */
-    public function profile()
-    {
-        return $this->morphOne(Profile::class, 'profileable');
-    }
 
     /**
      * guarantor has many loans.
