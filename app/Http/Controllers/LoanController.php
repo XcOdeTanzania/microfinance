@@ -194,12 +194,15 @@ class LoanController extends Controller
             $loan->guarantors;
             $loan->collaterals;
             $loan->standingInstructions;
+            $loan->audits;
             
+
             $loan->product = LoanType::find($loan->loan_type_id);
             $loan->status = LoanStatus::find($loan->loan_status_id);
             if ($val_to_lower == 'group') {
                 $group = $loan->loanable_type::find($loan->loanable_id);
                 $loan->clients = $group->clients;
+                $loan->groupMemberAllocation;
             }
 
 

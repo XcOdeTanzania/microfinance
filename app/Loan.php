@@ -111,6 +111,15 @@ class Loan extends Model
     }
 
     /**
+     * loan has many repayments
+     */
+
+    public function audits()
+    {
+        return $this->hasMany(Audit::class);
+    }
+
+    /**
      * loan has many transactions
      */
 
@@ -118,6 +127,16 @@ class Loan extends Model
     {
         return $this->hasMany(Transaction::class);
     }
+
+    /**
+     * loan has many transactions
+     */
+
+    public function groupMemberAllocation()
+    {
+        return $this->hasMany(GroupMemberAllocation::class);
+    }
+
 
     public function standingInstructions()
     {
