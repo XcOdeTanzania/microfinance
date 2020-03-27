@@ -20,10 +20,7 @@ require('@Service/loan/closed-service');
 require('@Service/loan/withdraw-service');
 require('@Service/loan/loan-detail-service');
 require("@Service/groups");
-<<<<<<< HEAD
 
 // Task Services
 require('@Service/task/myAction');
 require('@Service/task/pendingApproval');
-=======
->>>>>>> 8577682a8e8bde8aaf7e253a86ecb0e012180049
