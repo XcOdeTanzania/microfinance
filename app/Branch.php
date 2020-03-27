@@ -23,7 +23,7 @@ class Branch extends Model
 
     // relations
 
-    /** 
+    /**
      * branch has many client relations
      */
 
@@ -32,7 +32,7 @@ class Branch extends Model
         return $this->hasMany(Client::class);
     }
 
-    /** 
+    /**
      * branch has many groups relations
      */
 
@@ -41,7 +41,7 @@ class Branch extends Model
         return $this->hasMany(Group::class);
     }
 
-    /** 
+    /**
      * branch belongs to a company relations
      */
 
@@ -57,11 +57,11 @@ class Branch extends Model
 
 
     /**
-     *  A fucntion to Create a branch 
-     * 
+     *  A fucntion to Create a branch
+     *
      * @param Request $request used to pass request  body
      * @param Company $company used to pass company instance
-     * 
+     *
      * @return void
      */
     public function postBranch(Request $request, Company $company)
@@ -94,5 +94,12 @@ class Branch extends Model
     public function users()
     {
         return $this->hasMany(User::class);
+    }
+
+//  tasks relations
+
+     public function tasks()
+    {
+        return $this->belongsTo(Task::class);
     }
 }

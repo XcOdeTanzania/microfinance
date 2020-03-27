@@ -15,9 +15,7 @@ class CreateLoanStatusTable extends Migration
     {
         Schema::create('loan_status', function (Blueprint $table) {
             $table->bigIncrements('id');
-
             $table->string('name');
-
             $table->softDeletes();
             $table->timestamps();
         });

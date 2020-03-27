@@ -16,19 +16,19 @@ class CreateRepaymentsTable extends Migration
         Schema::create('repayments', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->dateTime('date');
-            $table->integer('days');
-            $table->string('paid_by');
-            $table->double('disbursement');
-            $table->double('principal_due');
-            $table->double('principal_balance');
-            $table->double('interest_due');
-            $table->double('fee');
-            $table->double('penalties');
-            $table->double('expected_saving');
-            $table->double('actual_saving');
-            $table->double('total_paid');
-            $table->double('total_outstanding');
+            $table->date('date')->nullable();
+            $table->integer('days')->nullable();
+            $table->date('paid_by')->nullable();
+            $table->double('disbursement')->nullable();
+            $table->double('principal_due')->nullable();
+            $table->double('principal_balance')->nullable();
+            $table->double('interest_due')->nullable();
+            $table->double('fees')->nullable();
+            $table->double('penalties')->nullable();
+            $table->double('total_due')->nullable();
+            $table->double('total_paid')->nullable();
+            $table->double('total_outstanding')->nullable();
+
             $table->bigInteger('loan_id');
 
             $table->softdeletes();

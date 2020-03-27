@@ -29,8 +29,25 @@ class DatabaseSeeder extends Seeder
         $this->call(ReportsTableSeeder::class);
         $this->call(ChargesTableSeeder::class);
         $this->call(ProfilesTableSeeder::class);
+        $this->call(TasksTableSeeder::class);
+
+
+        $this->call(LoanTypeTableSeeder::class);
+        $this->call(LoanStatusTableSeeder::class);
+
+
+        $this->call(LoanSummaryTableSeeder::class);
+        $this->call(PrincipalsTableSeeder::class);
+        $this->call(InterestsTableSeeder::class);
+        $this->call(FeesTableSeeder::class);
+        $this->call(PenaltiesTableSeeder::class);
+        $this->call(RepaymentsTableSeeder::class);
+        $this->call(TransactionsTableSeeder::class);
+        $this->call(CollateralsTableSeeder::class);
+        $this->call(StandingInstructionsTableSeeder::class);
+        $this->call(AuditsTableSeeder::class);
+        $this->call(GroupMemberAllocationTableSeeder::class);
+      
         
-
-
     }
 }

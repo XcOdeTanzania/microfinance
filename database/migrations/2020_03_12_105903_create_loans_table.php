@@ -17,6 +17,8 @@ class CreateLoansTable extends Migration
             $table->bigIncrements('id');
             
             $table->integer('loan_type_id');
+            $table->integer('loan_status_id');
+            $table->date('loan_status_date');
             $table->double('top_up');
             $table->double('amount');
             $table->string('orign_of_fund');
@@ -31,6 +33,21 @@ class CreateLoansTable extends Migration
             $table->boolean('auto_create_standing_instruction');
             $table->integer('loanable_id');
             $table->string('loanable_type');
+
+            $table->integer('loan_cycle');
+            $table->integer('timely_repayments');
+            $table->double('amount_in_arrears')->nullable();
+            $table->integer('days_in_arrears')->nullable();
+            $table->string('last_payment')->nullable();
+            $table->string('next_payment');
+            $table->date('final_payment_expected');
+
+            $table->double('annual_percentage_rate');
+            $table->double('effective_interest_rate');
+            $table->string('loan_sector');
+            $table->string('channel');
+            $table->double('collateral_value');
+
 
             $table->softDeletes();
             $table->timestamps();
