@@ -55,11 +55,43 @@ class LoanController extends Controller
         $loan = Loan::find($id);
 
 
-        $loan->charges = $loan->charges;
-        $loan->loanable = $loan->loanable->user->branch;
-        $loan->guarantors = $loan->guarantors;
-
         if (!$loan) return back()->with("error", "Loan not found");
+
+        /////
+
+        $val = substr($loan->loanable_type, 4);
+        $val_to_lower = strtolower($val);
+        $loan->$val_to_lower = $loan->loanable_type::find($loan->loanable_id);
+        $loan->officer = $loan->loanable_type::find($loan->loanable_id)->user;
+        $loan->branch = $loan->loanable_type::find($loan->loanable_id)->branch;
+        $loan->summary;
+        $loan->summaryPrincipal;
+        $loan->summaryInterest;
+        $loan->summaryFee;
+        $loan->summaryPenalty;
+        $loan->repayments;
+        $loan->transactions;
+        $loan->guarantors;
+        $loan->collaterals;
+        $loan->standingInstructions;
+        $loan->audits;
+        $loan->surveys;
+        
+
+        $loan->product = LoanType::find($loan->loan_type_id);
+        $loan->status = LoanStatus::find($loan->loan_status_id);
+        if ($val_to_lower == 'group') {
+            $group = $loan->loanable_type::find($loan->loanable_id);
+            $loan->clients = $group->clients;
+            $loan->groupMemberAllocation;
+        }
+
+
+        $loan->laonable;
+
+        /////
+
+
 
         // dd(@json_encode($loan));
         // return response()->json(['loan'=> $loan]);
