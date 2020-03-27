@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Validator;
 class Loan extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['loan_type_id', 'top_up', 'amount', 'orign_of_fund', 'loan_term', 'repayment_frequency_type', 'repayment_frequency_number', 'interest_rate', 'disbursement_date', 'grace_on_principal_payment', 'grace_on_principal_interest', 'loan_purpose', 'auto_create_standing_instruction'];
+    protected $fillable = ['loan_type_id', 'loan_status_id', 'loan_status_date', 'top_up', 'amount', 'orign_of_fund', 'loan_term', 'repayment_frequency_type', 'repayment_frequency_number', 'interest_rate', 'disbursement_date',  'grace_on_principal_payment', 'grace_on_principal_interest', 'loan_purpose', 'auto_create_standing_instruction', 'loan_cycle', 'timely_repayments', 'amount_in_arrears', 'days_in_arrears', 'last_payment', 'next_payment', 'final_payment_expected', 'annual_percentage_rate', 'effective_interest_rate', 'loan_sector', 'channel', 'collateral_value'];
+
 
     protected $dates = ['deleted_at'];
 
@@ -51,6 +52,47 @@ class Loan extends Model
     {
         return $this->hasMany(Charge::class);
     }
+
+    /**
+     * loans has many charges
+     */
+
+    public function summary()
+    {
+        return $this->hasOne(LoanSummary::class);
+    }
+
+    /**
+     * Get the loan's principal.
+     */
+    public function summaryPrincipal()
+    {
+        return $this->hasOneThrough(Principal::class, LoanSummary::class);
+    }
+
+    /**
+     * Get the loan's interest.
+     */
+    public function summaryInterest()
+    {
+        return $this->hasOneThrough(Interest::class, LoanSummary::class);
+    }
+
+    /**
+     * Get the loan's fee.
+     */
+    public function summaryFee()
+    {
+        return $this->hasOneThrough(Fee::class, LoanSummary::class);
+    }
+
+    /**
+     * Get the loan's penaltes.
+     */
+    public function summaryPenalty()
+    {
+        return $this->hasOneThrough(Penalty::class, LoanSummary::class);
+    }
     /**
      * loan has many repayments
      */
@@ -66,6 +108,15 @@ class Loan extends Model
     public function collaterals()
     {
         return $this->hasMany(Collateral::class);
+    }
+
+    /**
+     * loan has many transactions
+     */
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
     }
 
 

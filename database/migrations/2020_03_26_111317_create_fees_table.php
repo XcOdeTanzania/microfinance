@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoanStatusTable extends Migration
+class CreateFeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,17 @@ class CreateLoanStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('loan_status', function (Blueprint $table) {
+        Schema::create('fees', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+
+            $table->integer('loan_summary_id');
+            $table->double('contract');
+            $table->double('paid');
+            $table->double('outstanding');
+            $table->double('overdue');
+
             $table->softDeletes();
+            
             $table->timestamps();
         });
     }
@@ -28,6 +35,6 @@ class CreateLoanStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loan_status');
+        Schema::dropIfExists('fees');
     }
 }

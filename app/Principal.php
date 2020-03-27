@@ -5,16 +5,23 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class LoanStatus extends Model
+class Principal extends Model
 {
-    protected $table = 'loan_status';
     use SoftDeletes;
 
     protected $fillable = [
-        'name'
+        'contract', 'paid', 'outstanding', 'overdue'
     ];
 
     protected $dates = [
         'deleted_at'
     ];
+
+
+    //relations
+
+    public function summary()
+    {
+        return $this->belongsTo(LoanSummary::class);
+    }
 }

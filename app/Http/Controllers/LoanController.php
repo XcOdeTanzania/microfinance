@@ -6,6 +6,8 @@ use App\Charge;
 use App\Client;
 use App\Group;
 use App\Loan;
+use App\LoanStatus;
+use App\LoanType;
 use Illuminate\Http\Request;
 
 class LoanController extends Controller
@@ -51,17 +53,17 @@ class LoanController extends Controller
     public function loanDetailsPage($id)
     {
         $loan = Loan::find($id);
-        
-      
-            $loan->charges = $loan->charges;
-            $loan->loanable = $loan->loanable->user->branch;
-            $loan->guarantors = $loan->guarantors;
-        
-        if(!$loan) return back()->with("error","Loan not found");
+
+
+        $loan->charges = $loan->charges;
+        $loan->loanable = $loan->loanable->user->branch;
+        $loan->guarantors = $loan->guarantors;
+
+        if (!$loan) return back()->with("error", "Loan not found");
 
         // dd(@json_encode($loan));
         // return response()->json(['loan'=> $loan]);
-        return view('pages.loan.details', ['loan'=> $loan]);
+        return view('pages.loan.details', ['loan' => $loan]);
     }
 
     /**
@@ -109,23 +111,28 @@ class LoanController extends Controller
         return view('pages.loan.overpaid');
     }
 
-    public function awaitingPage() {
+    public function awaitingPage()
+    {
         return view('pages.loan.awaiting');
     }
 
-    public function rejectedPage() {
+    public function rejectedPage()
+    {
         return view('pages.loan.rejected');
     }
 
-    public function writtenOffPage() {
+    public function writtenOffPage()
+    {
         return view('pages.loan.written-off');
     }
 
-    public function closedPage() {
+    public function closedPage()
+    {
         return view('pages.loan.closed');
     }
 
-    public function withdrawPage() {
+    public function withdrawPage()
+    {
         return view('pages.loan.withdraw');
     }
 
@@ -148,11 +155,52 @@ class LoanController extends Controller
      */
     public function getAllLoans(Request $request)
     {
+        if ($request->status == null) {
+            $loans = Loan::all();
+        } else {
+            $filteredloans = Loan::all()->map(function ($loan) {
+                return $loan;
+            })
+                ->reject(function ($loan) use ($request) {
+                    $status = LoanStatus::find($loan->loan_status_id);
 
-        $loans = Loan::all();
+
+                    return $status->name != $request->status;
+                });
+
+
+            foreach ($filteredloans  as $key => $value) {
+                $loans[] = $value;
+            }
+        }
+
+
+
 
         foreach ($loans as $loan) {
-            $loan->laonable = $loan->laonable;
+
+            $val = substr($loan->loanable_type, 4);
+            $val_to_lower = strtolower($val);
+            $loan->$val_to_lower = $loan->loanable_type::find($loan->loanable_id);
+            $loan->officer = $loan->loanable_type::find($loan->loanable_id)->user;
+            $loan->branch = $loan->loanable_type::find($loan->loanable_id)->branch;
+            $loan->summary;
+            $loan->summaryPrincipal;
+            $loan->summaryInterest;
+            $loan->summaryFee;
+            $loan->summaryPenalty;
+            $loan->repayments;
+            $loan->transactions;
+            $loan->guarantors;
+            $loan->product = LoanType::find($loan->loan_type_id);
+            $loan->status = LoanStatus::find($loan->loan_status_id);
+            if ($val_to_lower == 'group') {
+                $group = $loan->loanable_type::find($loan->loanable_id);
+                $loan->clients = $group->clients;
+            }
+
+
+            $loan->laonable;
         }
         return response()->json([
             'loans' => $loans,

@@ -69,7 +69,7 @@ class ClientController extends Controller
     public function registerClientPage()
     {
         $regions = Region::all();
-        foreach ($regions as $region){
+        foreach ($regions as $region) {
             $region->districts = $region->districts;
         }
         return view('pages.client.register', ['regions' => $regions]);
@@ -78,12 +78,13 @@ class ClientController extends Controller
     public function getClientsList()
     {
         $clients = Client::all();
-        foreach ($clients as $client){
-            $client->profile = $client->profile;
+        foreach ($clients as $client) {
+            $client->pronpme = $client->profile;
             $client->branch = $client->branch;
         }
         return response()->json([
-            'clients' => $clients,   ], 200, [], JSON_NUMERIC_CHECK);
+            'clients' => $clients,
+        ], 200, [], JSON_NUMERIC_CHECK);
     }
 
     // Logical Functions
@@ -114,6 +115,7 @@ class ClientController extends Controller
         $client->terms_and_conditions  = true; // $request->terms_and_condition;
         $client->branch_id = 1;
         $client->name = $request->first_name;
+        $client->account_number = $request->account_number;
         $client->email = $request->client_email;
         $client->password = Hash::make($request->last_name);
 
