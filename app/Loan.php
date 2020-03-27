@@ -144,6 +144,12 @@ class Loan extends Model
     }
 
 
+    public function surveys()
+    {
+        return $this->hasMany(Survey::class);
+    }
+
+
 
 
 

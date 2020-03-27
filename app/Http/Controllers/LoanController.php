@@ -195,6 +195,7 @@ class LoanController extends Controller
             $loan->collaterals;
             $loan->standingInstructions;
             $loan->audits;
+            $loan->surveys;
             
 
             $loan->product = LoanType::find($loan->loan_type_id);

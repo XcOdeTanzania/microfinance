@@ -47,6 +47,7 @@ class DatabaseSeeder extends Seeder
         $this->call(StandingInstructionsTableSeeder::class);
         $this->call(AuditsTableSeeder::class);
         $this->call(GroupMemberAllocationTableSeeder::class);
+        $this->call(SurveysTableSeeder::class);
       
         
     }
