@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Branch;
 use App\Client;
 use App\Clients;
 use App\District;
@@ -15,114 +16,147 @@ use Illuminate\Support\Facades\Validator;
 class ClientController extends Controller
 {
 
-    // Views Functions
-
-    /**
-     * Display pendingApproval.
-     *
-     * @return pendingApprovalPage view in client
-     */
-    public function pendingApprovalPage()
+    //get client
+    public function getClients($status)
     {
         $clients = Client::all();
-        return view('pages.client.pendingApproval', ['clients' => $clients]);
-    }
 
-    /**
-     * Display closed.
-     *
-     * @return closedPage view in client
-     */
-    public function closedPage()
-    {
-        $clients = Client::class;
-        return view('pages.client.closed', ['clients' => $clients]);
-    }
+        if ($status != 'all') {
 
-    /**
-     * Display rejected.
-     *
-     * @return rejectedPage view in client
-     */
-    public function rejectedPage()
-    {
-        $clients = Client::class;
-        return view('pages.client.rejected', ['clients' => $clients]);
-    }
-
-    /**
-     * Display transfer.
-     *
-     * @return transferPage view in client
-     */
-    public function transferPage()
-    {
-        $clients = Client::class;
-        return view('pages.client.transfer', ['clients' => $clients]);
-    }
-
-    /**
-     * Display registerClient.
-     *
-     * @return transferPage view in client
-     */
-    public function registerClientPage()
-    {
-        $regions = Region::all();
-        foreach ($regions as $region) {
-            $region->districts = $region->districts;
+            $clients =  $clients->map(function ($client) {
+                return $client;
+            })->reject(function ($client) use ($status) {
+                return $client->status != $status;
+            })->values();
         }
-        return view('pages.client.register', ['regions' => $regions]);
-    }
-
-    public function getClientsList()
-    {
-        $clients = Client::all();
-        foreach ($clients as $client) {
-            $client->pronpme = $client->profile;
+        foreach ($clients as $key => $client) {
             $client->branch = $client->branch;
+             
         }
-        return response()->json([
-            'clients' => $clients,
-        ], 200, [], JSON_NUMERIC_CHECK);
+
+        // foreach ($branch->officers as $key => $officer) 
+
+        return response()->json(
+            ['clients' => $clients],
+            200,
+            [],
+            JSON_NUMERIC_CHECK
+        );
     }
 
-    // Logical Functions
+    //get all clients
+    public function getClient($clientId)
+    {
 
+        $client = Client::find($clientId);
+        if (!$client) return response()->json(['error' => 'Client not found']);
 
+        return response()->json(['client' => $client], 200, [], JSON_NUMERIC_CHECK);
+    }
 
+    /// post client
     public function postClient(Request $request)
     {
         $validator = Validator::make(
             $request->all(),
             [
                 'first_name' => 'required',
-                'client_email' => 'required | unique:users,email| email',
+                'email' => 'unique:clients,email| email',
                 'last_name' => 'required',
                 'registration_date' => 'required',
-                'terms_and_condition' => 'required',
-
+                'phone_number' => 'required',
+                'date_birth' => 'required',
+                'gender' => 'required',
+                'street' => 'required',
+                'district' => 'required',
+                'region' => 'required',
+                'marital_status' => 'required',
+                'branch_id' => 'required'
             ]
         );
 
         if ($validator->fails())
-            return redirect('/client/register')->with('error', $validator->errors());
+            return response()->json(['error', $validator->errors()]);
 
+        $branch = Branch::find($request->branch_id);
+        if (!$branch) return response()->json(['error' => 'Brach not found']);
 
         $client = new Client();
 
+        $client->first_name = $request->first_name;
+        $client->middle_name = $request->middle_name;
+        $client->last_name = $request->last_name;
         $client->registration_date =  $request->registration_date;
-        $client->terms_and_conditions  = true; // $request->terms_and_condition;
-        $client->branch_id = 1;
-        $client->name = $request->first_name;
-        $client->account_number = $request->account_number;
+        $client->phone_number = $request->phone_number;
+        $client->date_birth = $request->date_birth;
+        $client->gender = $request->gender;
+        $client->street = $request->street;
+        $client->district = $request->district;
+        $client->region = $request->region;
         $client->email = $request->client_email;
+        $client->marital_status = $request->marital_status;
         $client->password = Hash::make($request->last_name);
 
-        $client->save();
+        $client->status = 'pending';
 
-        event(new ClientCreatedEvent($request, $client));
+        $branch->clients()->save($client);
 
-        return redirect(route('client.pending.approval'))->with('Client registered successfuly');
+        return response()->json(['clients' => $client], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    // put client
+    public function putClient(Request $request, $clientId)
+    {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'first_name' => 'required',
+                'email' => 'unique:clients,email| email',
+                'last_name' => 'required',
+                'registration_date' => 'required',
+                'phone_number' => 'required',
+                'date_birth' => 'required',
+                'gender' => 'required',
+                'street' => 'required',
+                'district' => 'required',
+                'region' => 'required',
+                'marital_status' => 'required',
+
+            ]
+        );
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $client = Client::find($clientId);
+        if (!$client) return response()->json(['error' => 'User not found']);
+
+
+        $client->update([
+            'first_name' => $request->first_name,
+            'middle_name' => $request->middle_name,
+            'last_name' => $request->last_name,
+            'registration_date' =>  $request->registration_date,
+            'phone_number' => $request->phone_number,
+            'date_birth' => $request->date_birth,
+            'gender' => $request->gender,
+            'street' => $request->street,
+            'district' => $request->district,
+            'region' => $request->region,
+            'email' => $request->client_email,
+            'marital_status' => $request->marital_status,
+        ]);
+
+
+        return response()->json(['client' => $client], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    //delete client
+    public function deleteClient($clientId)
+    {
+        $client = Client::find($clientId);
+        if (!$client) return response()->json(['error' => 'Client not found']);
+
+       $client->delete();
+       return response()->json(['message' => 'Client deleted successfully']);
     }
 }

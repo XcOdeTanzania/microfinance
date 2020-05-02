@@ -16,17 +16,22 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->integer('user_id');
-            $table->string('name');
-            $table->string('account_number')->nullable();
-            $table->string('email')->unique();
+            $table->string('first_name');
+            $table->string('email')->unique()->nullable();
+            $table->string('middle_name')->nullable();
+            $table->string('last_name');
+            $table->string('phone_number');
+            $table->string('gender');
+            $table->string('street');
+            $table->string('district');
+            $table->string('region');
+            $table->string('marital_status');
             $table->string('password');
-
-            $table->integer('group_id')->nullable();
+            $table->string('status');
             $table->integer('branch_id');
-            $table->date('registration_date');
-            $table->boolean('terms_and_conditions');
 
+            $table->date('registration_date');
+            $table->date('date_birth');
             $table->softdeletes();
             $table->timestamps();
         });

@@ -119,6 +119,8 @@ class GroupController extends Controller
                     unset($branch->officers[$key]);
                 }
                  
+            
+            
             }
 
             // reject all groups
