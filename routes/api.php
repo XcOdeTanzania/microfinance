@@ -29,3 +29,9 @@ Route::get('tasks', ['uses' => 'TaskController@allTasks'])->name('tasks');
 // users
 Route::get('users', ['uses' => 'UserController@allUsers'])->name('users');
 
+
+
+//loans
+Route::post('loan', ['uses' => 'LoanController@postLoan'])->name('loan');
+Route::put('loan/terms/{loadId}', ['uses' => 'LoanController@updateLoanTerms'])->name('loanterms');
+Route::put('loan/settings/{loadId}', ['uses' => 'LoanController@updateLoanSettings'])->name('loansettings');

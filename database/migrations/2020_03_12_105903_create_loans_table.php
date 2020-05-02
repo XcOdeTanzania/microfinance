@@ -16,38 +16,51 @@ class CreateLoansTable extends Migration
         Schema::create('loans', function (Blueprint $table) {
             $table->bigIncrements('id');
             
+            ///loan terms
             $table->integer('loan_type_id');
+            $table->integer('loan_subtype_id');
             $table->integer('loan_status_id');
             $table->date('loan_status_date');
-            $table->double('top_up');
-            $table->double('amount');
-            $table->string('orign_of_fund');
-            $table->string('loan_term');
-            $table->string('repayment_frequency_type');
-            $table->integer('repayment_frequency_number');
-            $table->double('interest_rate');
-            $table->date('disbursement_date');
-            $table->double('grace_on_principal_payment');
-            $table->double('grace_on_principal_interest');
-            $table->string('loan_purpose');
-            $table->boolean('auto_create_standing_instruction');
-            $table->integer('loanable_id');
-            $table->string('loanable_type');
+            $table->boolean('top_up')->nullable();
+            $table->string('loan_to_close')->nullable();
+            $table->double('loan_size')->nullable();
+            $table->string('orign_of_funding')->nullable();
+            $table->integer('loan_term')->nullable();
+            $table->string('loan_term_type')->nullable();
+            $table->integer('repayment_every')->nullable();
+            $table->string('repayment_every_type')->nullable();
+            $table->string('repayment_day_of_the_week')->nullable();
+            $table->string('repayment_week_of_the_month')->nullable();
+            $table->double('interest_rate')->nullable();
+            $table->date('disbursement_date')->nullable();
+            $table->double('grace_on_principal_payment')->nullable();
+            $table->double('grace_on_interest_payment')->nullable();
 
-            $table->integer('loan_cycle');
-            $table->integer('timely_repayments');
+            ////loan settings
+            $table->string('loan_purpose')->nullable();
+            $table->boolean('auto_create_standing_instruction')->nullable();
+            $table->date('repayment_starts_from')->nullable();
+            $table->string('loan_sector')->nullable();
+            $table->string('channel')->nullable();
+
+            
+
+            $table->integer('loan_cycle')->nullable();
+            $table->integer('timely_repayments')->nullable();
             $table->double('amount_in_arrears')->nullable();
             $table->integer('days_in_arrears')->nullable();
             $table->string('last_payment')->nullable();
-            $table->string('next_payment');
-            $table->date('final_payment_expected');
+            $table->string('next_payment')->nullable();
+            $table->date('final_payment_expected')->nullable();
 
-            $table->double('annual_percentage_rate');
-            $table->double('effective_interest_rate');
-            $table->string('loan_sector');
-            $table->string('channel');
-            $table->double('collateral_value');
+            $table->double('annual_percentage_rate')->nullable();
+            $table->double('effective_interest_rate')->nullable();
+         
+            
+            $table->double('collateral_value')->nullable();
 
+            $table->integer('loanable_id')->nullable();
+            $table->string('loanable_type')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

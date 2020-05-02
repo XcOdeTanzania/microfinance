@@ -14,17 +14,14 @@ class LoanTypeTableSeeder extends Seeder
     {
         LoanType::create([
 
-            'name' => "Interest Recalculation Compounding on Principal (Daily)",
+            'name' => "Single Loan Product",
 
         ]);
         LoanType::create([
-            'name' => "Declining - Accrual",
+            'name' => "Individual Loan",
         ]);
         LoanType::create([
-            'name' => "Normal Loan",
-        ]);
-        LoanType::create([
-            'name' => "Flat - Cash",
+            'name' => "Group Loan",
         ]);
     }
 }
