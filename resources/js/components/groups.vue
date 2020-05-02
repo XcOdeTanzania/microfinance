@@ -15,6 +15,7 @@
                             role="tab"
                             aria-controls="groups"
                             aria-selected="true"
+                            @click="onclick(event)"
                             >Groups</a
                         >
                     </li>
@@ -70,6 +71,7 @@
                                             <option
                                                 v-bind:value="branch.id"
                                                 v-for="branch in branches"
+                                                v-bind:key="branch.id"
                                             >
                                                 {{ branch.name }}
                                             </option>
@@ -96,6 +98,7 @@
                                             <option
                                                 v-bind:value="officer.id"
                                                 v-for="officer in officers"
+                                                v-bind:key="officer.id"
                                             >
                                                 {{ officer.name }}
                                             </option>
@@ -247,7 +250,7 @@
                         </tr>
                     </thead>
                     <tbody id="groupTableBody">
-                        <tr v-for="group in groups">
+                        <tr v-for="group in groups" v-bind:key="group.id">
                             <td>
                                 {{ group.name }}
                             </td>
@@ -281,13 +284,12 @@ export default {
         return { groups: [], branches: [], officers: [] };
     },
     methods: {
-        getGroups() {
-            Container.resolve("groups").then(data => {
+        getApprovedGroups() {
+            Container.resolve("approvedGroups").then(data => {
                 this.branches = data.branches;
+                this.groups = data.groups;
             });
         },
-
-
 
         updateGroupTable(event) {
             for (let index = 0; index < this.officers.length; index++) {
@@ -306,7 +308,9 @@ export default {
         }
     },
     mounted() {
-        this.getGroups();
+        this.getApprovedGroups();
+        console.log(this.branches);
+        // console.log(this.groups);
     }
 };
 </script>

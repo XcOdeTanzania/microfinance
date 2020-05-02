@@ -85,23 +85,48 @@ class GroupController extends Controller
 
 
 
-    public function groups()
+    public function groups($status)
     {
-        $groups = Group::all();
+
+        $filteredGroups = Group::all()->map(function($group) {
+            return $group;
+        })->reject(function($group) use($status) {
+            return $group->status != $status;
+        });
+
+        foreach ($filteredGroups as $key => $value) {
+            $groups[] = $value;
+        }
 
 
         $branches = Branch::all();
 
         foreach ($branches as $branch) {
-            foreach ($branch->users as $key => $user) {
-                if ($user->is('Loan Officer')) {
-                    $user->groups;
-                    $user->clients;
-                } else {
-                    unset($branch->users[$key]);
-                }
+            foreach ($branch->officers as $key => $officer) {
+                if ($officer->is('Loan Officer')) {
 
+                    $gro = $officer->groups->map(function($group) {
+                        return $group;
+                    })->reject(function($group) use($status) {
+                        return $group->status != $status;
+                    });
+
+                    $officer->filtered_groups = $gro;
+
+                    $officer->groups = null;
+
+                } else {
+                    unset($branch->officers[$key]);
+                }
+                 
             }
+
+            // reject all groups
+            $branch->officers->map(function($officer) {
+                    return $officer;
+                })->reject(function($officer) use($status) {
+                    return $officer->status != $status;
+                });
         }
 
         foreach ($groups as $group) {
@@ -110,7 +135,6 @@ class GroupController extends Controller
         }
 
         return response()->json([
-            "groups" => $groups,
             "branches" => $branches
         ]);
     }

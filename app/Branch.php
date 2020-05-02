@@ -91,7 +91,7 @@ class Branch extends Model
     *  branch has many users
     */
 
-    public function users()
+    public function officers()
     {
         return $this->hasMany(User::class);
     }
