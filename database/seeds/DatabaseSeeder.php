@@ -49,6 +49,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GroupMemberAllocationTableSeeder::class);
         $this->call(SurveysTableSeeder::class);
         $this->call(IdentificationTableSeeder::class);
+        $this->call(KinsTableSeeder::class);
       
         
     }

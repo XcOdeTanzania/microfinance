@@ -6,6 +6,7 @@ use App\Branch;
 use App\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ClientController extends Controller
@@ -27,7 +28,7 @@ class ClientController extends Controller
         foreach ($clients as $key => $client) {
             $client->branch = $client->branch;
             $client->identifications = $client->identifications;
-             
+            $client->kins = $client->kins;
         }
 
         // foreach ($branch->officers as $key => $officer) 
@@ -46,6 +47,10 @@ class ClientController extends Controller
 
         $client = Client::find($clientId);
         if (!$client) return response()->json(['error' => 'Client not found']);
+
+        $client->branch;
+        $client->identifications;
+        $client->kins;
 
         return response()->json(['client' => $client], 200, [], JSON_NUMERIC_CHECK);
     }
@@ -125,9 +130,9 @@ class ClientController extends Controller
 
         $client = Client::find($clientId);
         if (!$client) return response()->json(['error' => 'User not found']);
-          
 
-         $client->update([
+
+        $client->update([
             'first_name' => $request->input('first_name'),
             'middle_name' => $request->middle_name,
             'last_name' => $request->last_name,
@@ -152,7 +157,12 @@ class ClientController extends Controller
         $client = Client::find($clientId);
         if (!$client) return response()->json(['error' => 'Client not found']);
 
-       $client->delete();
-       return response()->json(['message' => 'Client deleted successfully']);
+        $client->delete();
+        return response()->json(['message' => 'Client deleted successfully']);
+    }
+
+    public function downloadFile($fileName)
+    {
+        return Storage::download('file/'.$fileName);
     }
 }

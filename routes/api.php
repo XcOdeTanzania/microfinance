@@ -42,6 +42,7 @@ Route::get('clients/{status}', ['uses' => 'ClientController@getClients']);
 Route::get('client/{clientId}', ['uses' => 'ClientController@getClient']);
 Route::put('client/{clientId}', ['uses' => 'ClientController@putClient']);
 Route::delete('client/{clientId}', ['uses' => 'ClientController@deleteClient']);
+Route::get('file/{name}', ['uses' => 'ClientController@downloadFile']);
 
 
 //Identification
@@ -50,3 +51,11 @@ Route::post('identification/{clientId}', ['uses' => 'IdentificationController@po
 Route::get('identification/{identificationId}', ['uses' => 'IdentificationController@getIdentification']);
 Route::put('identification/{identificationId}', ['uses' => 'IdentificationController@putIdentification']);
 Route::delete('identification/{identificationId}', ['uses' => 'IdentificationController@deleteIdentification']);
+
+
+//kins
+Route::get('kins', ['uses' => 'KinController@getKins']);
+Route::post('kin/{clientId}', ['uses' => 'KinController@postKin']);
+Route::get('kin/{kinId}', ['uses' => 'KinController@getKin']);
+Route::put('kin/{kinId}', ['uses' => 'KinController@putKin']);
+Route::delete('kin/{kinId}', ['uses' => 'KinController@deleteKin']);

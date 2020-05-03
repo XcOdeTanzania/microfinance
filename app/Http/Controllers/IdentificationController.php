@@ -13,9 +13,9 @@ class IdentificationController extends Controller
     //get Identification
     public function getIdentifications()
     {
-        $clients = Client::all();
+        $identification = Identification::all();
 
-        return response()->json(['clients' => $clients], 200, [], JSON_NUMERIC_CHECK);
+        return response()->json(['identification' => $identification], 200, [], JSON_NUMERIC_CHECK);
     }
 
     //get all Identification
@@ -57,7 +57,7 @@ class IdentificationController extends Controller
         if (!$request->hasFile('file')) response()->json(['error', 'Identity attachment is required']);
 
         $path = $request->file('file')->store('file');
-        $identification->attachment = $path;
+        $identification->attachment = env("APP_URL", "local") . ":8000/api/" . $path;
 
 
         // dd($client);
@@ -101,4 +101,6 @@ class IdentificationController extends Controller
         $identification->delete();
         return response()->json(['message' => 'Identification deleted successfully']);
     }
+
+    
 }
