@@ -30,17 +30,23 @@ Route::get('tasks', ['uses' => 'TaskController@allTasks'])->name('tasks');
 Route::get('users', ['uses' => 'UserController@allUsers'])->name('users');
 
 
-
 //loans
 Route::post('loan', ['uses' => 'LoanController@postLoan'])->name('loan');
 Route::put('loan/terms/{loadId}', ['uses' => 'LoanController@updateLoanTerms'])->name('loanterms');
 Route::put('loan/settings/{loadId}', ['uses' => 'LoanController@updateLoanSettings'])->name('loansettings');
 
 
-//loans
-
+//Clients
 Route::post('client', ['uses' => 'ClientController@postClient']);
 Route::get('clients/{status}', ['uses' => 'ClientController@getClients']);
 Route::get('client/{clientId}', ['uses' => 'ClientController@getClient']);
 Route::put('client/{clientId}', ['uses' => 'ClientController@putClient']);
 Route::delete('client/{clientId}', ['uses' => 'ClientController@deleteClient']);
+
+
+//Identification
+Route::get('identifications', ['uses' => 'IdentificationController@getIdentifications']);
+Route::post('identification/{clientId}', ['uses' => 'IdentificationController@postIdentification']);
+Route::get('identification/{identificationId}', ['uses' => 'IdentificationController@getIdentification']);
+Route::put('identification/{identificationId}', ['uses' => 'IdentificationController@putIdentification']);
+Route::delete('identification/{identificationId}', ['uses' => 'IdentificationController@deleteIdentification']);

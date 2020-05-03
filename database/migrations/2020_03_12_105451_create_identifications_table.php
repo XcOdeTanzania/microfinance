@@ -15,12 +15,11 @@ class CreateIdentificationsTable extends Migration
     {
         Schema::create('identifications', function (Blueprint $table) {
             $table->bigIncrements('id');
-
             $table->bigInteger('client_id');
             $table->string('attachment');
             $table->string('uuid');
             $table->string('type');
-            $table->string('description')->nullable();
+            $table->date('expiry_date');
 
             $table->softDeletes();
             $table->timestamps();

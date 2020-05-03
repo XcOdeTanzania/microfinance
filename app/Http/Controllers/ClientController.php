@@ -4,11 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Branch;
 use App\Client;
-use App\Clients;
-use App\District;
-use App\Events\ClientCreatedEvent;
-use App\Region;
-use function foo\func;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -129,10 +124,10 @@ class ClientController extends Controller
 
         $client = Client::find($clientId);
         if (!$client) return response()->json(['error' => 'User not found']);
+          
 
-
-        $client->update([
-            'first_name' => $request->first_name,
+         $client->update([
+            'first_name' => $request->input('first_name'),
             'middle_name' => $request->middle_name,
             'last_name' => $request->last_name,
             'registration_date' =>  $request->registration_date,
