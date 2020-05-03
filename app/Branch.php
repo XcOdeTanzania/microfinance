@@ -16,7 +16,13 @@ class Branch extends Model
 
     protected $fillable = [
         'name',
-        'location',
+        'region',
+        'district',
+        'street',
+        'address',
+        'phone_number',
+        'post_code',
+        'email',
         'company_id'
     ];
 
@@ -53,40 +59,6 @@ class Branch extends Model
 
 
     // Business Logic
-
-
-
-    /**
-     *  A fucntion to Create a branch
-     *
-     * @param Request $request used to pass request  body
-     * @param Company $company used to pass company instance
-     *
-     * @return void
-     */
-    public function postBranch(Request $request, Company $company)
-    {
-
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'name' => 'required',
-                'location' => 'required',
-
-            ]
-        );
-
-        if ($validator->fails())
-            return back()->with('error', $validator->errors());
-
-        $branch = new Branch();
-
-        $branch->name = $request->branch_name;
-        $branch->location = $request->branch_location;
-        $branch->company_id = 1;
-
-        $company->branches()->save($branch);
-    }
     /*
     *  branch has many users
     */

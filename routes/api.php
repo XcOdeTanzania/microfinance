@@ -75,3 +75,10 @@ Route::post('group/{branchId}', ['uses' => 'GroupController@postGroup']);
 Route::get('group/{groupId}', ['uses' => 'GroupController@getGroup']);
 Route::put('group/{groupId}', ['uses' => 'GroupController@putGroup']);
 Route::delete('group/{groupId}', ['uses' => 'GroupController@deleteGroup']);
+
+//branches
+Route::get('branches', ['uses' => 'BranchController@getBranches']);
+Route::post('branch/{branchId}', ['uses' => 'BranchController@postBranch']);
+Route::get('branch/{branchId}', ['uses' => 'BranchController@getBranch']);
+Route::put('branch/{branchId}', ['uses' => 'BranchController@putBranch']);
+Route::delete('branch/{branchId}', ['uses' => 'BranchController@deleteBranch']);
