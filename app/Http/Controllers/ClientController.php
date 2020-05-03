@@ -26,6 +26,7 @@ class ClientController extends Controller
         }
         foreach ($clients as $key => $client) {
             $client->branch = $client->branch;
+            $client->identifications = $client->identifications;
              
         }
 
