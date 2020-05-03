@@ -59,3 +59,10 @@ Route::post('kin/{clientId}', ['uses' => 'KinController@postKin']);
 Route::get('kin/{kinId}', ['uses' => 'KinController@getKin']);
 Route::put('kin/{kinId}', ['uses' => 'KinController@putKin']);
 Route::delete('kin/{kinId}', ['uses' => 'KinController@deleteKin']);
+
+//businesses
+Route::get('businesses', ['uses' => 'BusinessController@getBusinesses']);
+Route::post('business/{clientId}', ['uses' => 'BusinessController@postBusiness']);
+Route::get('business/{kinId}', ['uses' => 'BusinessController@getBusiness']);
+Route::put('business/{kinId}', ['uses' => 'BusinessController@putBusiness']);
+Route::delete('business/{kinId}', ['uses' => 'BusinessController@deleteBusiness']);

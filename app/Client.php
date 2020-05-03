@@ -47,9 +47,9 @@ class Client extends Model
      * client has one business relation
      * 
      */
-    public function business()
+    public function businesses()
     {
-        return $this->hasOne(Business::class);
+        return $this->hasMany(Business::class);
     }
 
 

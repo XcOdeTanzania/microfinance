@@ -29,6 +29,7 @@ class ClientController extends Controller
             $client->branch = $client->branch;
             $client->identifications = $client->identifications;
             $client->kins = $client->kins;
+            $client->businesses = $client->businesses;
         }
 
         // foreach ($branch->officers as $key => $officer) 
@@ -51,6 +52,7 @@ class ClientController extends Controller
         $client->branch;
         $client->identifications;
         $client->kins;
+        $client->businesses;
 
         return response()->json(['client' => $client], 200, [], JSON_NUMERIC_CHECK);
     }
