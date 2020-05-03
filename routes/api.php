@@ -63,6 +63,15 @@ Route::delete('kin/{kinId}', ['uses' => 'KinController@deleteKin']);
 //businesses
 Route::get('businesses', ['uses' => 'BusinessController@getBusinesses']);
 Route::post('business/{clientId}', ['uses' => 'BusinessController@postBusiness']);
-Route::get('business/{kinId}', ['uses' => 'BusinessController@getBusiness']);
-Route::put('business/{kinId}', ['uses' => 'BusinessController@putBusiness']);
-Route::delete('business/{kinId}', ['uses' => 'BusinessController@deleteBusiness']);
+Route::get('business/{businessId}', ['uses' => 'BusinessController@getBusiness']);
+Route::put('business/{businessId}', ['uses' => 'BusinessController@putBusiness']);
+Route::delete('business/{businessId}', ['uses' => 'BusinessController@deleteBusiness']);
+
+
+
+//groups
+Route::get('groups', ['uses' => 'GroupController@getGroups']);
+Route::post('group/{branchId}', ['uses' => 'GroupController@postGroup']);
+Route::get('group/{groupId}', ['uses' => 'GroupController@getGroup']);
+Route::put('group/{groupId}', ['uses' => 'GroupController@putGroup']);
+Route::delete('group/{groupId}', ['uses' => 'GroupController@deleteGroup']);

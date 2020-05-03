@@ -4,140 +4,123 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Branch;
-use App\User;
 use App\Group;
-use App\Loan;
-use App\Officer;
-use App\Role;
+
+use Illuminate\Support\Facades\Validator;
 
 class GroupController extends Controller
 {
-    public function groupsPage()
+
+       //get Group
+       public function getGroups()
+       {
+           $groups = Group::all();
+
+        //    foreach ($groups as $key => $group) {
+        //     $group->clients = $group->clients;
+        // }
+   
+           return response()->json(['groups' => $groups], 200, [], JSON_NUMERIC_CHECK);
+       }
+   
+       //get all Group
+       public function getGroup($groupId)
+       {
+           $group = Group::find($groupId);
+           if (!$group) return response()->json(['error' => 'Group not found']);
+   
+           return response()->json(['group' => $group], 200, [], JSON_NUMERIC_CHECK);
+       }
+
+    //Post Business
+    public function postGroup(Request $request, $branchId)
     {
-        $groups = Group::all();
-
-        $branches = Branch::all();
-
-        foreach ($branches as $branch) {
-            foreach ($branch->users as $key => $user) {
-                if ($user->is('Loan Officer')) {
-                    $user->groups;
-                    $user->clients;
-                } else {
-                    unset($branch->users[$key]);
-                }
-
-            }
-        }
-
-       
-
-
-
-
-       
-
-
-
-
-        // return response()->json([
-        //     "branches" => $branches,
-        //     "groups" => $groups,
-        // ]);
-
-
-
-        return view(
-            'pages.groups.groups',
+        $validator = Validator::make(
+            $request->all(),
             [
-                "groups" => $groups,
-                "branches" => $branches,
+                'name' => 'required',
+                'account_number' => 'required',
+                'uuid' => 'required',
+                'status' => 'required',
+                'activation_date' => 'required',
+                'meeting_day' => 'required',
+                'meeting_location' => 'required',
+                'meeting_frequency' => 'required',
 
             ]
         );
+
+
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $branch = Branch::find($branchId);
+
+        if (!$branch) return  response()->json(['error', 'Branch does not exist']);
+
+
+        $group = new Group();
+
+        $group->name = $request->name;
+        $group->account_number  = $request->account_number;
+        $group->uuid  = $request->uuid;
+        $group->status  = $request->status;
+        $group->activation_date  = $request->activation_date;
+        $group->meeting_day = $request->meeting_day;
+        $group->meeting_location = $request->meeting_location;
+        $group->meeting_frequency  = $request->meeting_frequency;
+
+        $branch->groups()->save($group);
+
+        return response()->json(['group' => $group]);
     }
 
 
-    public function centersPage()
-    {
-        return view('pages.groups.centers');
-    }
+      // put Group
+      public function putGroup(Request $request, $groupId)
+      {
+          $validator = Validator::make(
+              $request->all(),
+              [
+                'name' => 'required',
+                'account_number' => 'required',
+                'uuid' => 'required',
+                'status' => 'required',
+                'activation_date' => 'required',
+                'meeting_day' => 'required',
+                'meeting_location' => 'required',
+                'meeting_frequency' => 'required',
+              ]
+          );
+          if ($validator->fails())
+              return response()->json(['error', $validator->errors()]);
+  
+          $group = Group::find($groupId);
+          if (!$group) return response()->json(['error' => 'Group not found']);
+  
+          $group->update([
+              'name' => $request->name,
+              'account_number' => $request->account_number,
+              'uuid' => $request->uuid,
+              'status' => $request->status,
+              'activation_date' => $request->activation_date,
+              'meeting_day' => $request->meeting_day,
+              'meeting_location' => $request->meeting_location,
+              'meeting_frequency' => $request->meeting_frequency,
+          ]);
+  
+          return response()->json(['group' => $group], 200, [], JSON_NUMERIC_CHECK);
+      }
+  
+      //delete Group
+      public function deleteGroup($groupId)
+      {
+          $group = Group::find($groupId);
+          if (!$group) return response()->json(['error' => 'Group not found']);
+  
+          $group->delete();
+          return response()->json(['message' => 'Group deleted successfully']);
+      }
 
-    public function transferPage()
-    {
-        return view('pages.groups.transfer');
-    }
-
-
-
-
-    public function getUsersByRole($roleName, $branch_id)
-    {
-        $users = User::whereHas("roles", function ($query) use ($roleName) {
-            $query->where("name", "=", $roleName);
-        })->get();
-
-        return $users->filter(function ($item) use ($branch_id) {
-            $item->branch_id = $branch_id;
-        })->get();
-    }
-
-
-
-
-    public function groups($status)
-    {
-
-        $filteredGroups = Group::all()->map(function($group) {
-            return $group;
-        })->reject(function($group) use($status) {
-            return $group->status != $status;
-        });
-
-        foreach ($filteredGroups as $key => $value) {
-            $groups[] = $value;
-        }
-
-
-        $branches = Branch::all();
-
-        foreach ($branches as $branch) {
-            foreach ($branch->officers as $key => $officer) {
-                if ($officer->is('Loan Officer')) {
-
-                    $gro = $officer->groups->map(function($group) {
-                        return $group;
-                    })->reject(function($group) use($status) {
-                        return $group->status != $status;
-                    });
-
-                    $officer->filtered_groups = $gro;
-
-                    $officer->groups = null;
-
-                } else {
-                    unset($branch->officers[$key]);
-                }
-                 
-            
-            
-            }
-
-            // reject all groups
-            $branch->officers->map(function($officer) {
-                    return $officer;
-                })->reject(function($officer) use($status) {
-                    return $officer->status != $status;
-                });
-        }
-
-        foreach ($groups as $group) {
-            $group->officer = $group->user;
-            $group->branch = $group->branch;
-        }
-
-        return response()->json([
-            "branches" => $branches
-        ]);
-    }
+ 
 }
