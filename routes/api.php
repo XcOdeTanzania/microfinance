@@ -86,3 +86,7 @@ Route::post('branch/{companyId}', ['uses' => 'BranchController@postBranch']);
 Route::get('branch/{branchId}', ['uses' => 'BranchController@getBranch']);
 Route::put('branch/{branchId}', ['uses' => 'BranchController@putBranch']);
 Route::delete('branch/{branchId}', ['uses' => 'BranchController@deleteBranch']);
+
+
+//reports
+Route::get('reports/{type}', ['uses' => 'ReportController@getReports']);
