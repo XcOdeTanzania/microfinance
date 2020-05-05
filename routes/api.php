@@ -20,20 +20,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 // Loan api
-Route::get('loan/list', ['uses' => 'LoanController@getAllLoans'])->name('loan.list');
+Route::get('loan/list', ['uses' => 'LoanController@getAllLoans']);
 Route::get('groups/{status}', ['uses' => 'GroupController@groups']);
 
 // tasks
-Route::get('tasks', ['uses' => 'TaskController@allTasks'])->name('tasks');
+Route::get('tasks', ['uses' => 'TaskController@allTasks']);
+Route::get('task/{taskId}', ['uses' => 'TaskController@getTask']);
+Route::put('task/{taskId}', ['uses' => 'TaskController@putTask']);
+Route::delete('task/{taskId}', ['uses' => 'TaskController@deleteTask']);
+
 
 // users
-Route::get('users', ['uses' => 'UserController@allUsers'])->name('users');
+Route::get('users', ['uses' => 'UserController@allUsers']);
 
 
 //loans
-Route::post('loan', ['uses' => 'LoanController@postLoan'])->name('loan');
-Route::put('loan/terms/{loadId}', ['uses' => 'LoanController@updateLoanTerms'])->name('loanterms');
-Route::put('loan/settings/{loadId}', ['uses' => 'LoanController@updateLoanSettings'])->name('loansettings');
+Route::post('loan', ['uses' => 'LoanController@postLoan']);
+Route::put('loan/terms/{loadId}', ['uses' => 'LoanController@updateLoanTerms']);
+Route::put('loan/settings/{loadId}', ['uses' => 'LoanController@updateLoanSettings']);
 
 
 //Clients

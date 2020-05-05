@@ -43,7 +43,7 @@ class Loan extends Model
         'final_payment_expected',
         'annual_percentage_rate',
         'effective_interest_rate',
-        
+
         'collateral_value'
     ];
 
@@ -192,5 +192,10 @@ class Loan extends Model
     public function reports()
     {
         return $this->morphMany(Report::class, 'reportable');
+    }
+
+    public function task()
+    {
+        return $this->morphMany(Task::class, 'taskable');
     }
 }

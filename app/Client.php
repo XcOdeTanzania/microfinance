@@ -149,6 +149,8 @@ class Client extends Model
         return null;
     }
 
-
-    // Business Logic
+    public function task()
+    {
+        return $this->morphMany(Task::class, 'taskable');
+    }
 }
