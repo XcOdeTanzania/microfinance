@@ -16,6 +16,7 @@ $factory->define(Branch::class, function (Faker $faker) {
         'post_code' => $faker->postcode,
         'district' => $faker->word,
         'street' => $faker->word,
+        'phone_number'=>$faker->e164PhoneNumber,
         'company_id' => $faker->randomDigit,
     ];
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Business;
 use App\Client;
+use App\Events\BusinessCreatedEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -66,6 +67,11 @@ class BusinessController extends Controller
         $business->region = $request->region;
 
         $client->businesses()->save($business);
+
+        //create a task for busines pending approval
+        //user_id for someone to approve clients
+
+        event(new BusinessCreatedEvent($business, '1', $client->branch_id));
         return response()->json(['business' => $business]);
     }
 

@@ -42,5 +42,9 @@ class Business extends Model
     }
 
 
-   
+    public function task()
+    {
+        return $this->morphMany(Task::class, 'taskable');
+    }
+
 }

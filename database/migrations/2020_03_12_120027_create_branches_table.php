@@ -21,6 +21,7 @@ class CreateBranchesTable extends Migration
             $table->string('region');
             $table->string('address');
             $table->string('post_code');
+            $table->string('phone_number');
             $table->string('district');
             $table->string('street');
             $table->integer('company_id');

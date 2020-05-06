@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Branch;
 use App\Client;
+use App\Events\ClientCreatedEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -104,6 +105,11 @@ class ClientController extends Controller
 
         $branch->clients()->save($client);
 
+        //create a task for client pending approval
+        //user_id for someone to approve clients
+
+        event(new ClientCreatedEvent($client, '1', $request->branch_id));
+
         return response()->json(['clients' => $client], 200, [], JSON_NUMERIC_CHECK);
     }
 
@@ -165,6 +171,6 @@ class ClientController extends Controller
 
     public function downloadFile($fileName)
     {
-        return Storage::download('file/'.$fileName);
+        return Storage::download('file/' . $fileName);
     }
 }

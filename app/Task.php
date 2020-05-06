@@ -7,19 +7,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Task extends Model
 {
-     use SoftDeletes;
+    use SoftDeletes;
 
     protected $fillable = [
         'name',
-       'action',
-       'entity',
-       'user_id',
-       'brach_id',
-       'group_id',
-       'amount',
-       'submittedondate',
-       'effectivedate'
-
+        'user_id',
+        'branch_id',
+        'status'
     ];
 
 
@@ -28,7 +22,7 @@ class Task extends Model
     ];
 
 
- // relations
+    // relations
 
     /**
      * tasks relation
@@ -36,16 +30,19 @@ class Task extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function group()
+
+
+    public function branch()
     {
-        return $this->hasOne(Group::class);
+        return $this->belongsTo(Branch::class);
     }
 
-    public function brach()
+    public function taskable()
     {
-        return $this->hasOne(Branch::class);
+        return $this->morphTo();
     }
+ 
 }

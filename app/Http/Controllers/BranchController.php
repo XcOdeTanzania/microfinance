@@ -17,6 +17,7 @@ class BranchController extends Controller
 
         foreach ($branches as $key => $branch) {
             $branch->groups = $branch->groups;
+            $branch->clients =$branch->clients;
         }
 
         return response()->json(['branches' => $branches], 200, [], JSON_NUMERIC_CHECK);
@@ -29,6 +30,9 @@ class BranchController extends Controller
         $branch = Branch::find($branchId);
         if (!$branch) return response()->json(['error' => 'Branch not found']);
 
+        $branch->groups;
+        $branch->clients;
+
         return response()->json(['branch' => $branch], 200, [], JSON_NUMERIC_CHECK);
     }
 
@@ -39,6 +43,7 @@ class BranchController extends Controller
             $request->all(),
             [
                 'name' => 'required',
+                'address' => 'required',
                 'region' => 'required',
                 'district' => 'required',
                 'street' => 'required',
@@ -64,6 +69,7 @@ class BranchController extends Controller
         $branch->phone_number = $request->phone_number;
         $branch->post_code = $request->post_code;
         $branch->email = $request->email;
+        $branch->address = $request->address;
 
         $company->branches()->save($branch);
 
@@ -78,6 +84,7 @@ class BranchController extends Controller
             $request->all(),
             [
                 'name' => 'required',
+                'address' => 'required',
                 'region' => 'required',
                 'district' => 'required',
                 'street' => 'required',
@@ -100,6 +107,7 @@ class BranchController extends Controller
             'phone_number' => $request->phone_number,
             'post_code' => $request->post_code,
             'email' => $request->email,
+            'address' => $request->address,
         ]);
 
         return response()->json(['branch' => $branch], 200, [], JSON_NUMERIC_CHECK);
