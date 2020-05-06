@@ -10,9 +10,9 @@ $factory->define(Task::class, function (Faker $faker) {
         'name' => $faker->randomElement(['loan pending first approval', 'loan pending second approval', 'client pending approval', 'loan awaiting disbursement', 'Group pending approval']),
         'user_id' => $faker->randomDigit,
         'branch_id' => $faker->randomDigit,
-        'status' =>  $faker->randomElement(['completed', 'pendding']),
+        'status' =>  $faker->randomElement(['completed', 'pending']),
         'taskable_id' => $faker->randomDigit,
         'taskable_type' => $faker->randomElement(['APP\Loan', 'APP\Client', 'APP\Group']),
-        
+
     ];
 });
