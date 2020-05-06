@@ -19,7 +19,7 @@ class BranchController extends Controller
             $branch->groups = $branch->groups;
         }
 
-        return response()->json(['Branches' => $branches], 200, [], JSON_NUMERIC_CHECK);
+        return response()->json(['branches' => $branches], 200, [], JSON_NUMERIC_CHECK);
     }
 
     //get all Branch
