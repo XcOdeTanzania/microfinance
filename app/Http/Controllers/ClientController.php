@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Branch;
 use App\Client;
 use App\Events\ClientCreatedEvent;
+use App\Events\CreateLoanEvent;
 use App\Loan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -180,10 +181,7 @@ class ClientController extends Controller
         $client = Client::find($clientId);
         if (!$client) return response()->json(['error' => 'Client not found']);
 
-        $postLoan = new Loan;
-        $loan = $postLoan->postLoan($request);
-
-        $client->loans()->save($loan);
+       $loan= event(new CreateLoanEvent($request, $client));
 
         return response()->json([
             'loan' => $loan

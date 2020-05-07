@@ -13,15 +13,18 @@ use Illuminate\Queue\SerializesModels;
 class CreateLoanEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
+    public $request;
+    public $loan_owner;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($request, $loan_owner)
     {
-        //
+        $this->loan_owner =$loan_owner;
+        $this->request = $request;
     }
 
     /**

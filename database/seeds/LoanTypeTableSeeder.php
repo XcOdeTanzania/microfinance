@@ -12,16 +12,6 @@ class LoanTypeTableSeeder extends Seeder
      */
     public function run()
     {
-        LoanType::create([
-
-            'name' => "Single Loan Product",
-
-        ]);
-        LoanType::create([
-            'name' => "Individual Loan",
-        ]);
-        LoanType::create([
-            'name' => "Group Loan",
-        ]);
+        factory(LoanType::class, 5)->create();
     }
 }

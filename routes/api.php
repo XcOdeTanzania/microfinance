@@ -71,6 +71,7 @@ Route::post('business/{clientId}', ['uses' => 'BusinessController@postBusiness']
 Route::get('business/{businessId}', ['uses' => 'BusinessController@getBusiness']);
 Route::put('business/{businessId}', ['uses' => 'BusinessController@putBusiness']);
 Route::delete('business/{businessId}', ['uses' => 'BusinessController@deleteBusiness']);
+Route::post('business/loan/{businessId}', ['uses' => 'BusinessController@createBusinessLoan']);
 
 
 
@@ -80,6 +81,7 @@ Route::post('group/{branchId}', ['uses' => 'GroupController@postGroup']);
 Route::get('group/{groupId}', ['uses' => 'GroupController@getGroup']);
 Route::put('group/{groupId}', ['uses' => 'GroupController@putGroup']);
 Route::delete('group/{groupId}', ['uses' => 'GroupController@deleteGroup']);
+Route::post('group/loan/{groupId}', ['uses' => 'GroupController@createGroupLoan']);
 
 //branches
 Route::get('branches', ['uses' => 'BranchController@getBranches']);

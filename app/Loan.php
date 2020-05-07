@@ -186,47 +186,10 @@ class Loan extends Model
     }
 
     //logic
-    public function postLoan(Request $request)
-    {   
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'loan_type_id' => 'required',
-                'status' => 'required',                
-                'amount' => 'required',
-                'orign_of_funding' => 'required',
-                'duration' => 'required',
-                'repayment_every' => 'required',
-                'repayment_every_type' => 'required',
-                'purpose' => 'required',
-                'auto_create_standing_instruction' => 'required',
-                'sector' => 'required',
-                'channel' => 'required',
-            ]
-        );
+    // public function postLoan(Request $request)
+    // {   
+      
+    //     return $loan;
 
-        if ($validator->fails())
-            return response()->json(['error', $validator->errors()]);
-
-
-        $loan = new Loan();
-        $loan->loan_type_id = $request->loan_type_id;
-        $loan->status = $request->status;
-        $loan->amount = $request->amount;
-        $loan->orign_of_funding = $request->orign_of_funding;
-        $loan->duration = $request->duration;
-        $loan->repayment_every = $request->repayment_every;
-        $loan->repayment_every_type = $request->repayment_every_type;
-        $loan->disbursement_date = $request->disbursement_date;
-        $loan->grace_on_interest_payment = $request->grace_on_interest_payment;
-        $loan->grace_on_principal_payment = $request->grace_on_principal_payment;
-        $loan->purpose = $request->purpose;
-        $loan->auto_create_standing_instruction = $request->auto_create_standing_instruction;
-        $loan->repayment_start_date = $request->repayment_start_date;
-        $loan->sector = $request->sector;
-        $loan->channel = $request->channel;
-
-        return $loan;
-
-    }
+    // }
 }

@@ -47,4 +47,12 @@ class Business extends Model
         return $this->morphMany(Task::class, 'taskable');
     }
 
+     /**
+     * Loan polymorphic to client.
+     */
+    public function loans()
+    {
+        return $this->morphMany(Loan::class, 'loanable');
+    }
+
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Branch;
+use App\Business;
+use App\Events\CreateLoanEvent;
 use App\Events\GroupCreatedEvent;
 use App\Group;
 
@@ -126,5 +128,18 @@ class GroupController extends Controller
 
         $group->delete();
         return response()->json(['message' => 'Group deleted successfully']);
+    }
+
+    //create group loan
+    public function createGroupLoan(Request $request, $groupId)
+    {
+        $group = Group::find($groupId);
+        if (!$group) return response()->json(['error' => 'Group not found']);
+
+        $loan = event(new CreateLoanEvent($request, $group));
+
+        return response()->json([
+            'loan' => $loan
+        ], 201);
     }
 }
