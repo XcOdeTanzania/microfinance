@@ -12,7 +12,7 @@ $factory->define(Task::class, function (Faker $faker) {
         'branch_id' => $faker->randomDigit,
         'status' =>  $faker->randomElement(['completed', 'pendding']),
         'taskable_id' => $faker->randomDigit,
-        'taskable_type' => $faker->randomElement(['APP\Loan', 'APP\Client', 'APP\Group']),
+        'taskable_type' => $faker->randomElement(['App\Loan', 'App\Client', 'App\Group']),
         
     ];
 });

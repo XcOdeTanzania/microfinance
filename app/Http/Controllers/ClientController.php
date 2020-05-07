@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Branch;
 use App\Client;
 use App\Events\ClientCreatedEvent;
+use App\Loan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -172,5 +173,20 @@ class ClientController extends Controller
     public function downloadFile($fileName)
     {
         return Storage::download('file/' . $fileName);
+    }
+
+    public function createClientLoan(Request $request, $clientId)
+    {
+        $client = Client::find($clientId);
+        if (!$client) return response()->json(['error' => 'Client not found']);
+
+        $postLoan = new Loan;
+        $loan = $postLoan->postLoan($request);
+
+        $client->loans()->save($loan);
+
+        return response()->json([
+            'loan' => $loan
+        ], 201);
     }
 }

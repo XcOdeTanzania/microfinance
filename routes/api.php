@@ -47,6 +47,7 @@ Route::get('client/{clientId}', ['uses' => 'ClientController@getClient']);
 Route::put('client/{clientId}', ['uses' => 'ClientController@putClient']);
 Route::delete('client/{clientId}', ['uses' => 'ClientController@deleteClient']);
 Route::get('file/{name}', ['uses' => 'ClientController@downloadFile']);
+Route::post('client/loan/{clientId}', ['uses' => 'ClientController@createClientLoan']);
 
 
 //Identification

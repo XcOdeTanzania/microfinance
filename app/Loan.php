@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -12,39 +13,24 @@ class Loan extends Model
     use SoftDeletes;
     protected $fillable = [
         'loan_type_id',
-        'loan_subtype_id',
-        'loan_status_id',
-        'loan_status_date',
+        'status',
         'top_up',
-        'loan_to_close',
-        'loan_size',
+        'amount',
         'orign_of_funding',
-        'loan_term',
-        'loan_term_type',
-        'repayment_every',
+        'duration',
+        'repayment_every', 
         'repayment_every_type',
         'repayment_day_of_the_week',
         'repayment_week_of_the_month',
-        'interest_rate',
         'disbursement_date',
-        'grace_on_principal_payment',
         'grace_on_interest_payment',
-        'loan_purpose',
+        'grace_on_principal_payment',
+        'purpose',
         'auto_create_standing_instruction',
-        'repayment_starts_from',
-        'loan_sector',
+        'repayment_start_date',
+        'sector',
         'channel',
-        'loan_cycle',
-        'timely_repayments',
-        'amount_in_arrears',
-        'days_in_arrears',
-        'last_payment',
-        'next_payment',
         'final_payment_expected',
-        'annual_percentage_rate',
-        'effective_interest_rate',
-
-        'collateral_value'
     ];
 
 
@@ -197,5 +183,50 @@ class Loan extends Model
     public function task()
     {
         return $this->morphMany(Task::class, 'taskable');
+    }
+
+    //logic
+    public function postLoan(Request $request)
+    {   
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'loan_type_id' => 'required',
+                'status' => 'required',                
+                'amount' => 'required',
+                'orign_of_funding' => 'required',
+                'duration' => 'required',
+                'repayment_every' => 'required',
+                'repayment_every_type' => 'required',
+                'purpose' => 'required',
+                'auto_create_standing_instruction' => 'required',
+                'sector' => 'required',
+                'channel' => 'required',
+            ]
+        );
+
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+
+        $loan = new Loan();
+        $loan->loan_type_id = $request->loan_type_id;
+        $loan->status = $request->status;
+        $loan->amount = $request->amount;
+        $loan->orign_of_funding = $request->orign_of_funding;
+        $loan->duration = $request->duration;
+        $loan->repayment_every = $request->repayment_every;
+        $loan->repayment_every_type = $request->repayment_every_type;
+        $loan->disbursement_date = $request->disbursement_date;
+        $loan->grace_on_interest_payment = $request->grace_on_interest_payment;
+        $loan->grace_on_principal_payment = $request->grace_on_principal_payment;
+        $loan->purpose = $request->purpose;
+        $loan->auto_create_standing_instruction = $request->auto_create_standing_instruction;
+        $loan->repayment_start_date = $request->repayment_start_date;
+        $loan->sector = $request->sector;
+        $loan->channel = $request->channel;
+
+        return $loan;
+
     }
 }

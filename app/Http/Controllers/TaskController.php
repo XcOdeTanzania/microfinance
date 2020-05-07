@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
-
+use App\User;
 use Illuminate\Support\Facades\Validator;
 
 class TaskController extends Controller
@@ -13,6 +13,12 @@ class TaskController extends Controller
     public function allTasks()
     {
         $tasks = Task::all();
+        foreach ($tasks as $task) {
+            $task->officer = User::find($task->user_id);
+            $task->performed_by = User::find($task->user_id);
+           
+            $task->entity = $task->taskable_type::find($task->taskable_id);
+        }
 
         return response()->json(['tasks' => $tasks]);
     }
