@@ -12,10 +12,10 @@ $factory->define(Branch::class, function (Faker $faker) {
         'email' => $faker->email,
         'region' => $faker->state,
         'address' => $faker->address,
+        'phone_number' =>$faker->e164PhoneNumber,
         'post_code' => $faker->postcode,
         'district' => $faker->word,
         'street' => $faker->word,
-        'phone_number'=>$faker->e164PhoneNumber,
         'company_id' => $faker->randomDigit,
     ];
 });
