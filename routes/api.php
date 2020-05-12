@@ -97,9 +97,9 @@ Route::get('loanType/{loanTypeId}', ['uses' => 'LoanTypeController@getLoanType']
 Route::put('loanType/{loanTypeId}', ['uses' => 'LoanTypeController@putLoanType']);
 Route::delete('loanType/{loanTypeId}', ['uses' => 'LoanTypeController@deleteLoanType']);
 
-//loan Types
+//Charges
 Route::get('charges', ['uses' => 'ChargeController@getCharges']);
-Route::post('charge/{$loanId}', ['uses' => 'ChargeController@postCharge']);
+Route::post('charge/{loanId}', ['uses' => 'ChargeController@postCharge']);
 Route::get('charge/{chargeId}', ['uses' => 'ChargeController@getCharge']);
 Route::put('charge/{chargeId}', ['uses' => 'ChargeController@putCharge']);
 Route::delete('charge/{chargeId}', ['uses' => 'ChargeController@deleteCharge']);

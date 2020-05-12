@@ -55,7 +55,8 @@ class ChargeController extends Controller
 
         $charge->name = $request->name;
         $charge->type  = $request->type;
-        $charge->amount  = $request->collected_on;
+        $charge->amount  = $request->amount;
+        $charge->collected_on  = $request->collected_on;
         $charge->date  = $request->date;
         $charge->payment_mode  = $request->payment_mode;
 
