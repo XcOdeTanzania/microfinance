@@ -28,7 +28,7 @@ class LoanTypeController extends Controller
     }
 
     //Post LoanType
-    public function postLoanType(Request $request, $clientId)
+    public function postLoanType(Request $request)
     {
         $validator = Validator::make(
             $request->all(),
@@ -86,9 +86,9 @@ class LoanTypeController extends Controller
     }
 
     //delete LoanType
-    public function deleteLoanType($businessId)
+    public function deleteLoanType($loanTypeId)
     {
-        $loanType = LoanType::find($businessId);
+        $loanType = LoanType::find($loanTypeId);
         if (!$loanType) return response()->json(['error' => 'LoanType not found']);
 
         $loanType->delete();
