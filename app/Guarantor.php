@@ -13,8 +13,7 @@ class Guarantor extends Model
     use SoftDeletes;
 
     protected $fillable =[
-        'client_id',
-        'group_id',
+        'loan_id',
         'first_name',
         'last_name',
         'date_of_birth',
@@ -24,8 +23,7 @@ class Guarantor extends Model
         'postal_code',
         'country',
         'phone_number',
-        'comment',
-        'type',
+        'image',
         'relationship'
     ];
 

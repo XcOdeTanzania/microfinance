@@ -103,6 +103,12 @@ Route::get('charge/{chargeId}', ['uses' => 'ChargeController@getCharge']);
 Route::put('charge/{chargeId}', ['uses' => 'ChargeController@putCharge']);
 Route::delete('charge/{chargeId}', ['uses' => 'ChargeController@deleteCharge']);
 
+//Guarator
+Route::get('guarantors', ['uses' => 'GuarantorController@getGuarantors']);
+Route::post('guarantor', ['uses' => 'GuarantorController@postGuarantor']);
+Route::get('guarantor/{guarantorId}', ['uses' => 'GuarantorController@getGuarantor']);
+Route::put('guarantor/{guarantorId}', ['uses' => 'GuarantorController@putGuarantor']);
+Route::delete('guarantor/{guarantorId}', ['uses' => 'GuarantorController@deleteGuarantor']);
 
 
 //reports

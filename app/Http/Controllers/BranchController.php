@@ -73,7 +73,7 @@ class BranchController extends Controller
 
         $company->branches()->save($branch);
 
-        return response()->json(['company' => $branch]);
+        return response()->json(['branch' => $branch]);
     }
 
 
