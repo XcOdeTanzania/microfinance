@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div >
         <div class="col-lg-8">
             <div class="card card-default">
                 <div class="card-header d-flex align-items-center">

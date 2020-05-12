@@ -17,12 +17,12 @@
                         <div class="col-12 col-sm-10">
                             <form class="form-horizontal">
                                 <div class="form-group row">
-                                    <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact1">Name</label>
-                                    <div class="col-xl-10 col-md-9 col-8"><input class="form-control" id="inputRole" type="text" placeholder="" value="Hawa12" /></div>
+                                    <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="roleName">Name</label>
+                                    <div class="col-xl-10 col-md-9 col-8"><input class="form-control" id="roleName" type="text" placeholder="" value="Hawa12" /></div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact2">Description</label>
-                                    <div class="col-xl-10 col-md-9 col-8"><input class="form-control" id="inputRole" type="text" value="Head Office" /></div>
+                                    <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="roleDetail">Description</label>
+                                    <div class="col-xl-10 col-md-9 col-8"><input class="form-control" id="roleDetail" type="text" value="Head Office" /></div>
                                 </div>
                             </form>
                         </div>
