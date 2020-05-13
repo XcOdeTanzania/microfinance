@@ -118,5 +118,13 @@ Route::get('loanStatus/{loanStatusId}', ['uses' => 'LoanStatusController@getLoan
 Route::put('loanStatus/{loanStatusId}', ['uses' => 'LoanStatusController@putLoanStatus']);
 Route::delete('loanStatus/{loanStatusId}', ['uses' => 'LoanStatusController@deleteLoanStatus']);
 
+//Schedules
+Route::get('schedules', ['uses' => 'ScheduleController@getSchedules']);
+Route::get('schedules/{loanId}', ['uses' => 'ScheduleController@getSingleLoanSchedules']);
+Route::get('schedule/{scheduleId}', ['uses' => 'ScheduleController@getSchedule']);
+Route::put('schedule/{scheduleId}', ['uses' => 'ScheduleController@putSchedule']);
+Route::delete('schedule/{scheduleId}', ['uses' => 'ScheduleController@deleteSchedule']);
+
+
 //reports
 Route::get('reports/{type}', ['uses' => 'ReportController@getReports']);

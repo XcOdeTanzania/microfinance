@@ -21,7 +21,7 @@ class LoanController extends Controller
     {
         $loans = Loan::all();
         if ($status != 'all') {
-            $$loans = $loans->map(function ($loan) {
+            $loans = $loans->map(function ($loan) {
                 return $loan;
             })
                 ->reject(function ($loan) use ($status) {

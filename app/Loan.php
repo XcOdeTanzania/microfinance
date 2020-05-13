@@ -47,6 +47,14 @@ class Loan extends Model
         return $this->hasMany(Guarantor::class);
     }
 
+     /**
+     * loan has many schedules
+     */
+    function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
+
     /** 
      * loan polymorpic relations to client and group
      */
