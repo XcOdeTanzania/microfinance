@@ -32,6 +32,7 @@ class CreateLoansTable extends Migration
             $table->string('purpose')->nullable();
             $table->boolean('auto_create_standing_instruction')->nullable();
             $table->date('repayment_start_date')->nullable();
+            $table->date('repayment_end_date')->nullable();
             $table->string('sector')->nullable();
             $table->string('channel')->nullable();
 

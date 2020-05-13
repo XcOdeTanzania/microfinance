@@ -13,6 +13,6 @@ class ScheduleTableSeeder extends Seeder
     public function run()
     {
 
-        factory(Schedule::class, 20)->create();
+        // factory(Schedule::class, 20)->create();
     }
 }

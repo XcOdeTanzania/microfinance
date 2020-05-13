@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Charge;
 use App\Client;
+use App\Events\CreateScheduleEvent;
 use App\Group;
 use App\Loan;
 use App\LoanStatus;
@@ -120,5 +121,17 @@ class LoanController extends Controller
 
         $loan->delete();
         return response()->json(['message' => 'Loan deleted successfully']);
+    }
+
+
+    //get all Loan
+    public function disburseLoan($loanId)
+    {
+
+        $loan = Loan::find($loanId);
+        if (!$loan) return response()->json(['error' => 'Loan not found']);
+        event(new CreateScheduleEvent($loan));
+
+        return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
     }
 }

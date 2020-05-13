@@ -34,6 +34,7 @@ Route::get('loans/{status}', ['uses' => 'LoanController@getLoans']);
 Route::get('loan/{loanId}', ['uses' => 'LoanController@getLoan']);
 Route::put('loan/{loanId}', ['uses' => 'LoanController@putLoan']);
 Route::delete('loan/{loanId}', ['uses' => 'LoanController@deleteLoan']);
+Route::post('loan/disburse/{loanId}', ['uses' => 'LoanController@disburseLoan']);
 
 //Clients
 Route::post('client', ['uses' => 'ClientController@postClient']);
