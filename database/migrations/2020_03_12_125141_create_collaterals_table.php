@@ -19,6 +19,7 @@ class CreateCollateralsTable extends Migration
             $table->string('type');
             $table->double('value');
             $table->string('description');
+            $table->string('attachment')->nullable();
             $table->bigInteger('loan_id');
 
             $table->softDeletes();

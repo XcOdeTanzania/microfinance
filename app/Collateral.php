@@ -14,6 +14,7 @@ class Collateral extends Model {
         'type',
         'value',
         'description',
+        'attachment'
 
     ];
 

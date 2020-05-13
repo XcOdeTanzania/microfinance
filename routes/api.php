@@ -110,6 +110,12 @@ Route::get('guarantor/{guarantorId}', ['uses' => 'GuarantorController@getGuarant
 Route::put('guarantor/{guarantorId}', ['uses' => 'GuarantorController@putGuarantor']);
 Route::delete('guarantor/{guarantorId}', ['uses' => 'GuarantorController@deleteGuarantor']);
 
+//Collateral
+Route::get('collaterals', ['uses' => 'CollateralController@getCollaterals']);
+Route::post('collateral/{loanId}', ['uses' => 'CollateralController@postCollateral']);
+Route::get('collateral/{collateralId}', ['uses' => 'CollateralController@getCollateral']);
+Route::put('collateral/{collateralId}', ['uses' => 'CollateralController@putCollateral']);
+Route::delete('collateral/{collateralId}', ['uses' => 'CollateralController@deleteCollateral']);
 
 //reports
 Route::get('reports/{type}', ['uses' => 'ReportController@getReports']);
