@@ -11,6 +11,7 @@ $factory->define(Collateral::class, function (Faker $faker) {
         'type' => $faker->randomElement(['fixed', 'asset']),
         'value' => $faker->randomFloat(),
         'description' => $faker->word,
+        'attachment' => $faker->imageUrl($width = 640, $height = 480),
         'loan_id' => $faker->randomDigit
     ];
 });

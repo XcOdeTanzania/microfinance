@@ -17,7 +17,7 @@ $factory->define(Guarantor::class, function (Faker $faker) {
         'post_code' => $faker->postcode,
         'country' => $faker->country,
         'phone_number' => $faker->e164PhoneNumber,
-        'image' => '$faker->image',
+        'image' => $faker->imageUrl($width = 640, $height = 480),
         'relationship' => $faker->randomElement(['friend', 'brother', 'Father'])
     ];
 });
