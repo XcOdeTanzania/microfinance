@@ -20,7 +20,7 @@ class Guarantor extends Model
         'address',
         'city',
         'state',
-        'postal_code',
+        'post_code',
         'country',
         'phone_number',
         'image',
@@ -37,7 +37,7 @@ class Guarantor extends Model
      */
     public function loans()
     {
-        return $this->belongsToMany(Loan::class);
+        return $this->belongsTo(Loan::class);
     }
 
 

@@ -44,7 +44,7 @@ class Loan extends Model
      */
     function guarantors()
     {
-        return $this->belongsToMany(Guarantor::class);
+        return $this->hasMany(Guarantor::class);
     }
 
     /** 

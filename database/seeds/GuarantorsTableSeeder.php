@@ -1,18 +1,16 @@
 <?php
 
-use App\Guarantor;
 use Illuminate\Database\Seeder;
 
-class GuarantorsSeeder extends Seeder
+class GuarantorsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     * Guarantor seeder
+     *
      * @return void
      */
     public function run()
     {
-        
-
+        factory(App\Guarantor::class, 30)->create();
     }
 }
