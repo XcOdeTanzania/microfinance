@@ -25,8 +25,8 @@ class CreateLoansTable extends Migration
             $table->integer('repayment_every')->nullable();
             $table->string('repayment_every_type')->nullable();
             $table->date('disbursement_date')->nullable();
-            $table->double('grace_on_principal_payment')->nullable();
-            $table->double('grace_on_interest_payment')->nullable();            
+            $table->integer('grace_on_principal_payment')->nullable();
+            $table->integer('grace_on_interest_payment')->nullable();            
 
             ////loan settings
             $table->string('purpose')->nullable();

@@ -35,10 +35,6 @@ Route::get('loan/{loanId}', ['uses' => 'LoanController@getLoan']);
 Route::put('loan/{loanId}', ['uses' => 'LoanController@putLoan']);
 Route::delete('loan/{loanId}', ['uses' => 'LoanController@deleteLoan']);
 
-
-
-
-
 //Clients
 Route::post('client', ['uses' => 'ClientController@postClient']);
 Route::get('clients/{status}', ['uses' => 'ClientController@getClients']);
@@ -71,8 +67,6 @@ Route::get('business/{businessId}', ['uses' => 'BusinessController@getBusiness']
 Route::put('business/{businessId}', ['uses' => 'BusinessController@putBusiness']);
 Route::delete('business/{businessId}', ['uses' => 'BusinessController@deleteBusiness']);
 Route::post('business/loan/{businessId}', ['uses' => 'BusinessController@createBusinessLoan']);
-
-
 
 //groups
 Route::get('groups', ['uses' => 'GroupController@getGroups']);
@@ -116,6 +110,13 @@ Route::post('collateral/{loanId}', ['uses' => 'CollateralController@postCollater
 Route::get('collateral/{collateralId}', ['uses' => 'CollateralController@getCollateral']);
 Route::put('collateral/{collateralId}', ['uses' => 'CollateralController@putCollateral']);
 Route::delete('collateral/{collateralId}', ['uses' => 'CollateralController@deleteCollateral']);
+
+//LoanStatus
+Route::get('loanStatus', ['uses' => 'LoanStatusController@getAllLoanStatus']);
+Route::post('loanStatus', ['uses' => 'LoanStatusController@postLoanStatus']);
+Route::get('loanStatus/{loanStatusId}', ['uses' => 'LoanStatusController@getLoanStatus']);
+Route::put('loanStatus/{loanStatusId}', ['uses' => 'LoanStatusController@putLoanStatus']);
+Route::delete('loanStatus/{loanStatusId}', ['uses' => 'LoanStatusController@deleteLoanStatus']);
 
 //reports
 Route::get('reports/{type}', ['uses' => 'ReportController@getReports']);

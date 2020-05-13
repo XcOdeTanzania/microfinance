@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Loan::class, function (Faker $faker) {
     return [
         'loan_type_id' => $faker->randomDigit(),
-        'status' => $faker->randomElement(['pending_first_approval', 'pending_second_approval', 'active']),
+        'status' => $faker->randomElement(['Overpaid Loans', 'Pending First Approval', 'Pending Second Approval','Awaiting Disbursement','Rejected','Withdrawn', 'closed','Written Off Loans']),
         'amount' => $faker->randomFloat(),
         'orign_of_funding' => $faker->word(),
         'duration' => $faker->randomDigit(),
