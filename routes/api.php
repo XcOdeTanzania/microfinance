@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
- //user 
- Route::post('register', 'AuthController@register');
- Route::post('login', 'AuthController@login');
- Route::post('logout', 'AuthController@logout');
- Route::post('refresh/token', 'AuthController@refresh');
+//user  authentication
+Route::post('register', 'AuthController@register');
+Route::post('login', 'AuthController@login');
+Route::post('logout', 'AuthController@logout');
+Route::post('refresh/token', 'AuthController@refresh');
 
 
 // tasks
@@ -29,7 +29,8 @@ Route::delete('task/{taskId}', ['uses' => 'TaskController@deleteTask']);
 
 
 // users
-Route::get('users', ['uses' => 'UserController@allUsers']);
+Route::get('users', ['uses' => 'UserController@users']);
+Route::get('user/{userId}', ['uses' => 'UserController@user']);
 
 
 //loans

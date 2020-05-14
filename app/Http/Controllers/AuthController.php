@@ -35,6 +35,7 @@ class AuthController extends Controller
             'password' => $request->password,
         ]);
 
+
         $token = auth()->login($user);
 
         return $this->respondWithToken($token);
