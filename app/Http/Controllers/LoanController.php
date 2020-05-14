@@ -124,14 +124,20 @@ class LoanController extends Controller
     }
 
 
-    //get all Loan
+    //disburse loans
     public function disburseLoan($loanId)
     {
 
         $loan = Loan::find($loanId);
         if (!$loan) return response()->json(['error' => 'Loan not found']);
-        event(new CreateScheduleEvent($loan));
 
-        return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
+        if ($loan->status == 'Awaiting Disbursement') {
+            event(new CreateScheduleEvent($loan));
+            $loan->update([
+                'status' => 'Active'
+            ]);
+            return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
+        }
+        return response()->json(['error' => 'The loan could not be disbursed'], 200, [], JSON_NUMERIC_CHECK);
     }
 }
