@@ -2,15 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Charge;
-use App\Client;
 use App\Events\CreateScheduleEvent;
-use App\Group;
 use App\Loan;
-use App\LoanStatus;
 use App\LoanType;
-use App\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
