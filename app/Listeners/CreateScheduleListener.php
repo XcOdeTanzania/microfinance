@@ -41,73 +41,42 @@ class CreateScheduleListener
         $loan = $event->loan;
         $amount = $loan->amount;
 
-        
+
 
         $number_of_times_to_pay = number_format($loan->duration / $loan->repayment_every);
-        // dd($number_of_times_to_pay);
+        
         $payment = $loan->amount / $number_of_times_to_pay;
-        // dd($payment);
+       
         $date = Carbon::parse($loan->disbursement_date);
+        $repayment_type = $loan->repayment_every_type;
 
-        switch ($loan->repayment_every_type) {
-            case 'days':
-                for ($i = 0; $i < $number_of_times_to_pay; $i++) {
-                    $schedule = new Schedule();
-                    $schedule->day = $weekMap[$date->dayOfWeek];
-                    $date = $schedule->date = $date->addDays($loan->repayment_every);
-                    $schedule->amount = $payment;
-                    $payment = $payment;
 
-                    $loan->schedules()->save($schedule);
-                }
+        for ($i = 0; $i < $number_of_times_to_pay; $i++) {
 
-                break;
+            $schedule = new Schedule();
+            $schedule->day = $weekMap[$date->dayOfWeek];
 
-            case 'weeks':
-                for ($i = 0; $i < $number_of_times_to_pay; $i++) {
-                    $schedule = new Schedule();
-                    $schedule->day = $weekMap[$date->dayOfWeek];
-                    $date = $schedule->date = $date->addWeeks($loan->repayment_every);
-                    $schedule->amount = $payment;
-                    $payment = $loan->amount - $payment;
 
-                    $loan->schedules()->save($schedule);
-                }
-                break;
+           ///days weeks month and years
+            if ($repayment_type == 'days')
+                $date = $schedule->date = $date->addDays($loan->repayment_every);
+            if ($repayment_type == 'weeks')
+                $date = $schedule->date = $date->addWeeks($loan->repayment_every);
+            if ($repayment_type == 'months')
+                $date = $schedule->date = $date->addMonths($loan->repayment_every);
+            if ($repayment_type == 'years')
+                $date = $schedule->date = $date->addYears($loan->repayment_every);
 
-            case 'months':
-                for ($i = 0; $i < $number_of_times_to_pay; $i++) {
 
-                    $schedule = new Schedule();
-                    $schedule->day = $weekMap[$date->dayOfWeek];
-                    $date = $schedule->date = $date->addMonths($loan->repayment_every);
-                    if ($i < $number_of_times_to_pay - 1)
-                        $schedule->amount = $payment;
-                    else
-                        $schedule->amount = $amount;
-                    $amount = $amount - $payment;
+            if ($i < $number_of_times_to_pay - 1)
+                $schedule->amount = $payment;
+            else
+                $schedule->amount = $amount;
+            $amount = $amount - $payment;
 
-                    event(new SaveScheduleEvent($loan, $schedule));
-                    echo ($i);
-                    echo ($schedule);
-                }
-                break;
-            case 'years':
-                for ($i = 0; $i < $number_of_times_to_pay; $i++) {
-                    $schedule = new Schedule();
-                    
-                    $schedule->day = $weekMap[$date->dayOfWeek];
-                    $date = $schedule->date = $date->addYears($loan->repayment_every);
-                    $schedule->amount = $payment;
-                    $payment = $loan->amount - $payment;
-
-                    $loan->schedules()->save($schedule);
-                }
-                break;
-
-            default:
-                return response()->json(['error' => 'There are alot of errors']);
-                break;
+            $loan->schedules()->save($schedule);
+           
         }
+
     }
 }
