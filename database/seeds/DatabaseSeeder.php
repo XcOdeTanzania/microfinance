@@ -54,5 +54,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ScheduleTableSeeder::class);
 
         $this->call(GuarantorsTableSeeder::class);
+        $this->call(GuardsTableSeeder::class);
     }
 }

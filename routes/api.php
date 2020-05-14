@@ -133,3 +133,13 @@ Route::delete('schedule/{scheduleId}', ['uses' => 'ScheduleController@deleteSche
 
 //reports
 Route::get('reports/{type}', ['uses' => 'ReportController@getReports']);
+
+
+//Guards
+Route::get('guards', ['uses' => 'GuardController@getGuards']);
+Route::post('role/guard', ['uses' => 'GuardController@addGuardToRole']);
+
+
+//Roles
+Route::get('roles', ['uses' => 'RoleController@getRoles']);
+Route::post('user/role', ['uses' => 'RoleController@addRoleToUser']);
