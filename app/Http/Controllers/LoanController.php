@@ -18,15 +18,24 @@ class LoanController extends Controller
 {
 
 
-    public function getLoans($status)
+    public function getLoans(Request $request)
     {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'status' => 'required',
+            ]
+        );
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
         $loans = Loan::all();
-        if ($status != 'all') {
+        if ($request->status != 'all') {
             $loans = $loans->map(function ($loan) {
                 return $loan;
             })
-                ->reject(function ($loan) use ($status) {
-                    return $loan->status != $status;
+                ->reject(function ($loan) use ($request) {
+                    return $loan->status != $request->status;
                 })->values();
         }
 
@@ -66,6 +75,7 @@ class LoanController extends Controller
     //get all Loan
     public function getLoan($loanId)
     {
+
 
         $loan = Loan::find($loanId);
         if (!$loan) return response()->json(['error' => 'Loan not found']);
