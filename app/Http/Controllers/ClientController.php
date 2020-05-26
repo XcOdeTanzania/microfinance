@@ -29,10 +29,12 @@ class ClientController extends Controller
             })->values();
         }
         foreach ($clients as $key => $client) {
-            $client->branch = $client->branch;
-            $client->identifications = $client->identifications;
-            $client->kins = $client->kins;
-            $client->businesses = $client->businesses;
+            $client->branch;
+            $client->identifications;
+            $client->kins;
+            $client->businesses;
+            $client->group;
+            $client->user;
         }
 
         // foreach ($branch->officers as $key => $officer) 
@@ -181,7 +183,7 @@ class ClientController extends Controller
         $client = Client::find($clientId);
         if (!$client) return response()->json(['error' => 'Client not found']);
 
-       $loan= event(new CreateLoanEvent($request, $client));
+        $loan = event(new CreateLoanEvent($request, $client));
 
         return response()->json([
             'loan' => $loan

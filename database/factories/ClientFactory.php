@@ -19,7 +19,9 @@ $factory->define(Client::class, function (Faker $faker) {
         'region' => $faker->word,
         'email' => $faker->email,
         'marital_status' => $faker->randomElement(['single', 'married','divorced','widowed']),
-        'branch_id' => $faker->randomDigit,
+        'branch_id' => $faker->randomElement([1,2,3,4,5,6,7,8,9,10]),
+        'group_id' => $faker->randomElement([1,2,3,4,5,6,7,8,9,10]),
+        'user_id' => $faker->randomElement([1,2,3,4]),
         'password' => $faker->password,
         'status' => $faker->randomElement(['pending', 'closed','rejected','active']),
     ];
