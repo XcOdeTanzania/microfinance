@@ -38,6 +38,7 @@ class CreateLoansTable extends Migration
 
             $table->integer('loanable_id')->nullable();
             $table->string('loanable_type')->nullable();
+            $table->bigInteger('user_id')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

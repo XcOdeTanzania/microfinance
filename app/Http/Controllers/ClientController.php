@@ -35,6 +35,7 @@ class ClientController extends Controller
             $client->businesses;
             $client->group;
             $client->user;
+            // $client->loanOfficer = $client->use
         }
 
         // foreach ($branch->officers as $key => $officer) 

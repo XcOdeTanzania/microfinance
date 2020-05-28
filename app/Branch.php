@@ -63,7 +63,7 @@ class Branch extends Model
     *  branch has many users
     */
 
-    public function officers()
+    public function users()
     {
         return $this->hasMany(User::class);
     }
@@ -74,4 +74,12 @@ class Branch extends Model
     {
         return $this->belongsTo(Task::class);
     }
+
+    //loans
+
+    public function loans()
+    {
+        return $this->hasManyThrough('App\Loan', 'App\User');
+    }
+
 }

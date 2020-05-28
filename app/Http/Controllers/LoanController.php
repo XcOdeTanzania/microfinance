@@ -12,43 +12,33 @@ class LoanController extends Controller
 {
 
 
-    public function getLoans(Request $request)
+    public function getLoans(Request $request, $status)
     {
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'status' => 'required',
-            ]
-        );
-        if ($validator->fails())
-            return response()->json(['error', $validator->errors()]);
+
 
         $loans = Loan::all();
         if ($request->status != 'all') {
             $loans = $loans->map(function ($loan) {
                 return $loan;
             })
-                ->reject(function ($loan) use ($request) {
-                    return $loan->status != $request->status;
+                ->reject(function ($loan) use ($status) {
+                    return $loan->status != $status;
                 })->values();
         }
 
         foreach ($loans as $loan) {
 
-            // $val = substr($loan->loanable_type, 4);
-            // $val_to_lower = strtolower($val);
-            // $loan->$val_to_lower = $loan->loanable_type::find($loan->loanable_id);
-            // $loan->officer = $loan->loanable_type::find($loan->loanable_id)->user;
-            // $loan->branch = $loan->loanable_type::find($loan->loanable_id)->branch;
+            $loan->guarantors;
+            $loan->user;
+            $loan->collaterals;
+            $loan->loanable;
             // $loan->summary;
             // $loan->summaryPrincipal;
             // $loan->summaryInterest;
             // $loan->summaryFee;
             // $loan->summaryPenalty;
             // $loan->repayments;
-            // $loan->transactions;
-            // $loan->guarantors;
-            // $loan->collaterals;
+    
             // $loan->standingInstructions;
             // $loan->audits;
             // $loan->surveys;
@@ -73,6 +63,8 @@ class LoanController extends Controller
 
         $loan = Loan::find($loanId);
         if (!$loan) return response()->json(['error' => 'Loan not found']);
+
+        $loan->loanable;
 
         return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
     }

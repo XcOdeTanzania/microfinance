@@ -19,7 +19,9 @@ $factory->define(Loan::class, function (Faker $faker) {
         'auto_create_standing_instruction' => $faker->boolean(),
         'sector' => $faker->word(),
         'channel' => $faker->word(),
-        'loanable_id' => $faker->randomDigit(),
-        'loanable_type' => $faker->randomElement(['APP\Loan', 'APP\Client', 'APP\Group']),
+        'loanable_id' => $faker->randomElement([1,2,3,4,5,6,7,8,9,10]),
+        'loanable_type' => $faker->randomElement(['App\Business', 'App\Client', 'App\Group']),
+        'user_id' => $faker->randomElement([1,2,3,4]),
+
     ];
 });

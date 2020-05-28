@@ -68,9 +68,9 @@ class Loan extends Model
      * user has many charges
      */
 
-    public function officer()
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     /**
@@ -193,11 +193,4 @@ class Loan extends Model
         return $this->morphMany(Task::class, 'taskable');
     }
 
-    //logic
-    // public function postLoan(Request $request)
-    // {   
-      
-    //     return $loan;
-
-    // }
 }

@@ -34,7 +34,7 @@ Route::get('user/{userId}', ['uses' => 'UserController@user']);
 
 
 //loans
-Route::post('loans', ['uses' => 'LoanController@getLoans']);
+Route::get('loans/{status}', ['uses' => 'LoanController@getLoans']);
 Route::get('loan/{loanId}', ['uses' => 'LoanController@getLoan']);
 Route::put('loan/{loanId}', ['uses' => 'LoanController@putLoan']);
 Route::delete('loan/{loanId}', ['uses' => 'LoanController@deleteLoan']);
