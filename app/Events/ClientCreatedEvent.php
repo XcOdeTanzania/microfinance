@@ -9,26 +9,25 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Http\Request;
-use App\Client;
 
 class ClientCreatedEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $client;
-    public $request;
+    public $user_id;
+    public $branch_id;
 
     /**
-     * Create a new client create event instance.
-     * @param Request $request
-     * @param Client $client
+     * Create a new event instance.
+     *
      * @return void
      */
-    public function __construct(Request $request,Client $client)
+    public function __construct($client, $user_id, $branch_id)
     {
         $this->client = $client;
-        $this->request = $request;
+        $this->user_id = $user_id;
+        $this->branch_id = $branch_id;
     }
 
     /**

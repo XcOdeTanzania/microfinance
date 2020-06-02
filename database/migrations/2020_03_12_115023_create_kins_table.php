@@ -21,9 +21,10 @@ class CreateKinsTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->date('date_of_birth');
-            $table->string('city');
+            $table->string('district');
+            $table->string('region');
             $table->string('phone_number');
-            $table->string('town');
+            $table->string('image')->nullable();
             $table->string('relationship');
 
             $table->softdeletes();

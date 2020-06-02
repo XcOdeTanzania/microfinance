@@ -15,15 +15,15 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
-            $table->integer('user_id');
+
+
             $table->string('name');
             $table->integer('branch_id');
             $table->string('account_number');
             $table->string('uuid');
             $table->string('status');
             $table->date('activation_date');
-            $table->integer('meeting_day');
+            $table->string('meeting_day');
             $table->string('meeting_location');
             $table->string('meeting_frequency');
 

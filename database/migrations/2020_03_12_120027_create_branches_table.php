@@ -17,7 +17,13 @@ class CreateBranchesTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('name');
-            $table->string('location');
+            $table->string('email');
+            $table->string('region');
+            $table->string('address');
+            $table->string('post_code');
+            $table->string('phone_number');
+            $table->string('district');
+            $table->string('street');
             $table->integer('company_id');
 
             $table->softDeletes();

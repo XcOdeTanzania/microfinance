@@ -19,13 +19,13 @@ class CreateBusinessesTable extends Migration
             $table->integer('client_id');
             $table->string('name');
             $table->string('type');
-            $table->date('date_of_start');
+            $table->date('start_date');
             $table->string('address');
-            $table->integer('region_id');
-            $table->integer('post_code');
-            $table->bigInteger('business_revenue');
-            $table->bigInteger('expenses');
-            $table->bigInteger('net_income');
+            $table->string('region');
+            $table->string('post_code');
+            $table->double('revenue');
+            $table->double('expenses');
+            $table->double('net_income');
 
             $table->softDeletes();
             $table->timestamps();

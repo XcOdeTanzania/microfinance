@@ -16,10 +16,21 @@ class Client extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'phone_number',
+        'gender',
+        'street',
+        'district',
+        'region',
+        'marital_status',
+        'email',
+        'password',
         'registration_date',
-        'account_number',
-        'terms_and_condition'
+        'status',
+        'branch_id',
+        'date_birth'
     ];
 
     protected $dates = [
@@ -36,9 +47,9 @@ class Client extends Model
      * client has one business relation
      * 
      */
-    public function business()
+    public function businesses()
     {
-        return $this->hasOne(Business::class);
+        return $this->hasMany(Business::class);
     }
 
 
@@ -138,6 +149,8 @@ class Client extends Model
         return null;
     }
 
-
-    // Business Logic
+    public function task()
+    {
+        return $this->morphMany(Task::class, 'taskable');
+    }
 }

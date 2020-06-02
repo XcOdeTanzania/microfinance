@@ -4,82 +4,94 @@ namespace App\Http\Controllers;
 
 use App\LoanType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LoanTypeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    //get LoanType
+    public function getLoanTypes()
     {
-        //
+        $loanTypes = LoanType::all();
+
+        return response()->json(['loanTypes' => $loanTypes], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    //get all LoanType
+    public function getLoanType($loanTypeId)
     {
-        //
+
+        $loanType = LoanType::find($loanTypeId);
+        if (!$loanType) return response()->json(['error' => 'LoanType not found']);
+
+        return response()->json(['loanType' => $loanType], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    //Post LoanType
+    public function postLoanType(Request $request)
     {
-        //
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => 'required',
+                'interest_rate' => 'required',
+                'max_duration' => 'required',
+                'duration_type' => 'required'
+            ]
+        );
+
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $loanType = new LoanType();
+
+        $loanType->name = $request->name;
+        $loanType->interest_rate  = $request->interest_rate;
+        $loanType->max_duration  = $request->max_duration;
+        $loanType->duration_type  = $request->duration_type;
+
+        $loanType->save();
+
+        return response()->json(['loanType' => $loanType]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\LoanType  $loanType
-     * @return \Illuminate\Http\Response
-     */
-    public function show(LoanType $loanType)
+
+
+    // put LoanType
+    public function putLoanType(Request $request, $businessId)
     {
-        //
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => 'required',
+                'interest_rate' => 'required',
+                'max_duration' => 'required',
+                'duration_type' => 'required'
+            ]
+        );
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $loanType = LoanType::find($businessId);
+        if (!$loanType) return response()->json(['error' => 'LoanType not found']);
+
+        $loanType->update([
+            'name' => $request->name,
+            'interest_rate' => $request->interest_rate,
+            'max_duration' => $request->max_duration,
+            'duration_type' => $request->duration_type
+        ]);
+
+        return response()->json(['loanType' => $loanType], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\LoanType  $loanType
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(LoanType $loanType)
+    //delete LoanType
+    public function deleteLoanType($loanTypeId)
     {
-        //
-    }
+        $loanType = LoanType::find($loanTypeId);
+        if (!$loanType) return response()->json(['error' => 'LoanType not found']);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\LoanType  $loanType
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, LoanType $loanType)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\LoanType  $loanType
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(LoanType $loanType)
-    {
-        //
+        $loanType->delete();
+        return response()->json(['message' => 'LoanType deleted successfully']);
     }
 }

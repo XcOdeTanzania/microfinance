@@ -7,10 +7,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LoanType extends Model
 {
-    protected $table = 'loan_type';
 
     use SoftDeletes;
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'interest_rate', 'max_duration', 'duration_type'];
 
     protected $dates = ['deleted_at'];
 }

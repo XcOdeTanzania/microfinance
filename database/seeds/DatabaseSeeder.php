@@ -48,7 +48,9 @@ class DatabaseSeeder extends Seeder
         $this->call(AuditsTableSeeder::class);
         $this->call(GroupMemberAllocationTableSeeder::class);
         $this->call(SurveysTableSeeder::class);
-      
-        
+        $this->call(IdentificationTableSeeder::class);
+        $this->call(KinsTableSeeder::class);
+        $this->call(BusinessesTableSeeder::class);
+        $this->call(LoansTableSeeder::class);
     }
 }

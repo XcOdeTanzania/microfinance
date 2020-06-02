@@ -12,19 +12,6 @@ class LoanTypeTableSeeder extends Seeder
      */
     public function run()
     {
-        LoanType::create([
-
-            'name' => "Interest Recalculation Compounding on Principal (Daily)",
-
-        ]);
-        LoanType::create([
-            'name' => "Declining - Accrual",
-        ]);
-        LoanType::create([
-            'name' => "Normal Loan",
-        ]);
-        LoanType::create([
-            'name' => "Flat - Cash",
-        ]);
+        factory(LoanType::class, 5)->create();
     }
 }

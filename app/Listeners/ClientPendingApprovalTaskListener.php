@@ -3,12 +3,11 @@
 namespace App\Listeners;
 
 use App\Events\ClientCreatedEvent;
-use App\Kin;
+use App\Task;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-
-class CreateKinListener
+class ClientPendingApprovalTaskListener
 {
     /**
      * Create the event listener.
@@ -28,7 +27,12 @@ class CreateKinListener
      */
     public function handle(ClientCreatedEvent $event)
     {
-        $kin = new Kin;
-        $kin->postKin($event->request, $event->client);
+        $task = new Task();
+        $task->name = 'client pending approval';
+        $task->user_id = $event->user_id;
+        $task->branch_id = $event->branch_id;
+        $task->status = 'pending';
+
+        $event->client->task()->save($task);
     }
 }

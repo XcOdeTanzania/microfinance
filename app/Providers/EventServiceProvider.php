@@ -18,15 +18,21 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        'App\Events\UserCreatedEvent' => [
-            'App\Listeners\CreateClientListener',
-        ],
         'App\Events\ClientCreatedEvent' => [
-            'App\Listeners\CreateProfileListener',
-            'App\Listeners\CreateIdentificationListener',
-            'App\Listeners\CreateBusinessListener',
-            'App\Listeners\CreateKinListener',
+            'App\Listeners\ClientPendingApprovalTaskListener',
         ],
+        'App\Events\GroupCreatedEvent' => [
+            'App\Listeners\GroupPendingApprovalTaskListener',
+        ],
+        'App\Events\BusinessCreatedEvent' => [
+            'App\Listeners\BusinessPendingApprovalTaskListener',
+        ],
+        'App\Events\CreateLoanEvent' => [
+            'App\Listeners\CreateLoanListener',
+        ],
+        'App\Events\LoanCreatedEvent' => [
+            'App\Listeners\LoanPendingFirstApprovalTaskListener',
+        ]
     ];
 
     /**
