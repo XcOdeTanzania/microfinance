@@ -12,6 +12,6 @@ class LoanTypeTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(LoanType::class, 5)->create();
+        factory(LoanType::class, 10)->create();
     }
 }

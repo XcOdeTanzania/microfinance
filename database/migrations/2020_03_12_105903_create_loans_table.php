@@ -22,7 +22,7 @@ class CreateLoansTable extends Migration
             $table->double('amount')->nullable();
             $table->string('orign_of_funding')->nullable();
             $table->integer('duration')->nullable();
-            $table->integer('repayment_every')->nullable();
+            $table->string('repayment_every')->nullable();
             $table->string('repayment_every_type')->nullable();
             $table->date('disbursement_date')->nullable();
             $table->integer('grace_on_principal_payment')->nullable();
