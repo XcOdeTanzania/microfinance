@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Role;
+use Illuminate\Support\Str;
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,99 +15,56 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = new User();
-        $user->name = "Nyakachebwe Ronald";
-        $user->email = "nyakachebwe@mail.com";
-        $user->password = Hash::make("password");
+        // $role = Role::where('id', 1);
+        // //  factory(App\User::class, 5)->create()->roles()->attach($role);
 
-        // attach role Loan Officer with id 1 to user
+        $user = User::create([
+        'name' => 'John',
+        'email' => 'me@m.com',
+        'email_verified_at' => now(),
+        'password' => Hash::make("password"), // password
+        'remember_token' => Str::random(10),
+        'branch_id' => 1
+        ]);
 
-        $user->save();
+        $role = Role::where('id', 1)->get();
+        $user->roles()->attach($role);
 
-        $user->roles()->attach(1);
-
-        $user->update(["branch_id" => 1]);
-
-
-
-        $user = new User();
-        $user->name = "Zamzam Kanda";
-        $user->email = "etv@mail.com";
-        $user->password = Hash::make("password");
-
-        // attach role Loan Officer with id 1 to user
-
-        $user->save();
-
-        $user->roles()->attach(1);
-
-        $user->update(["branch_id" => 1]);
-
+        $user = User::create([
+            'name' => 'Kim',
+            'email' => 'mi@m.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("password"), // password
+            'remember_token' => Str::random(10),
+            'branch_id' => 1
+            ]);
+    
+        $role = Role::where('id', 1)->get();
+        $user->roles()->attach($role);
 
 
-        $user = new User();
-        $user->name = "Cris Rock";
-        $user->email = "cris@mail.com";
-        $user->password = Hash::make("password");
+        $user = User::create([
+            'name' => 'lyo',
+            'email' => 'mr@m.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("password"), // password
+            'remember_token' => Str::random(10),
+            'branch_id' => 1
+            ]);
 
-        // attach role Loan Officer with id 1 to user
+        $role = Role::where('id', 1)->get();
+        $user->roles()->attach($role);
 
-        $user->save();
-
-        $user->roles()->attach(1);
-
-        $user->update(["branch_id" => 1]);
-
-
-        ///////////////
-
-        $user = new User();
-        $user->name = "Ali, Ronald";
-        $user->email = "ali@mail.com";
-        $user->password = Hash::make("password");
-
-        // attach role Loan Officer with id 1 to user
-
-        $user->save();
-
-        $user->roles()->attach(1);
-
-        $user->update(["branch_id" => 1]);
-
-
-
-         ///////////////
-
-         $user = new User();
-         $user->name = "oaa, Ronald";
-         $user->email = "alia@mail.com";
-         $user->password = Hash::make("password");
-
-         // attach role Loan Officer with id 1 to user
-
-         $user->save();
-
-         $user->roles()->attach(1);
-
-         $user->update(["branch_id" => 1]);
-
-
- ///////////////
-
- $user = new User();
- $user->name = "ioioi, Ronald";
- $user->email = "asssli@mail.com";
- $user->password = Hash::make("password");
-
- // attach role Loan Officer with id 1 to user
-
- $user->save();
-
- $user->roles()->attach(2);
-
- $user->update(["branch_id" => 1]);
-
-
-
+        $user = User::create([
+            'name' => 'Mee',
+            'email' => 'mt@m.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("password"), // password
+            'remember_token' => Str::random(10),
+            'branch_id' => 1
+            ]);
+    
+        $role = Role::where('id', 1)->get();
+        $user->roles()->attach($role);
     }
 }

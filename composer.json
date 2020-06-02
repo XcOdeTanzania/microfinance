@@ -15,7 +15,8 @@
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.0",
-        "symfony/translation-contracts": "^1.1.6"
+        "symfony/translation-contracts": "^1.1.6",
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

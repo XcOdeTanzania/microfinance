@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//user  authentication
+Route::post('register', 'AuthController@register');
+Route::post('login', 'AuthController@login');
+Route::post('logout', 'AuthController@logout');
+Route::post('refresh/token', 'AuthController@refresh');
+
 
 // tasks
 Route::get('tasks', ['uses' => 'TaskController@allTasks']);
@@ -26,7 +29,8 @@ Route::delete('task/{taskId}', ['uses' => 'TaskController@deleteTask']);
 
 
 // users
-Route::get('users', ['uses' => 'UserController@allUsers']);
+Route::get('users', ['uses' => 'UserController@users']);
+Route::get('user/{userId}', ['uses' => 'UserController@user']);
 
 
 //loans
@@ -34,10 +38,7 @@ Route::get('loans/{status}', ['uses' => 'LoanController@getLoans']);
 Route::get('loan/{loanId}', ['uses' => 'LoanController@getLoan']);
 Route::put('loan/{loanId}', ['uses' => 'LoanController@putLoan']);
 Route::delete('loan/{loanId}', ['uses' => 'LoanController@deleteLoan']);
-
-
-
-
+Route::post('loan/disburse/{loanId}', ['uses' => 'LoanController@disburseLoan']);
 
 //Clients
 Route::post('client', ['uses' => 'ClientController@postClient']);
@@ -72,8 +73,6 @@ Route::put('business/{businessId}', ['uses' => 'BusinessController@putBusiness']
 Route::delete('business/{businessId}', ['uses' => 'BusinessController@deleteBusiness']);
 Route::post('business/loan/{businessId}', ['uses' => 'BusinessController@createBusinessLoan']);
 
-
-
 //groups
 Route::get('groups', ['uses' => 'GroupController@getGroups']);
 Route::post('group/{branchId}', ['uses' => 'GroupController@postGroup']);
@@ -103,7 +102,44 @@ Route::get('charge/{chargeId}', ['uses' => 'ChargeController@getCharge']);
 Route::put('charge/{chargeId}', ['uses' => 'ChargeController@putCharge']);
 Route::delete('charge/{chargeId}', ['uses' => 'ChargeController@deleteCharge']);
 
+//Guarator
+Route::get('guarantors', ['uses' => 'GuarantorController@getGuarantors']);
+Route::post('guarantor/{loanId}', ['uses' => 'GuarantorController@postGuarantor']);
+Route::get('guarantor/{guarantorId}', ['uses' => 'GuarantorController@getGuarantor']);
+Route::put('guarantor/{guarantorId}', ['uses' => 'GuarantorController@putGuarantor']);
+Route::delete('guarantor/{guarantorId}', ['uses' => 'GuarantorController@deleteGuarantor']);
+
+//Collateral
+Route::get('collaterals', ['uses' => 'CollateralController@getCollaterals']);
+Route::post('collateral/{loanId}', ['uses' => 'CollateralController@postCollateral']);
+Route::get('collateral/{collateralId}', ['uses' => 'CollateralController@getCollateral']);
+Route::put('collateral/{collateralId}', ['uses' => 'CollateralController@putCollateral']);
+Route::delete('collateral/{collateralId}', ['uses' => 'CollateralController@deleteCollateral']);
+
+//LoanStatus
+Route::get('loanStatus', ['uses' => 'LoanStatusController@getAllLoanStatus']);
+Route::post('loanStatus', ['uses' => 'LoanStatusController@postLoanStatus']);
+Route::get('loanStatus/{loanStatusId}', ['uses' => 'LoanStatusController@getLoanStatus']);
+Route::put('loanStatus/{loanStatusId}', ['uses' => 'LoanStatusController@putLoanStatus']);
+Route::delete('loanStatus/{loanStatusId}', ['uses' => 'LoanStatusController@deleteLoanStatus']);
+
+//Schedules
+Route::get('schedules', ['uses' => 'ScheduleController@getSchedules']);
+Route::get('schedules/{loanId}', ['uses' => 'ScheduleController@getSingleLoanSchedules']);
+Route::get('schedule/{scheduleId}', ['uses' => 'ScheduleController@getSchedule']);
+Route::put('schedule/{scheduleId}', ['uses' => 'ScheduleController@putSchedule']);
+Route::delete('schedule/{scheduleId}', ['uses' => 'ScheduleController@deleteSchedule']);
 
 
 //reports
 Route::get('reports/{type}', ['uses' => 'ReportController@getReports']);
+
+
+//Guards
+Route::get('guards', ['uses' => 'GuardController@getGuards']);
+Route::post('role/guard', ['uses' => 'GuardController@addGuardToRole']);
+
+
+//Roles
+Route::get('roles', ['uses' => 'RoleController@getRoles']);
+Route::post('user/role', ['uses' => 'RoleController@addRoleToUser']);

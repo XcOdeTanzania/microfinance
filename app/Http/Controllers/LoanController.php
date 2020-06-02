@@ -2,14 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Charge;
-use App\Client;
-use App\Group;
+use App\Events\CreateScheduleEvent;
 use App\Loan;
-use App\LoanStatus;
 use App\LoanType;
-use App\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -17,11 +12,13 @@ class LoanController extends Controller
 {
 
 
-    public function getLoans($status)
+    public function getLoans(Request $request, $status)
     {
+
+
         $loans = Loan::all();
-        if ($status != 'all') {
-            $$loans = $loans->map(function ($loan) {
+        if ($request->status != 'all') {
+            $loans = $loans->map(function ($loan) {
                 return $loan;
             })
                 ->reject(function ($loan) use ($status) {
@@ -31,20 +28,17 @@ class LoanController extends Controller
 
         foreach ($loans as $loan) {
 
-            // $val = substr($loan->loanable_type, 4);
-            // $val_to_lower = strtolower($val);
-            // $loan->$val_to_lower = $loan->loanable_type::find($loan->loanable_id);
-            // $loan->officer = $loan->loanable_type::find($loan->loanable_id)->user;
-            // $loan->branch = $loan->loanable_type::find($loan->loanable_id)->branch;
+            $loan->guarantors;
+            $loan->user;
+            $loan->collaterals;
+            $loan->loanable;
             // $loan->summary;
             // $loan->summaryPrincipal;
             // $loan->summaryInterest;
             // $loan->summaryFee;
             // $loan->summaryPenalty;
             // $loan->repayments;
-            // $loan->transactions;
-            // $loan->guarantors;
-            // $loan->collaterals;
+    
             // $loan->standingInstructions;
             // $loan->audits;
             // $loan->surveys;
@@ -66,8 +60,11 @@ class LoanController extends Controller
     public function getLoan($loanId)
     {
 
+
         $loan = Loan::find($loanId);
         if (!$loan) return response()->json(['error' => 'Loan not found']);
+
+        $loan->loanable;
 
         return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
     }
@@ -120,5 +117,23 @@ class LoanController extends Controller
 
         $loan->delete();
         return response()->json(['message' => 'Loan deleted successfully']);
+    }
+
+
+    //disburse loans
+    public function disburseLoan($loanId)
+    {
+
+        $loan = Loan::find($loanId);
+        if (!$loan) return response()->json(['error' => 'Loan not found']);
+
+        if ($loan->status == 'Awaiting Disbursement') {
+            event(new CreateScheduleEvent($loan));
+            $loan->update([
+                'status' => 'Active'
+            ]);
+            return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
+        }
+        return response()->json(['error' => 'The loan could not be disbursed'], 200, [], JSON_NUMERIC_CHECK);
     }
 }

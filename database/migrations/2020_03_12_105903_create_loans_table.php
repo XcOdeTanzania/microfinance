@@ -22,21 +22,23 @@ class CreateLoansTable extends Migration
             $table->double('amount')->nullable();
             $table->string('orign_of_funding')->nullable();
             $table->integer('duration')->nullable();
-            $table->integer('repayment_every')->nullable();
+            $table->string('repayment_every')->nullable();
             $table->string('repayment_every_type')->nullable();
             $table->date('disbursement_date')->nullable();
-            $table->double('grace_on_principal_payment')->nullable();
-            $table->double('grace_on_interest_payment')->nullable();            
+            $table->integer('grace_on_principal_payment')->nullable();
+            $table->integer('grace_on_interest_payment')->nullable();            
 
             ////loan settings
             $table->string('purpose')->nullable();
             $table->boolean('auto_create_standing_instruction')->nullable();
             $table->date('repayment_start_date')->nullable();
+            $table->date('repayment_end_date')->nullable();
             $table->string('sector')->nullable();
             $table->string('channel')->nullable();
 
             $table->integer('loanable_id')->nullable();
             $table->string('loanable_type')->nullable();
+            $table->bigInteger('user_id')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

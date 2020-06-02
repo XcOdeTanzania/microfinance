@@ -13,19 +13,17 @@ class Guarantor extends Model
     use SoftDeletes;
 
     protected $fillable =[
-        'client_id',
-        'group_id',
+        'loan_id',
         'first_name',
         'last_name',
         'date_of_birth',
         'address',
         'city',
         'state',
-        'postal_code',
+        'post_code',
         'country',
         'phone_number',
-        'comment',
-        'type',
+        'image',
         'relationship'
     ];
 
@@ -39,7 +37,7 @@ class Guarantor extends Model
      */
     public function loans()
     {
-        return $this->belongsToMany(Loan::class);
+        return $this->belongsTo(Loan::class);
     }
 
 

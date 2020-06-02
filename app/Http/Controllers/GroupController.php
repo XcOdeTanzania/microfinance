@@ -42,13 +42,13 @@ class GroupController extends Controller
             $request->all(),
             [
                 'name' => 'required',
-                'account_number' => 'required',
+                'accountNumber' => 'required',
                 'uuid' => 'required',
                 'status' => 'required',
-                'activation_date' => 'required',
-                'meeting_day' => 'required',
-                'meeting_location' => 'required',
-                'meeting_frequency' => 'required',
+                'activationDate' => 'required',
+                'meetingDay' => 'required',
+                'meetingLocation' => 'required',
+                'meetingFrequency' => 'required',
 
             ]
         );
@@ -65,13 +65,13 @@ class GroupController extends Controller
         $group = new Group();
 
         $group->name = $request->name;
-        $group->account_number  = $request->account_number;
+        $group->account_number  = $request->accountNumber;
         $group->uuid  = $request->uuid;
         $group->status  = $request->status;
-        $group->activation_date  = $request->activation_date;
-        $group->meeting_day = $request->meeting_day;
-        $group->meeting_location = $request->meeting_location;
-        $group->meeting_frequency  = $request->meeting_frequency;
+        $group->activation_date  = $request->activationDate;
+        $group->meeting_day = $request->meetingDay;
+        $group->meeting_location = $request->meetingLocation;
+        $group->meeting_frequency  = $request->meetingFrequency;
 
         $branch->groups()->save($group);
 

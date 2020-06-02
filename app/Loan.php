@@ -44,7 +44,15 @@ class Loan extends Model
      */
     function guarantors()
     {
-        return $this->belongsToMany(Guarantor::class);
+        return $this->hasMany(Guarantor::class);
+    }
+
+     /**
+     * loan has many schedules
+     */
+    function schedules()
+    {
+        return $this->hasMany(Schedule::class);
     }
 
     /** 
@@ -60,9 +68,9 @@ class Loan extends Model
      * user has many charges
      */
 
-    public function officer()
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     /**
@@ -185,11 +193,4 @@ class Loan extends Model
         return $this->morphMany(Task::class, 'taskable');
     }
 
-    //logic
-    // public function postLoan(Request $request)
-    // {   
-      
-    //     return $loan;
-
-    // }
 }

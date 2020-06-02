@@ -1,9 +1,8 @@
 <?php
 
-use App\LoanStatus;
 use Illuminate\Database\Seeder;
 
-class LoanStatusTableSeeder extends Seeder
+class GuardsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,8 +11,6 @@ class LoanStatusTableSeeder extends Seeder
      */
     public function run()
     {
-
-        factory(LoanStatus::class, 20)->create();
-      
+        factory(App\Guard::class, 10)->create();
     }
 }

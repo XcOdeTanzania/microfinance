@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCollateralsTable extends Migration
+class CreateGuardRoleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,10 @@ class CreateCollateralsTable extends Migration
      */
     public function up()
     {
-        Schema::create('collaterals', function (Blueprint $table) {
+        Schema::create('guard_role', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->string('type');
-            $table->double('value');
-            $table->string('description');
-            $table->string('attachment')->nullable();
-            $table->bigInteger('loan_id');
-
-            $table->softDeletes();
+            $table->bigInteger('guard_id');
+            $table->bigInteger('role_id');
             $table->timestamps();
         });
     }
@@ -34,6 +28,6 @@ class CreateCollateralsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('collaterals');
+        Schema::dropIfExists('guard_role');
     }
 }

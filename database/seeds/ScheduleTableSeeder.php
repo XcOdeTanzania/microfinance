@@ -1,9 +1,9 @@
 <?php
 
-use App\LoanStatus;
+use App\Schedule;
 use Illuminate\Database\Seeder;
 
-class LoanStatusTableSeeder extends Seeder
+class ScheduleTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,6 @@ class LoanStatusTableSeeder extends Seeder
     public function run()
     {
 
-        factory(LoanStatus::class, 20)->create();
-      
+        // factory(Schedule::class, 20)->create();
     }
 }
