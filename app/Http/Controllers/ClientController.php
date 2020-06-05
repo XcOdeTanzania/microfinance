@@ -71,7 +71,7 @@ class ClientController extends Controller
             [
                 'first_name' => 'required',
                 'last_name' => 'required',
-                'email' => 'unique:clients,email| email| required',
+                'email' => 'unique:clients,email| email',
                 'registration_date' => 'required',
                 'phone_number' => 'required',
                 'date_birth' => 'required',
