@@ -70,8 +70,8 @@ class ClientController extends Controller
             $request->all(),
             [
                 'first_name' => 'required',
-                'email' => 'unique:clients,email| email',
                 'last_name' => 'required',
+                'email' => 'unique:clients,email| email| required',
                 'registration_date' => 'required',
                 'phone_number' => 'required',
                 'date_birth' => 'required',
@@ -102,7 +102,7 @@ class ClientController extends Controller
         $client->street = $request->street;
         $client->district = $request->district;
         $client->region = $request->region;
-        $client->email = $request->client_email;
+        $client->email = $request->email;
         $client->marital_status = $request->marital_status;
         $client->password = Hash::make($request->last_name);
 
