@@ -17,7 +17,7 @@ class TaskController extends Controller
             $task->officer = User::find($task->user_id);
             $task->performed_by = User::find($task->user_id);
             $task->branch;
-            $task->user;
+            // $task->user;
             $task->entity = $task->taskable_type::find($task->taskable_id);
         }
 
