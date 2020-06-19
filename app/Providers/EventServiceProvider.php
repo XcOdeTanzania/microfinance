@@ -35,6 +35,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\CreateScheduleEvent' => [
             'App\Listeners\CreateScheduleListener',
+        ],
+        'App\Events\CreateRentEvent' => [
+            'App\Listeners\CreateRentListener',
         ]
     ];
 

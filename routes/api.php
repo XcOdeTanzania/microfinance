@@ -144,3 +144,11 @@ Route::post('role/guard', ['uses' => 'GuardController@addGuardToRole']);
 //Roles
 Route::get('roles', ['uses' => 'RoleController@getRoles']);
 Route::post('user/role', ['uses' => 'RoleController@addRoleToUser']);
+
+
+// rentAccounts
+Route::get('rentAccounts', ['uses' => 'RentAccountController@allRentAccounts']);
+Route::post('rentAccount', ['uses' => 'RentAccountController@postRentAccount']);
+Route::get('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@getRentAccount']);
+Route::put('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@putRentAccount']);
+Route::delete('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@deleteRentAccount']);

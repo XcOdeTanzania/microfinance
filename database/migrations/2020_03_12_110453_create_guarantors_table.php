@@ -22,8 +22,8 @@ class CreateGuarantorsTable extends Migration
             $table->string('last_name');
             $table->date('date_of_birth');
             $table->string('address');
-            $table->string('city');
-            $table->string('state');
+            $table->string('district');
+            $table->string('region');
             $table->string('post_code');
             $table->string('country');
             $table->string('phone_number');
