@@ -15,6 +15,8 @@ class CreateRentAccountsTable extends Migration
     {
         Schema::create('rent_accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('loan_id');
+            $table->double('balance_due');
             $table->timestamps();
         });
     }
