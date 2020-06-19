@@ -28,8 +28,8 @@ class CreateRentListener
     public function handle(CreateRentEvent $event)
     {
         $businessCheckingAccount = new BusinessCheckingAccount();
-        $businessCheckingAccount->loan_id = $event->request->loan_id;
-        $businessCheckingAccount->pay_balance = $event->request->pay_balance;
+        $businessCheckingAccount->loan_id = $event->loan_id;
+        $businessCheckingAccount->pay_balance = $event->pay_balance;
 
         $event->rent->businessCheckingAccount()->save($businessCheckingAccount);
 
