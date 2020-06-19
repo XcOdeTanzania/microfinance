@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\CreateScheduleEvent;
+use App\Events\DisburseLoanEvent;
 use App\Loan;
 use App\LoanType;
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class LoanController extends Controller
             // $loan->summaryFee;
             // $loan->summaryPenalty;
             // $loan->repayments;
-    
+
             // $loan->standingInstructions;
             // $loan->audits;
             // $loan->surveys;
@@ -132,6 +133,8 @@ class LoanController extends Controller
             $loan->update([
                 'status' => 'Active'
             ]);
+            
+            event(new DisburseLoanEvent($loan));
             return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
         }
         return response()->json(['error' => 'The loan could not be disbursed'], 200, [], JSON_NUMERIC_CHECK);
