@@ -16,7 +16,8 @@ class CreateBusinessCheckingAccountsTable extends Migration
         Schema::create('business_checking_accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('loan_id');
-            $table->double('balance_due');
+            $table->double('pay_balance');
+            $table->bigInteger('rent_account_id');
             $table->timestamps();
         });
     }
