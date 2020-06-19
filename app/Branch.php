@@ -72,7 +72,7 @@ class Branch extends Model
 
      public function tasks()
     {
-        return $this->belongsTo(Task::class);
+        return $this->hasMany(Task::class);
     }
 
     //loans

@@ -38,8 +38,8 @@ class GuarantorController extends Controller
                 'last_name' => 'required',
                 'date_of_birth' => 'required',
                 'address' => 'required',
-                'city' => 'required',
-                'state' => 'required',
+                'district' => 'required',
+                'region' => 'required',
                 'post_code' => 'required',
                 'country' => 'required',
                 'phone_number' => 'required',
@@ -60,8 +60,8 @@ class GuarantorController extends Controller
         $guarantor->last_name = $request->last_name;
         $guarantor->date_of_birth = $request->date_of_birth;
         $guarantor->address = $request->address;
-        $guarantor->city = $request->city;
-        $guarantor->state = $request->state;
+        $guarantor->district = $request->district;
+        $guarantor->region = $request->region;
         $guarantor->post_code = $request->post_code;
         $guarantor->country = $request->country;
         $guarantor->phone_number = $request->phone_number;
@@ -78,7 +78,7 @@ class GuarantorController extends Controller
 
         $loan->guarantors()->save($guarantor);
 
-        return  response()->json(['guarantors' => $guarantor]);
+        return  response()->json(['guarantor' => $guarantor]);
     }
 
     // put Guarantor
@@ -91,8 +91,8 @@ class GuarantorController extends Controller
                 'last_name' => 'required',
                 'date_of_birth' => 'required',
                 'address' => 'required',
-                'city' => 'required',
-                'state' => 'required',
+                'district' => 'required',
+                'region' => 'required',
                 'post_code' => 'required',
                 'country' => 'required',
                 'phone_number' => 'required',
@@ -110,8 +110,8 @@ class GuarantorController extends Controller
             'last_name' => $request->last_name,
             'date_of_birth' => $request->date_of_birth,
             'address' => $request->address,
-            'city' => $request->city,
-            'state' => $request->state,
+            'district' => $request->district,
+            'region' => $request->region,
             'post_code' => $request->post_code,
             'country' => $request->country,
             'phone_number' => $request->phone_number,

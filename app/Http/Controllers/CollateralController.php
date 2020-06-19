@@ -66,7 +66,7 @@ class CollateralController extends Controller
 
         $loan->collaterals()->  save($collateral);
 
-        return  response()->json(['collaterals' => $collateral]);
+        return  response()->json(['collateral' => $collateral]);
     }
 
     // put Collateral
