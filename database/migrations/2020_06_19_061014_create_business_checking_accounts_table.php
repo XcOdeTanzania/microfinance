@@ -18,6 +18,7 @@ class CreateBusinessCheckingAccountsTable extends Migration
             $table->bigInteger('loan_id');
             $table->double('pay_balance');
             $table->bigInteger('rent_account_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

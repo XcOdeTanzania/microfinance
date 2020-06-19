@@ -17,6 +17,7 @@ class CreateRentAccountsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('loan_id');
             $table->double('balance_due');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

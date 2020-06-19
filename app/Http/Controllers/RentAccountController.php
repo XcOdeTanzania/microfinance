@@ -2,84 +2,99 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CreateRentEvent;
+use App\Loan;
 use App\RentAccount;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class RentAccountController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function allRentAccounts()
     {
-        //
+        $rentAccounts = RentAccount::all();
+        foreach ($rentAccounts as $rentAccount) {
+
+            $rentAccount->businessCheckingAccount;
+            // $rentAccount->officer = User::find($rentAccount->user_id);
+            // $rentAccount->performed_by = User::find($rentAccount->user_id);
+
+            // $rentAccount->entity = $rentAccount->rentAccountable_type::find($rentAccount->rentAccountable_id);
+        }
+
+        return response()->json(['rentAccounts' => $rentAccounts]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    //get all RentAccount
+    public function getRentAccount($rentAccountId)
     {
-        //
+
+        $rentAccount = RentAccount::find($rentAccountId);
+        if (!$rentAccount) return response()->json(['error' => 'RentAccount not found']);
+
+        return response()->json(['rentAccount' => $rentAccount], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    // put RentAccount
+    public function postRentAccount(Request $request)
     {
-        //
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'balance_due' => 'required',
+                'loan_id' => 'required',
+                'pay_balance' => 'required'
+            ]
+        );
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $loan = Loan::find($request->loan_id);
+        if (!$loan) return response()->json(['error' => 'Loan not found']);
+
+        $rentAccount = new RentAccount();
+        $rentAccount->balance_due = $request->balance_due;
+        $loan->rentAccounts()->save($rentAccount);
+
+        event(new CreateRentEvent($rentAccount, $request));
+
+        return response()->json(['rentAccount' => $rentAccount], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\RentAccount  $rentAccount
-     * @return \Illuminate\Http\Response
-     */
-    public function show(RentAccount $rentAccount)
+
+
+
+    // put RentAccount
+    public function putRentAccount(Request $request, $rentAccountId)
     {
-        //
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'balance_due' => 'required'
+            ]
+        );
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $rentAccount = RentAccount::find($rentAccountId);
+        if (!$rentAccount) return response()->json(['error' => 'RentAccount not found']);
+
+        $rentAccount->update([
+            'balance_due' => $request->status
+        ]);
+
+        return response()->json(['rentAccount' => $rentAccount], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\RentAccount  $rentAccount
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(RentAccount $rentAccount)
+    //delete RentAccount
+    public function deleteRentAccount($rentAccountId)
     {
-        //
-    }
+        $rentAccount = RentAccount::find($rentAccountId);
+        if (!$rentAccount) return response()->json(['error' => 'RentAccount not found']);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\RentAccount  $rentAccount
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, RentAccount $rentAccount)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\RentAccount  $rentAccount
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(RentAccount $rentAccount)
-    {
-        //
+        $rentAccount->delete();
+        return response()->json(['message' => 'RentAccount deleted successfully']);
     }
 }

@@ -18,7 +18,7 @@ class Loan extends Model
         'amount',
         'orign_of_funding',
         'duration',
-        'repayment_every', 
+        'repayment_every',
         'repayment_every_type',
         'repayment_day_of_the_week',
         'repayment_week_of_the_month',
@@ -47,7 +47,7 @@ class Loan extends Model
         return $this->hasMany(Guarantor::class);
     }
 
-     /**
+    /**
      * loan has many schedules
      */
     function schedules()
@@ -80,6 +80,12 @@ class Loan extends Model
     public function charges()
     {
         return $this->hasMany(Charge::class);
+    }
+
+
+    public function rentAccounts()
+    {
+        return $this->hasMany(RentAccount::class);
     }
 
     /**
@@ -192,5 +198,4 @@ class Loan extends Model
     {
         return $this->morphMany(Task::class, 'taskable');
     }
-
 }

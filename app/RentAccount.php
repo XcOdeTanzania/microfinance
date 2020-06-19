@@ -24,4 +24,9 @@ class RentAccount extends Model
     {
         return $this->hasOne(BusinessCheckingAccount::class);
     }
+
+    public function loan()
+    {
+        return $this->belongsTo(Loan::class);
+    }
 }
