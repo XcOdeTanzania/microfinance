@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Account;
 use App\Events\DisbursedLoanEvent;
 use App\Loan;
 use App\LoanType;
@@ -62,6 +62,7 @@ class LoanController extends Controller
     //get all Loan
     public function getLoan($loanId)
     {
+
 
 
         $loan = Loan::find($loanId);
@@ -124,19 +125,35 @@ class LoanController extends Controller
 
 
     //disburse loans
-    public function disburseLoan($loanId)
+    public function disburseLoan(Request $request, $loanId)
     {
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'account_id' => 'required',
+
+            ]
+        );
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $account = Account::find($request->account_id);
+        if (!$account) return response()->json(['error' => 'Account not found']);
+
 
         $loan = Loan::find($loanId);
         if (!$loan) return response()->json(['error' => 'Loan not found']);
 
+        if ($loan->amount > $account->balance)  return response()->json(['error' => 'The loan could not be disbursed', 'reason' => $account->name . ' has insurfficeint balance'], 200, [], JSON_NUMERIC_CHECK);
+
         if ($loan->status == 'Awaiting Disbursement') {
 
             $loan->update([
-                'status' => 'Active'
+                'status' => 'Active',
+                'account_id' => $account->id
             ]);
-
-            event(new DisbursedLoanEvent($loan));
+            event(new DisbursedLoanEvent($loan, $account));
 
             $loan->rentAccounts;
             $loan->repayments;

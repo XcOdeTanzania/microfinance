@@ -14,14 +14,16 @@ class DisbursedLoanEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     public $loan;
+    public $account;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($loan)
+    public function __construct($loan, $account)
     {
         $this->loan = $loan;
+        $this->account = $account;
     }
 
     /**
