@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\CreateScheduleEvent;
-use App\Events\DisburseLoanEvent;
+
+use App\Events\DisbursedLoanEvent;
 use App\Loan;
 use App\LoanType;
 use Illuminate\Http\Request;
@@ -13,12 +13,12 @@ class LoanController extends Controller
 {
 
 
-    public function getLoans(Request $request, $status)
+    public function getLoans($status)
     {
 
-
         $loans = Loan::all();
-        if ($request->status != 'all') {
+        if ($status != 'all') {
+
             $loans = $loans->map(function ($loan) {
                 return $loan;
             })
@@ -26,6 +26,8 @@ class LoanController extends Controller
                     return $loan->status != $status;
                 })->values();
         }
+
+
 
         foreach ($loans as $loan) {
 
@@ -129,14 +131,17 @@ class LoanController extends Controller
         if (!$loan) return response()->json(['error' => 'Loan not found']);
 
         if ($loan->status == 'Awaiting Disbursement') {
-            event(new CreateScheduleEvent($loan));
+
             $loan->update([
                 'status' => 'Active'
             ]);
-            
-            event(new DisburseLoanEvent($loan));
+
+            event(new DisbursedLoanEvent($loan));
+
+            $loan->rentAccounts;
+            $loan->repayments;
             return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
         }
-        return response()->json(['error' => 'The loan could not be disbursed'], 200, [], JSON_NUMERIC_CHECK);
+        return response()->json(['error' => 'The loan could not be disbursed', 'reason' => $loan->status], 200, [], JSON_NUMERIC_CHECK);
     }
 }

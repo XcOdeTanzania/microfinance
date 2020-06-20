@@ -33,15 +33,16 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\LoanCreatedEvent' => [
             'App\Listeners\LoanPendingFirstApprovalTaskListener',
         ],
-        'App\Events\CreateScheduleEvent' => [
-            'App\Listeners\CreateScheduleListener',
-        ],
-        'App\Events\CreateRentEvent' => [
-            'App\Listeners\CreateRentListener',
-        ],
         'App\Events\DisburseLoanEvent' => [
             'App\Listeners\DisburseLoanListener',
-        ]
+        ],
+        'App\Events\DisbursedLoanEvent' => [
+            'App\Listeners\CreateRentAccountListener',
+            'App\Listeners\CreateLoanPaymentScheduleListener',
+        ],
+        'App\Events\CreatedRentEvent' => [
+            'App\Listeners\CreateBusinessCheckingAccountListener',
+        ],
     ];
 
     /**

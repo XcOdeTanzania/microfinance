@@ -10,18 +10,22 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class CreateScheduleEvent
+class CreatedRentEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $loan;
+    public $rent;
+    public $loan_id;
+    public $pay_balance;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($loan)
+    public function __construct($rent, $loan_id, $pay_balance)
     {
-        $this->loan =  $loan;
+        $this->rent = $rent;
+        $this->loan_id = $loan_id;
+        $this->pay_balance = $pay_balance;
     }
 
     /**

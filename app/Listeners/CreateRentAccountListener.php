@@ -2,13 +2,13 @@
 
 namespace App\Listeners;
 
-use App\Events\CreateRentEvent;
-use App\Events\DisburseLoanEvent;
+use App\Events\CreatedRentEvent;
+use App\Events\DisbursedLoanEvent;
 use App\RentAccount;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class DisburseLoanListener
+class CreateRentAccountListener
 {
     /**
      * Create the event listener.
@@ -23,17 +23,15 @@ class DisburseLoanListener
     /**
      * Handle the event.
      *
-     * @param  DisburseLoanEvent  $event
+     * @param  DisbursedLoanEvent  $event
      * @return void
      */
-    public function handle(DisburseLoanEvent $event)
+    public function handle(DisbursedLoanEvent $event)
     {
-
-
         $rentAccount = new RentAccount();
         $rentAccount->balance_due = $event->loan->amount;
         $event->loan->rentAccounts()->save($rentAccount);
 
-        event(new CreateRentEvent($rentAccount, $event->loan->id, 0));
+        event(new CreatedRentEvent($rentAccount, $event->loan->id, 0));
     }
 }
