@@ -16,10 +16,11 @@ class BranchController extends Controller
         $branches = Branch::all();
 
         foreach ($branches as $key => $branch) {
-            $branch->groups ;
-            $branch->clients ;
+            $branch->groups;
+            $branch->clients;
             $branch->loans;
             $branch->users;
+            $branch->accounts;
         }
 
         return response()->json(['branches' => $branches], 200, [], JSON_NUMERIC_CHECK);

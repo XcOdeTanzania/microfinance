@@ -140,6 +140,7 @@ class LoanController extends Controller
 
             $loan->rentAccounts;
             $loan->repayments;
+            $loan->businessChecking;
             return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
         }
         return response()->json(['error' => 'The loan could not be disbursed', 'reason' => $loan->status], 200, [], JSON_NUMERIC_CHECK);

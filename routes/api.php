@@ -151,3 +151,11 @@ Route::post('rentAccount', ['uses' => 'RentAccountController@postRentAccount']);
 Route::get('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@getRentAccount']);
 Route::put('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@putRentAccount']);
 Route::delete('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@deleteRentAccount']);
+
+
+//accounts
+Route::get('accounts', ['uses' => 'AccountController@getAccounts']);
+Route::post('account/{branchId}', ['uses' => 'AccountController@postAccount']);
+Route::get('account/{accountId}', ['uses' => 'AccountController@getAccount']);
+Route::put('account/{accountId}', ['uses' => 'AccountController@putAccount']);
+Route::delete('account/{accountId}', ['uses' => 'AccountController@deleteAccount']);
