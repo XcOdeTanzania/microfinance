@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 //user  authentication
 Route::post('register', 'AuthController@register');
-Route::post('login', 'AuthController@login');
+Route::post('auth/login', 'AuthController@login');
 Route::post('logout', 'AuthController@logout');
 Route::post('refresh/token', 'AuthController@refresh');
 
@@ -38,6 +38,7 @@ Route::get('loans/{status}', ['uses' => 'LoanController@getLoans']);
 Route::get('loan/{loanId}', ['uses' => 'LoanController@getLoan']);
 Route::put('loan/{loanId}', ['uses' => 'LoanController@putLoan']);
 Route::delete('loan/{loanId}', ['uses' => 'LoanController@deleteLoan']);
+Route::post('loan/actions/{loanId}/{status}', ['uses' => 'LoanController@approveLoan']);
 Route::post('loan/disburse/{loanId}', ['uses' => 'LoanController@disburseLoan']);
 
 //Clients

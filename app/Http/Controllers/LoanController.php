@@ -35,6 +35,8 @@ class LoanController extends Controller
             $loan->user;
             $loan->collaterals;
             $loan->loanable;
+            $loan->charges;
+
             // $loan->summary;
             // $loan->summaryPrincipal;
             // $loan->summaryInterest;
@@ -111,6 +113,17 @@ class LoanController extends Controller
         ]);
 
         return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    public function approveLoan($loanId, $status) {
+        $loan = Loan::find($loanId);
+        if (!$loan) return response()->json(['error' => 'Loan not found']);
+
+        $loan->update([
+            'status'=> $status
+        ]);
+
+        return response()->json(['loan' => $loan], 204, [], JSON_NUMERIC_CHECK);
     }
 
     //delete Loan
