@@ -28,8 +28,7 @@ class UpdateAccountListener
     {
 
         $event->account->update([
-
-            'balance' => $event->account->balance - $event->loan->amount
+            'balance' => $event->account->balance - $event->loan->amount,
         ]);
     }
 }

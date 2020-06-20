@@ -25,7 +25,7 @@ class CreateAccountsTable extends Migration
             $table->boolean('manual_entries_allowed');
             $table->boolean('enable_bank_reconciliation');
             $table->double('balance');
-            $table->double('unreconciled_balance');   
+            $table->double('reconciled_balance');   
             $table->string('status');
 
             $table->softDeletes();

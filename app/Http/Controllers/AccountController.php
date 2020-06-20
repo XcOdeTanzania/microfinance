@@ -16,6 +16,7 @@ class AccountController extends Controller
 
         foreach ($accounts as $key => $account) {
             $account->branch;
+            $account->reconciliations;
         }
 
         return response()->json(['accounts' => $accounts], 200, [], JSON_NUMERIC_CHECK);
@@ -48,7 +49,7 @@ class AccountController extends Controller
                 'manual_entries_allowed' => 'required',
                 'enable_bank_reconciliation' => 'required',
                 'balance' => 'required',
-                'unreconciled_balance' => 'required',
+                'reconciled_balance' => 'required',
                 'status' => 'required',
 
             ]
@@ -71,7 +72,7 @@ class AccountController extends Controller
         $account->manual_entries_allowed = $request->manual_entries_allowed;
         $account->enable_bank_reconciliation = $request->enable_bank_reconciliation;
         $account->balance = $request->balance;
-        $account->unreconciled_balance = $request->unreconciled_balance;
+        $account->reconciled_balance = $request->reconciled_balance;
         $account->status = $request->status;
 
 
@@ -95,7 +96,7 @@ class AccountController extends Controller
                 'manual_entries_allowed' => 'required',
                 'enable_bank_reconciliation' => 'required',
                 'balance' => 'required',
-                'unreconciled_balance' => 'required',
+                'reconciled_balance' => 'required',
                 'status' => 'required',
             ]
         );
@@ -114,7 +115,7 @@ class AccountController extends Controller
             'manual_entries_allowed' => $request->manual_entries_allowed,
             'enable_bank_reconciliation' => $request->enable_bank_reconciliation,
             'balance' => $request->balance,
-            'unreconciled_balance' => $request->unreconciled_balance,
+            'reconciled_balance' => $request->reconciled_balance,
             'status' => $request->status,
         ]);
 
