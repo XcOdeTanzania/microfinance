@@ -3,80 +3,132 @@
 namespace App\Http\Controllers;
 
 use App\Account;
+use App\Branch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AccountController extends Controller
 {
-    /**
-     * Display accounting charts.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function chartOfAccountsPage()
+    //get Account
+    public function getAccounts()
     {
-        return view('pages.accounting.chartsOfAccounts');
+        $accounts = Account::all();
+
+        foreach ($accounts as $key => $account) {
+            $account->branch;
+            $account->reconciliations;
+        }
+
+        return response()->json(['accounts' => $accounts], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    /**
-     * Display journals.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function journalsPage()
+    //get all Account
+    public function getAccount($accountId)
     {
-        return view('pages.accounting.journals');
+
+        $account = Account::find($accountId);
+        if (!$account) return response()->json(['error' => 'Account not found']);
+
+        $account->branch;
+
+
+        return response()->json(['account' => $account], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    public function postAccount(Request $request, $branchId)
+    {
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => 'required',
+                'type' => 'required',
+                'bank_account_no' => 'required',
+                'tag' => 'required',
+                'usage' => 'required',
+                'manual_entries_allowed' => 'required',
+                'enable_bank_reconciliation' => 'required',
+                'balance' => 'required',
+                'reconciled_balance' => 'required',
+                'status' => 'required',
+
+            ]
+        );
+
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $branch = Branch::find($branchId);
+        if (!$branch) return response()->json(['error' => 'branch not found']);
+
+
+        $account = new Account();
+
+        $account->name = $request->name;
+        $account->type = $request->type;
+        $account->bank_account_no = $request->bank_account_no;
+        $account->tag = $request->tag;
+        $account->usage = $request->usage;
+        $account->manual_entries_allowed = $request->manual_entries_allowed;
+        $account->enable_bank_reconciliation = $request->enable_bank_reconciliation;
+        $account->balance = $request->balance;
+        $account->reconciled_balance = $request->reconciled_balance;
+        $account->status = $request->status;
+
+
+        $branch->accounts()->save($account);
+
+        return response()->json(['account' => $account]);
     }
 
 
-    /**
-     * Display account reconciliation.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function accountReconciliationPage()
+    // put Account
+    public function putAccount(Request $request, $accountId)
     {
-        return view('pages.accounting.reconciliation');
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => 'required',
+                'type' => 'required',
+                'bank_account_no' => 'required',
+                'tag' => 'required',
+                'usage' => 'required',
+                'manual_entries_allowed' => 'required',
+                'enable_bank_reconciliation' => 'required',
+                'balance' => 'required',
+                'reconciled_balance' => 'required',
+                'status' => 'required',
+            ]
+        );
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $account = Account::find($accountId);
+        if (!$account) return response()->json(['error' => 'Account not found']);
+
+        $account->update([
+            'name' => $request->name,
+            'type' => $request->type,
+            'bank_account_no' => $request->bank_account_no,
+            'tag' => $request->tag,
+            'usage' => $request->usage,
+            'manual_entries_allowed' => $request->manual_entries_allowed,
+            'enable_bank_reconciliation' => $request->enable_bank_reconciliation,
+            'balance' => $request->balance,
+            'reconciled_balance' => $request->reconciled_balance,
+            'status' => $request->status,
+        ]);
+
+        return response()->json(['account' => $account], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    /**
-     * Display account closed period.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function accountClosePeriodPage()
+    //delete Account
+    public function deleteAccount($accountId)
     {
-        return view('pages.accounting.closeperiod');
+        $account = Account::find($accountId);
+        if (!$account) return response()->json(['error' => 'Account not found']);
+
+        $account->delete();
+        return response()->json(['message' => 'Account deleted successfully']);
     }
-
-
-    /**
-     * Display account export.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function accountExportPage()
-    {
-        return view('pages.accounting.export');
-    }
-
-     /**
-     * Display account periodic accrual.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function accountPeriodicAccrualPage()
-    {
-        return view('pages.accounting.periodicaccrual');
-    }
-
-     /**
-     * Display account journal template.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function accountJournalTemplatePage()
-    {
-        return view('pages.accounting.journaltemplate');
-    }
-
 }

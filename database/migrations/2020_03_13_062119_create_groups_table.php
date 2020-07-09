@@ -19,6 +19,7 @@ class CreateGroupsTable extends Migration
 
             $table->string('name');
             $table->integer('branch_id');
+            $table->integer('client_id');
             $table->string('account_number');
             $table->string('uuid');
             $table->string('status');

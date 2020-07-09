@@ -2,14 +2,14 @@
 
 namespace App\Listeners;
 
-use App\Events\CreateScheduleEvent;
-use App\Events\SaveScheduleEvent;
+use App\Events\DisbursedLoanEvent;
 use App\Schedule;
 use Carbon\Carbon;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class CreateScheduleListener
+
+class CreateLoanPaymentScheduleListener
 {
     /**
      * Create the event listener.
@@ -24,10 +24,10 @@ class CreateScheduleListener
     /**
      * Handle the event.
      *
-     * @param  CreateScheduleEvent  $event
+     * @param  DisbursedLoanEvent  $event
      * @return void
      */
-    public function handle(CreateScheduleEvent $event)
+    public function handle(DisbursedLoanEvent $event)
     {
         $weekMap = [
             0 => 'Sunday',
@@ -41,12 +41,19 @@ class CreateScheduleListener
         $loan = $event->loan;
         $amount = $loan->amount;
 
+        $number_of_times_to_pay = 1;
+        if ($loan->repayment_type == 'days')
+            $number_of_times_to_pay = number_format($loan->duration);
+        if ($loan->repayment_type == 'weeks')
+            $number_of_times_to_pay = number_format($loan->duration);
+        if ($loan->repayment_type == 'months')
+            $number_of_times_to_pay = number_format($loan->duration);
+        if ($loan->repayment_type == 'years')
+            $number_of_times_to_pay = number_format($loan->duration * 12);
 
 
-        $number_of_times_to_pay = number_format($loan->duration / $loan->repayment_every);
-        
         $payment = $loan->amount / $number_of_times_to_pay;
-       
+
         $date = Carbon::parse($loan->disbursement_date);
         $repayment_type = $loan->repayment_every_type;
 
@@ -57,7 +64,7 @@ class CreateScheduleListener
             $schedule->day = $weekMap[$date->dayOfWeek];
 
 
-           ///days weeks month and years
+            ///days weeks month and years
             if ($repayment_type == 'days')
                 $date = $schedule->date = $date->addDays($loan->repayment_every);
             if ($repayment_type == 'weeks')
@@ -75,8 +82,6 @@ class CreateScheduleListener
             $amount = $amount - $payment;
 
             $loan->schedules()->save($schedule);
-           
         }
-
     }
 }
