@@ -85,10 +85,10 @@ class ClientController extends Controller
         );
 
         if ($validator->fails())
-            return response()->json(['error', $validator->errors()]);
+            return response()->json([ 'status'=> false, 'message' => 'Validation Failed' ,'errors' => $validator->errors()],200);
 
         $branch = Branch::find($request->branch_id);
-        if (!$branch) return response()->json(['error' => 'Brach not found']);
+        if (!$branch) return response()->json(['status'=> false, 'message' => 'Selected Branch not found' ,'error' => 'Branch not found'],200);
 
         $client = new Client();
 
@@ -115,7 +115,7 @@ class ClientController extends Controller
 
         event(new ClientCreatedEvent($client, '1', $request->branch_id));
 
-        return response()->json(['clients' => $client], 200, [], JSON_NUMERIC_CHECK);
+        return response()->json(['status'=> true ,'clients' => $client], 200, [], JSON_NUMERIC_CHECK);
     }
 
     // put client

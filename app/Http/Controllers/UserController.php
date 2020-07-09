@@ -8,6 +8,7 @@ class UserController extends Controller
     public function users()
     {
         $users = User::all();
+		
         foreach ($users as $user) {
             $user->profile = $user->profile;
             $user->roles = $user->roles;
