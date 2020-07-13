@@ -3,11 +3,11 @@
 namespace App\Listeners;
 
 use App\BusinessCheckingAccount;
-use App\Events\CreateRentEvent;
+use App\Events\CreatedRentEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class CreateRentListener
+class CreateBusinessCheckingAccountListener
 {
     /**
      * Create the event listener.
@@ -22,17 +22,15 @@ class CreateRentListener
     /**
      * Handle the event.
      *
-     * @param  CreateRentEvent  $event
+     * @param  CreatedRentEvent  $event
      * @return void
      */
-    public function handle(CreateRentEvent $event)
+    public function handle(CreatedRentEvent $event)
     {
         $businessCheckingAccount = new BusinessCheckingAccount();
-        $businessCheckingAccount->loan_id = $event->request->loan_id;
-        $businessCheckingAccount->pay_balance = $event->request->pay_balance;
+        $businessCheckingAccount->loan_id = $event->loan_id;
+        $businessCheckingAccount->pay_balance = $event->pay_balance;
 
         $event->rent->businessCheckingAccount()->save($businessCheckingAccount);
-
-        
     }
 }

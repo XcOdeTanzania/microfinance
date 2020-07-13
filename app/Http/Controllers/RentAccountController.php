@@ -58,7 +58,7 @@ class RentAccountController extends Controller
         $rentAccount->balance_due = $request->balance_due;
         $loan->rentAccounts()->save($rentAccount);
 
-        event(new CreateRentEvent($rentAccount, $request));
+        event(new CreateRentEvent($rentAccount, $loan->id, $request->pay_balance));
 
         return response()->json(['rentAccount' => $rentAccount], 200, [], JSON_NUMERIC_CHECK);
     }

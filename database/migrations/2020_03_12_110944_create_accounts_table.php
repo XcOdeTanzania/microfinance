@@ -18,12 +18,15 @@ class CreateAccountsTable extends Migration
 
             $table->string('name');
             $table->string('type');
-            $table->string('gl_code');
-            $table->integer('external_id');
+            $table->string('bank_account_no');
+            $table->integer('branch_id');
             $table->string('tag');
             $table->string('usage');
             $table->boolean('manual_entries_allowed');
             $table->boolean('enable_bank_reconciliation');
+            $table->double('balance');
+            $table->double('unreconciled_balance');
+            $table->string('status');
 
             $table->softDeletes();
             $table->timestamps();

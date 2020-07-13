@@ -198,4 +198,10 @@ class Loan extends Model
     {
         return $this->morphMany(Task::class, 'taskable');
     }
+
+
+    public function businessChecking()
+    {
+        return $this->hasManyThrough(BusinessCheckingAccount::class, RentAccount::class);
+    }
 }

@@ -68,9 +68,9 @@ class Branch extends Model
         return $this->hasMany(User::class);
     }
 
-//  tasks relations
+    //  tasks relations
 
-     public function tasks()
+    public function tasks()
     {
         return $this->hasMany(Task::class);
     }
@@ -82,4 +82,9 @@ class Branch extends Model
         return $this->hasManyThrough('App\Loan', 'App\User');
     }
 
+    // account
+    public function accounts()
+    {
+        return $this->hasMany(Account::class);
+    }
 }

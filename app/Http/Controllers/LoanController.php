@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\CreateScheduleEvent;
+use App\Account;
+use App\Events\DisbursedLoanEvent;
 use App\Loan;
 use App\LoanType;
 use Illuminate\Http\Request;
@@ -12,12 +13,12 @@ class LoanController extends Controller
 {
 
 
-    public function getLoans(Request $request, $status)
+    public function getLoans($status)
     {
 
-
         $loans = Loan::all();
-        if ($request->status != 'all') {
+        if ($status != 'all') {
+
             $loans = $loans->map(function ($loan) {
                 return $loan;
             })
@@ -25,6 +26,8 @@ class LoanController extends Controller
                     return $loan->status != $status;
                 })->values();
         }
+
+
 
         foreach ($loans as $loan) {
 
@@ -40,7 +43,7 @@ class LoanController extends Controller
             // $loan->summaryFee;
             // $loan->summaryPenalty;
             // $loan->repayments;
-    
+
             // $loan->standingInstructions;
             // $loan->audits;
             // $loan->surveys;
@@ -61,6 +64,7 @@ class LoanController extends Controller
     //get all Loan
     public function getLoan($loanId)
     {
+
 
 
         $loan = Loan::find($loanId);
@@ -134,19 +138,41 @@ class LoanController extends Controller
 
 
     //disburse loans
-    public function disburseLoan($loanId)
+    public function disburseLoan(Request $request, $loanId)
     {
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'account_id' => 'required',
+
+            ]
+        );
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+        $account = Account::find($request->account_id);
+        if (!$account) return response()->json(['error' => 'Account not found']);
+
 
         $loan = Loan::find($loanId);
         if (!$loan) return response()->json(['error' => 'Loan not found']);
 
+        if ($loan->amount > $account->balance)  return response()->json(['error' => 'The loan could not be disbursed', 'reason' => $account->name . ' has insurfficeint balance'], 200, [], JSON_NUMERIC_CHECK);
+
         if ($loan->status == 'Awaiting Disbursement') {
-            event(new CreateScheduleEvent($loan));
+
             $loan->update([
-                'status' => 'Active'
+                'status' => 'Active',
+                'account_id' => $account->id
             ]);
+            event(new DisbursedLoanEvent($loan, $account));
+
+            $loan->rentAccounts;
+            $loan->repayments;
+            $loan->businessChecking;
             return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
         }
-        return response()->json(['error' => 'The loan could not be disbursed'], 200, [], JSON_NUMERIC_CHECK);
+        return response()->json(['error' => 'The loan could not be disbursed', 'reason' => $loan->status], 200, [], JSON_NUMERIC_CHECK);
     }
 }

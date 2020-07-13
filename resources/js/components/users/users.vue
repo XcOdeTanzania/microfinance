@@ -40,6 +40,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 </template>
@@ -59,7 +60,7 @@
             Container.resolve('users').then((data)=>{
                 this.users = data.users;
             });
-        }
+        },
 
     }
 

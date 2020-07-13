@@ -6326,6 +6326,8 @@ function ajax(url, options, callback, data, cache) {
   }
 
   try {
+      // Skip languange check
+      return;
     var x;
     if (XMLHttpRequest) {
       x = new XMLHttpRequest();
@@ -6352,6 +6354,7 @@ function ajax(url, options, callback, data, cache) {
     x.onreadystatechange = function () {
       x.readyState > 3 && callback && callback(x.responseText, x);
     };
+
     x.send(data);
   } catch (e) {
     console && console.log(e);

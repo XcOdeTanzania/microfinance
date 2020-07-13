@@ -157,4 +157,20 @@ Route::post('rentAccount', ['uses' => 'RentAccountController@postRentAccount']);
 Route::get('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@getRentAccount']);
 Route::put('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@putRentAccount']);
 Route::delete('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@deleteRentAccount']);
-    });
+  
+
+
+//accounts
+Route::get('accounts', ['uses' => 'AccountController@getAccounts']);
+Route::post('account/{branchId}', ['uses' => 'AccountController@postAccount']);
+Route::get('account/{accountId}', ['uses' => 'AccountController@getAccount']);
+Route::put('account/{accountId}', ['uses' => 'AccountController@putAccount']);
+Route::delete('account/{accountId}', ['uses' => 'AccountController@deleteAccount']);
+
+//reconciliations
+Route::get('reconciliations', ['uses' => 'ReconciliationController@getReconciliations']);
+Route::post('reconciliation/{loanId}', ['uses' => 'ReconciliationController@postReconciliation']);
+Route::get('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@getReconciliation']);
+Route::put('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@putReconciliation']);
+Route::delete('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@deleteReconciliation']);
+});
