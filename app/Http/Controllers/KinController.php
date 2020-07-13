@@ -45,11 +45,11 @@ class KinController extends Controller
         );
 
         if ($validator->fails())
-            return response()->json(['error', $validator->errors()]);
+            return response()->json(['error' => $validator->errors(),'message' => $validator->getMessageBag()->first(), 'status' => false ]);
 
         $client = Client::find($clientId);
 
-        if (!$client) return  response()->json(['error', 'Client does not exist']);
+        if (!$client) return  response()->json(['error' => $validator->errors(), 'status' => false ,'message' => 'Client does not exist']);
 
         $kin = new Kin();
 
@@ -69,7 +69,7 @@ class KinController extends Controller
 
         $client->kins()->save($kin);
 
-        return  response()->json(['kins' => $kin]);
+        return  response()->json(['kin' => $kin, 'status' => true,'message'=>'Submitted successfully']);
     }
 
     // put Kin
