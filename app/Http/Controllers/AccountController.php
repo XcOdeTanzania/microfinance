@@ -49,7 +49,7 @@ class AccountController extends Controller
                 'manual_entries_allowed' => 'required',
                 'enable_bank_reconciliation' => 'required',
                 'balance' => 'required',
-                'reconciled_balance' => 'required',
+                'unreconciled_balance' => 'required',
                 'status' => 'required',
 
             ]
@@ -72,7 +72,7 @@ class AccountController extends Controller
         $account->manual_entries_allowed = $request->manual_entries_allowed;
         $account->enable_bank_reconciliation = $request->enable_bank_reconciliation;
         $account->balance = $request->balance;
-        $account->reconciled_balance = $request->reconciled_balance;
+        $account->unreconciled_balance = $request->unreconciled_balance;
         $account->status = $request->status;
 
 
@@ -96,7 +96,7 @@ class AccountController extends Controller
                 'manual_entries_allowed' => 'required',
                 'enable_bank_reconciliation' => 'required',
                 'balance' => 'required',
-                'reconciled_balance' => 'required',
+                'unreconciled_balance' => 'required',
                 'status' => 'required',
             ]
         );
@@ -115,7 +115,7 @@ class AccountController extends Controller
             'manual_entries_allowed' => $request->manual_entries_allowed,
             'enable_bank_reconciliation' => $request->enable_bank_reconciliation,
             'balance' => $request->balance,
-            'reconciled_balance' => $request->reconciled_balance,
+            'unreconciled_balance' => $request->reconciled_balance,
             'status' => $request->status,
         ]);
 

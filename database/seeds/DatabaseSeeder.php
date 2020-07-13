@@ -55,5 +55,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(GuarantorsTableSeeder::class);
         $this->call(GuardsTableSeeder::class);
+
+        $this->call(AccountsTableSeeder::class);
     }
 }
