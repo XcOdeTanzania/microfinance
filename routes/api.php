@@ -20,7 +20,12 @@ Route::post('auth/login', 'AuthController@login');
 Route::post('logout', 'AuthController@logout');
 Route::post('refresh/token', 'AuthController@refresh');
 
+Route::group([
+    'name' => 'Auth',
+    'middleware' => 'auth',
+],
 
+   function ()  { 
 // tasks
 Route::get('tasks', ['uses' => 'TaskController@allTasks']);
 Route::get('task/{taskId}', ['uses' => 'TaskController@getTask']);
@@ -152,3 +157,4 @@ Route::post('rentAccount', ['uses' => 'RentAccountController@postRentAccount']);
 Route::get('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@getRentAccount']);
 Route::put('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@putRentAccount']);
 Route::delete('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@deleteRentAccount']);
+    });
