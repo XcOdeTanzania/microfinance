@@ -13,7 +13,7 @@ $factory->define(Loan::class, function (Faker $faker) {
         'orign_of_funding' => $faker->word(),
         'duration' => $faker->randomElement([6, 8, 12, 11, 10, 7]),
         'repayment_every' => $faker->randomElement(['Monday', 'Tuesday', 'Wensday', 'Thursday','Friday','Saturday','Sunday']),
-        'repayment_every_type' => $faker->randomElement(['months', 'months', 'months', 'months']),
+        'repayment_every_type' => $faker->randomElement(['weeks', 'weeks', 'weeks', 'weeks']),
         'purpose' => $faker->word(),
         'disbursement_date' =>  $faker->dateTimeBetween($startDate = 'now', $endDate = '1 year', $timezone = null),
         'auto_create_standing_instruction' => $faker->boolean(),
