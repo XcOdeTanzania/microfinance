@@ -54,6 +54,7 @@ class LoanController extends Controller
 
 
             $loan->laonable;
+            $loan->repayments;
         }
         return response()->json([
             'loans' => $loans,
@@ -71,6 +72,7 @@ class LoanController extends Controller
         if (!$loan) return response()->json(['error' => 'Loan not found']);
 
         $loan->loanable;
+        $loan->repayments;
 
         return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Loan;
 use App\Schedule;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -67,7 +68,7 @@ class ScheduleController extends Controller
         $schedule = new Schedule();
 
         $schedule->day = $request->day;
-        $schedule->date = $request->date;
+        $schedule->date = Carbon::now();
         $schedule->amount = $request->amount;
 
         $loan->schedules()->save($schedule);

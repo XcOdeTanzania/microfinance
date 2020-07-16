@@ -15,7 +15,7 @@ $factory->define(Account::class, function (Faker $faker) {
         'usage' => $faker->word,
         'manual_entries_allowed' => true,
         'enable_bank_reconciliation' =>true,
-        'balance' => $faker->randomDigit,
+        'balance' => $faker->randomNumber,
         'unreconciled_balance' => $faker->randomDigit,
         'status' => $faker->word,
         'branch_id' => $faker->randomDigit,
