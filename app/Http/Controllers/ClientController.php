@@ -85,7 +85,7 @@ class ClientController extends Controller
         );
 
         if ($validator->fails())
-            return response()->json([ 'status'=> false, 'message' => 'Validation Failed' ,'errors' => $validator->errors()],200);
+            return response()->json([ 'status'=> false, 'message' => $validator->getMessageBag()->first() ,'errors' => $validator->errors()],200);
 
         $branch = Branch::find($request->branch_id);
         if (!$branch) return response()->json(['status'=> false, 'message' => 'Selected Branch not found' ,'error' => 'Branch not found'],200);

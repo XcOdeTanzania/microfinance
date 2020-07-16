@@ -42,6 +42,7 @@ class CreateLoanListener
                 'auto_create_standing_instruction' => 'required',
                 'sector' => 'required',
                 'channel' => 'required',
+                'user_id' => 'required',
             ]
         );
 
@@ -65,6 +66,7 @@ class CreateLoanListener
         $loan->repayment_start_date = $event->request->repayment_start_date;
         $loan->sector = $event->request->sector;
         $loan->channel = $event->request->channel;
+        $loan->user_id = $event->request->user_id;
 
 
         $event->loan_owner->loans()->save($loan);
