@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\DisbursedLoanEvent;
+use App\LoanType;
 use App\Schedule;
 use Carbon\Carbon;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -11,6 +12,15 @@ use Illuminate\Queue\InteractsWithQueue;
 
 class CreateLoanPaymentScheduleListener
 {
+    public  $weekMap = [
+        0 => 'Sunday',
+        1 => 'Monday',
+        2 => 'Tuesday',
+        3 => 'Wenesday',
+        4 => 'Thursday',
+        5 => 'Friday',
+        6 => 'Saturday',
+    ];
     /**
      * Create the event listener.
      *
@@ -29,57 +39,41 @@ class CreateLoanPaymentScheduleListener
      */
     public function handle(DisbursedLoanEvent $event)
     {
-        $weekMap = [
-            0 => 'Sunday',
-            1 => 'Monday',
-            2 => 'Tuesday',
-            3 => 'Wenesday',
-            4 => 'Thursday',
-            5 => 'Friday',
-            6 => 'Saturday',
-        ];
+
         $loan = $event->loan;
-        $amount = $loan->amount;
-
-        $number_of_times_to_pay = 1;
-        if ($loan->repayment_type == 'days')
-            $number_of_times_to_pay = number_format($loan->duration);
-        if ($loan->repayment_type == 'weeks')
-            $number_of_times_to_pay = number_format($loan->duration);
-        if ($loan->repayment_type == 'months')
-            $number_of_times_to_pay = number_format($loan->duration);
-        if ($loan->repayment_type == 'years')
-            $number_of_times_to_pay = number_format($loan->duration * 12);
 
 
-        $payment = $loan->amount / $number_of_times_to_pay;
+        $loanType = LoanType::find($loan->loan_type_id);
+        $payment =  $loan->amount / $loanType->max_duration;
+
+        $this->createSchedule($loan, $payment, $loanType->max_duration, $loanType->duration_type);
+    }
+
+    public function createSchedule($loan, $payment, $duration, $duration_type)
+    {
+
 
         $date = Carbon::parse($loan->disbursement_date);
-        $repayment_type = $loan->repayment_every_type;
+        // $payment = $loan->amount / number_format($loan->duration);
+        for ($i = 0; $i < number_format($duration); $i++) {
 
 
-        for ($i = 0; $i < $number_of_times_to_pay; $i++) {
 
             $schedule = new Schedule();
-            $schedule->day = $weekMap[$date->dayOfWeek];
+            $schedule->day = $this->weekMap[$date->dayOfWeek];
 
+            if ($duration_type == 'days')
+                $date = $schedule->date =  $date->addDays(1);
+            if ($duration_type == 'weeks')
+                $date = $schedule->date =  $date->addWeeks(1);
+            if ($duration_type == 'months')
+                $date = $schedule->date =  $date->addMonths(1);
+            if ($duration_type == 'years')
+                $date = $schedule->date =  $date->addYears(1);
 
-            ///days weeks month and years
-            if ($repayment_type == 'days')
-                $date = $schedule->date = $date->addDays($loan->repayment_every);
-            if ($repayment_type == 'weeks')
-                $date = $schedule->date = $date->addWeeks($loan->repayment_every);
-            if ($repayment_type == 'months')
-                $date = $schedule->date = $date->addMonths($loan->repayment_every);
-            if ($repayment_type == 'years')
-                $date = $schedule->date = $date->addYears($loan->repayment_every);
+            ///this will need fixing for decimal amounts
+            $schedule->amount = $payment;
 
-
-            if ($i < $number_of_times_to_pay - 1)
-                $schedule->amount = $payment;
-            else
-                $schedule->amount = $amount;
-            $amount = $amount - $payment;
 
             $loan->schedules()->save($schedule);
         }

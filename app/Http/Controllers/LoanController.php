@@ -55,6 +55,7 @@ class LoanController extends Controller
 
             $loan->laonable;
             $loan->repayments;
+            
         }
         return response()->json([
             'loans' => $loans,
@@ -73,6 +74,7 @@ class LoanController extends Controller
 
         $loan->loanable;
         $loan->repayments;
+        $loan->schedules;
 
         return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
     }
