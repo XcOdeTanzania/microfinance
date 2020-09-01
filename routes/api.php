@@ -26,6 +26,10 @@ Route::group([
 ],
 
    function ()  { 
+
+});
+
+
 // tasks
 Route::get('tasks', ['uses' => 'TaskController@allTasks']);
 Route::get('task/{taskId}', ['uses' => 'TaskController@getTask']);
@@ -39,6 +43,7 @@ Route::get('user/{userId}', ['uses' => 'UserController@user']);
 
 
 //loans
+Route::post('loan', ['uses' => 'LoanController@postLoan']);
 Route::get('loans/{status}', ['uses' => 'LoanController@getLoans']);
 Route::get('loan/{loanId}', ['uses' => 'LoanController@getLoan']);
 Route::put('loan/{loanId}', ['uses' => 'LoanController@putLoan']);
@@ -173,7 +178,6 @@ Route::post('reconciliation/{loanId}', ['uses' => 'ReconciliationController@post
 Route::get('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@getReconciliation']);
 Route::put('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@putReconciliation']);
 Route::delete('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@deleteReconciliation']);
-});
 
 
 ///products

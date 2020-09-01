@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Account;
 use App\Events\DisbursedLoanEvent;
 use App\Loan;
-use App\LoanType;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
 class LoanController extends Controller
@@ -80,6 +81,7 @@ class LoanController extends Controller
 
             ]
         );
+        $loan_form = null;
 
         if ($validator->fails())
             return response()->json(['error', $validator->errors()]);
@@ -88,6 +90,16 @@ class LoanController extends Controller
         $product = Product::find($request->product_id);
 
         if (!$product) return response()->json(['error' => 'Product not found']);
+
+        $hostname = URL::to('/');
+        $avatar = $hostname . Storage::url('uploads/loan_forms/default.png');
+        $destinationPath = storage_path('/app/public/uploads/loan_forms');
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            $name = time() . $this->generateRandomString() . '.png';
+            $image->move($destinationPath, $name);
+            $loan_form  = $hostname . Storage::url('uploads/loan_forms/' . $name);
+        }
 
         $loan = new Loan();
         $loan->amount = $request->amount;
@@ -102,9 +114,12 @@ class LoanController extends Controller
         $loan->account_id = $request->account_id;
         $loan->client_id = $request->client_id;
         $loan->group_loan_id = $request->group_loan_id;
+        $loan->loan_form = $loan_form;
 
 
         $product->loans()->save($loan);
+
+        return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
     }
 
     // put Loan
@@ -207,5 +222,17 @@ class LoanController extends Controller
             return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
         }
         return response()->json(['error' => 'The loan could not be disbursed', 'reason' => $loan->status], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+
+    public  function generateRandomString($length = 20)
+    {
+        $characters = '0123456789abcdefghijklmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }

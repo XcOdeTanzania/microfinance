@@ -57,5 +57,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GuardsTableSeeder::class);
 
         $this->call(AccountsTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
+
     }
 }
