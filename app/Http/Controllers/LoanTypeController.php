@@ -2,96 +2,88 @@
 
 namespace App\Http\Controllers;
 
-use App\LoanType;
+use App\LoanClassification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class LoanTypeController extends Controller
+class LoanClassificationController extends Controller
 {
 
-    //get LoanType
-    public function getLoanTypes()
+    //get LoanClassification
+    public function getLoanClassifications()
     {
-        $loanTypes = LoanType::all();
+        $loanClassifications = LoanClassification::all();
 
-        return response()->json(['loanTypes' => $loanTypes], 200, [], JSON_NUMERIC_CHECK);
+        return response()->json(['loanClassifications' => $loanClassifications], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    //get all LoanType
-    public function getLoanType($loanTypeId)
+    //get all LoanClassification
+    public function getLoanClassification($loanClassificationId)
     {
 
-        $loanType = LoanType::find($loanTypeId);
-        if (!$loanType) return response()->json(['error' => 'LoanType not found']);
+        $loanClassification = LoanClassification::find($loanClassificationId);
+        if (!$loanClassification) return response()->json(['error' => 'LoanClassification not found']);
 
-        return response()->json(['loanType' => $loanType], 200, [], JSON_NUMERIC_CHECK);
+        return response()->json(['loanClassification' => $loanClassification], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    //Post LoanType
-    public function postLoanType(Request $request)
+    //Post LoanClassification
+    public function postLoanClassification(Request $request)
     {
         $validator = Validator::make(
             $request->all(),
             [
                 'name' => 'required',
-                'interest_rate' => 'required',
-                'max_duration' => 'required',
-                'duration_type' => 'required'
             ]
         );
 
         if ($validator->fails())
             return response()->json(['error', $validator->errors()]);
 
-        $loanType = new LoanType();
+        $loanClassification = new LoanClassification();
 
-        $loanType->name = $request->name;
-        $loanType->interest_rate  = $request->interest_rate;
-        $loanType->max_duration  = $request->max_duration;
-        $loanType->duration_type  = $request->duration_type;
+        $loanClassification->name = $request->name;
+        $loanClassification->past_due  = $request->past_due;
+        $loanClassification->provision  = $request->provision;
 
-        $loanType->save();
+        $loanClassification->save();
 
-        return response()->json(['loanType' => $loanType]);
+        return response()->json(['loanClassification' => $loanClassification]);
     }
 
 
 
-    // put LoanType
-    public function putLoanType(Request $request, $businessId)
+    // put LoanClassification
+    public function putLoanClassification(Request $request, $businessId)
     {
         $validator = Validator::make(
             $request->all(),
             [
                 'name' => 'required',
-                'interest_rate' => 'required',
-                'max_duration' => 'required',
-                'duration_type' => 'required'
             ]
         );
         if ($validator->fails())
             return response()->json(['error', $validator->errors()]);
 
-        $loanType = LoanType::find($businessId);
-        if (!$loanType) return response()->json(['error' => 'LoanType not found']);
+        $loanClassification = LoanClassification::find($businessId);
+        if (!$loanClassification) return response()->json(['error' => 'LoanClassification not found']);
 
-        $loanType->update([
+        $loanClassification->update([
             'name' => $request->name,
-            'interest_rate' => $request->interest_rate,
-            'max_duration' => $request->max_duration,
-            'duration_type' => $request->duration_type
+            'past_due' => $request->past_due,
+            'provision' => $request->provision
         ]);
 
-        return response()->json(['loanType' => $loanType], 200, [], JSON_NUMERIC_CHECK);
+        return response()->json(['loanClassification' => $loanClassification], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    //delete LoanType
-    public function deleteLoanType($loanTypeId)
+    //delete LoanClassification
+    public function deleteLoanClassification($loanClassificationId)
     {
-        $loanType = LoanType::find($loanTypeId);
-        if (!$loanType) return response()->json(['error' => 'LoanType not found']);
+        $loanClassification = LoanClassification::find($loanClassificationId);
+        if (!$loanClassification) return response()->json(['error' => 'LoanClassification not found']);
 
-        $loanType->delete();
-        return response()->json(['message' => 'LoanType deleted successfully']);
+        $loanClassification->delete();
+        return response()->json(['message' => 'LoanClassification deleted successfully']);
     }
 }

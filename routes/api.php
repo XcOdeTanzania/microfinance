@@ -100,11 +100,11 @@ Route::put('branch/{branchId}', ['uses' => 'BranchController@putBranch']);
 Route::delete('branch/{branchId}', ['uses' => 'BranchController@deleteBranch']);
 
 //loan Types
-Route::get('loanTypes', ['uses' => 'LoanTypeController@getLoanTypes']);
-Route::post('loanType', ['uses' => 'LoanTypeController@postLoanType']);
-Route::get('loanType/{loanTypeId}', ['uses' => 'LoanTypeController@getLoanType']);
-Route::put('loanType/{loanTypeId}', ['uses' => 'LoanTypeController@putLoanType']);
-Route::delete('loanType/{loanTypeId}', ['uses' => 'LoanTypeController@deleteLoanType']);
+Route::get('loanClassifications', ['uses' => 'LoanClassificationController@getLoanClassifications']);
+Route::post('loanClassification', ['uses' => 'LoanClassificationController@postLoanClassification']);
+Route::get('loanClassification/{loanClassificationId}', ['uses' => 'LoanClassificationController@getLoanClassification']);
+Route::put('loanClassification/{loanClassificationId}', ['uses' => 'LoanClassificationController@putLoanClassification']);
+Route::delete('loanClassification/{loanClassificationId}', ['uses' => 'LoanClassificationController@deleteLoanClassification']);
 
 //Charges
 Route::get('charges', ['uses' => 'ChargeController@getCharges']);
