@@ -15,17 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 //user  authentication
-Route::post('register', 'AuthController@register');
+Route::post('auth/register', 'AuthController@register');
 Route::post('auth/login', 'AuthController@login');
-Route::post('logout', 'AuthController@logout');
-Route::post('refresh/token', 'AuthController@refresh');
+Route::post('auth/logout', 'AuthController@logout');
+Route::post('auth/refresh/token', 'AuthController@refresh');
 
-// Route::group([
-//     'name' => 'Auth',
-//     'middleware' => 'auth',
-// ],
+Route::group([
+    'name' => 'Auth',
+    'middleware' => 'auth',
+],
 
-//    function ()  { 
+   function ()  { 
 // tasks
 Route::get('tasks', ['uses' => 'TaskController@allTasks']);
 Route::get('task/{taskId}', ['uses' => 'TaskController@getTask']);
@@ -173,4 +173,4 @@ Route::post('reconciliation/{loanId}', ['uses' => 'ReconciliationController@post
 Route::get('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@getReconciliation']);
 Route::put('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@putReconciliation']);
 Route::delete('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@deleteReconciliation']);
-// });
+});

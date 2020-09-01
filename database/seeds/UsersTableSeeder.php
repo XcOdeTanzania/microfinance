@@ -19,12 +19,21 @@ class UsersTableSeeder extends Seeder
         // //  factory(App\User::class, 5)->create()->roles()->attach($role);
 
         $user = User::create([
-        'name' => 'John',
-        'email' => 'me@m.com',
-        'email_verified_at' => now(),
-        'password' => Hash::make("password"), // password
-        'remember_token' => Str::random(10),
-        'branch_id' => 1
+            'name' => 'System Admin',
+            'email' => 'admin@admin.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("password"), // password
+            'remember_token' => Str::random(10),
+            'branch_id' => 1
+        ]);
+
+        $user = User::create([
+            'name' => 'John',
+            'email' => 'me@m.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("password"), // password
+            'remember_token' => Str::random(10),
+            'branch_id' => 1
         ]);
 
         $role = Role::where('id', 1)->get();
@@ -37,8 +46,8 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make("password"), // password
             'remember_token' => Str::random(10),
             'branch_id' => 1
-            ]);
-    
+        ]);
+
         $role = Role::where('id', 1)->get();
         $user->roles()->attach($role);
 
@@ -50,7 +59,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make("password"), // password
             'remember_token' => Str::random(10),
             'branch_id' => 1
-            ]);
+        ]);
 
         $role = Role::where('id', 1)->get();
         $user->roles()->attach($role);
@@ -62,8 +71,8 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make("password"), // password
             'remember_token' => Str::random(10),
             'branch_id' => 1
-            ]);
-    
+        ]);
+
         $role = Role::where('id', 1)->get();
         $user->roles()->attach($role);
     }

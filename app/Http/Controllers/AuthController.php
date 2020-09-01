@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 
 class AuthController extends Controller
 {
 
-   
+
 
     public function register(Request $request)
     {
@@ -31,8 +32,8 @@ class AuthController extends Controller
 
         $user = User::create([
             'name' => $request->name,
-            'email'    => $request->email,
-            'password' => $request->password,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
 
 
@@ -66,8 +67,9 @@ class AuthController extends Controller
 
         return response()->json([
             'access_token' => $token,
+            'refresh_token' => $token,
             'token_type'   => 'bearer',
-            'expires_in'   => Auth::factory()->getTTL() * 3600,
+            'expires_in'   => Auth::factory()->getTTL(),
             'user' => $user,
         ]);
     }
@@ -80,6 +82,6 @@ class AuthController extends Controller
      */
     public function refresh()
     {
-        return $this->respondWithToken(Auth::refresh());
+        return  $this->respondWithToken(Auth::refresh());
     }
 }
