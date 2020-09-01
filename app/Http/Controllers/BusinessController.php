@@ -125,19 +125,4 @@ class BusinessController extends Controller
         $business->delete();
         return response()->json(['message' => 'Business deleted successfully']);
     }
-
-
-    //create business loan
-
-    public function createBusinessLoan(Request $request, $businessId)
-    {
-        $business = Business::find($businessId);
-        if (!$business) return response()->json(['error' => 'Business not found']);
-
-       $loan= event(new CreateLoanEvent($request, $business));
-
-        return response()->json([
-            'loan' => $loan
-        ], 201);
-    }
 }

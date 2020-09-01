@@ -6,6 +6,7 @@ use App\Account;
 use App\Events\DisbursedLoanEvent;
 use App\Loan;
 use App\LoanType;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -30,32 +31,11 @@ class LoanController extends Controller
 
 
         foreach ($loans as $loan) {
-
             $loan->guarantors;
             $loan->user;
             $loan->collaterals;
-            $loan->loanable;
             $loan->charges;
-
-            // $loan->summary;
-            // $loan->summaryPrincipal;
-            // $loan->summaryInterest;
-            // $loan->summaryFee;
-            // $loan->summaryPenalty;
-            // $loan->repayments;
-
-            // $loan->standingInstructions;
-            // $loan->audits;
-            // $loan->surveys;
-
-
-            $loan->loan_type = LoanType::find($loan->loan_type_id);
-
-
-
-            $loan->laonable;
             $loan->repayments;
-            
         }
         return response()->json([
             'loans' => $loans,
@@ -77,6 +57,54 @@ class LoanController extends Controller
         $loan->schedules;
 
         return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    //post loan
+    public function postLoan(Request $request)
+    {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'product_id' => 'required',
+                'status' => 'required',
+                'amount' => 'required',
+                'duration' => 'required',
+                'disbursement_date' => 'required',
+                'repayment_start_date' => 'required',
+                'repayment_end_date' => 'required',
+                'amount_refund_per_month' => 'required',
+                'loan_officer_id' => 'required',
+                'account_id' => 'required',
+                'client_id' => 'required',
+
+
+            ]
+        );
+
+        if ($validator->fails())
+            return response()->json(['error', $validator->errors()]);
+
+
+        $product = Product::find($request->product_id);
+
+        if (!$product) return response()->json(['error' => 'Product not found']);
+
+        $loan = new Loan();
+        $loan->amount = $request->amount;
+        $loan->status = $request->status;
+        $loan->interest = $request->amount * $product->interest_rate;
+        $loan->duration = $request->duration;
+        $loan->disbursement_date = $request->disbursement_date;
+        $loan->repayment_start_date = $request->repayment_start_date;
+        $loan->repayment_end_date = $request->repayment_end_date;
+        $loan->amount_refund_per_month = $request->amount_refund_per_month;
+        $loan->user_id = $request->loan_officer_id;
+        $loan->account_id = $request->account_id;
+        $loan->client_id = $request->client_id;
+        $loan->group_loan_id = $request->group_loan_id;
+
+
+        $product->loans()->save($loan);
     }
 
     // put Loan
@@ -119,12 +147,13 @@ class LoanController extends Controller
         return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    public function approveLoan($loanId, $status) {
+    public function approveLoan($loanId, $status)
+    {
         $loan = Loan::find($loanId);
         if (!$loan) return response()->json(['error' => 'Loan not found']);
 
         $loan->update([
-            'status'=> $status
+            'status' => $status
         ]);
 
         return response()->json(['loan' => $loan], 204, [], JSON_NUMERIC_CHECK);

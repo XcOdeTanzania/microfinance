@@ -12,25 +12,19 @@ class Loan extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'loan_type_id',
+        'product_id',
         'status',
-        'top_up',
+        'interest',
         'amount',
-        'orign_of_funding',
         'duration',
-        'repayment_every',
-        'repayment_every_type',
-        'repayment_day_of_the_week',
-        'repayment_week_of_the_month',
         'disbursement_date',
-        'grace_on_interest_payment',
-        'grace_on_principal_payment',
-        'purpose',
-        'auto_create_standing_instruction',
         'repayment_start_date',
-        'sector',
-        'channel',
-        'final_payment_expected',
+        'repayment_end_date',
+        'amount_refund_per_month',
+        'loan_officer_id',
+        'account_id',
+        'client_id',
+        'group_loan_id'
     ];
 
 
@@ -55,23 +49,22 @@ class Loan extends Model
         return $this->hasMany(Schedule::class);
     }
 
-    /** 
-     * loan polymorpic relations to client and group
-     */
 
-    public function loanable()
-    {
-        return $this->morphTo();
-    }
 
     /**
      * user has many charges
      */
 
-    public function user()
+    public function loanOfficer()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function account()
+    {
+        return $this->belongsTo(Account::class, 'account_id');
+    }
+
 
     /**
      * loans has many charges
@@ -83,10 +76,13 @@ class Loan extends Model
     }
 
 
-    public function rentAccounts()
+    //prouct
+    public function product()
     {
-        return $this->hasMany(RentAccount::class);
+        return $this->belongsTo(Product::class, 'product_id');
     }
+
+
 
     /**
      * loans has many charges

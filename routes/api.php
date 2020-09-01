@@ -174,3 +174,11 @@ Route::get('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationContro
 Route::put('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@putReconciliation']);
 Route::delete('reconciliation/{reconciliationId}', ['uses' => 'ReconciliationController@deleteReconciliation']);
 });
+
+
+///products
+Route::get('products', ['uses' => 'ProductController@getProducts']);
+Route::post('product', ['uses' => 'ProductController@postProduct']);
+Route::get('product/{productId}', ['uses' => 'ProductController@getProduct']);
+Route::put('product/{productId}', ['uses' => 'ProductController@putProduct']);
+Route::delete('product/{productId}', ['uses' => 'ProductController@deleteProduct']);
