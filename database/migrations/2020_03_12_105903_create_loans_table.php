@@ -31,7 +31,7 @@ class CreateLoansTable extends Migration
             $table->integer('client_id');
             $table->integer('group_loan_id')->nullable();
             $table->string('loan_form')->nullable();
-
+            $table->string('loan_classification_id')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });

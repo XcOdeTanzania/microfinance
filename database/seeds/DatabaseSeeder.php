@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TasksTableSeeder::class);
 
 
-        $this->call(LoanTypeTableSeeder::class);
+        $this->call(LoanClassificationsTableSeeder::class);
         $this->call(LoanStatusTableSeeder::class);
 
 
@@ -58,6 +58,5 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AccountsTableSeeder::class);
         $this->call(ProductsTableSeeder::class);
-
     }
 }

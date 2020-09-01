@@ -13,6 +13,9 @@ class LoanClassificationController extends Controller
     public function getLoanClassifications()
     {
         $loanClassifications = LoanClassification::all();
+        foreach ($loanClassifications as $loanClassification) {
+            $loanClassification->loans;
+        }
 
         return response()->json(['loanClassifications' => $loanClassifications], 200, [], JSON_NUMERIC_CHECK);
     }

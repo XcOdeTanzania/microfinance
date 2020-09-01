@@ -49,7 +49,10 @@ class Loan extends Model
         return $this->hasMany(Schedule::class);
     }
 
-
+    public function loanClassification()
+    {
+        return $this->belongsTo(LoanClassification::class, 'loan_classification_id');
+    }
 
     /**
      * user has many charges

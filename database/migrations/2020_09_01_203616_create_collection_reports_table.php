@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoanTypeTable extends Migration
+class CreateCollectionReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,8 @@ class CreateLoanTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('loan_classifications', function (Blueprint $table) {
+        Schema::create('collection_reports', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->string('name');
-            $table->double('past_due')->nullable();
-            $table->integer('provision')->nullable();
-
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -32,6 +26,6 @@ class CreateLoanTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loan_type');
+        Schema::dropIfExists('collection_reports');
     }
 }
