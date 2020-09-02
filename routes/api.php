@@ -20,14 +20,15 @@ Route::post('auth/login', 'AuthController@login');
 Route::post('auth/logout', 'AuthController@logout');
 Route::post('auth/refresh/token', 'AuthController@refresh');
 
-Route::group([
-    'name' => 'Auth',
-    'middleware' => 'auth',
-],
+Route::group(
+    [
+        'name' => 'Auth',
+        'middleware' => 'auth',
+    ],
 
-   function ()  { 
-
-});
+    function () {
+    }
+);
 
 
 // tasks
@@ -162,7 +163,7 @@ Route::post('rentAccount', ['uses' => 'RentAccountController@postRentAccount']);
 Route::get('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@getRentAccount']);
 Route::put('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@putRentAccount']);
 Route::delete('rentAccount/{rentAccountId}', ['uses' => 'RentAccountController@deleteRentAccount']);
-  
+
 
 
 //accounts
@@ -186,3 +187,10 @@ Route::post('product', ['uses' => 'ProductController@postProduct']);
 Route::get('product/{productId}', ['uses' => 'ProductController@getProduct']);
 Route::put('product/{productId}', ['uses' => 'ProductController@putProduct']);
 Route::delete('product/{productId}', ['uses' => 'ProductController@deleteProduct']);
+
+///grouploans
+Route::get('grouploans', ['uses' => 'GroupLoanController@getGroupLoans']);
+Route::post('product', ['uses' => 'GroupLoanController@postGroupLoan']);
+Route::get('product/{productId}', ['uses' => 'GroupLoanController@getGroupLoan']);
+Route::put('product/{productId}', ['uses' => 'GroupLoanController@putGroupLoan']);
+Route::delete('product/{productId}', ['uses' => 'GroupLoanController@deleteGroupLoan']);

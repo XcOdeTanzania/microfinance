@@ -77,4 +77,9 @@ class Group extends Model
         return $this->morphMany(Task::class, 'taskable');
     }
 
+    public function groupLoans()
+    {
+        return $this->hasMany(GroupLoan::class);
+    }
+    
 }

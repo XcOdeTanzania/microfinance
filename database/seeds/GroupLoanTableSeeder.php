@@ -1,8 +1,9 @@
 <?php
 
+use App\GroupLoan;
 use Illuminate\Database\Seeder;
 
-class CollectionReportsTableSeeder extends Seeder
+class GroupLoanTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class CollectionReportsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\CollectionReport::class, 100)->create();
+        factory(GroupLoan::class, 20)->create();
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\CollectionReport;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -58,5 +59,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AccountsTableSeeder::class);
         $this->call(ProductsTableSeeder::class);
+        $this->call(CollectionReportsTableSeeder::class);
+        $this->call(GroupLoanTableSeeder::class);
     }
 }
