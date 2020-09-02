@@ -189,8 +189,16 @@ Route::put('product/{productId}', ['uses' => 'ProductController@putProduct']);
 Route::delete('product/{productId}', ['uses' => 'ProductController@deleteProduct']);
 
 ///grouploans
-Route::get('grouploans', ['uses' => 'GroupLoanController@getGroupLoans']);
-Route::post('product', ['uses' => 'GroupLoanController@postGroupLoan']);
-Route::get('product/{productId}', ['uses' => 'GroupLoanController@getGroupLoan']);
-Route::put('product/{productId}', ['uses' => 'GroupLoanController@putGroupLoan']);
-Route::delete('product/{productId}', ['uses' => 'GroupLoanController@deleteGroupLoan']);
+Route::get('groupLoans', ['uses' => 'GroupLoanController@getGroupLoans']);
+Route::post('groupLoan', ['uses' => 'GroupLoanController@postGroupLoan']);
+Route::get('groupLoan/{groupLoanId}', ['uses' => 'GroupLoanController@getGroupLoan']);
+Route::put('groupLoan/{groupLoanId}', ['uses' => 'GroupLoanController@putGroupLoan']);
+Route::delete('groupLoan/{groupLoanId}', ['uses' => 'GroupLoanController@deleteGroupLoan']);
+
+
+///repaymentsummaries
+Route::get('repaymentSummaries', ['uses' => 'RepaymentSummaryController@getRepaymentSummaries']);
+Route::post('repaymentSummary', ['uses' => 'RepaymentSummaryController@postRepaymentSummary']);
+Route::get('repaymentSummary/{repaymentSummaryId}', ['uses' => 'RepaymentSummaryController@getRepaymentSummary']);
+Route::put('repaymentSummary/{repaymentSummaryId}', ['uses' => 'RepaymentSummaryController@putRepaymentSummary']);
+Route::delete('repaymentSummary/{repaymentSummaryId}', ['uses' => 'RepaymentSummaryController@deleteRepaymentSummary']);

@@ -128,16 +128,17 @@ class LoanController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
+                'product_id' => 'required',
                 'status' => 'required',
                 'amount' => 'required',
-                'orign_of_funding' => 'required',
                 'duration' => 'required',
-                'repayment_every' => 'required',
-                'repayment_every_type' => 'required',
-                'purpose' => 'required',
-                'auto_create_standing_instruction' => 'required',
-                'sector' => 'required',
-                'channel' => 'required',
+                'disbursement_date' => 'required',
+                'repayment_start_date' => 'required',
+                'repayment_end_date' => 'required',
+                'amount_refund_per_month' => 'required',
+                'loan_officer_id' => 'required',
+                'account_id' => 'required',
+                'client_id' => 'required',
             ]
         );
         if ($validator->fails())
@@ -155,8 +156,7 @@ class LoanController extends Controller
             'repayment_every_type' => $request->repayment_every_type,
             'purpose' => $request->purpose,
             'auto_create_standing_instruction' => $request->auto_create_standing_instruction,
-            'sector' => $request->sector,
-            'channel' => $request->channel
+           
         ]);
 
         return response()->json(['loan' => $loan], 200, [], JSON_NUMERIC_CHECK);

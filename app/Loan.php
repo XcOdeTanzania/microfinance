@@ -49,6 +49,13 @@ class Loan extends Model
         return $this->hasMany(Schedule::class);
     }
 
+    //repayment summary..
+    function repaymentSummary()
+    {
+        return $this->hasOne(RepaymentSummary::class);
+    }
+
+    //loan classification...
     public function loanClassification()
     {
         return $this->belongsTo(LoanClassification::class, 'loan_classification_id');
@@ -61,6 +68,11 @@ class Loan extends Model
     public function loanOfficer()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id');
     }
 
     public function account()
