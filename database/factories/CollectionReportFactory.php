@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
+use App\CollectionReport;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(CollectionReport::class, function (Faker $faker) {
     return [
         'client_id' => $faker->randomElement([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
         'loan_id' => $faker->randomElement([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
